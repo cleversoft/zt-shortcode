@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension group="editors-xtd" method="upgrade" type="plugin" version="2.5">
+	<name>Button - Zo2Shortcodes</name>
+	<creationDate>2014</creationDate>
+	<author></author>
+	<authorEmail>admin@zo2framework.com</authorEmail>
+	<authorUrl>http://www.zo2framework.com</authorUrl>
+	<copyright></copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<version>0.5.0</version>
+	<description></description>
+	<files>
+		<filename plugin="zo2shortcodes">zo2shortcodes.php</filename>
+        <filename>index.html</filename>
+    </files>
+</extension>
