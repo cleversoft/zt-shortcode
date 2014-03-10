@@ -17,14 +17,19 @@ require_once ( JPATH_BASE . '/includes/framework.php' );
 
 $jsonFile = JPATH_ROOT . '/plugins/system/zo2/assets/zo2/shortcodes.json';
 $data = json_decode(file_get_contents($jsonFile));
+
 ?>
+<link type="text/css" rel="stylesheet" href="<?php echo '../../../plugins/system/zo2/assets/vendor/bootstrap/core/css/bootstrap.min.css' ?>" />
+<script src="<?php echo '../../../plugins/system/zo2/assets/vendor/bootstrap/core/js/bootstrap.min.js' ?>"></script> 
+
 <script>
     function insertMacro(shortcode) {
         jInsertEditorText(shortcode, 'jform_articletext');
         SqueezeBox.close();
     }
 </script>
-<table class="table table-striped">
+<h2 class="text-center">ZO2 ShortCodes</h2>
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>#</th>
@@ -37,7 +42,7 @@ $data = json_decode(file_get_contents($jsonFile));
             <tr>
                 <td><?php echo $index + 1; ?></td>
                 <td>                    
-                    <a href="" onclick='window.parent.insertMacro("<?php echo $item->pattern; ?>");
+                    <a class="btn btn-default" href="javascript: void(0);" onclick='window.parent.insertMacro("<?php echo $item->pattern; ?>");
                                 return false;' >
                            <?php echo $item->name; ?>
                     </a>

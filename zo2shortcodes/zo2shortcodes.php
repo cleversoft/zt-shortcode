@@ -55,7 +55,7 @@ if (!class_exists('plgButtonZo2Shortcodes')) {
             $button->set('class', 'btn');
             $button->set('link', $shortcodesFile);
             $button->set('text', 'Zo2Shortcodes');
-            $button->set('name', 'zo2shortcodes');
+            $button->set('name', 'arrow-up');
             $button->set('options', "{handler: 'iframe', size: {x: 770, y: 400}}");
 
             return $button;
