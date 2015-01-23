@@ -3,7 +3,6 @@ zo2shortcode
 
 * Pricing table 
 * Tabs
-* Slideshow
 * Testimonial 
 * Blockquotes 
 * Buttons
@@ -11,10 +10,13 @@ zo2shortcode
 * Columns
 * Divider
 * Dropcap
-* Gallery
+* Carousel
+* Slideshow
 * Lightbox
+* Progess Bars ( http://getbootstrap.com/2.3.2/components.html#progress ) 
 * List-icon
 * Message Box
+* Youtube
 * Twitter
 * Vimeo
 
