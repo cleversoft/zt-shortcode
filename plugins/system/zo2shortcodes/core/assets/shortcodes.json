@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Tabs",
+        "description": "",
+        "group": "General",
+        "tag": "tabs",       
+        "options": {
+            "tabs": "10",
+            "text": "20"
+        }
+
+
+    }
+]  
