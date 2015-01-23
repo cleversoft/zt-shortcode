@@ -1,0 +1,1 @@
+<span class="label label-<?php echo $options->get('type'); ?>"><?php echo $content; ?></span>

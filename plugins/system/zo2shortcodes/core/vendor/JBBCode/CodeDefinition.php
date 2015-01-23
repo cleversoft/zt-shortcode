@@ -165,9 +165,18 @@ class CodeDefinition
         $content = $this->getContent($el);
 
         $tpl = new \Zo2ShortcodesHtml();
-        $tpl->set('shortcode', $shortcode);
+        if (!empty($shortcode))
+        {
+            $tpl->set('shortcode', $shortcode);
+        }
+        if (!empty($options))
+        {
+            $tpl->set('options', new \JObject($options));
+        }
+
         $tpl->set('content', $content);
-        return $tpl->fetch('Shortcodes://html/' . $shortcode->get('tag') . '.php');
+
+        return $tpl->fetch('Shortcodes://html/' . $this->shortcode->get('tag') . '.php');
     }
 
     protected function getContent(ElementNode $el)

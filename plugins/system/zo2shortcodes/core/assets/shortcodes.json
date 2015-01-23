@@ -1,14 +1,30 @@
 [
     {
+        "name": "Label",
+        "description": "",
+        "group": "Typography",
+        "tag": "label",
+        "options": {
+            "type": "default"
+        }
+    },
+    {
+        "name": "Badge",
+        "description": "",
+        "group": "Typography",
+        "tag": "badge",
+        "options": {
+        }
+    },
+    {
         "name": "Tabs",
         "description": "",
         "group": "General",
-        "tag": "tabs",       
+        "tag": "tabs",
         "options": {
             "tabs": "10",
             "text": "20"
         }
-
-
     }
+
 ]  

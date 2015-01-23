@@ -30,6 +30,15 @@ if (!class_exists('plgSystemZo2Shortcodes'))
             parent::__construct($subject, $config);
 
             require_once __DIR__ . '/core/bootstrap.php';
+            if (JFactory::getApplication()->isSite())
+            {
+                if ($this->params->get('load_bs3', true))
+                {
+                    $doc = JFactory::getDocument();
+                    $doc->addStyleSheet(Zo2ShortcodesPath::getInstance()->getUrl('Shortcodes://assets/bootstrap/css/bootstrap.min.css'));
+                    $doc->addStyleSheet(Zo2ShortcodesPath::getInstance()->getUrl('Shortcodes://assets/bootstrap/js/bootstrap.min.js'));
+                }
+            }
         }
 
         /**
@@ -44,9 +53,23 @@ if (!class_exists('plgSystemZo2Shortcodes'))
                 foreach ($shortcodes as $shortcode)
                 {
                     $shortcode = new JObject($shortcode);
+                    // Load depend if needed
+                    $depend = Zo2ShortcodesPath::getInstance()->getPath('Shortcodes://depends/' . $shortcode->get('tag') . '.php');
+                    if ($depend)
+                    {
+                        require_once $depend;
+                    }
                     $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
-                    $builder->setUseOption(true);
-                    $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
+
+                    if (count($shortcode->get('options')) > 0)
+                    {
+                        $builder->setUseOption(true);
+                        $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
+                    } else
+                    {
+                        $builder->setUseOption(false);
+                        $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
+                    }
                 }
                 $html = JResponse::getBody();
                 $parser->parse($html);
