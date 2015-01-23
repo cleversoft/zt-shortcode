@@ -6,6 +6,8 @@ ZT Shortcodes package includes:
 * 
 ## Features List
 
+![Features List](https://cloud.githubusercontent.com/assets/5260516/5871284/8f780dcc-a30d-11e4-871e-0ddc1591a3a4.png)
+
 * Pricing table 
 * Tabs
 * Testimonial 
