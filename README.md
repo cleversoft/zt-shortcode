@@ -1,9 +1,13 @@
-zo2shortcode
-============
+ZT Shortcodes package includes: 
+
+* ZT Shortcodes Content 
+* ZT Shortcodes Editors
+* ZT Shortcodes System 
+* 
+## Features List
 
 * Pricing table 
 * Tabs
-* Slideshow
 * Testimonial 
 * Blockquotes 
 * Buttons
@@ -11,10 +15,14 @@ zo2shortcode
 * Columns
 * Divider
 * Dropcap
-* Gallery
+* Carousel
+* Slideshow
 * Lightbox
+* Progess Bars ( http://getbootstrap.com/2.3.2/components.html#progress ) 
 * List-icon
 * Message Box
+* Google Maps
+* Youtube
 * Twitter
 * Vimeo
 
