@@ -1,4 +1,11 @@
 zo2shortcode
 ============
 
-Shortcode plugin for Zo2 Framework
+* Pricing table 
+* Tabs
+* Slideshow
+* Testimonial 
+* Blockquotes 
+* Buttons
+* Accordion
+* Updating 
