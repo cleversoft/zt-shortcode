@@ -144,7 +144,9 @@ class CodeDefinition
         {
             $options = $el->getAttribute();
             $options = array_merge($this->shortcode->get('options'), $el->getAttribute());
-            $this->shortcode->set('options', $options);
+            $shortcode = new \JObject();
+            $shortcode->set('tag', $this->shortcode->get('tag'));
+            $shortcode->set('options', $options);
             if (count($options) == 1)
             {
                 //$vals = array_values($options);
@@ -163,9 +165,9 @@ class CodeDefinition
         $content = $this->getContent($el);
 
         $tpl = new \Zo2ShortcodesHtml();
-        $tpl->set('shortcode', $this->shortcode);
+        $tpl->set('shortcode', $shortcode);
         $tpl->set('content', $content);
-        return $tpl->fetch($this->shortcode->get('tag') . '.php');
+        return $tpl->fetch('Shortcodes://html/' . $shortcode->get('tag') . '.php');
     }
 
     protected function getContent(ElementNode $el)

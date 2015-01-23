@@ -34,13 +34,24 @@ if (!class_exists('Zo2ShortcodesHtml'))
         private $_path;
 
         /**
+         * Constructor
+         * @param object|array $properties
+         */
+        public function __construct($properties = null)
+        {
+            parent::__construct($properties);
+            /* Init local variables */
+            $this->_path = Zo2ShortcodesPath::getInstance();
+        }
+
+        /**
          * Fetch template file
          * @param string $key
          * @return string
          */
-        public function fetch($tpl)
+        public function fetch($key)
         {
-            $tplFile = ZO2SHORTCODES_PATH . '/html/' . $tpl;
+            $tplFile = $this->_path->getPath($key);
             /* Make sure this template file is exists */
             if ($tplFile)
             {
@@ -60,7 +71,7 @@ if (!class_exists('Zo2ShortcodesHtml'))
          */
         public function load($key)
         {
-            $tplFile = ZO2SHORTCODES_PATH . '/html/' . $tpl;
+            $tplFile = $this->_path->getPath($key);
             if ($tplFile)
             {
                 $properties = $this->getProperties();

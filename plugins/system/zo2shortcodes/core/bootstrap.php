@@ -15,3 +15,7 @@ require_once ZO2SHORTCODES_CORE . '/vendor/JBBCode/Parser.php';
 /* Register Zo2 autoloading by Psr2 */
 spl_autoload_register(array('Zo2ShortcodesLoader', 'autoloadZo2Psr2'));
 
+JHtml::_('jquery.framework');
+JHtml::_('jquery.ui', array('core', 'sortable'));
+JHtml::_('bootstrap.framework');
+JHtmlBootstrap::loadCss();

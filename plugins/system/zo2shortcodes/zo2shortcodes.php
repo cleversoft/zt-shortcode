@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Zo2 (http://www.zo2framework.org)
- * A powerful Joomla template framework
+ * Zo2 Shortcodes (http://www.zo2framework.org)
  *
  * @link        http://www.zo2framework.org
  * @link        http://github.com/aploss/zo2
@@ -38,19 +37,22 @@ if (!class_exists('plgSystemZo2Shortcodes'))
          */
         public function onAfterRender()
         {
-            $shortcodes = $this->_getShortcodes();
-            $parser = new JBBCode\Parser();
-            foreach ($shortcodes as $shortcode)
+            if (JFactory::getApplication()->isSite())
             {
-                $shortcode = new JObject($shortcode);
-                $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
-                $builder->setUseOption(true);
-                $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
+                $shortcodes = $this->_getShortcodes();
+                $parser = new JBBCode\Parser();
+                foreach ($shortcodes as $shortcode)
+                {
+                    $shortcode = new JObject($shortcode);
+                    $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
+                    $builder->setUseOption(true);
+                    $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
+                }
+                $html = JResponse::getBody();
+                $parser->parse($html);
+                $html = $parser->getAsHTML();
+                JResponse::setBody($html);
             }
-            $html = JResponse::getBody();
-            $parser->parse($html);
-            $html = $parser->getAsHTML();
-            JResponse::setBody($html);
         }
 
         /**
