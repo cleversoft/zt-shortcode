@@ -16,6 +16,7 @@ zo2shortcode
 * Progess Bars ( http://getbootstrap.com/2.3.2/components.html#progress ) 
 * List-icon
 * Message Box
+* Google Maps
 * Youtube
 * Twitter
 * Vimeo
