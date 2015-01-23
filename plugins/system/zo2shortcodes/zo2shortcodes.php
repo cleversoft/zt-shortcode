@@ -50,6 +50,7 @@ if (!class_exists('plgSystemZo2Shortcodes'))
             {
                 $shortcodes = $this->_getShortcodes();
                 $parser = new JBBCode\Parser();
+                $buffer = array();
                 foreach ($shortcodes as $shortcode)
                 {
                     $shortcode = new JObject($shortcode);
@@ -57,7 +58,7 @@ if (!class_exists('plgSystemZo2Shortcodes'))
                     $depend = Zo2ShortcodesPath::getInstance()->getPath('Shortcodes://depends/' . $shortcode->get('tag') . '.php');
                     if ($depend)
                     {
-                        require_once $depend;
+                        $buffer[] = file_get_contents($depend);
                     }
                     $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
 
@@ -74,6 +75,8 @@ if (!class_exists('plgSystemZo2Shortcodes'))
                 $html = JResponse::getBody();
                 $parser->parse($html);
                 $html = $parser->getAsHTML();
+                $buffer = implode(PHP_EOL, $buffer);
+                $html = str_replace('</body>', $buffer . '</body>', $html);
                 JResponse::setBody($html);
             }
         }
