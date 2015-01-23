@@ -8,4 +8,13 @@ zo2shortcode
 * Blockquotes 
 * Buttons
 * Accordion
-* Updating 
+* Columns
+* Divider
+* Dropcap
+* Gallery
+* Lightbox
+* List-icon
+* Message Box
+* Twitter
+* Vimeo
+
