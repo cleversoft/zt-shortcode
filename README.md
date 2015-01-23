@@ -1,5 +1,10 @@
-zo2shortcode
-============
+ZT Shortcodes package includes: 
+
+* ZT Shortcodes Content 
+* ZT Shortcodes Editors
+* ZT Shortcodes System 
+* 
+## Features List
 
 * Pricing table 
 * Tabs
