@@ -25,20 +25,15 @@ if (!class_exists('plgSystemZo2Shortcodes'))
     class plgSystemZo2Shortcodes extends JPlugin
     {
 
+        /**
+         * 
+         * @param type $subject
+         * @param type $config
+         */
         public function __construct(&$subject, $config = array())
         {
             parent::__construct($subject, $config);
-
             require_once __DIR__ . '/core/bootstrap.php';
-            if (JFactory::getApplication()->isSite())
-            {
-                if ($this->params->get('load_bs3', true))
-                {
-                    $doc = JFactory::getDocument();
-                    $doc->addStyleSheet(Zo2ShortcodesPath::getInstance()->getUrl('Shortcodes://assets/bootstrap/css/bootstrap.min.css'));
-                    $doc->addStyleSheet(Zo2ShortcodesPath::getInstance()->getUrl('Shortcodes://assets/bootstrap/js/bootstrap.min.js'));
-                }
-            }
         }
 
         /**
@@ -46,22 +41,34 @@ if (!class_exists('plgSystemZo2Shortcodes'))
          */
         public function onAfterRender()
         {
+            // Only process for frontend
             if (JFactory::getApplication()->isSite())
             {
+                $path = Zo2ShortcodesPath::getInstance();
+                // Prepare buffer
+                $buffer = array();
+                // Init with Bootstrap 3
+                if ($this->params->get('load_bs3', true))
+                {
+                    $buffer [] = '<link rel="stylesheet" type="text/css" href="' . $path->getUrl('Shortcodes://assets/bootstrap/css/bootstrap.min.css') . '">';
+                    $buffer [] = '<script src="' . $path->getUrl('Shortcodes://assets/bootstrap/js/bootstrap.min.js') . '"></script>';
+                }
+                // Shortcodes process
                 $shortcodes = $this->_getShortcodes();
                 $parser = new JBBCode\Parser();
-                $buffer = array();
                 foreach ($shortcodes as $shortcode)
                 {
+                    // Convert to JObject
                     $shortcode = new JObject($shortcode);
                     // Load depend if needed
                     $depend = Zo2ShortcodesPath::getInstance()->getPath('Shortcodes://depends/' . $shortcode->get('tag') . '.php');
+                    // Include depends to buffer
                     if ($depend)
                     {
                         $buffer[] = file_get_contents($depend);
                     }
+                    // Setup shortcode
                     $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
-
                     if (count($shortcode->get('options')) > 0)
                     {
                         $builder->setUseOption(true);
@@ -72,11 +79,14 @@ if (!class_exists('plgSystemZo2Shortcodes'))
                         $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
                     }
                 }
+                // Get body
                 $html = JResponse::getBody();
+                // Parsing
                 $parser->parse($html);
+                // Parse to HTML
                 $html = $parser->getAsHTML();
                 $buffer = implode(PHP_EOL, $buffer);
-                $html = str_replace('</body>', $buffer . '</body>', $html);
+                $html = str_replace('</head>', $buffer . '</head>', $html);
                 JResponse::setBody($html);
             }
         }
