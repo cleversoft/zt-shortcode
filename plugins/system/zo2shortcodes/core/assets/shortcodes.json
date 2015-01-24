@@ -25,6 +25,14 @@
             "tabs": "10",
             "text": "20"
         }
+    },
+    {
+        "name": "Columns",
+        "description": "",
+        "group": "Grid",
+        "tag": "columns",
+        "options": {
+        }
     }
 
 ]  
