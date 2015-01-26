@@ -36,6 +36,18 @@ if (!class_exists('plgSystemZo2Shortcodes'))
             require_once __DIR__ . '/core/bootstrap.php';
         }
 
+        public function onAfterRoute()
+        {
+            $jinput = JFactory::getApplication()->input;
+            if ($view = $jinput->get('zo2shortcodes_view'))
+            {
+                $html = new Zo2ShortcodesHtml();
+                $buffer = $html->fetch('Shortcodes://html/admin/' . $view . '.php');
+                echo $buffer;
+                exit();
+            }
+        }
+
         /**
          * 
          */
@@ -69,11 +81,12 @@ if (!class_exists('plgSystemZo2Shortcodes'))
                     }
                     // Setup shortcode
                     $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
+                    // This shortcode required to input options
                     if (count($shortcode->get('options')) > 0)
                     {
                         $builder->setUseOption(true);
                         $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
-                    } else
+                    } else // This shortcode do not required to input options
                     {
                         $builder->setUseOption(false);
                         $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));

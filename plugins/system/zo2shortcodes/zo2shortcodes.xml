@@ -19,4 +19,12 @@
         <filename plugin="zo2shortcodes">zo2shortcodes.php</filename>        
         <filename>index.html</filename>
     </files>
+    <config>
+        <fields name="params">
+            <field name="load_bs3" type="radio" default="0" label="Load Bootstrap 3" description="">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fields>
+    </config>
 </extension>
