@@ -5,8 +5,9 @@
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
  *
  * @version     1.0.0
- * @link        http://www.zootemplate.com
  * @author      ZooTemplate 
+ * @email       support@zootemplate.com 
+ * @link        http://www.zootemplate.com 
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
@@ -33,7 +34,7 @@ class PlgSystemZo2InstallerScript
             ->set("`enabled`='1'")
             ->where("`type`='plugin'")
             ->where("`folder`='system'")
-            ->where("`element`='ztshortcodes'");
+            ->where("`element`='zt_shortcodes_system'");
         $db->setQuery($query);
         $db->execute();
         

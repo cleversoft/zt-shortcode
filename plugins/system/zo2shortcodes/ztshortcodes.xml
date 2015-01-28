@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <extension group="system" method="upgrade" type="plugin" version="2.5">
-    <name>PLG_SYSTEM_ZO2_SHORTCODES</name>
+    <name>zt_shortcodes_system</name>
     <creationDate>Jan 2015</creationDate>
-    <author>CleverSoft</author>
-    <authorEmail>hello@cleversoft.co</authorEmail>
-    <authorUrl>https://github.com/cleversoft</authorUrl>
-    <copyright>Copyright (c) 2008 - 2014 CleverSoft</copyright>
+    <author>ZooTemplate.Com</author>
+    <authorEmail>support@zootemplate.com</authorEmail>
+    <authorUrl>https://www.zootemplate.com</authorUrl>
+    <copyright>Copyright (c) 2008 - 2015 ZooTemplate.com</copyright>
     <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
     <version>1.0.0</version>
     <description>PLG_SYSTEM_ZO2_SHORTCODES_DESC</description>
