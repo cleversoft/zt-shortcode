@@ -9,6 +9,7 @@
     <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
     <version>1.0.0</version>
     <description>PLG_SYSTEM_ZO2_SHORTCODES_DESC</description>
+    <scriptfile>ztshortcodes.script.php</scriptfile>
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.plg_system_zo2shortcodes.ini</language>
         <language tag="en-GB">en-GB/en-GB.plg_system_zo2shortcodes.sys.ini</language>		
@@ -16,7 +17,7 @@
     <files>
         <folder>core</folder>
         <folder>local</folder>
-        <filename plugin="zo2shortcodes">zo2shortcodes.php</filename>        
+        <filename plugin="zo2shortcodes">ztshortcodes.php</filename>        
         <filename>index.html</filename>
     </files>
     <config>
