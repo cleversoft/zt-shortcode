@@ -33,6 +33,66 @@
         "tag": "columns",
         "options": {
         }
+    },
+    {
+        "name": "Progress Bar",
+        "description": "",
+        "group": "Grid",
+        "tag": "progress-bar",
+        "options": {
+            "type": "success",
+            "strip": "striped",
+            "animated": "active",
+            "now-value": "70",
+            "min-value": "0",
+            "max-value": "99",
+            "hidden-content": "hidden"
+        }
+    },
+    {
+        "name": "Button",
+        "description": "",
+        "group": "Grid",
+        "tag": "button",
+        "options": {
+            "type": "default",
+            "size": "standard",
+            "colour": "accent",
+            "icon": "",
+            "link": "#",
+            "extra-class": ""
+        }
+    },
+    {
+        "name": "Message Box",
+        "description": "",
+        "group": "Grid",
+        "tag": "message-box",
+        "options": {
+            "type": "success",
+            "icon": "",
+            "extra-class": ""
+        }
+    },
+    {
+        "name": "Blockquotes",
+        "description": "",
+        "group": "Grid",
+        "tag": "blockquotes",
+        "options": {
+            "type": "default",
+            "author": "",
+            "author-link": "",
+            "extra-class": ""
+        }
+    },
+    {
+        "name": "Pricing Table",
+        "description": "",
+        "group": "Grid",
+        "tag": "pricing-table",
+        "options": {
+            "type": "default"
+        }
     }
-
-]  
+]
