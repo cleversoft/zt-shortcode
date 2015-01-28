@@ -65,6 +65,11 @@ if (!class_exists('plgSystemZo2Shortcodes'))
                     $buffer [] = '<link rel="stylesheet" type="text/css" href="' . $path->getUrl('Shortcodes://assets/bootstrap/css/bootstrap.min.css') . '">';
                     $buffer [] = '<script src="' . $path->getUrl('Shortcodes://assets/bootstrap/js/bootstrap.min.js') . '"></script>';
                 }
+				// Init with Font-awesome
+				if ($this->params->get('load_fa', true))
+                {
+                    $buffer [] = '<link rel="stylesheet" type="text/css" href="' . $path->getUrl('Shortcodes://assets/font-awesome/css/font-awesome.min.css') . '">';                 
+                }
                 // Shortcodes process
                 $shortcodes = $this->_getShortcodes();
                 $parser = new JBBCode\Parser();
