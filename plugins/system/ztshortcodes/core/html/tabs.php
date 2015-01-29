@@ -32,7 +32,7 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
 }
 ?>  
 
-<?php if (!empty($currentTab)) : ?>
+<?php if (!empty($currentTab) && !empty($currentTab['tabs'])) : ?>
     <div class="zo2-tabs">
         <ul id="zo2Tab<?php echo $id; ?>" class="nav nav-tabs">
             <?php foreach ($currentTab['tabs'] as $key => $tab): ?> 
