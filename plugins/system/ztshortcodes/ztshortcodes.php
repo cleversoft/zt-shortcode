@@ -94,7 +94,6 @@ if (!class_exists('plgSystemZtShortcodes'))
                     // This shortcode required to input options
                     if (count($shortcode->get('options')) > 0)
                     {
-                        echo $shortcode->get('tag') . '<br />';
                         $builder->setUseOption(true);
                         $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
                     } else // This shortcode do not required to input options
