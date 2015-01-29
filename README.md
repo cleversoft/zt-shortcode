@@ -12,6 +12,7 @@ ZT Shortcodes package includes:
 * Blockquotes 
 * Buttons
 * Accordion
+* Toggle
 * Columns
 * Divider
 * Dropcap
