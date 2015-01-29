@@ -94,5 +94,15 @@
         "options": {
             "type": "default"
         }
+    },
+    {
+        "name": "Accordion ",
+        "description": "",
+        "group": "Collapse",
+        "tag": "accordion",
+        "options": {
+            "role": "tablist",
+            "aria-multiselectable": "true"
+        }
     }
 ]
