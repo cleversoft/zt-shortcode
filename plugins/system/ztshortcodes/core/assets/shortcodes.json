@@ -116,5 +116,27 @@
         "options": {
             "class-icon": "fa fa-joomla"
         }
+    },
+    {
+        "name": "Dropcaps",
+        "description": "",
+        "group": "Collapse",
+        "tag": "dropcaps",
+        "options": {
+            "type": "type-1",
+            "bg-color": "transparent",
+            "text-color": "#444444"
+        }
+    },
+    {
+        "name": "Divider",
+        "description": "",
+        "group": "Collapse",
+        "tag": "divider",
+        "options": {
+            "type": "thin",
+            "text": "",
+            "icon": ""
+        }
     }
 ]
