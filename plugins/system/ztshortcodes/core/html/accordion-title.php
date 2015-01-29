@@ -17,16 +17,16 @@ defined('_JEXEC') or die('Restricted access');
         <h4 class="panel-title">
             <a 
                 data-toggle="collapse" 
-                data-parent="#<?php echo $options->get('parent'); ?>" 
-                href="#<?php echo $options->get('content-id'); ?>" 
+                data-parent="#<?php echo $options->get('parent'); ?>"
+                href="#<?php echo $options->get('content-id'); ?>"
                 aria-expanded="<?php echo $options->get('expanded'); ?>" 
                 aria-controls="<?php echo $options->get('content-id'); ?>">
                     <?php echo $options->get('title'); ?>
             </a>
         </h4>
     </div>
-    <div id="<?php echo $options->get('content-id'); ?>" 
-         class="panel-collapse collapse in" role="tabpanel" aria-labelledby="<?php echo $options->get('title-id'); ?>">
+    <div id="<?php echo $options->get('content-id'); ?>"
+         class="panel-collapse collapse<?php echo ' '.$options->get('active'); ?>" role="tabpanel" aria-labelledby="<?php echo $options->get('title-id'); ?>">
         <div class="panel-body">
             <?php echo $content; ?>
         </div>

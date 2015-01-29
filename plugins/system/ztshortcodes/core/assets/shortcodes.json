@@ -90,19 +90,31 @@
         "name": "Pricing Table",
         "description": "",
         "group": "Grid",
-        "tag": "pricing-table",
+        "tag": "pricing",
         "options": {
             "type": "default"
         }
     },
     {
-        "name": "Accordion ",
+        "name": "Accordion",
         "description": "",
         "group": "Collapse",
         "tag": "accordion",
         "options": {
+            "class": "panel-group",
+            "expanded": "true",
             "role": "tablist",
+            "active": "",
             "aria-multiselectable": "true"
+        }
+    },
+    {
+        "name": "List Icon",
+        "description": "",
+        "group": "Collapse",
+        "tag": "list-icon",
+        "options": {
+            "class-icon": "fa fa-joomla"
         }
     }
 ]

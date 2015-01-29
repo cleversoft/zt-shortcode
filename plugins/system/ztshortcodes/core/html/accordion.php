@@ -13,7 +13,7 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 <div 
-    class="<?php echo $options->get('style') . ' ' . $options->get('class'); ?>" 
+    class="<?php echo $options->get('class'); ?>"
     id="<?php echo $options->get('id'); ?>" 
     role="<?php echo $options->get('role'); ?>" 
     aria-multiselectable="<?php echo $options->get('aria-multiselectable'); ?>">
