@@ -1,6 +1,15 @@
 <?php
-$dir = JPath::clean(JPATH_ROOT . '/images/' . $options->get('dir'));
+/**
+ * Created by PhpStorm.
+ * User: chinhbeo
+ * Date: 1/30/15
+ * Time: 4:21 PM
+ */
 
+?>
+
+<?php
+$dir = JPath::clean(JPATH_ROOT . '/images/' . $options->get('dir'));
 // Allowed filetypes
 $allowedExtensions = array('jpg', 'png', 'gif');
 // Also allow filetypes in uppercase
@@ -9,7 +18,6 @@ $allowedExtensions = array_merge($allowedExtensions, array_map('strtoupper', $al
 $filter = implode('|', $allowedExtensions);
 $filter = "^.*\.(" . implode('|', $allowedExtensions) . ")$";
 $files = JFolder::files($dir, $filter, false, true);
-
 foreach ($files as $key => $image)
 {
     $image = JPath::clean($image);
@@ -25,6 +33,9 @@ foreach ($files as $key => $image)
 <?php endif; ?>
 <script>
     jQuery(document).ready(function () {
-        jQuery('a.ztshortcodes-gallery').colorbox({});
+        jQuery('a.ztshortcodes-gallery').colorbox({
+            width: <?php echo $options->get('width'); ?>,
+            height: <?php echo $options->get('height'); ?>
+        });
     })
 </script>

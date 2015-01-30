@@ -1,5 +1,4 @@
 <?php
-
 $style = $options->get('style');
 $styleFile = __DIR__ . '/galleries/' . $style . '.php';
 if (JFile::exists($styleFile))
