@@ -96,13 +96,24 @@
         }
     },
     {
-        "name": "Accordion ",
+        "name": "Accordion",
         "description": "",
         "group": "Collapse",
         "tag": "accordion",
         "options": {
             "role": "tablist",
             "aria-multiselectable": "true"
+        }
+    },
+    {
+        "name": "Gallery",
+        "description": "",
+        "group": "gallery",
+        "tag": "gallery",
+        "options": {
+            "dir": "",
+            "thumb-width": "300",
+            "thumb-height": "300"
         }
     }
 ]
