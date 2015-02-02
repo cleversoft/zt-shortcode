@@ -47,8 +47,10 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-<div id="zo2-shortcode-plugin" class="zo2-shortcode-wrap">
+<!-- Short code Javascript -->
+<script type="text/javascript" src="<?php echo ($uri . '/js/shortcode.js'); ?>"></script>
 
+<div id="zo2-shortcode-plugin" class="zo2-shortcode-wrap">
     <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
         <ul id="myTab" class="nav nav-tabs" role="tablist">
             <?php
@@ -65,5 +67,10 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
                      aria-labelledby="<?php echo $shortcode->tag; ?>-tab"><?php include_once(__DIR__ . '/' . $shortcode->tag . '.php'); ?></div>
             <?php endforeach; ?>
         </div>
+    </div>
+    <!-- Short code value -->    
+    <div class="form-group clearfix">
+        <label for="zo2-sc-label-name">Shortcode value</label>
+        <textarea style="width: 100%; height: 50px;" id="zo2-shortcode-value"></textarea>
     </div>
 </div>
