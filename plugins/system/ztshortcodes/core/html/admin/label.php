@@ -6,11 +6,11 @@
     <h3>Label</h3>
 </div>
 <form>
-    <div class="form-group">
+    <div class="form-group clearfix">
         <label for="<?php echo $prefix.'label-name' ?>">Label</label>
         <input type="label" class="form-control" id="<?php echo $prefix.'label-name' ?>" placeholder="Enter Label">
     </div>
-    <div class="form-group">
+    <div class="form-group clearfix">
         <label for="<?php echo $prefix.'label-type'; ?>">Type Label</label>
         <select id="<?php echo $prefix.'label-type'; ?>" class="form-control">
             <option value="default">Default</option>

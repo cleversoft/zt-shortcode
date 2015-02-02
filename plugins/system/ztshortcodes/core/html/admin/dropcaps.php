@@ -28,6 +28,6 @@ $prefix = 'zo2-sc-';
         <textarea placeholder="Dropcaps Content" rows="3" class="form-control" id="<?php echo $prefix.'dropcaps-content' ?>"></textarea>
     </div>
     <div class="form-insert">
-        <button type="button" id="<?php echo $prefix.'insert-label'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
+        <button type="button" id="<?php echo $prefix.'insert-dropcaps'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
     </div>
 </form>

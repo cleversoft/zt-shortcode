@@ -6,7 +6,7 @@ $prefix = 'zo2-sc-';
     <h3>Blockquotes</h3>
 </div>
 <form>
-    <div class="form-group">
+    <div class="form-group clearfix">
         <label for="<?php echo $prefix.'blockquotes-type'; ?>">Type</label>
         <select id="<?php echo $prefix.'blockquotes-type'; ?>" class="form-control">
             <option value="default">Default</option>

@@ -23,12 +23,12 @@ $prefix = 'zo2-sc-';
         <input type="label" class="form-control" id="<?php echo $prefix.'divider-text' ?>" placeholder="Use Only type go to top">
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'button-icon'; ?>">Icon (use only type go top top 1 and go to top 2)</label>
+        <label for="<?php echo $prefix.'divider-icon'; ?>">Icon (use only type go top top 1 and go to top 2)</label>
         <div id="list-icon-divider">
             <?php echo getAwesome(); ?>
         </div>
     </div>
     <div class="form-insert">
-        <button type="button" id="<?php echo $prefix.'insert-column'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
+        <button type="button" id="<?php echo $prefix.'insert-divider'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
     </div>
 </form>

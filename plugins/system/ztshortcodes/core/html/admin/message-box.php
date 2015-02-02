@@ -6,7 +6,7 @@ $prefix = 'zo2-sc-';
     <h3>Message Box</h3>
 </div>
 <form>
-    <div class="form-group">
+    <div class="form-group clearfix">
         <label for="<?php echo $prefix.'message-box-type'; ?>">Type</label>
         <select id="<?php echo $prefix.'message-box-type'; ?>" class="form-control">
             <option value="success">Success</option>
