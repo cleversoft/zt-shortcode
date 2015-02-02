@@ -6,6 +6,35 @@
  */
 (function (w, $) {
 
+    /* Small extension for jQuery */
+    $.fn.extend({
+        insertAtCaret: function (myValue) {
+            return this.each(function (i) {
+                if (w.document.selection) {
+                    //For browsers like Internet Explorer
+                    this.focus();
+                    var sel = w.document.selection.createRange();
+                    sel.text = myValue;
+                    this.focus();
+                }
+                else if (this.selectionStart || this.selectionStart == '0') {
+                    //For browsers like Firefox and Webkit based
+                    var startPos = this.selectionStart;
+                    var endPos = this.selectionEnd;
+                    var scrollTop = this.scrollTop;
+                    this.value = this.value.substring(0, startPos) + myValue + this.value.substring(endPos, this.value.length);
+                    this.focus();
+                    this.selectionStart = startPos + myValue.length;
+                    this.selectionEnd = startPos + myValue.length;
+                    this.scrollTop = scrollTop;
+                } else {
+                    this.value += myValue;
+                    this.focus();
+                }
+            });
+        }
+    });
+
     /* Short code main class */
     var _shortcode = {
         /**
@@ -17,7 +46,10 @@
             /* Shortcode text editable value */
             textAreaCode: "#zo2-shortcode-value",
             /* Joomla article editor */
-            joomlaEditor: "jform_articletext"
+            joomlaEditor: "jform_articletext",
+            /* Shortcode label */
+            labelValue: "#zo2-sc-label-name",
+            labelType: "#zo2-sc-label-type"
         },
         /**
          * Select function
@@ -36,6 +68,16 @@
                     }
                 }
             });
+        },
+        /**
+         * Event hook for label shortcode generation
+         * @returns {undefined}
+         */
+        _labelHook: function () {
+            
+        },
+        _labelShortCode: function (value, type) {
+            return '[label type="' + type + '"]' + value + '[/label]';
         }
     };
 
