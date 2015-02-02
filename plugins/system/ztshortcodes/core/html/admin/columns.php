@@ -3,21 +3,35 @@ $prefix = 'zo2-sc-';
 ?>
 
 <div class="shortcode-element-title">
-    <h3>Tabs Content</h3>
+    <h3>Columns</h3>
 </div>
 <form>
     <div class="form-group">
-        <label for="<?php echo $prefix.'tab-title' ?>">Type</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'label-name' ?>" placeholder="Enter title">
+        <label for="<?php echo $prefix.'column-number'; ?>">Select Number Column</label>
+        <select id="<?php echo $prefix.'column-number'; ?>" class="form-control">
+            <option value="12">12</option>
+            <option value="6">6</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+        </select>
     </div>
     <div class="form-group">
-        <label for="<?php echo $prefix.'content-tab'; ?>">Content Tab</label>
-        <textarea placeholder="Content Tabs" rows="3" class="form-control" id="<?php echo $prefix.'content-tab'; ?>"></textarea>
+        <label for="<?php echo $prefix.'content-tab'; ?>">Content Column</label>
+        <div class="row">
+            <div class="col-sm-4 col-md-4">
+                <textarea placeholder="Content Column" rows="3" class="form-control" id="<?php echo $prefix.'content-column-1'; ?>"></textarea>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <textarea placeholder="Content Column" rows="3" class="form-control" id="<?php echo $prefix.'content-column-2'; ?>"></textarea>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <textarea placeholder="Content Column" rows="3" class="form-control" id="<?php echo $prefix.'content-column-3'; ?>"></textarea>
+            </div>
+        </div>
     </div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" id="<?php echo $prefix.'tab-active'; ?>"> Active
-        </label>
+    <div class="form-insert">
+        <button type="button" id="<?php echo $prefix.'insert-column'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
     </div>
-    <button class="btn btn-primary" type="button" id="<?php echo $prefix.'new-tab' ?>">Add New Tab</button>
 </form>

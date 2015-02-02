@@ -4,10 +4,10 @@
 
 
 
-    jQuery(document).ready( function(){
-// Animate Top Links
-        jQuery('.animate-top').on('click', function(e) {
-            e.preventDefault();
-            jQuery('body,html').animate({scrollTop: 0}, 800, 'easeOutCubic');
-        });
-        });
+jQuery(document).ready(function () {
+    // Animate Top Links
+    jQuery('.animate-top').on('click', function (e) {
+        e.preventDefault();
+        jQuery('body,html').animate({scrollTop: 0}, 800, 'easeOutCubic');
+    });
+});

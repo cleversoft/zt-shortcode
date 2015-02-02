@@ -2,6 +2,7 @@
     {
         "name": "Label",
         "description": "",
+        "icon": "fa fa-behance",
         "group": "Typography",
         "tag": "label",
         "options": {
@@ -11,6 +12,7 @@
     {
         "name": "Badge",
         "description": "",
+        "icon": "fa fa-btc",
         "group": "Typography",
         "tag": "badge",
         "options": {
@@ -19,6 +21,7 @@
     {
         "name": "Tabs",
         "description": "",
+        "icon": "fa fa-table",
         "group": "General",
         "tag": "tabs",
         "options": {
@@ -29,6 +32,7 @@
     {
         "name": "Columns",
         "description": "",
+        "icon": "fa fa-columns",
         "group": "Grid",
         "tag": "columns",
         "options": {
@@ -37,6 +41,7 @@
     {
         "name": "Progress Bar",
         "description": "",
+        "icon": "fa fa-wifi",
         "group": "Grid",
         "tag": "progress-bar",
         "options": {
@@ -52,6 +57,7 @@
     {
         "name": "Button",
         "description": "",
+        "icon": "fa fa-thumbs-o-up",
         "group": "Grid",
         "tag": "button",
         "options": {
@@ -66,6 +72,7 @@
     {
         "name": "Message Box",
         "description": "",
+        "icon": "fa fa-info-circle",
         "group": "Grid",
         "tag": "message-box",
         "options": {
@@ -77,6 +84,7 @@
     {
         "name": "Blockquotes",
         "description": "",
+        "icon": "fa fa-quote-left",
         "group": "Grid",
         "tag": "blockquotes",
         "options": {
@@ -89,15 +97,24 @@
     {
         "name": "Pricing Table",
         "description": "",
+        "icon": "fa fa-table",
         "group": "Grid",
-        "tag": "pricing-table",
+        "tag": "pricing",
         "options": {
-            "type": "default"
+            "pricing-type": "default",
+            "price": "",
+            "item-column": "",
+            "item-hightlight": "",
+            "level-item": "",
+            "title": "",
+            "button-type": "",
+            "button-text": ""
         }
     },
     {
         "name": "Accordion",
         "description": "",
+        "icon": "fa fa-list",
         "group": "Collapse",
         "tag": "accordion",
         "options": {
@@ -108,6 +125,7 @@
     {
         "name": "Dropcaps",
         "description": "",
+        "icon": "fa fa-bullseye",
         "group": "Collapse",
         "tag": "dropcaps",
         "options": {
@@ -119,6 +137,7 @@
     {
         "name": "List Icon",
         "description": "",
+        "icon": "fa fa-align-justify",
         "group": "Collapse",
         "tag": "list-icon",
         "options": {
@@ -128,6 +147,7 @@
     {
         "name": "Divider",
         "description": "",
+        "icon": "fa fa-area-chart",
         "group": "Collapse",
         "tag": "divider",
         "options": {
@@ -139,6 +159,7 @@
     {
         "name": "Gallery",
         "description": "",
+        "icon": "fa fa-picture-o",
         "group": "gallery",
         "tag": "gallery",
         "options": {
@@ -148,6 +169,18 @@
             "style": "default",
             "thumb-width": "300",
             "thumb-height": "300"
+        }
+    },
+    {
+        "name": "Video Play",
+        "description": "",
+        "icon": "fa fa-youtube-play",
+        "group": "media",
+        "tag": "video-play",
+        "options": {
+            "src": "",
+            "width": "640",
+            "height": "480"
         }
     }
 ]

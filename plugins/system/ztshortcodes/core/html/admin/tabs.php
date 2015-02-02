@@ -19,5 +19,8 @@ $prefix = 'zo2-sc-';
             <input type="checkbox" id="<?php echo $prefix.'tab-active'; ?>"> Active
         </label>
     </div>
-    <button class="btn btn-primary" type="button" id="<?php echo $prefix.'new-tab' ?>">Add New Tab</button>
+    <button class="btn btn-default" type="button" id="<?php echo $prefix.'new-tab' ?>">Add New Tab</button>
+    <div class="form-insert">
+        <button type="button" id="<?php echo $prefix.'insert-label'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
+    </div>
 </form>

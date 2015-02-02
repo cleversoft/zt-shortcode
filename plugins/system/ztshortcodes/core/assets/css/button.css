@@ -33,18 +33,18 @@ a.zo2-button.type-stroke-to-fill {
 a.zo2-button.size-large.type-stroke-to-fill {
     padding: 15px 40px;
 }
-a.zo2-button.black {
+a.zo2-button.color-black {
     background-color: #222;
     color: #fff;
 }
-a.zo2-button.black:hover {
+a.zo2-button.color-black:hover {
     background-color: #111;
 }
-a.zo2-button.white {
+a.zo2-button.color-white {
     background-color: #fff;
     color: #222;
 }
-a.zo2-button.white:hover {
+a.zo2-button.color-white:hover {
     background-color: #e4e4e4;
 }
 a.zo2-button.color-blue {
@@ -58,17 +58,17 @@ a.zo2-button.color-blue:hover {
 a.zo2-button.color-blue:hover span {
     color: #fff;
 }
-a.zo2-button.grey {
+a.zo2-button.color-grey {
     background-color: #444;
 }
-a.zo2-button.grey:hover {
+a.zo2-button.color-grey:hover {
     background-color: #333;
 }
-a.zo2-button.lightgrey {
+a.zo2-button.color-light-grey {
     background-color: #e4e4e4;
     color: #222;
 }
-a.zo2-button.lightgrey:hover {
+a.zo2-button.color-light-grey:hover {
     background-color: #ccc;
 }
 a.zo2-button.color-orange {
@@ -106,18 +106,18 @@ a.zo2-button.color-gold {
 a.zo2-button.color-gold:hover {
     background-color: #ffbe1c;
 }
-a.zo2-button.transparent-light {
+a.zo2-button.color-transparent-light {
     border: 1px solid rgba(255, 255, 255, 0.5);
     color: #fff !important;
 }
-a.zo2-button.transparent-light:hover {
+a.zo2-button.color-transparent-light:hover {
     background: none repeat scroll 0 0 #fff;
     border-color: #fff;
 }
-a.zo2-button.transparent-dark {
+a.zo2-button.color-transparent-dark {
     border: 1px solid rgba(34, 34, 34, 0.2);
 }
-a.zo2-button.transparent-dark:hover {
+a.zo2-button.color-transparent-dark:hover {
     background: none repeat scroll 0 0 #222;
     border-color: #222;
 }
@@ -178,20 +178,20 @@ a.zo2-button.type-icon-reveal.size-large:hover span.text {
     padding-left: 77px;
     padding-right: 23px;
 }
-a.zo2-button.type-icon-reveal.black {
+a.zo2-button.type-icon-reveal.color-black {
     background-color: #222;
 }
-a.zo2-button.type-icon-reveal.white {
+a.zo2-button.type-icon-reveal.color-white {
     background-color: #fff;
     color: #222;
 }
 a.zo2-button.type-icon-reveal.color-blue {
     background-color: #00bff3;
 }
-a.zo2-button.type-icon-reveal.grey {
+a.zo2-button.type-icon-reveal.color-grey {
     background-color: #444;
 }
-a.zo2-button.type-icon-reveal.lightgrey {
+a.zo2-button.type-icon-reveal.color-light-grey {
     background-color: #e4e4e4;
 }
 a.zo2-button.type-icon-reveal.color-orange {
@@ -225,7 +225,7 @@ a.zo2-button.type-icon-stroke span.text {
     line-height: 20px;
     padding: 12px 20px 12px 66px;
     vertical-align: 4px;
-    white-space: nowrap;
+    color-white-space: nowrap;
 }
 a.zo2-button.size-large.type-icon-stroke i {
     font-size: 22px;
