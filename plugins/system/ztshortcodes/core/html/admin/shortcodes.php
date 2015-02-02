@@ -47,13 +47,32 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+<script src="<?php echo $uri . 'js/shortcode.js'; ?>" type="text/javascript"></script>
+
 <div id="zo2-shortcode-plugin" class="zo2-shortcode-wrap">
+    <div class="shortcode-element-title group-shortcode-wrap clearfix">
+        <?php
+        $arrayGroup = array();
+        foreach($shortcodes as $key => $group){
+            array_push($arrayGroup, $group->group, $group->group);
+        }
+        $gruopShortcode = array_unique($arrayGroup);
+        ?>
+        <h5>Filter By Group: </h5>
+        <ul class="group-shortcode">
+            <?php foreach($gruopShortcode as $key => $nameGroup): ?>
+            <li><a href="#" data-group="<?php echo strtolower($nameGroup); ?>"><?php echo $nameGroup; ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+
 
     <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
         <ul id="myTab" class="nav nav-tabs" role="tablist">
             <?php
             foreach ($shortcodes as $key => $shortcode) {
-                echo '<li role="presentation" class="item-shortcode ' . 'item-' . $shortcode->tag . '"><a href="#' . $shortcode->tag . '" id="' . $shortcode->tag . '-tab" role="tab" data-toggle="tab" aria-controls="' . $shortcode->tag . '" aria-expanded="false"><i class="' . $shortcode->icon . '"></i>' . $shortcode->name . '</a></li>';
+                echo '<li role="presentation" class="item-shortcode ' . 'item-' . $shortcode->tag . ' item-' . strtolower($shortcode->group) .'"><a href="#' . $shortcode->tag . '" id="' . $shortcode->tag . '-tab" role="tab" data-toggle="tab" aria-controls="' . $shortcode->tag . '" aria-expanded="false"><i class="' . $shortcode->icon . '"></i>' . $shortcode->name . '</a></li>';
             }
             ?>
         </ul>
