@@ -82,12 +82,13 @@ if (!class_exists('plgSystemZtShortcodes'))
                 {
                     // Convert to JObject
                     $shortcode = new JObject($shortcode);
-                    // Load depend if needed
-                    $depend = ZtShortcodesPath::getInstance()->getPath('Shortcodes://depends/' . $shortcode->get('tag') . '.php');
                     // Include depends to buffer
-                    if ($depend)
+                    $html = new ZtShortcodesHtml();
+
+                    $depend = $html->fetch('Shortcodes://depends/' . $shortcode->get('tag') . '.php');
+                    if (!empty($depend))
                     {
-                        $buffer[] = file_get_contents($depend);
+                        $buffer[] = $depend;
                     }
                     // Setup shortcode
                     $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));

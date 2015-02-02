@@ -1,3 +1,18 @@
+<?php
+$jsonFile = realpath(__DIR__ . '/../../assets') . '/shortcodes.json';
+$buffer = file_get_contents($jsonFile);
+$shortcodes = json_decode($buffer);
+// Grouping
+foreach ($shortcodes as $key => $shortcode)
+{
+    $shortcodes[$shortcode->group][] = $shortcode;
+    unset($shortcodes[$key]);
+}
+echo '<pre>';
+print_r($shortcodes);
+echo '</pre>';
+?>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
