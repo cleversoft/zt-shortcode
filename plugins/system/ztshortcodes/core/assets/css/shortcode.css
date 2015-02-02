@@ -1,0 +1,39 @@
+/* Style List Insert shortcode */
+#zo2-shortcode-plugin{
+    font-size: 14px;
+    color: #333;
+}
+#zo2-shortcode-plugin .modal-dialog{
+    width: 800px;
+}
+#zo2-shortcode-plugin .item-shortcode{
+    width: 20%;
+}
+#zo2-shortcode-plugin .nav-tabs > li > a{
+    padding: 6px 0;
+    border-bottom: 1px dotted #e5e5e5;
+    color: #222222;
+    margin: 0;
+}
+#zo2-shortcode-plugin .nav-tabs > li > a:hover,
+#zo2-shortcode-plugin .nav-tabs > li > a:focus,
+#zo2-shortcode-plugin .nav-tabs > li.active > a{
+    background-color: transparent;
+    color: #005580;
+    border-color: transparent;
+    border-bottom: 1px dotted #e5e5e5;
+}
+#zo2-shortcode-plugin .nav-tabs > li > a i{
+    margin-right: 7px;
+}
+.shortcode-element-title{
+    background-color: #eeeeee;
+    border-bottom: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    margin: 20px 0;
+    padding: 13px 10px;
+}
+.shortcode-element-title h3{
+    color: #555555;
+    margin: 0;
+}
