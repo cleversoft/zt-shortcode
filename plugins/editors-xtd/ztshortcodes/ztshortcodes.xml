@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension version="3.1" type="plugin" group="editors-xtd">
+    <name>PLG_EDITORS-XTD_ZTSHORTCODES</name>
+    <creationDate>Jan 2015</creationDate>
+    <author>ZooTemplate.Com</author>
+    <authorEmail>support@zootemplate.com</authorEmail>
+    <authorUrl>https://www.zootemplate.com</authorUrl>
+    <copyright>Copyright (c) 2008 - 2015 ZooTemplate.com</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
+    <version>1.0.0</version>
+    <description>PLG_EDITORS-XTD_ZTSHORTCODES</description>
+    <scriptfile>ztshortcodes.script.php</scriptfile>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_editors-xtd_ztshortcodes.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_editors-xtd_ztshortcodes.sys.ini</language>		
+    </languages>
+    <files>     
+        <filename plugin="ztshortcodes">ztshortcodes.php</filename>        
+        <filename>index.html</filename>
+    </files>    
+</extension>
