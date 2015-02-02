@@ -1,0 +1,6 @@
+li{
+    list-style: none;
+}
+i:before{
+    margin-right: 7px;
+}

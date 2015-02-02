@@ -106,12 +106,46 @@
         }
     },
     {
+        "name": "Dropcaps",
+        "description": "",
+        "group": "Collapse",
+        "tag": "dropcaps",
+        "options": {
+            "type": "type-1",
+            "bg-color": "transparent",
+            "text-color": "#444444"
+        }
+    },
+    {
+        "name": "List Icon",
+        "description": "",
+        "group": "Collapse",
+        "tag": "list-icon",
+        "options": {
+            "class-icon": "fa fa-joomla"
+        }
+    },
+    {
+        "name": "Divider",
+        "description": "",
+        "group": "Collapse",
+        "tag": "divider",
+        "options": {
+            "type": "thin",
+            "text": "",
+            "icon": ""
+        }
+    },
+    {
         "name": "Gallery",
         "description": "",
         "group": "gallery",
         "tag": "gallery",
         "options": {
+            "width": "700",
+            "height": "700",
             "dir": "",
+            "style": "default",
             "thumb-width": "300",
             "thumb-height": "300"
         }
