@@ -44,8 +44,9 @@ if (!class_exists('plgSystemZtShortcodes'))
         public function onAfterRoute()
         {
             $jinput = JFactory::getApplication()->input;
-            if ($view = $jinput->get('ztshortcodes_view'))
+            if ($task = $jinput->get('ztshortcodes_task'))
             {
+                $view = $jinput->get('ztshortcodes_view');
                 $html = new ZtShortcodesHtml();
                 $buffer = $html->fetch('Shortcodes://html/admin/' . $view . '.php');
                 echo $buffer;
