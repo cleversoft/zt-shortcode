@@ -41,15 +41,23 @@
          * Elements selector
          */
         _elements: {
-            /* Insert shortcode button */
-            buttonInsertCode: ".button-insert-shortcode",
-            /* Shortcode text editable value */
-            textAreaCode: "#zo2-shortcode-value",
             /* Joomla article editor */
             joomlaEditor: "jform_articletext",
             /* Shortcode label */
             labelValue: "#zo2-sc-label-name",
-            labelType: "#zo2-sc-label-type"
+            labelType: "#zo2-sc-label-type",
+            /* Common controls */
+            comControls: "#zo2-short-code-common-controls",
+            /* Shortcode preview */
+            comPreview: "#zo2-shortcode-preview",
+            shortcodeContent: "#zo2-sc-value",
+            shortcodeRender: "#zo2-sc-render",
+            /* Control button */
+            comButtons: "#zo2-shortcode-controls",
+            buttonInsert: "#zo2-sc-insert",
+            buttonPreview: "#zo2-sc-preview",
+            buttonReset: "#zo2-sc-reset",
+            buttonClose: "#zo2-sc-close"
         },
         /**
          * Select function
@@ -57,8 +65,8 @@
          */
         _init: function () {
             var _self = this;
-            $(_self._elements.buttonInsertCode).on('click', function () {
-                var code = $(_self._elements.textAreaCode).val();
+            $(_self._elements.buttonInsert).on('click', function () {
+                var code = $(_self._elements.shortcodeContent).val();
                 if (typeof (w.parent) !== 'undefined') {
                     if (w.parent.hasOwnProperty('jInsertEditorText')) {
                         /* Insert to parent editor */
