@@ -2,6 +2,7 @@
 #zo2-shortcode-plugin{
     font-size: 14px;
     color: #333;
+    padding: 0 10px;
 }
 #zo2-shortcode-plugin .modal-dialog{
     width: 800px;
@@ -37,6 +38,8 @@
     color: #555555;
     margin: 0;
 }
+
+/* Form Gruop */
 .form-insert{
     border-top: 1px solid #ccc;
     margin-top: 10px;

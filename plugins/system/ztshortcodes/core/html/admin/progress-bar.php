@@ -47,6 +47,10 @@ $prefix = 'zo2-sc-';
             <input type="checkbox" id="<?php echo $prefix.'progress-hide-content'; ?>"> Hidden Content
         </label>
     </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'progress-shortcode-content'; ?>">Shortcode Content</label>
+        <textarea placeholder="Shortcode Content" rows="3" class="form-control" id="<?php echo $prefix.'progress-shortcode-content'; ?>"></textarea>
+    </div>
     <div class="form-insert">
         <button type="button" id="<?php echo $prefix . 'insert-progress'; ?>"
                 class="btn btn-primary button-insert-shortcode">Insert Shortcode

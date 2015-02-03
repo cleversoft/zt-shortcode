@@ -86,9 +86,4 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
             <?php endforeach; ?>
         </div>
     </div>
-    <!-- Short code value -->    
-    <div class="form-group clearfix">
-        <label for="zo2-sc-label-name">Shortcode value</label>
-        <textarea style="width: 100%; height: 50px;" id="zo2-shortcode-value"></textarea>
-    </div>
 </div>

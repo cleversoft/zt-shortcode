@@ -7,8 +7,8 @@
 </div>
 <form>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'label-name' ?>">Label</label>
-        <input type="label" class="form-control" id="<?php echo $prefix.'label-name' ?>" placeholder="Enter Label">
+        <label for="<?php echo $prefix.'label-name'; ?>">Label</label>
+        <input type="label" class="form-control" id="<?php echo $prefix.'label-name'; ?>" placeholder="Enter Label">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'label-type'; ?>">Type Label</label>
@@ -20,6 +20,10 @@
             <option value="warning">Warning</option>
             <option value="danger">Danger</option>
         </select>
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'label-shortcode-content'; ?>">Shortcode Content</label>
+        <textarea placeholder="Shortcode Content" rows="3" class="form-control" id="<?php echo $prefix.'label-shortcode-content'; ?>"></textarea>
     </div>
     <div class="form-insert">
         <button type="button" id="<?php echo $prefix.'insert-label'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
