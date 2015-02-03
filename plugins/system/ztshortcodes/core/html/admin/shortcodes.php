@@ -51,7 +51,7 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
 <script type="text/javascript" src="<?php echo ($uri . '/js/shortcode.js'); ?>"></script>
 
 <div id="zo2-shortcode-plugin" class="zo2-shortcode-wrap">
-    <div class="shortcode-element-title group-shortcode-wrap clearfix">
+    <div class="shortcode-element-title group-shortcode-wrap clearfix" id="zo2-shortcode-groups">
         <?php
         $arrayGroup = array();
         foreach($shortcodes as $key => $group){
@@ -67,9 +67,7 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
         </ul>
     </div>
 
-
-
-    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs" id="zo2-shortcode-tabs-wrapper">
         <ul id="myTab" class="nav nav-tabs" role="tablist">
             <?php
             foreach ($shortcodes as $key => $shortcode) {
@@ -85,5 +83,9 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
                      aria-labelledby="<?php echo $shortcode->tag; ?>-tab"><?php include_once(__DIR__ . '/' . $shortcode->tag . '.php'); ?></div>
             <?php endforeach; ?>
         </div>
+    </div>
+    <div id="zo2-short-code-common-controls">
+        <?php include_once(__DIR__ . '/common/short-code-preview.php'); ?>
+        <?php include_once(__DIR__ . '/common/control-buttons.php'); ?>
     </div>
 </div>

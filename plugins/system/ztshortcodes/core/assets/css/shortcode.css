@@ -38,7 +38,12 @@
     color: #555555;
     margin: 0;
 }
-
+/* Short code common */
+.shortcode-render {
+    background-color: #eeeeee;
+    width: 100%;
+    min-height: 50px; 
+}
 /* Form Gruop */
 .form-insert{
     border-top: 1px solid #ccc;
