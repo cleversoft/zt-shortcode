@@ -56,7 +56,7 @@ class PlgButtonZtShortcodes extends JPlugin
         $button->link = $link;
         $button->text = JText::_('PLG_EDITORS-XTD_ZTSHORTCODES_BUTTON');
         $button->name = 'picture';
-        $button->options = "{handler: 'iframe', size: {x: 800, y: 500}}";
+        $button->options = "{handler: 'iframe', size: {x: 900, y: 600}}";
 
         return $button;
     }
