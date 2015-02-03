@@ -221,7 +221,8 @@ if (!class_exists('ZtShortcodesImagerAbstract'))
          */
         protected function _isValidResource()
         {
-            return (!empty($this->getResource()));
+            $stupidPHP = $this->getResource();
+            return (!empty($stupidPHP));
         }
 
         abstract function closeResource();
