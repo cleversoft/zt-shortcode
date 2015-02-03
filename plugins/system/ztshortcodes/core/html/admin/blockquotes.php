@@ -15,20 +15,24 @@ $prefix = 'zo2-sc-';
         </select>
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'blockquotes-author' ?>">Author</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'blockquotes-author' ?>" placeholder="Enter Author Blockquotes">
+        <label for="<?php echo $prefix.'blockquotes-author'; ?>">Author</label>
+        <input type="text" class="form-control" id="<?php echo $prefix.'blockquotes-author'; ?>" placeholder="Enter Author Blockquotes">
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'blockquotes-author-link' ?>">Author Link</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'blockquotes-author-link' ?>" placeholder="Enter Author Link Blockquotes">
+        <label for="<?php echo $prefix.'blockquotes-author-link'; ?>">Author Link</label>
+        <input type="text" class="form-control" id="<?php echo $prefix.'blockquotes-author-link'; ?>" placeholder="Enter Author Link Blockquotes">
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'blockquotes-content' ?>">Content</label>
-        <textarea placeholder="Content Message Box" rows="3" class="form-control" id="<?php echo $prefix.'blockquotes-content' ?>"></textarea>
+        <label for="<?php echo $prefix.'blockquotes-content'; ?>">Content</label>
+        <textarea placeholder="Content Message Box" rows="3" class="form-control" id="<?php echo $prefix.'blockquotes-content'; ?>"></textarea>
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'blockquotes-class' ?>">Extra Class</label>
-        <input type="label" class="form-control" id="<?php echo $prefix.'blockquotes-class' ?>" placeholder="Enter Extra Class Blockquotes">
+        <label for="<?php echo $prefix.'blockquotes-class'; ?>">Extra Class</label>
+        <input type="label" class="form-control" id="<?php echo $prefix.'blockquotes-class'; ?>" placeholder="Enter Extra Class Blockquotes">
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'blockquotes-shortcode-content'; ?>">Shortcode Content</label>
+        <textarea placeholder="Shortcode Content" rows="3" class="form-control" id="<?php echo $prefix.'blockquotes-shortcode-content'; ?>"></textarea>
     </div>
     <div class="form-insert">
         <button type="button" id="<?php echo $prefix.'insert-blockquotes'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>

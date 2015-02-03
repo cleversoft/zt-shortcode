@@ -2,6 +2,7 @@
 #zo2-shortcode-plugin{
     font-size: 14px;
     color: #333;
+    padding: 0 10px;
 }
 #zo2-shortcode-plugin .modal-dialog{
     width: 800px;
@@ -37,6 +38,8 @@
     color: #555555;
     margin: 0;
 }
+
+/* Form Gruop */
 .form-insert{
     border-top: 1px solid #ccc;
     margin-top: 10px;
@@ -44,12 +47,12 @@
 }
 
 /* Font Awesome */
-.list-awesome-font ul{
+.list-awesome-font ul, .group-shortcode-wrap ul{
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.list-awesome-font ul li{
+.list-awesome-font ul li, .group-shortcode-wrap ul li{
     float: left;
     display: block;
 }
@@ -67,4 +70,14 @@
 }
 .list-awesome-font ul li a i{
     line-height: 30px;
+}
+
+/* Group Shortcode */
+.group-shortcode-wrap h5{
+       float: left;
+}
+.group-shortcode-wrap a {
+       border-right: 1px solid #ccc;
+       line-height: 35px;
+       padding: 0 10px;
 }
