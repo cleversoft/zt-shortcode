@@ -35,11 +35,4 @@ $prefix = 'zo2-sc-';
             <input type="checkbox" id="<?php echo $prefix.'accordion-active-1'; ?>"> Active
         </label>
     </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'accordion-shortcode-content' ?>">Shortcode Content</label>
-        <textarea placeholder="Shortcode Content" rows="3" class="form-control" id="<?php echo $prefix.'accordion-shortcode-content' ?>"></textarea>
-    </div>
-    <div class="form-insert">
-        <button type="button" id="<?php echo $prefix.'insert-accordion'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
-    </div>
 </form>

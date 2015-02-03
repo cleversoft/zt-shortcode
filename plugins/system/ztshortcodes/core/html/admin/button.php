@@ -55,11 +55,4 @@ $prefix = 'zo2-sc-';
         <label for="<?php echo $prefix.'button-extra-class'; ?>">Extra Class</label>
         <input type="label" class="form-control" id="<?php echo $prefix.'button-extra-class'; ?>" placeholder="Enter Extra Class Button">
     </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'button-shortcode-content'; ?>">Shortcode Content</label>
-        <textarea placeholder="Shortcode Content" rows="3" class="form-control" id="<?php echo $prefix.'button-shortcode-content'; ?>"></textarea>
-    </div>
-    <div class="form-insert clearfix">
-        <button type="button" id="<?php echo $prefix.'insert-button'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
-    </div>
 </form>

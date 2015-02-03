@@ -28,11 +28,4 @@ $prefix = 'zo2-sc-';
             <?php echo getAwesome(); ?>
         </div>
     </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'divider-shortcode-content'; ?>">Shortcode Content</label>
-        <textarea placeholder="Shortcode Content" rows="3" class="form-control" id="<?php echo $prefix.'divider-shortcode-content'; ?>"></textarea>
-    </div>
-    <div class="form-insert">
-        <button type="button" id="<?php echo $prefix.'insert-divider'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
-    </div>
 </form>

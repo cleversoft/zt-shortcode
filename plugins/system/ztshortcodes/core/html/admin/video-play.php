@@ -18,11 +18,4 @@ $prefix = 'zo2-sc-';
         <label for="<?php echo $prefix.'video-height' ?>">Video Height</label>
         <input type="label" class="form-control" id="<?php echo $prefix.'video-height' ?>" placeholder="Enter Height video (exp: 480).">
     </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'video-shortcode-content'; ?>">Shortcode Content</label>
-        <textarea placeholder="Shortcode Content" rows="3" class="form-control" id="<?php echo $prefix.'video-shortcode-content'; ?>"></textarea>
-    </div>
-    <div class="form-insert">
-        <button type="button" id="<?php echo $prefix.'insert-video'; ?>" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
-    </div>
 </form>
