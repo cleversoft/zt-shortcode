@@ -7,6 +7,10 @@ $prefix = 'zo2-sc-';
 </div>
 <form>
     <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'button-text'; ?>">Text</label>
+        <input type="label" class="form-control" id="<?php echo $prefix.'button-text'; ?>" placeholder="Enter button caption">
+    </div>
+    <div class="form-group clearfix">
         <label for="<?php echo $prefix.'button-type'; ?>">Type</label>
         <select id="<?php echo $prefix.'button-type'; ?>" class="form-control">
             <option value="standard">Standard</option>

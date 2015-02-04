@@ -1,4 +1,4 @@
-<div id="zo2-shortcode-preview" style="display: none">
+<div id="zo2-shortcode-preview">
     <div class="form-group clearfix">
         <label for="zo2-sc-value">Shortcode Content</label>
         <textarea placeholder="Shortcode Content" rows="3" class="form-control"

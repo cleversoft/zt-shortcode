@@ -73,6 +73,21 @@
     text-align: center;
     width: 30px;
 }
+
+.list-awesome-font ul li a.selected{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #333;
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 20px;
+    margin: 0 5px 5px 0;
+    text-align: center;
+    width: 30px;
+}
+
 .list-awesome-font ul li a i{
     line-height: 30px;
 }
