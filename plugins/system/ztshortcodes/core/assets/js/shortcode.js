@@ -190,7 +190,7 @@
         _init: function () {
             var _self = this;
             /* Label shortcode */
-            $(_self._elements.value).on('keydown', function () {
+            $(_self._elements.value).on('keyup', function () {
                 _self._update();
             });
             $(_self._elements.type).on('change', function () {
