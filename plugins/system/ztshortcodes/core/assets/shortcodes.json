@@ -45,13 +45,16 @@
         "group": "Grid",
         "tag": "progress-bar",
         "options": {
-            "type": "success",
             "strip": "striped",
             "animated": "active",
             "now-value": "70",
             "min-value": "0",
             "max-value": "99",
-            "hidden-content": "hidden"
+            "hidden-content": "hidden",
+            "trackColor": "#f6f6f6",
+            "barColor": "#a0ce4e",
+            "titleColor": "#ffffff",
+            "height": "37"
         }
     },
     {
