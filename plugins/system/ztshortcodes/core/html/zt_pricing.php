@@ -17,7 +17,7 @@ defined('_JEXEC') or die('Restricted access');
         <?php
         $shortcode = new JObject();
         $shortcode->set('options', array());
-        $shortcode->set('tag', 'pricing-item');
+        $shortcode->set('tag', 'zt_pricing_item');
         $parser = new JBBCode\Parser();
         $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
         $builder->setUseOption(true);

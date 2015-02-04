@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
 
 global $zo2Shortcodes;
 $zo2Shortcodes['tabs'][$shortcode->options['id']]['options'] = $shortcode->get('options');
-$shortcode->set('tag', 'tab');
+$shortcode->set('tag', 'zt_tab');
 $parser = new JBBCode\Parser();
 $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
 $builder->setUseOption(true);

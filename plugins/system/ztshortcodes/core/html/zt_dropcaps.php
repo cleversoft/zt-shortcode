@@ -9,7 +9,7 @@
 
 <?php
     $html = $style = '';
-    $style = 'style="background-color: '. $options->get('bg-color') .'; color:'. $options->get('text-color') .'" ';
+    $style = 'style="background-color: '. $options->get('bgColor') .'; color:'. $options->get('textColor') .'" ';
 
     $html .= '<span class="dropcap'. ' dropcap-'.$options->get('type') .'"'. ' '.$style .'>'. $content .'</span>';
     echo $html;

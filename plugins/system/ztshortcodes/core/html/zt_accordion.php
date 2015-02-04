@@ -22,7 +22,7 @@ defined('_JEXEC') or die('Restricted access');
     <?php
     $shortcode = new JObject();
     $shortcode->set('options', array());
-    $shortcode->set('tag', 'accordion-title');
+    $shortcode->set('tag', 'zt_accordion_title');
     $parser = new JBBCode\Parser();
     $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
     $builder->setUseOption(true);
