@@ -262,7 +262,10 @@
                 _self._update();
             });
         },
-        /* Update shortcode */
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
         _update: function () {
             var _self = this;
             var text = $(_self._elements.buttonText).val();
@@ -289,6 +292,66 @@
         _getIcon: function () {
             var selected = $(this._elements.buttonIcon).find('.selected');
             return (selected.length <= 0) ? '' : selected.find('i').attr('class');
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_button);
+
+})(window, jQuery);
+
+/**
+ * Dropcap shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.dropcap.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Label shortcode class */
+    var _button = {
+        name: 'Dropcap shortcode add-on',
+        /* Selector container */
+        _elements: {
+            /* Shortcode button */
+            dropcapType: "#zo2-sc-dropcaps-type",
+            dropcapTextColour: "#zo2-sc-dropcaps-text-color",
+            dropcapBackgroundColour: "#zo2-sc-dropcaps-bg-color",
+            dropcapContent: "#zo2-sc-dropcaps-content"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            /* Button shortcode */
+            $(_self._elements.dropcapType).on('change', function () {
+                _self._update();
+            });
+            $(_self._elements.dropcapContent + ', '
+                    + _self._elements.dropcapTextColour + ', '
+                    + _self._elements.dropcapBackgroundColour).on('keyup', function () {
+                _self._update();
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var content = $(_self._elements.dropcapContent).val();
+            var bgColour = $(_self._elements.dropcapBackgroundColour).val();
+            var colour = $(_self._elements.dropcapTextColour).val();
+            var type = $(_self._elements.dropcapType).val();
+            var shortcode = '[zt_dropcap';
+            shortcode += (type !== '') ? ' type="' + type + '"' : '';
+            shortcode += (colour !== '') ? ' textColour="' + colour + '"' : '';
+            shortcode += (bgColour !== '') ? ' bgColour="' + bgColour + '"' : '';
+            shortcode += ']' + content + '[/zt_dropcap]';
+            w.zo2.shortcode.value(shortcode);
         }
     };
 
