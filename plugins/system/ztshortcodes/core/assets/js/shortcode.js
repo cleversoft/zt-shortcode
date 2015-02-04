@@ -46,6 +46,10 @@
             /* Shortcode label */
             labelValue: "#zo2-sc-label-name",
             labelType: "#zo2-sc-label-type",
+            /* Shortcode tabs */
+            tabGroup: "#zo2-shortcode-groups",
+            tabList: "#zo2-shortcode-tabs-wrapper > #myTab",
+            tabContent: "#zo2-shortcode-tabs-wrapper > #myTabContent",
             /* Common controls */
             comControls: "#zo2-shortcode-common-controls",
             /* Shortcode preview */
@@ -88,6 +92,26 @@
                     /* Scroll to end of page */
                     $("html, body").animate({scrollTop: $(w.document).height()});
                 });
+            });
+            /* Hide tab & group after choice */
+            $(_self._elements.tabList).on('click', 'li', function () {
+                $(_self._elements.tabList).hide('slow');
+                $(_self._elements.tabGroup).hide('slow');
+            });
+            /* Reset button */
+            $(_self._elements.buttonReset).on('click', function(){
+                $(_self._elements.tabList).show('slow');
+                $(_self._elements.tabGroup).show('slow');
+                $(_self._elements.comPreview).hide('slow', function(){
+                    $("html, body").animate({scrollTop: 0});
+                });
+                $(_self._elements.shortcodeContent).val('');
+                $(_self._elements.shortcodeRender).text('');
+                $(_self._elements.tabContent).find('.active').removeClass('active in');
+            });
+            /* Close button */
+            $(_self._elements.buttonClose).on('click', function(){
+                w.parent.SqueezeBox.close();
             });
         },
         /**
