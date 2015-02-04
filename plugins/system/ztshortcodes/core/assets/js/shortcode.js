@@ -47,7 +47,7 @@
             labelValue: "#zo2-sc-label-name",
             labelType: "#zo2-sc-label-type",
             /* Common controls */
-            comControls: "#zo2-short-code-common-controls",
+            comControls: "#zo2-shortcode-common-controls",
             /* Shortcode preview */
             comPreview: "#zo2-shortcode-preview",
             shortcodeContent: "#zo2-sc-value",
@@ -65,6 +65,7 @@
          */
         _init: function () {
             var _self = this;
+            /* Insert button */
             $(_self._elements.buttonInsert).on('click', function () {
                 var code = $(_self._elements.shortcodeContent).val();
                 if (typeof (w.parent) !== 'undefined') {
@@ -76,13 +77,25 @@
                     }
                 }
             });
+            /* Preview button */
+            $(_self._elements.buttonPreview).on('click', function () {
+                if ($(_self._elements.buttonPreview).text() === 'Preview Shortcode') {
+                    $(_self._elements.buttonPreview).text('Hide Shortcode');
+                } else {
+                    $(_self._elements.buttonPreview).text('Preview Shortcode');
+                }
+                $(_self._elements.comPreview).toggle('slow', function () {
+                    /* Scroll to end of page */
+                    $("html, body").animate({scrollTop: $(w.document).height()});
+                });
+            });
         },
         /**
          * Event hook for label shortcode generation
          * @returns {undefined}
          */
         _labelHook: function () {
-            
+
         },
         _labelShortCode: function (value, type) {
             return '[label type="' + type + '"]' + value + '[/label]';

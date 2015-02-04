@@ -84,7 +84,7 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
             <?php endforeach; ?>
         </div>
     </div>
-    <div id="zo2-short-code-common-controls">
+    <div id="zo2-shortcode-common-controls">
         <?php include_once(__DIR__ . '/common/short-code-preview.php'); ?>
         <?php include_once(__DIR__ . '/common/control-buttons.php'); ?>
     </div>
