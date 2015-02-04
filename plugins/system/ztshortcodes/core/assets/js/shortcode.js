@@ -37,15 +37,14 @@
 
     /* Short code main class */
     var _shortcode = {
+        /* Short code add on */
+        _addOn: [],
         /**
          * Elements selector
          */
         _elements: {
             /* Joomla article editor */
             joomlaEditor: "jform_articletext",
-            /* Shortcode label */
-            labelValue: "#zo2-sc-label-name",
-            labelType: "#zo2-sc-label-type",
             /* Shortcode tabs */
             tabGroup: "#zo2-shortcode-groups",
             tabList: "#zo2-shortcode-tabs-wrapper > #myTab",
@@ -68,6 +67,7 @@
          * @returns {undefined}
          */
         _init: function () {
+
             var _self = this;
             /* Insert button */
             $(_self._elements.buttonInsert).on('click', function () {
@@ -81,6 +81,7 @@
                     }
                 }
             });
+
             /* Preview button */
             $(_self._elements.buttonPreview).on('click', function () {
                 if ($(_self._elements.buttonPreview).text() === 'Preview Shortcode') {
@@ -93,23 +94,27 @@
                     $("html, body").animate({scrollTop: $(w.document).height()});
                 });
             });
+
             /* Hide tab & group after choice */
             $(_self._elements.tabList).on('click', 'li', function () {
                 $(_self._elements.tabList).hide('slow');
                 $(_self._elements.tabGroup).hide('slow');
             });
+
             /* Reset button */
             $(_self._elements.buttonReset).on('click', function () {
                 $(_self._elements.tabList).show('slow');
                 $(_self._elements.tabGroup).show('slow');
+                $(_self._elements.buttonPreview).text('Preview Shortcode');
                 $(_self._elements.comPreview).hide('slow', function () {
                     $("html, body").animate({scrollTop: 0});
                 });
-                $(_self._elements.shortcodeContent).val('');
-                $(_self._elements.shortcodeRender).text('');
+                _self.value('');
+                _self.preview('');
                 $(_self._elements.tabContent).find('.active').removeClass('active in');
                 $(_self._elements.tabList).find('.active').removeClass('active');
             });
+
             /* Close button */
             $(_self._elements.buttonClose).on('click', function () {
                 if (typeof (w.parent) !== 'undefined') {
@@ -117,23 +122,32 @@
                         w.parent.SqueezeBox.close();
                     }
                 }
-
             });
-            /* Label shortcode */
-            $(_self._elements.labelValue + ', ' + _self._elements.labelType).on('change', function () {
-                _self._labelShortCode();
+
+            /* Init shortcode add-on */
+            $(this._addOn).each(function (key, item) {
+                if (item.hasOwnProperty('_init')) {
+                    item._init();
+                }
             });
         },
         /**
-         * Label shortcode generator
+         * Set shortcode value
+         * @param {type} value
          * @returns {undefined}
          */
-        _labelShortCode: function () {
-            var type = $(this._elements.labelType).val();
-            var value = $(this._elements.labelValue).val()
-            $(this._elements.shortcodeContent).val('[zt_label type="' + type + '"]' + value + '[/zt_label]');
-            $(this._elements.shortcodeRender).html('<span class="label label-' + type + '">' + value + '</span>');
+        value: function (value) {
+            $(this._elements.shortcodeContent).val(value);
+        },
+        /**
+         * Preview shortcode HTML
+         * @param {type} html
+         * @returns {undefined}
+         */
+        preview: function (html) {
+            $(this._elements.shortcodeRender).html(html);
         }
+
     };
 
     /* Check for Zo2 javascript framework */
@@ -148,5 +162,44 @@
     $(w.document).ready(function () {
         w.zo2.shortcode._init();
     });
+
+})(window, jQuery);
+
+/**
+ * Label shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.label.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Label shortcode class */
+    var _label = {
+        name: 'Label shortcode add-on',
+        /* Selector container */
+        _elements: {
+            /* Shortcode label */
+            labelValue: "#zo2-sc-label-name",
+            labelType: "#zo2-sc-label-type"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            /* Label shortcode */
+            $(_self._elements.labelValue + ', ' + _self._elements.labelType).on('change', function () {
+                var type = $(_self._elements.labelType).val();
+                var value = $(_self._elements.labelValue).val();
+                w.zo2.shortcode.value('[zt_label type="' + type + '"]' + value + '[/zt_label]');
+                w.zo2.shortcode.preview('<span class="label label-' + type + '">' + value + '</span>');
+            });
+        }
+    };
+
+    /* Append to shortcode add-on */
+    w.zo2.shortcode._addOn.push(_label);
 
 })(window, jQuery);
