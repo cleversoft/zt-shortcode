@@ -99,10 +99,10 @@
                 $(_self._elements.tabGroup).hide('slow');
             });
             /* Reset button */
-            $(_self._elements.buttonReset).on('click', function(){
+            $(_self._elements.buttonReset).on('click', function () {
                 $(_self._elements.tabList).show('slow');
                 $(_self._elements.tabGroup).show('slow');
-                $(_self._elements.comPreview).hide('slow', function(){
+                $(_self._elements.comPreview).hide('slow', function () {
                     $("html, body").animate({scrollTop: 0});
                 });
                 $(_self._elements.shortcodeContent).val('');
@@ -110,19 +110,23 @@
                 $(_self._elements.tabContent).find('.active').removeClass('active in');
             });
             /* Close button */
-            $(_self._elements.buttonClose).on('click', function(){
+            $(_self._elements.buttonClose).on('click', function () {
                 w.parent.SqueezeBox.close();
+            });
+            /* Label shortcode */
+            $(_self._elements.labelValue + ', ' + _self._elements.labelType).on('change', function(){
+                _self._labelShortCode();
             });
         },
         /**
-         * Event hook for label shortcode generation
+         * Label shortcode generator
          * @returns {undefined}
          */
-        _labelHook: function () {
-
-        },
-        _labelShortCode: function (value, type) {
-            return '[label type="' + type + '"]' + value + '[/label]';
+        _labelShortCode: function () {
+            var type = $(this._elements.labelType).val();
+            var value = $(this._elements.labelValue).val()
+            $(this._elements.shortcodeContent).val('[zt_label type="' + type + '"]' + value + '[/zt_label]');
+            $(this._elements.shortcodeRender).html('<span class="label label-' + type + '">' + value + '</span>');
         }
     };
 
