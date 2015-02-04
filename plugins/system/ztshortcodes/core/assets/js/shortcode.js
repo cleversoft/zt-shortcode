@@ -224,7 +224,7 @@
  */
 (function (w, $) {
 
-    /* Label shortcode class */
+    /* Button shortcode class */
     var _button = {
         name: 'Button shortcode add-on',
         /* Selector container */
@@ -309,7 +309,7 @@
  */
 (function (w, $) {
 
-    /* Label shortcode class */
+    /* Dropcap shortcode class */
     var _button = {
         name: 'Dropcap shortcode add-on',
         /* Selector container */
