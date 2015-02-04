@@ -108,13 +108,19 @@
                 $(_self._elements.shortcodeContent).val('');
                 $(_self._elements.shortcodeRender).text('');
                 $(_self._elements.tabContent).find('.active').removeClass('active in');
+                $(_self._elements.tabList).find('.active').removeClass('active');
             });
             /* Close button */
             $(_self._elements.buttonClose).on('click', function () {
-                w.parent.SqueezeBox.close();
+                if (typeof (w.parent) !== 'undefined') {
+                    if (w.parent.hasOwnProperty('SqueezeBox')) {
+                        w.parent.SqueezeBox.close();
+                    }
+                }
+
             });
             /* Label shortcode */
-            $(_self._elements.labelValue + ', ' + _self._elements.labelType).on('change', function(){
+            $(_self._elements.labelValue + ', ' + _self._elements.labelType).on('change', function () {
                 _self._labelShortCode();
             });
         },
