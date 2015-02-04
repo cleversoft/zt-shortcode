@@ -1,0 +1,6 @@
+.font-icon{
+    display: block;
+}
+.font-icon:before {
+    margin-right: 7px;
+}

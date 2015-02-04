@@ -9,7 +9,7 @@
 
 <?php
 $html = '';
-$html .= '<div class="zo2-quote ' . $options->get('type') . '-quote" style="width: '. $options->get('width') .'">';
+$html .= '<div class="zo2-quote ' . $options->get('type') . '-quote">';
 $html .= '<div class="zo2-quote-inner">';
 if($options->get('type') == "box"){
     $html .= '<i class="fa fa-quote-left"></i>';

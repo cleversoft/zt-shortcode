@@ -135,11 +135,11 @@
         }
     },
     {
-        "name": "List Icon",
+        "name": "Font Icon",
         "description": "",
         "icon": "fa fa-align-justify",
         "group": "Collapse",
-        "tag": "list-icon",
+        "tag": "i",
         "options": {
             "class-icon": "fa fa-joomla"
         }
@@ -181,6 +181,41 @@
             "src": "",
             "width": "640",
             "height": "480"
+        }
+    },
+    {
+        "name": "Modal",
+        "description": "",
+        "icon": "fa fa-database",
+        "group": "modal",
+        "tag": "modal",
+        "options": {
+            "id": "myModal",
+            "title": "",
+            "button-type": "",
+            "button-size": "",
+            "button-text": ""
+        }
+    },
+    {
+        "name": "Counter Circle",
+        "description": "",
+        "icon": "fa fa-certificate",
+        "group": "modal",
+        "tag": "counter-circle",
+        "options": {
+            "easing": "easeInQuad",
+            "barColor": "#449D44",
+            "trackColor": "#f9f9f9",
+            "scaleLength": "10",
+            "percent": "90",
+            "lineCap": "butt",
+            "lineWidth": "10",
+            "size": "200",
+            "duration": "1000",
+            "content-type": "none",
+            "icon": "fa fa-thumbs-o-up",
+            "extra-class": ""
         }
     }
 ]

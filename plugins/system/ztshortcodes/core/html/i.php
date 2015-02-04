@@ -10,6 +10,6 @@
 <?php
     $html = '';
 
-    $html .= '<li><i class="'. $options->get('class-icon') .'">'. $content .'</i></li>';
+    $html .= '<i class="font-icon '. $options->get('class-icon') .'">'. $content .'</i>';
     echo $html;
 ?>
