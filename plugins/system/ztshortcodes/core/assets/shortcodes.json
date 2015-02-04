@@ -2,9 +2,9 @@
     {
         "name": "Label",
         "description": "",
-        "icon": "fa fa-behance",
+        "icon": "fa fa-adn",
         "group": "Typography",
-        "tag": "label",
+        "tag": "zt_label",
         "options": {
             "type": "default"
         }
@@ -12,9 +12,9 @@
     {
         "name": "Badge",
         "description": "",
-        "icon": "fa fa-btc",
+        "icon": "fa fa-bullhorn",
         "group": "Typography",
-        "tag": "badge",
+        "tag": "zt_badge",
         "options": {
         }
     },
@@ -23,7 +23,7 @@
         "description": "",
         "icon": "fa fa-table",
         "group": "General",
-        "tag": "tabs",
+        "tag": "zt_tabs",
         "options": {
             "tabs": "10",
             "text": "20"
@@ -34,7 +34,7 @@
         "description": "",
         "icon": "fa fa-columns",
         "group": "Grid",
-        "tag": "columns",
+        "tag": "zt_columns",
         "options": {
         }
     },
@@ -43,7 +43,7 @@
         "description": "",
         "icon": "fa fa-wifi",
         "group": "Grid",
-        "tag": "progress-bar",
+        "tag": "zt_progress_bar",
         "options": {
             "strip": "striped",
             "animated": "active",
@@ -62,7 +62,7 @@
         "description": "",
         "icon": "fa fa-thumbs-o-up",
         "group": "Grid",
-        "tag": "button",
+        "tag": "zt_button",
         "options": {
             "type": "default",
             "size": "standard",
@@ -77,7 +77,7 @@
         "description": "",
         "icon": "fa fa-info-circle",
         "group": "Grid",
-        "tag": "message-box",
+        "tag": "zt_message_box",
         "options": {
             "type": "success",
             "icon": "",
@@ -89,7 +89,7 @@
         "description": "",
         "icon": "fa fa-quote-left",
         "group": "Grid",
-        "tag": "blockquotes",
+        "tag": "zt_blockquotes",
         "options": {
             "type": "default",
             "author": "",
@@ -102,7 +102,7 @@
         "description": "",
         "icon": "fa fa-table",
         "group": "Grid",
-        "tag": "pricing",
+        "tag": "zt_pricing",
         "options": {
             "pricing-type": "default",
             "price": "",
@@ -119,7 +119,7 @@
         "description": "",
         "icon": "fa fa-list",
         "group": "Collapse",
-        "tag": "accordion",
+        "tag": "zt_accordion",
         "options": {
             "role": "tablist",
             "aria-multiselectable": "true"
@@ -130,11 +130,11 @@
         "description": "",
         "icon": "fa fa-bullseye",
         "group": "Collapse",
-        "tag": "dropcaps",
+        "tag": "zt_dropcaps",
         "options": {
             "type": "type-1",
-            "bg-color": "transparent",
-            "text-color": "#444444"
+            "bgColor": "transparent",
+            "textColor": "#444444"
         }
     },
     {
@@ -142,7 +142,7 @@
         "description": "",
         "icon": "fa fa-align-justify",
         "group": "Collapse",
-        "tag": "i",
+        "tag": "zt_i",
         "options": {
             "class-icon": "fa fa-joomla"
         }
@@ -152,7 +152,7 @@
         "description": "",
         "icon": "fa fa-area-chart",
         "group": "Collapse",
-        "tag": "divider",
+        "tag": "zt_divider",
         "options": {
             "type": "thin",
             "text": "",
@@ -164,7 +164,7 @@
         "description": "",
         "icon": "fa fa-picture-o",
         "group": "gallery",
-        "tag": "gallery",
+        "tag": "zt_gallery",
         "options": {
             "width": "700",
             "height": "700",
@@ -179,7 +179,7 @@
         "description": "",
         "icon": "fa fa-youtube-play",
         "group": "media",
-        "tag": "video-play",
+        "tag": "zt_video_play",
         "options": {
             "src": "",
             "width": "640",
@@ -191,7 +191,7 @@
         "description": "",
         "icon": "fa fa-database",
         "group": "modal",
-        "tag": "modal",
+        "tag": "zt_modal",
         "options": {
             "id": "myModal",
             "title": "",
@@ -205,7 +205,7 @@
         "description": "",
         "icon": "fa fa-certificate",
         "group": "modal",
-        "tag": "counter-circle",
+        "tag": "zt_counter_circle",
         "options": {
             "easing": "easeInQuad",
             "barColor": "#449D44",
@@ -219,6 +219,24 @@
             "content-type": "none",
             "icon": "fa fa-thumbs-o-up",
             "extra-class": ""
+        }
+    },
+    {
+        "name": "Testimonial",
+        "description": "",
+        "icon": "fa fa-database",
+        "group": "modal",
+        "tag": "zt_testimonial",
+        "options": {
+            "bgColor": "#f6f6f6",
+            "textColor": "#747474",
+            "slider": "false",
+            "name": "Zoo Templates",
+            "customAvatar": "image/avata/male.jpg",
+            "company": "ClearSoft",
+            "borderRadius": "4",
+            "link": "#",
+            "target": "_self"
         }
     }
 ]
