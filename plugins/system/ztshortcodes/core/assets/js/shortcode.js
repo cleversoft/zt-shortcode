@@ -180,8 +180,8 @@
         /* Selector container */
         _elements: {
             /* Shortcode label */
-            labelValue: "#zo2-sc-label-name",
-            labelType: "#zo2-sc-label-type"
+            value: "#zo2-sc-label-name",
+            type: "#zo2-sc-label-type"
         },
         /**
          * Init function
@@ -190,10 +190,10 @@
         _init: function () {
             var _self = this;
             /* Label shortcode */
-            $(_self._elements.labelValue).on('keydown', function () {
+            $(_self._elements.value).on('keydown', function () {
                 _self._update();
             });
-            $(_self._elements.labelType).on('change', function () {
+            $(_self._elements.type).on('change', function () {
                 _self._update();
             });
         },
@@ -203,8 +203,8 @@
          */
         _update: function () {
             var _self = this;
-            var type = $(_self._elements.labelType).val();
-            var value = $(_self._elements.labelValue).val();
+            var type = $(_self._elements.type).val();
+            var value = $(_self._elements.value).val();
             w.zo2.shortcode.value('[zt_label type="' + type + '"]' + value + '[/zt_label]');
             w.zo2.shortcode.preview('<span class="label label-' + type + '">' + value + '</span>');
         }
@@ -230,13 +230,13 @@
         /* Selector container */
         _elements: {
             /* Shortcode button */
-            buttonText: "#zo2-sc-button-text",
-            buttonType: "#zo2-sc-button-type",
-            buttonSize: "#zo2-sc-button-size",
-            buttonColour: "#zo2-sc-button-colour",
-            buttonIcon: "#list-icon-button",
-            buttonLink: "#zo2-sc-button-link",
-            buttonClass: "#zo2-sc-button-extra-class",
+            text: "#zo2-sc-button-text",
+            type: "#zo2-sc-button-type",
+            size: "#zo2-sc-button-size",
+            colour: "#zo2-sc-button-colour",
+            icon: "#list-icon-button",
+            link: "#zo2-sc-button-link",
+            extraClass: "#zo2-sc-button-extra-class"
         },
         /**
          * Init function
@@ -244,21 +244,21 @@
          */
         _init: function () {
             var _self = this;
-            $(_self._elements.buttonIcon).find('a').on('click', function () {
-                $(_self._elements.buttonIcon).find('a').removeClass('selected');
+            $(_self._elements.icon).find('a').on('click', function () {
+                $(_self._elements.icon).find('a').removeClass('selected');
                 $(this).addClass('selected');
                 _self._update();
                 return false;
             });
             /* Button shortcode */
-            $(_self._elements.buttonColour + ', '
-                    + _self._elements.buttonSize + ', '
-                    + _self._elements.buttonType).on('change', function () {
+            $(_self._elements.colour + ', '
+                    + _self._elements.size + ', '
+                    + _self._elements.type).on('change', function () {
                 _self._update();
             });
-            $(_self._elements.buttonText + ', '
-                    + _self._elements.buttonClass + ', '
-                    + _self._elements.buttonLink).on('keyup', function () {
+            $(_self._elements.text + ', '
+                    + _self._elements.extraClass + ', '
+                    + _self._elements.link).on('keyup', function () {
                 _self._update();
             });
         },
@@ -268,12 +268,12 @@
          */
         _update: function () {
             var _self = this;
-            var text = $(_self._elements.buttonText).val();
-            var className = $(_self._elements.buttonClass).val();
-            var colour = $(_self._elements.buttonColour).val();
-            var link = $(_self._elements.buttonLink).val();
-            var size = $(_self._elements.buttonSize).val();
-            var type = $(_self._elements.buttonType).val();
+            var text = $(_self._elements.text).val();
+            var extraClass = $(_self._elements.extraClass).val();
+            var colour = $(_self._elements.colour).val();
+            var link = $(_self._elements.link).val();
+            var size = $(_self._elements.size).val();
+            var type = $(_self._elements.type).val();
             var icon = _self._getIcon();
             var shortcode = '[zt_button';
             shortcode += (type !== '') ? ' type="' + type + '"' : '';
@@ -281,7 +281,7 @@
             shortcode += (colour !== '') ? ' colour="' + colour + '"' : '';
             shortcode += (link !== '') ? ' link="' + link + '"' : '';
             shortcode += (icon !== '') ? ' icon="' + icon + '"' : '';
-            shortcode += (className !== '') ? ' extra-class="' + className + '"' : '';
+            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
             shortcode += ']' + text + '[/zt_button]';
             w.zo2.shortcode.value(shortcode);
         },
@@ -290,7 +290,7 @@
          * @returns {String}
          */
         _getIcon: function () {
-            var selected = $(this._elements.buttonIcon).find('.selected');
+            var selected = $(this._elements.icon).find('.selected');
             return (selected.length <= 0) ? '' : selected.find('i').attr('class');
         }
     };
@@ -310,15 +310,15 @@
 (function (w, $) {
 
     /* Dropcap shortcode class */
-    var _button = {
+    var _dropcap = {
         name: 'Dropcap shortcode add-on',
         /* Selector container */
         _elements: {
-            /* Shortcode button */
-            dropcapType: "#zo2-sc-dropcaps-type",
-            dropcapTextColour: "#zo2-sc-dropcaps-text-color",
-            dropcapBackgroundColour: "#zo2-sc-dropcaps-bg-color",
-            dropcapContent: "#zo2-sc-dropcaps-content"
+            /* Shortcode dropcap */
+            type: "#zo2-sc-dropcaps-type",
+            textColour: "#zo2-sc-dropcaps-text-color",
+            bgColour: "#zo2-sc-dropcaps-bg-color",
+            content: "#zo2-sc-dropcaps-content"
         },
         /**
          * Init function
@@ -326,13 +326,13 @@
          */
         _init: function () {
             var _self = this;
-            /* Button shortcode */
-            $(_self._elements.dropcapType).on('change', function () {
+            /* Dropcap shortcode */
+            $(_self._elements.type).on('change', function () {
                 _self._update();
             });
-            $(_self._elements.dropcapContent + ', '
-                    + _self._elements.dropcapTextColour + ', '
-                    + _self._elements.dropcapBackgroundColour).on('keyup', function () {
+            $(_self._elements.content + ', '
+                    + _self._elements.textColour + ', '
+                    + _self._elements.bgColour).on('keyup', function () {
                 _self._update();
             });
         },
@@ -342,10 +342,10 @@
          */
         _update: function () {
             var _self = this;
-            var content = $(_self._elements.dropcapContent).val();
-            var bgColour = $(_self._elements.dropcapBackgroundColour).val();
-            var colour = $(_self._elements.dropcapTextColour).val();
-            var type = $(_self._elements.dropcapType).val();
+            var content = $(_self._elements.content).val();
+            var bgColour = $(_self._elements.bgColour).val();
+            var colour = $(_self._elements.textColour).val();
+            var type = $(_self._elements.type).val();
             var shortcode = '[zt_dropcap';
             shortcode += (type !== '') ? ' type="' + type + '"' : '';
             shortcode += (colour !== '') ? ' textColour="' + colour + '"' : '';
@@ -356,6 +356,80 @@
     };
 
     /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_button);
+    w.zo2.shortcode._addOn.push(_dropcap);
+
+})(window, jQuery);
+
+
+/**
+ * Messagebox shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.messagebox.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Messagebox shortcode class */
+    var _messageBox = {
+        name: 'MessageBox shortcode add-on',
+        /* Selector container */
+        _elements: {
+            /* Shortcode messagebox */
+            content: "#zo2-sc-message-box-content",
+            type: "#zo2-sc-message-box-type",
+            icon: "#list-icon-message-box",
+            extraClass: "#zo2-sc-message-box-class"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.icon).find('a').on('click', function () {
+                $(_self._elements.icon).find('a').removeClass('selected');
+                $(this).addClass('selected');
+                _self._update();
+                return false;
+            });
+            /* MessageBox shortcode */
+            $(_self._elements.type).on('change', function () {
+                _self._update();
+            });
+            $(_self._elements.content + ', '
+                    + _self._elements.extraClass).on('keyup', function () {
+                _self._update();
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var content = $(_self._elements.content).val();
+            var className = $(_self._elements.extraClass).val();
+            var type = $(_self._elements.type).val();
+            var icon = _self._getIcon();
+            var shortcode = '[zt_message_box';
+            shortcode += (type !== '') ? ' type="' + type + '"' : '';
+            shortcode += (icon !== '') ? ' icon="' + icon + '"' : '';
+            shortcode += (className !== '') ? ' extra-class="' + className + '"' : '';
+            shortcode += ']' + content + '[/zt_message_box]';
+            w.zo2.shortcode.value(shortcode);
+        },
+        /**
+         * Get messagebox icon
+         * @returns {String}
+         */
+        _getIcon: function () {
+            var selected = $(this._elements.icon).find('.selected');
+            return (selected.length <= 0) ? '' : selected.find('i').attr('class');
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_messageBox);
 
 })(window, jQuery);
