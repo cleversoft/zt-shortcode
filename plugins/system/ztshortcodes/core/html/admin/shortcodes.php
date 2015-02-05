@@ -20,21 +20,6 @@ function getAwesome(){
     return $html;
 }
 
-// Effect jQuery Easing
-function getEffectJqueryEasing($id, $classs){
-    $effect = "easeInQuad|easeOutQuad|easeInOutQuad|easeInCubic|easeOutCubic|easeInOutCubic|easeInQuart|easeOutQuart|easeInOutQuart|easeInQuint|easeOutQuint|easeInOutQuint|easeInSine|easeOutSine|easeInOutSine|easeInExpo|easeOutExpo|easeInOutExpo|easeInCirc|easeOutCirc|easeInOutCirc|easeInElastic|easeOutElastic|easeInOutElastic|easeInBack|easeOutBack|easeInOutBack|easeInBounce|easeOutBounce|easeInOutBounce";
-    $arrayEffect = explode("|", $effect);
-
-    $html = '';
-    $html .= '<select id="'. $id .'" class="'. $classs .'">';
-    foreach($arrayEffect as $key => $iEffect){
-        $html .= '<option value="'. $iEffect .'">'. $iEffect .'</option>';
-    }
-    $html .= '</select>';
-
-    return $html;
-}
-
 // Path Uri
 $uri = $_SERVER['REQUEST_URI'];
 $uri = explode('/', $uri);
@@ -44,10 +29,7 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
 
 ?>
 
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <!-- Font Awesome -->
 <link rel="stylesheet"

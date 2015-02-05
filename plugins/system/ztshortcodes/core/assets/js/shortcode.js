@@ -433,3 +433,110 @@
     w.zo2.shortcode._addOn.push(_messageBox);
 
 })(window, jQuery);
+
+/**
+ * Tabs shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.tabs.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Tabs shortcode class */
+    var _tabs = {
+        name: 'Tabs shortcode add-on',
+        /* Selector container */
+        _elements: {
+            /* Shortcode tab */
+            newTab: "#zo2-sc-new-tab",
+            container: "#zo2-sc-tabs-container",
+            element: "#zo2-sc-tabs-element",
+            title: "#zo2-sc-tab-title",
+            content: "#zo2-sc-tab-content",
+            active: "#zo2-sc-tab-active"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.newTab).on('click', function () {
+                $(_self._elements.element).first()
+                        .clone()
+                        .appendTo(_self._elements.container);
+                $(_self._elements.container).children()
+                        .last()
+                        .find(_self._elements.title)
+                        .val('');
+                $(_self._elements.container).children()
+                        .last()
+                        .find(_self._elements.content)
+                        .val('');
+                $(_self._elements.container).children()
+                        .last()
+                        .find(_self._elements.active)
+                        .removeAttr('checked');
+            });
+            /* One active tab per tabs shortcode */
+            $(_self._elements.container).on('click', _self._elements.active, function () {
+                var checked = $(this).is(':checked');
+                $(_self._elements.container).children()
+                        .find(_self._elements.active)
+                        .removeAttr('checked');
+                if ($(_self._elements.container).children().length === 1) {
+                    if (!checked) {
+                        $(this).removeAttr('checked');
+                    } else {
+                        $(this).prop('checked', true);
+                    }                    
+                } else {
+                    $(this).prop('checked', true);
+                }
+                _self._update();
+            });
+            /* Update tabs shortcode */
+            $(_self._elements.container).on('keyup',
+                    _self._elements.title + ', '
+                    + _self._elements.content
+                    , function () {
+                        _self._update();
+                    });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var shortcode = '';
+            var $tabs = $(_self._elements.container).children();
+            $tabs.each(function () {
+                shortcode += _self._genTabShortcode($(this));
+            });
+            var shortcode = '[zt_tabs ' + (($tabs.length > 0) ? ' tabs="' + $tabs.length + '"' : '')
+                    + ']' + shortcode + '[/zt_tabs]';
+            w.zo2.shortcode.value(shortcode);
+        },
+        /**
+         * Generate tab shortcode
+         * @param {type} $tab
+         * @returns {undefined}
+         */
+        _genTabShortcode: function ($tab) {
+            var title = $tab.find(this._elements.title).val();
+            var content = $tab.find(this._elements.content).val();
+            var active = $tab.find(this._elements.active).is(':checked');
+            var shortcode = '[zt_tab';
+            shortcode += (title !== '') ? ' title="' + title + '"' : '';
+            shortcode += (active) ? ' active="true"' : '';
+            shortcode += ']' + content + '[/zt_tab]';
+            return shortcode;
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_tabs);
+
+})(window, jQuery);
