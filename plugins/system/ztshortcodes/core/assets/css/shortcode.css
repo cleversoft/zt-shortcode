@@ -101,3 +101,10 @@
        line-height: 35px;
        padding: 0 10px;
 }
+
+/* Shortcode Item */
+.shortcoder-item{
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+}

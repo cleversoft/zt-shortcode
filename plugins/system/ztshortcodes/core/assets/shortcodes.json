@@ -244,7 +244,7 @@
         "name": "Carousel",
         "description": "",
         "icon": "fa fa-sliders",
-        "group": "modal",
+        "group": "slider",
         "tag": "zt_carousel",
         "options": {
             "image": "images/carousel/up1.jpg",
