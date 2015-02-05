@@ -2,9 +2,6 @@
 $prefix = 'zo2-sc-testimonial-';
 ?>
 
-<div class="shortcode-element-title">
-    <h3>Testimonial</h3>
-</div>
 <form>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'bgColor'; ?>">Background Color</label>

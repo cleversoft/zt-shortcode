@@ -1,10 +1,6 @@
 <?php
 $prefix = 'zo2-sc-carousel-';
 ?>
-
-<div class="shortcode-element-title">
-    <h3>Carousel</h3>
-</div>
 <form>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix . 'showItem'; ?>">Item Carousel</label>

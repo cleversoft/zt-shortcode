@@ -38,6 +38,10 @@
     color: #555555;
     margin: 0;
 }
+.description-shortcode{
+    padding-left: 20px;
+}
+
 /* Short code common */
 .shortcode-render {
     background-color: #eeeeee;

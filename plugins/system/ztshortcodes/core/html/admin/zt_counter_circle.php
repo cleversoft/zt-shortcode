@@ -2,9 +2,6 @@
 $prefix = 'zo2-sc-counter-';
 ?>
 
-<div class="shortcode-element-title">
-    <h3>Counter Circle</h3>
-</div>
 <form>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'effect'; ?>">Effect Bar</label>

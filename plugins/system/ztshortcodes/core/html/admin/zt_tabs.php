@@ -2,9 +2,6 @@
 $prefix = 'zo2-sc-';
 ?>
 
-<div class="shortcode-element-title">
-    <h3>Tabs Content</h3>
-</div>
 <div id="<?php echo $prefix . 'tabs-container' ?>">
     <div id="<?php echo $prefix . 'tabs-element' ?>">
         <div class="form-group clearfix">

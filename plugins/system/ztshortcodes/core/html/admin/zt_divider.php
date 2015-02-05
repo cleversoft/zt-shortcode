@@ -2,9 +2,6 @@
 $prefix = 'zo2-sc-';
 ?>
 
-<div class="shortcode-element-title">
-    <h3>Divider</h3>
-</div>
 <form>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'divider-type'; ?>">Type</label>

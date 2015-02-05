@@ -90,6 +90,7 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
             }
             ?>
         </ul>
+        <?php include_once(__DIR__ . '/common/breadcrumb.php'); ?>
         <div id="myTabContent" class="tab-content">
 
             <?php

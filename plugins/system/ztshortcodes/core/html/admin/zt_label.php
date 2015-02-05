@@ -2,9 +2,6 @@
     $prefix = 'zo2-sc-';
 ?>
 
-<div class="shortcode-element-title">
-    <h3>Label</h3>
-</div>
 <form>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'label-name'; ?>">Label</label>

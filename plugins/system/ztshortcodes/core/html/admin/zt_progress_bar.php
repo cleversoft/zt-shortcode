@@ -2,9 +2,6 @@
 $prefix = 'zo2-sc-';
 ?>
 
-<div class="shortcode-element-title">
-    <h3>Progress Bar</h3>
-</div>
 <form>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'progress-trackcolor'; ?>">Track Color</label>
