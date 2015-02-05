@@ -189,7 +189,7 @@
     {
         "name": "Modal",
         "description": "",
-        "icon": "fa fa-database",
+        "icon": "fa fa-credit-card",
         "group": "modal",
         "tag": "zt_modal",
         "options": {
@@ -224,7 +224,7 @@
     {
         "name": "Testimonial",
         "description": "",
-        "icon": "fa fa-database",
+        "icon": "fa fa-shirtsinbulk",
         "group": "modal",
         "tag": "zt_testimonial",
         "options": {
@@ -242,7 +242,7 @@
     {
         "name": "Carousel",
         "description": "",
-        "icon": "fa fa-database",
+        "icon": "fa fa-sliders",
         "group": "modal",
         "tag": "zt_carousel",
         "options": {
