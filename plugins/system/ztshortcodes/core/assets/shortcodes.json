@@ -238,5 +238,22 @@
             "link": "#",
             "target": "_self"
         }
+    },
+    {
+        "name": "Carousel",
+        "description": "",
+        "icon": "fa fa-database",
+        "group": "modal",
+        "tag": "zt_carousel",
+        "options": {
+            "image": "images/carousel/up1.jpg",
+            "title": "",
+            "link": "",
+            "showPager": "true",
+            "showControl": "true",
+            "showItem": "4",
+            "duration": "1000",
+            "enableReponsive": "true"
+        }
     }
 ]
