@@ -11,16 +11,16 @@ $prefix = 'zo2-sc-counter-';
         <?php echo getEffectJqueryEasing($prefix.'effect', 'form-control'); ?>
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'barcolor' ?>">Bar Color</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'barcolor' ?>" placeholder="Counter Bar Color (exp: #969af2)">
+        <label for="<?php echo $prefix.'barColor' ?>">Bar Color</label>
+        <input type="text" class="form-control" id="<?php echo $prefix.'barColor' ?>" placeholder="Counter Bar Color (exp: #969af2)">
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'trackcolor' ?>">Track Color</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'trackcolor' ?>" placeholder="Counter Track Color (exp: #969af2)">
+        <label for="<?php echo $prefix.'trackColor' ?>">Track Color</label>
+        <input type="text" class="form-control" id="<?php echo $prefix.'trackColor' ?>" placeholder="Counter Track Color (exp: #969af2)">
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'scalelength' ?>">Scale Length</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'scalelength' ?>" placeholder="Counter Scale Length (exp: 10)">
+        <label for="<?php echo $prefix.'scaleLength' ?>">Scale Length</label>
+        <input type="text" class="form-control" id="<?php echo $prefix.'scaleLength' ?>" placeholder="Counter Scale Length (exp: 10)">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'percent' ?>">Counter Percent</label>
@@ -35,8 +35,8 @@ $prefix = 'zo2-sc-counter-';
         </select>
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'linewidth' ?>">Counter Line Width</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'linewidth' ?>" placeholder="Counter Line Width (exp: 10)">
+        <label for="<?php echo $prefix.'lineWidth' ?>">Counter Line Width</label>
+        <input type="text" class="form-control" id="<?php echo $prefix.'lineWidth' ?>" placeholder="Counter Line Width (exp: 10)">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'size' ?>">Counter Around Size</label>
@@ -47,8 +47,8 @@ $prefix = 'zo2-sc-counter-';
         <input type="text" class="form-control" id="<?php echo $prefix.'duration' ?>" placeholder="Counter Duration (exp: 1000)">
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'contenttype' ?>">Content Type</label>
-        <select id="<?php echo $prefix.'contenttype' ?>" class="form-control">
+        <label for="<?php echo $prefix.'contentType' ?>">Content Type</label>
+        <select id="<?php echo $prefix.'contentType' ?>" class="form-control">
             <option value="default">Default</option>
             <option value="percent">Percent</option>
             <option value="icon">Icon</option>
@@ -61,8 +61,8 @@ $prefix = 'zo2-sc-counter-';
         </div>
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'extraclass' ?>">Extra Class</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'extraclass' ?>" placeholder="Counter Extra Class">
+        <label for="<?php echo $prefix.'extraClass' ?>">Extra Class</label>
+        <input type="text" class="form-control" id="<?php echo $prefix.'extraClass' ?>" placeholder="Counter Extra Class">
     </div>
 
 </form>
