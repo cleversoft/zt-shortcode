@@ -29,7 +29,7 @@ $uri = implode('/', $uri) . '/plugins/system/ztshortcodes/core/assets/';
 
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
