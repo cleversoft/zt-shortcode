@@ -179,7 +179,6 @@
         name: 'Label shortcode add-on',
         /* Selector container */
         _elements: {
-            /* Shortcode label */
             value: "#zo2-sc-label-name",
             type: "#zo2-sc-label-type"
         },
@@ -189,7 +188,6 @@
          */
         _init: function () {
             var _self = this;
-            /* Label shortcode */
             $(_self._elements.value).on('keyup', function () {
                 _self._update();
             });
@@ -229,7 +227,6 @@
         name: 'Button shortcode add-on',
         /* Selector container */
         _elements: {
-            /* Shortcode button */
             text: "#zo2-sc-button-text",
             type: "#zo2-sc-button-type",
             size: "#zo2-sc-button-size",
@@ -250,7 +247,6 @@
                 _self._update();
                 return false;
             });
-            /* Button shortcode */
             $(_self._elements.colour + ', '
                     + _self._elements.size + ', '
                     + _self._elements.type).on('change', function () {
@@ -314,7 +310,6 @@
         name: 'Dropcap shortcode add-on',
         /* Selector container */
         _elements: {
-            /* Shortcode dropcap */
             type: "#zo2-sc-dropcaps-type",
             textColour: "#zo2-sc-dropcaps-text-color",
             bgColour: "#zo2-sc-dropcaps-bg-color",
@@ -326,7 +321,6 @@
          */
         _init: function () {
             var _self = this;
-            /* Dropcap shortcode */
             $(_self._elements.type).on('change', function () {
                 _self._update();
             });
@@ -375,7 +369,6 @@
         name: 'MessageBox shortcode add-on',
         /* Selector container */
         _elements: {
-            /* Shortcode messagebox */
             content: "#zo2-sc-message-box-content",
             type: "#zo2-sc-message-box-type",
             icon: "#list-icon-message-box",
@@ -393,7 +386,6 @@
                 _self._update();
                 return false;
             });
-            /* MessageBox shortcode */
             $(_self._elements.type).on('change', function () {
                 _self._update();
             });
@@ -409,13 +401,13 @@
         _update: function () {
             var _self = this;
             var content = $(_self._elements.content).val();
-            var className = $(_self._elements.extraClass).val();
+            var extraClass = $(_self._elements.extraClass).val();
             var type = $(_self._elements.type).val();
             var icon = _self._getIcon();
             var shortcode = '[zt_message_box';
             shortcode += (type !== '') ? ' type="' + type + '"' : '';
             shortcode += (icon !== '') ? ' icon="' + icon + '"' : '';
-            shortcode += (className !== '') ? ' extra-class="' + className + '"' : '';
+            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
             shortcode += ']' + content + '[/zt_message_box]';
             w.zo2.shortcode.value(shortcode);
         },
@@ -448,7 +440,6 @@
         name: 'Tabs shortcode add-on',
         /* Selector container */
         _elements: {
-            /* Shortcode tab */
             newTab: "#zo2-sc-new-tab",
             container: "#zo2-sc-tabs-container",
             element: "#zo2-sc-tabs-element",
@@ -490,13 +481,12 @@
                         $(this).removeAttr('checked');
                     } else {
                         $(this).prop('checked', true);
-                    }                    
+                    }
                 } else {
                     $(this).prop('checked', true);
                 }
                 _self._update();
             });
-            /* Update tabs shortcode */
             $(_self._elements.container).on('keyup',
                     _self._elements.title + ', '
                     + _self._elements.content
@@ -538,5 +528,66 @@
 
     /* Append to shortcode add-ons */
     w.zo2.shortcode._addOn.push(_tabs);
+
+})(window, jQuery);
+
+/**
+ * Blockquotes shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.label.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Blockquotes shortcode class */
+    var _blockquotes = {
+        name: 'Blockquotes shortcode add-on',
+        /* Selector container */
+        _elements: {
+            type: "#zo2-sc-blockquotes-type",
+            author: "#zo2-sc-blockquotes-author",
+            link: "#zo2-sc-blockquotes-author-link",
+            content: "#zo2-sc-blockquotes-content",
+            extraClass: "#zo2-sc-blockquotes-class"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.author + ', '
+                    + _self._elements.link + ', '
+                    + _self._elements.content + ', '
+                    + _self._elements.extraClass).on('keyup', function () {
+                _self._update();
+            });
+            $(_self._elements.type).on('change', function () {
+                _self._update();
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var author = $(this._elements.author).val();
+            var link = $(this._elements.link).val();
+            var content = $(this._elements.content).val();
+            var extraClass = $(this._elements.extraClass).val();
+            var type = $(this._elements.type).val();
+            var shortcode = '[zt_blockquotes';
+            shortcode += (author !== '') ? ' author="' + author + '"' : '';
+            shortcode += (link !== '') ? ' link="' + link + '"' : '';
+            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
+            shortcode += (type !== '') ? ' type="' + type + '"' : '';
+            shortcode += ']' + content + '[/zt_blockquotes]';
+            w.zo2.shortcode.value(shortcode);
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_blockquotes);
 
 })(window, jQuery);
