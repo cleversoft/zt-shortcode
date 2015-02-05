@@ -2,19 +2,22 @@
 $prefix = 'zo2-sc-';
 ?>
 
-<div class="shortcode-element-title">
-    <h3>Progress Bar</h3>
-</div>
 <form>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix . 'progress-type'; ?>">Type</label>
-        <select id="<?php echo $prefix . 'progress-type'; ?>" class="form-control">
-            <option value="default">Default</option>
-            <option value="success">Success</option>
-            <option value="info">Info</option>
-            <option value="warning">Warning</option>
-            <option value="danger">Danger</option>
-        </select>
+        <label for="<?php echo $prefix.'progress-trackcolor'; ?>">Track Color</label>
+        <input type="label" class="form-control" id="<?php echo $prefix.'progress-trackcolor'; ?>" placeholder="Enter Track Color (exp: #eee000)">
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'progress-barcolor'; ?>">Bar Color</label>
+        <input type="label" class="form-control" id="<?php echo $prefix.'progress-barcolor'; ?>" placeholder="Enter Bar Color (exp: #eee000)">
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'progress-titlecolor'; ?>">Title Color</label>
+        <input type="label" class="form-control" id="<?php echo $prefix.'progress-titlecolor'; ?>" placeholder="Enter Title Color (exp: #eee000)">
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'progress-trackcolor'; ?>">Track Color</label>
+        <input type="label" class="form-control" id="<?php echo $prefix.'progress-trackcolor'; ?>" placeholder="Enter Track Color (exp: #eee000)">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix . 'strip-type'; ?>">Strip Type</label>

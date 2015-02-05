@@ -38,6 +38,10 @@
     color: #555555;
     margin: 0;
 }
+.description-shortcode{
+    padding-left: 20px;
+}
+
 /* Short code common */
 .shortcode-render {
     background-color: #eeeeee;
@@ -100,4 +104,11 @@
        border-right: 1px solid #ccc;
        line-height: 35px;
        padding: 0 10px;
+}
+
+/* Shortcode Item */
+.shortcoder-item{
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
 }
