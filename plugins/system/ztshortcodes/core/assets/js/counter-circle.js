@@ -16,7 +16,6 @@ jQuery(window).load(function (){
                 chartsize           = jQuery(this).data('size'),
                 chartduration       = jQuery(this).data('duration')
 
-
             jQuery(this).easyPieChart({
                 easing: chartEasing,
                 barColor: chartbarColor,

@@ -64,4 +64,5 @@ $prefix = 'zo2-sc-counter-';
         <label for="<?php echo $prefix.'extraclass' ?>">Extra Class</label>
         <input type="text" class="form-control" id="<?php echo $prefix.'extraclass' ?>" placeholder="Counter Extra Class">
     </div>
+
 </form>
