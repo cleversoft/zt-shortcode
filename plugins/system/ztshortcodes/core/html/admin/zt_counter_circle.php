@@ -46,7 +46,7 @@ $prefix = 'zo2-sc-counter-';
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'contentType' ?>">Content Type</label>
         <select id="<?php echo $prefix.'contentType' ?>" class="form-control">
-            <option value="default">Default</option>
+            <option value="">Default</option>
             <option value="percent">Percent</option>
             <option value="icon">Icon</option>
         </select>

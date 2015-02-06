@@ -22,14 +22,14 @@ $prefix = 'zo2-sc-';
     <div class="form-group clearfix">
         <label for="<?php echo $prefix . 'strip-type'; ?>">Strip Type</label>
         <select id="<?php echo $prefix . 'strip-type'; ?>" class="form-control">
-            <option value="default">Default</option>
+            <option value="">Default</option>
             <option value="striped">Striped</option>
         </select>
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix . 'animated-type'; ?>">Animated Type</label>
         <select id="<?php echo $prefix . 'animated-type'; ?>" class="form-control">
-            <option value="default">Default</option>
+            <option value="">Default</option>
             <option value="active">Active</option>
         </select>
     </div>

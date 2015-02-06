@@ -16,7 +16,7 @@ $prefix = 'zo2-sc-';
     <div class="form-group clearfix">
         <label for="<?php echo $prefix . 'pricing-type'; ?>">Pricing Type</label>
         <select id="<?php echo $prefix . 'pricing-type'; ?>" class="form-control">
-            <option value="default">Default</option>
+            <option value="">Default</option>
             <option value="attached">Attached</option>
         </select>
     </div>
@@ -44,8 +44,7 @@ $prefix = 'zo2-sc-';
                 </div>
                 <div class="form-group">
                     <select id="<?php echo $prefix . 'pricing-button-1-type'; ?>" class="form-control">
-                        <option value="none">Button Type</option>
-                        <option value="default">Default</option>
+                        <option value="">Default</option>
                         <option value="primary">Primary</option>
                         <option value="success">Success</option>
                         <option value="info">Info</option>

@@ -9,7 +9,7 @@ $prefix = 'zo2-sc-';
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'button-type'; ?>">Type</label>
         <select id="<?php echo $prefix.'button-type'; ?>" class="form-control">
-            <option value="standard">Standard</option>
+            <option value="">Standard</option>
             <option value="stroke-to-fill">Stroke To Fill</option>
             <option value="icon-reveal">Icon Reveal</option>
             <option value="icon-stroke">Icon Stroke</option>
@@ -18,7 +18,7 @@ $prefix = 'zo2-sc-';
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'button-size'; ?>">Size</label>
         <select id="<?php echo $prefix.'button-size'; ?>" class="form-control">
-            <option value="standard">Standard</option>
+            <option value="">Standard</option>
             <option value="small">Small</option>
             <option value="large">Large</option>
         </select>
