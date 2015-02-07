@@ -4,7 +4,7 @@
         <textarea placeholder="Shortcode Content" rows="3" class="form-control"
                   id="zo2-sc-value"></textarea>
     </div>
-    <div class="form-group clearfix">
+    <div class="form-group clearfix" id="zo2-sc-preview-content" style="display: none;">
         <label for="zo2-sc-render">Shortcode Preview</label>
         <div id="zo2-sc-render" class="shortcode-render"></div>
     </div>

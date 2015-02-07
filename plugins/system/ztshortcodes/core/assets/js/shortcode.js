@@ -55,12 +55,16 @@
             comPreview: "#zo2-shortcode-preview",
             shortcodeContent: "#zo2-sc-value",
             shortcodeRender: "#zo2-sc-render",
+            shortcodePreview: "#zo2-sc-preview-content",
             /* Control button */
             comButtons: "#zo2-shortcode-controls",
             buttonInsert: "#zo2-sc-insert",
             buttonPreview: "#zo2-sc-preview",
-            buttonReset: "#zo2-sc-reset",
-            buttonClose: "#zo2-sc-close"
+            buttonClose: "#zo2-sc-close",
+            /* Shortcode breadcrumb */
+            breadcrumdContainer: "#zo2-shortcode-breadcrumd",
+            breadcrumdHome: "#zo2-sc-all-shortcode",
+            breadcrumdCurrent: "#zo2-sc-current-tab"
         },
         /**
          * Select function
@@ -81,7 +85,7 @@
                     }
                 }
             });
-
+            
             /* Preview button */
             $(_self._elements.buttonPreview).on('click', function () {
                 if ($(_self._elements.buttonPreview).text() === 'Preview Shortcode') {
@@ -89,28 +93,39 @@
                 } else {
                     $(_self._elements.buttonPreview).text('Preview Shortcode');
                 }
-                $(_self._elements.comPreview).toggle('slow', function () {
-                    /* Scroll to end of page */
-                    $("html, body").animate({scrollTop: $(w.document).height()});
-                });
+                $(_self._elements.comPreview)
+                        .find(_self._elements.shortcodePreview)
+                        .toggle('slow', function () {
+                            /* Scroll to end of page */
+                            $("html, body").animate({scrollTop: $(w.document).height()});
+                        });
             });
 
             /* Hide tab & group after choice */
             $(_self._elements.tabList).on('click', 'li', function () {
+                var currentTab = $(this).find('a').text();
+                $(_self._elements.breadcrumdCurrent)
+                        .html('&rarr;' + currentTab);
                 $(_self._elements.tabList).hide('slow');
                 $(_self._elements.tabGroup).hide('slow');
+                $(_self._elements.breadcrumdContainer).show('slow');
             });
 
-            /* Reset button */
-            $(_self._elements.buttonReset).on('click', function () {
+            /* Bread crumd home */
+            $(_self._elements.breadcrumdContainer).on('click', _self._elements.breadcrumdHome, function () {
                 $(_self._elements.tabList).show('slow');
                 $(_self._elements.tabGroup).show('slow');
-//                $(_self._elements.buttonPreview).text('Preview Shortcode');
-//                $(_self._elements.comPreview).hide('slow', function () {
-//                    $("html, body").animate({scrollTop: 0});
-//                });
+                $(_self._elements.buttonPreview).text('Preview Shortcode');
+                $(_self._elements.comPreview)
+                        .find(_self._elements.shortcodePreview)
+                        .hide('slow', function () {
+                            $("html, body").animate({scrollTop: 0});
+                        });
                 _self.value('');
                 _self.preview('');
+                $(_self._elements.breadcrumdContainer).hide('slow');
+                $(_self._elements.breadcrumdCurrent)
+                        .html('');
                 $(_self._elements.tabContent).find('.active').removeClass('active in');
                 $(_self._elements.tabList).find('.active').removeClass('active');
             });
@@ -145,6 +160,7 @@
          * @returns {undefined}
          */
         preview: function (html) {
+            console.log(html);
             $(this._elements.shortcodeRender).html(html);
         }
 
