@@ -105,7 +105,7 @@
             $(_self._elements.tabList).on('click', 'li', function () {
                 var currentTab = $(this).find('a').text();
                 $(_self._elements.breadcrumdCurrent)
-                        .html('&rarr;' + currentTab);
+                        .html(' &rarr; ' + currentTab);
                 $(_self._elements.tabList).hide('slow');
                 $(_self._elements.tabGroup).hide('slow');
                 $(_self._elements.breadcrumdContainer).show('slow');
@@ -160,7 +160,6 @@
          * @returns {undefined}
          */
         preview: function (html) {
-            console.log(html);
             $(this._elements.shortcodeRender).html(html);
         }
 
