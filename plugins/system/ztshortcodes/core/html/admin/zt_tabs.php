@@ -9,6 +9,10 @@ $prefix = 'zo2-sc-';
             <input type="text" class="form-control" id="<?php echo $prefix . 'tab-title' ?>" placeholder="Enter title">
         </div>
         <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'tab-title' ?>">Tab id</label>
+            <input type="text" class="form-control" id="<?php echo $prefix . 'tab-id' ?>" placeholder="Enter id">
+        </div>
+        <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'tab-content'; ?>">Content Tab</label>
             <textarea placeholder="Content Tabs" rows="3" class="form-control"
                       id="<?php echo $prefix . 'tab-content'; ?>"></textarea>

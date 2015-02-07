@@ -444,6 +444,7 @@
             container: "#zo2-sc-tabs-container",
             element: "#zo2-sc-tabs-element",
             title: "#zo2-sc-tab-title",
+            id: "#zo2-sc-tab-id",
             content: "#zo2-sc-tab-content",
             active: "#zo2-sc-tab-active"
         },
@@ -453,6 +454,10 @@
          */
         _init: function () {
             var _self = this;
+            $(_self._elements.container).children()
+                    .last()
+                    .find(_self._elements.id)
+                    .val('zt-tab-' + $(_self._elements.container).children().last().index());
             $(_self._elements.newTab).on('click', function () {
                 $(_self._elements.element).first()
                         .clone()
@@ -465,6 +470,10 @@
                         .last()
                         .find(_self._elements.content)
                         .val('');
+                $(_self._elements.container).children()
+                        .last()
+                        .find(_self._elements.id)
+                        .val('zt-tab-' + $(_self._elements.container).children().last().index());
                 $(_self._elements.container).children()
                         .last()
                         .find(_self._elements.active)
@@ -489,6 +498,7 @@
             });
             $(_self._elements.container).on('keyup',
                     _self._elements.title + ', '
+                    + _self._elements.id + ', '
                     + _self._elements.content
                     , function () {
                         _self._update();
@@ -516,9 +526,11 @@
          */
         _genTabShortcode: function ($tab) {
             var title = $tab.find(this._elements.title).val();
+            var id = $tab.find(this._elements.id).val();
             var content = $tab.find(this._elements.content).val();
             var active = $tab.find(this._elements.active).is(':checked');
             var shortcode = '[zt_tab';
+            shortcode += (id !== '') ? ' id="' + id + '"' : '';
             shortcode += (title !== '') ? ' title="' + title + '"' : '';
             shortcode += (active) ? ' active="true"' : '';
             shortcode += ']' + content + '[/zt_tab]';
