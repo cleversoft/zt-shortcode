@@ -830,3 +830,120 @@
     w.zo2.shortcode._addOn.push(_divider);
 
 })(window, jQuery);
+
+/**
+ * Accordion shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.tabs.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Accordion shortcode class */
+    var _accordion = {
+        name: 'Accordion shortcode add-on',
+        /* Selector container */
+        _elements: {
+            newAccordion: "#zo2-sc-new-accordion",
+            container: "#zo2-sc-accordion-container",
+            element: "#zo2-sc-accordion-element",
+            title: "#zo2-sc-accordion-title",
+            id: "#zo2-sc-accordion-id",
+            content: "#zo2-sc-accordion-content",
+            active: "#zo2-sc-accordion-active"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.container).children()
+                    .last()
+                    .find(_self._elements.id)
+                    .val('zt-accordion-' + $(_self._elements.container).children().last().index());
+            $(_self._elements.newAccordion).on('click', function () {
+                $(_self._elements.element).first()
+                        .clone()
+                        .appendTo(_self._elements.container);
+                $(_self._elements.container).children()
+                        .last()
+                        .find(_self._elements.title)
+                        .val('');
+                $(_self._elements.container).children()
+                        .last()
+                        .find(_self._elements.content)
+                        .val('');
+                $(_self._elements.container).children()
+                        .last()
+                        .find(_self._elements.id)
+                        .val('zt-accordion-' + $(_self._elements.container).children().last().index());
+                $(_self._elements.container).children()
+                        .last()
+                        .find(_self._elements.active)
+                        .removeAttr('checked');
+            });
+            /* One active accordion per accordions shortcode */
+            $(_self._elements.container).on('click', _self._elements.active, function () {
+                var checked = $(this).is(':checked');
+                $(_self._elements.container).children()
+                        .find(_self._elements.active)
+                        .removeAttr('checked');
+                if ($(_self._elements.container).children().length === 1) {
+                    if (!checked) {
+                        $(this).removeAttr('checked');
+                    } else {
+                        $(this).prop('checked', true);
+                    }
+                } else {
+                    $(this).prop('checked', true);
+                }
+                _self._update();
+            });
+            $(_self._elements.container).on('keyup',
+                    _self._elements.title + ', '
+                    + _self._elements.id + ', '
+                    + _self._elements.content
+                    , function () {
+                        _self._update();
+                    });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var shortcode = '';
+            var $accordions = $(_self._elements.container).children();
+            $accordions.each(function () {
+                shortcode += _self._genTabShortcode($(this));
+            });
+            var shortcode = '[accordions ' + (($accordions.length > 0) ? ' accordions="' + $accordions.length + '"' : '')
+                    + ']' + shortcode + '[/zt_accordions]';
+            w.zo2.shortcode.value(shortcode);
+        },
+        /**
+         * Generate accordion shortcode
+         * @param {type} $accordion
+         * @returns {undefined}
+         */
+        _genTabShortcode: function ($accordion) {
+            var title = $accordion.find(this._elements.title).val();
+            var id = $accordion.find(this._elements.id).val();
+            var content = $accordion.find(this._elements.content).val();
+            var active = $accordion.find(this._elements.active).is(':checked');
+            var shortcode = '[zt_accordion';
+            shortcode += (id !== '') ? ' id="' + id + '"' : '';
+            shortcode += (title !== '') ? ' title="' + title + '"' : '';
+            shortcode += (active) ? ' active="true"' : '';
+            shortcode += ']' + content + '[/zt_accordion]';
+            return shortcode;
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_accordion);
+
+})(window, jQuery);
