@@ -11,16 +11,16 @@ $prefix = 'zo2-sc-';
             <option value="fat">Fat</option>
             <option value="dotted">Dotted</option>
             <option value="text-only">Go to top 1</option>
-            <option value="icon-type-1">Go to top 1</option>
-            <option value="icon-type-2">Go to top 2</option>
+            <option value="icon-type-1">Go to top icon 1</option>
+            <option value="icon-type-2">Go to top icon 2</option>
         </select>
     </div>
-    <div class="form-group clearfix">
+    <div class="form-group clearfix" id="<?php echo $prefix.'field-text'; ?>" style="display: none;">
         <label for="<?php echo $prefix.'divider-text'; ?>">Text</label>
-        <input type="label" class="form-control" id="<?php echo $prefix.'divider-text'; ?>" placeholder="Use Only type go to top">
+        <input type="label" class="form-control" id="<?php echo $prefix.'divider-text'; ?>" placeholder="Enter text content">
     </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'divider-icon'; ?>">Icon (use only type go top top 1 and go to top 2)</label>
+    <div class="form-group clearfix" id="<?php echo $prefix.'field-icon'; ?>" style="display: none;">
+        <label for="<?php echo $prefix.'divider-icon'; ?>">Icon (please select an icon)</label>
         <div id="list-icon-divider">
             <?php echo getAwesome(); ?>
         </div>

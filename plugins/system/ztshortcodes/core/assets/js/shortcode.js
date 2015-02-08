@@ -746,3 +746,86 @@
     w.zo2.shortcode._addOn.push(_counterCircle);
 
 })(window, jQuery);
+
+/**
+ * Divider add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.divider.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Divider shortcode class */
+    var _divider = {
+        name: 'Button shortcode add-on',
+        /* Selector container */
+        _elements: {
+            type: "#zo2-sc-divider-type",
+            text: "#zo2-sc-divider-text",
+            icon: "#list-icon-divider",
+            fieldText: "#zo2-sc-field-text",
+            fieldIcon: "#zo2-sc-field-icon"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.icon).find('a').on('click', function () {
+                $(_self._elements.icon).find('a').removeClass('selected');
+                $(this).addClass('selected');
+                _self._update();
+                return false;
+            });
+            $(_self._elements.type).on('change', function () {
+                $(_self._elements.text).val('');
+                if($(this).val() === 'text-only'){
+                    $(_self._elements.fieldText).show('slow');
+                    
+                }else{
+                    $(_self._elements.fieldText).hide('slow');
+                }
+                $(_self._elements.icon).find('a').removeClass('selected');
+                if($(this).val() === 'icon-type-1' || $(this).val() === 'icon-type-2' ){
+                    $(_self._elements.fieldIcon).show('slow');
+                }else{
+                    $(_self._elements.fieldIcon).hide('slow');
+                }
+                _self._update();
+            });
+            $(_self._elements.text).on('keyup', function () {
+                _self._update();
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var text = $(_self._elements.text).val();
+            var type = $(_self._elements.type).val();
+            var icon = _self._getIcon();
+            var shortcode = '[zt_divider';
+            shortcode += (type !== '') ? ' type="' + type + '"' : '';
+            shortcode += (text !== '') ? ' text="' + text + '"' : '';
+            shortcode += (icon !== '') ? ' icon="' + icon + '"' : '';
+            shortcode += '][/zt_divider]';
+            w.zo2.shortcode.value(shortcode);
+        },
+        /**
+         * Get divider icon
+         * @returns {String}
+         */
+        _getIcon: function () {
+            var selected = $(this._elements.icon).find('.selected');
+            return (selected.length <= 0) ? '' : selected.find('i').attr('class');
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_divider);
+
+})(window, jQuery);
