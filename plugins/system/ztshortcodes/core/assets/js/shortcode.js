@@ -85,7 +85,7 @@
                     }
                 }
             });
-            
+
             /* Preview button */
             $(_self._elements.buttonPreview).on('click', function () {
                 if ($(_self._elements.buttonPreview).text() === 'Preview Shortcode') {
@@ -616,5 +616,133 @@
 
     /* Append to shortcode add-ons */
     w.zo2.shortcode._addOn.push(_blockquotes);
+
+})(window, jQuery);
+
+/**
+ * Counter cirle shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.button.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Counter circle shortcode class */
+    var _counterCircle = {
+        name: 'Counter circle shortcode add-on',
+        /* Selector container */
+        _elements: {
+            effect: "#zo2-sc-counter-effect",
+            barColor: "#zo2-sc-counter-barColor",
+            trackColor: "#zo2-sc-counter-trackColor",
+            scale: "#zo2-sc-counter-scaleLength",
+            percent: "#zo2-sc-counter-percent",
+            lineCap: "#zo2-sc-counter-lineCap",
+            lineWidth: "#zo2-sc-counter-lineWidth",
+            arountSize: "#zo2-sc-counter-size",
+            duration: "#zo2-sc-counter-duration",
+            type: "#zo2-sc-counter-contentType",
+            icon: "#zo2-sc-counter-icon",
+            extraClass: "#zo2-sc-counter-extraClass",
+            content: "#zo2-sc-counter-content",
+            fieldContent: "#zo2-sc-counter-field-content",
+            fieldIcon: "#zo2-sc-counter-field-icon"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.icon).find('a').on('click', function () {
+                $(_self._elements.icon).find('a').removeClass('selected');
+                $(this).addClass('selected');
+                _self._update();
+                return false;
+            });
+            $(_self._elements.effect + ', '
+                    + _self._elements.lineCap + ', '
+                    + _self._elements.type).on('change', function () {
+                _self._update();
+            });
+            $(_self._elements.type).on('change', function () {
+                if ($(_self._elements.type).val() === '') {
+                    $(_self._elements.fieldContent).show('slow');
+                    $(_self._elements.content).val('');
+                } else {
+                    $(_self._elements.fieldContent).hide('slow');
+                }
+                if ($(_self._elements.type).val() === 'icon') {
+                    $(_self._elements.fieldIcon).show('slow');
+                    $(_self._elements.icon).find('a').removeClass('selected');
+                }
+                else {
+                    $(_self._elements.fieldIcon).hide('slow');
+                }
+                _self._update();
+            });
+            $(_self._elements.barColor + ', '
+                    + _self._elements.trackColor + ', '
+                    + _self._elements.scale + ', '
+                    + _self._elements.percent + ', '
+                    + _self._elements.lineWidth + ', '
+                    + _self._elements.arountSize + ', '
+                    + _self._elements.duration + ', '
+                    + _self._elements.extraClass).on('keyup', function () {
+                _self._update();
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var effect = $(_self._elements.effect).val();
+            var extraClass = $(_self._elements.extraClass).val();
+            var barColor = $(_self._elements.barColor).val();
+            var trackColor = $(_self._elements.trackColor).val();
+            var scale = $(_self._elements.scale).val();
+            var percent = $(_self._elements.percent).val();
+            var lineCap = $(_self._elements.lineCap).val();
+            var lineWidth = $(_self._elements.lineWidth).val();
+            var aroundSize = $(_self._elements.arountSize).val();
+            var duration = $(_self._elements.duration).val();
+            var type = $(_self._elements.type).val();
+            var icon = _self._getIcon();
+            var content = '';
+            if (type === '') {
+                content = $(_self._elements.content).val();
+            } else {
+                content = (type === 'icon') ? icon : percent;
+            }
+            var shortcode = '[zt_counter_circle';
+            shortcode += (effect !== '') ? ' easing="' + effect + '"' : '';
+            shortcode += (barColor !== '') ? ' barColor="' + barColor + '"' : '';
+            shortcode += (trackColor !== '') ? ' trackColor="' + trackColor + '"' : '';
+            shortcode += (lineCap !== '') ? ' lineCap="' + lineCap + '"' : '';
+            shortcode += (lineWidth !== '') ? ' lineWidth="' + lineWidth + '"' : '';
+            shortcode += (scale !== '') ? ' scaleLength="' + scale + '"' : '';
+            shortcode += (aroundSize !== '') ? ' size="' + aroundSize + '"' : '';
+            shortcode += (type !== '') ? ' content-type="' + type + '"' : '';
+            shortcode += (duration !== '') ? ' size="' + duration + '"' : '';
+            shortcode += (percent !== '') ? ' percent="' + percent + '"' : '';
+            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
+            shortcode += ']' + content + '[/zt_counter_circle]';
+            w.zo2.shortcode.value(shortcode);
+        },
+        /**
+         * Get counter cirle icon
+         * @returns {String}
+         */
+        _getIcon: function () {
+            var selected = $(this._elements.icon).find('.selected');
+            return (selected.length <= 0) ? '' : selected.find('i').attr('class');
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_counterCircle);
 
 })(window, jQuery);

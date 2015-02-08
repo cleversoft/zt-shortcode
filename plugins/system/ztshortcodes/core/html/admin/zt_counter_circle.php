@@ -51,7 +51,11 @@ $prefix = 'zo2-sc-counter-';
             <option value="icon">Icon</option>
         </select>
     </div>
-    <div class="form-group clearfix">
+    <div class="form-group clearfix" id="<?php echo $prefix.'field-content' ?>">
+        <label for="<?php echo $prefix.'content' ?>">Content</label>
+        <input type="text" class="form-control" id="<?php echo $prefix.'content' ?>" placeholder="Enter content">
+    </div>
+    <div class="form-group clearfix" id="<?php echo $prefix.'field-icon' ?>" style="display: none;">
         <label for="<?php echo $prefix.'icon' ?>">Icon (only show when content type is Icon)</label>
         <div id="<?php echo $prefix.'icon' ?>">
             <?php echo getAwesome(); ?>
