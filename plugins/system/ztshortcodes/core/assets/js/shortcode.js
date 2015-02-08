@@ -689,7 +689,8 @@
                     + _self._elements.lineWidth + ', '
                     + _self._elements.arountSize + ', '
                     + _self._elements.duration + ', '
-                    + _self._elements.extraClass).on('keyup', function () {
+                    + _self._elements.extraClass + ', '
+                    + _self._elements.content).on('keyup', function () {
                 _self._update();
             });
         },
@@ -721,13 +722,13 @@
             shortcode += (effect !== '') ? ' easing="' + effect + '"' : '';
             shortcode += (barColor !== '') ? ' barColor="' + barColor + '"' : '';
             shortcode += (trackColor !== '') ? ' trackColor="' + trackColor + '"' : '';
+            shortcode += (scale !== '') ? ' scaleLength="' + scale + '"' : '';
+            shortcode += (percent !== '') ? ' percent="' + percent + '"' : '';
             shortcode += (lineCap !== '') ? ' lineCap="' + lineCap + '"' : '';
             shortcode += (lineWidth !== '') ? ' lineWidth="' + lineWidth + '"' : '';
-            shortcode += (scale !== '') ? ' scaleLength="' + scale + '"' : '';
             shortcode += (aroundSize !== '') ? ' size="' + aroundSize + '"' : '';
             shortcode += (type !== '') ? ' content-type="' + type + '"' : '';
-            shortcode += (duration !== '') ? ' size="' + duration + '"' : '';
-            shortcode += (percent !== '') ? ' percent="' + percent + '"' : '';
+            shortcode += (duration !== '') ? ' duration="' + duration + '"' : '';
             shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
             shortcode += ']' + content + '[/zt_counter_circle]';
             w.zo2.shortcode.value(shortcode);
