@@ -14,8 +14,12 @@
         "description": "",
         "icon": "fa fa-bullhorn",
         "group": "Typography",
-        "tag": "zt_badge",
+        "tag": "zt_badges",
         "options": {
+            "type": "link",
+            "text": "",
+            "link": "",
+            "buttonType": ""
         }
     },
     {
