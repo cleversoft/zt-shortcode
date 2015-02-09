@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 <div 
     class="<?php echo $options->get('class'); ?>"
-    id="<?php echo 'zt-' . md5(microtime()); ?>" 
+    id="<?php echo 'zt-accordion-' . md5(microtime()); ?>" 
     role="<?php echo $options->get('role'); ?>" 
     aria-multiselectable="<?php echo $options->get('aria-multiselectable'); ?>">
 
