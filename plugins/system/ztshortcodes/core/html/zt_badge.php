@@ -1,1 +1,0 @@
-<span class="badge"><?php echo $content; ?></span>
