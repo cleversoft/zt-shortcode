@@ -13,6 +13,8 @@
 defined('_JEXEC') or die('Restricted access');
 
 global $zo2Shortcodes;
+$id = 'zt-tabcontent-' . md5(microtime());
+$shortcode->options['id'] = $id;
 $zo2Shortcodes['tabs'][$shortcode->options['id']]['options'] = $shortcode->get('options');
 $shortcode->set('tag', 'zt_tab');
 $parser = new JBBCode\Parser();
