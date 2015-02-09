@@ -11,7 +11,7 @@ function getAwesome(){
     $listAwesome = json_decode($bufferAwesome);
 
     $html = '';
-    $html .= '<div class="list-awesome-font"><ul>';
+    $html .= '<div class="list-awesome-font clearfix"><ul>';
     foreach($listAwesome as $key => $fontName){
         $html .= '<li><a href="#"><i class="fa '. $key .'"></i></a></li>';
     }

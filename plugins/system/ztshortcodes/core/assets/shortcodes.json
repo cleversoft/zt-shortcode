@@ -144,7 +144,13 @@
         "group": "Collapse",
         "tag": "zt_i",
         "options": {
-            "class-icon": "fa fa-joomla"
+            "classIcon": "fa fa-joomla",
+            "iconCircle": "",
+            "iconSize": "",
+            "iconColor": "",
+            "iconBgColor": "",
+            "iconBdColor": "",
+            "spinningIcon": ""
         }
     },
     {
