@@ -1,0 +1,11 @@
+.modal-backdrop{
+    position: fixed;
+}
+div.modal.zt-modal{
+    background-color: transparent;
+    left: 0;
+    margin-left: inherit;
+    width: auto;
+    box-shadow: none;
+    border: none;
+}
