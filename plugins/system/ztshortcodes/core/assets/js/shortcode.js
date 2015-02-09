@@ -920,7 +920,7 @@
             $accordions.each(function () {
                 shortcode += _self._genTabShortcode($(this));
             });
-            var shortcode = '[accordions ' + (($accordions.length > 0) ? ' accordions="' + $accordions.length + '"' : '')
+            var shortcode = '[zt_accordions ' + (($accordions.length > 0) ? ' accordions="' + $accordions.length + '"' : '')
                     + ']' + shortcode + '[/zt_accordions]';
             w.zo2.shortcode.value(shortcode);
         },
