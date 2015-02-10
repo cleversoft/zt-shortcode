@@ -9,10 +9,6 @@ $prefix = 'zo2-sc-';
             <input type="text" class="form-control" id="<?php echo $prefix . 'accordion-title' ?>" placeholder="Accordion Title">
         </div>
         <div class="form-group clearfix">
-            <label for="<?php echo $prefix . 'accordion-title' ?>">Accordion id</label>
-            <input type="text" class="form-control" id="<?php echo $prefix . 'accordion-id' ?>" placeholder="Enter id">
-        </div>
-        <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'accordion-content' ?>">Accordion Content</label>
             <textarea placeholder="Content Accordion" rows="3" class="form-control" id="<?php echo $prefix . 'accordion-content' ?>"></textarea>
         </div>

@@ -538,7 +538,6 @@
          */
         _genTabShortcode: function ($tab) {
             var title = $tab.find(this._elements.title).val();
-            var id = $tab.find(this._elements.id).val();
             var content = $tab.find(this._elements.content).val();
             var active = $tab.find(this._elements.active).is(':checked');
             var shortcode = '[zt_tab';
@@ -845,7 +844,6 @@
             container: "#zo2-sc-accordion-container",
             element: "#zo2-sc-accordion-element",
             title: "#zo2-sc-accordion-title",
-            id: "#zo2-sc-accordion-id",
             content: "#zo2-sc-accordion-content",
             active: "#zo2-sc-accordion-active"
         },
@@ -914,10 +912,9 @@
             var shortcode = '';
             var $accordions = $(_self._elements.container).children();
             $accordions.each(function () {
-                shortcode += _self._genTabShortcode($(this));
+                shortcode += _self._genAccordionShortcode($(this));
             });
-            var shortcode = '[zt_accordions ' + (($accordions.length > 0) ? ' accordions="' + $accordions.length + '"' : '')
-                    + ']' + shortcode + '[/zt_accordions]';
+            var shortcode = '[zt_accordions]' + shortcode + '[/zt_accordions]';
             w.zo2.shortcode.value(shortcode);
         },
         /**
@@ -925,13 +922,11 @@
          * @param {type} $accordion
          * @returns {undefined}
          */
-        _genTabShortcode: function ($accordion) {
+        _genAccordionShortcode: function ($accordion) {
             var title = $accordion.find(this._elements.title).val();
-            var id = $accordion.find(this._elements.id).val();
             var content = $accordion.find(this._elements.content).val();
             var active = $accordion.find(this._elements.active).is(':checked');
             var shortcode = '[zt_accordion';
-            shortcode += (id !== '') ? ' id="' + id + '"' : '';
             shortcode += (title !== '') ? ' title="' + title + '"' : '';
             shortcode += (active) ? ' active="true"' : '';
             shortcode += ']' + content + '[/zt_accordion]';
