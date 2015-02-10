@@ -100,6 +100,13 @@ if (!class_exists('plgSystemZtShortcodes'))
                         $buffer[] = '<link rel="stylesheet" type="text/css" href="' . $url . '">';
                     }
                 }
+                if (!empty($zo2Shortcodes['_js']))
+                {
+                    foreach ($zo2Shortcodes['_js'] as $key => $url)
+                    {
+                        $buffer[] = '<script src="' . $url . '"></script>';
+                    }
+                }
                 $buffer = implode(PHP_EOL, $buffer);
                 $html = str_replace('</head>', $buffer . '</head>', $html);
                 JResponse::setBody($html);
