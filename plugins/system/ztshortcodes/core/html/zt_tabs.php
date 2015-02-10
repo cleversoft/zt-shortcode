@@ -39,9 +39,6 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
     $id = $shortcode->options['id'];
 }
 ?>  
-<pre>
-    <?php print_r($zo2Shortcodes); ?>
-</pre>
 <!-- http://getbootstrap.com/javascript/#tabs -->
 <?php if (!empty($currentTab) && !empty($currentTab['tabs'])) : ?>
     <div class="zo2-tabs" role="tabpanel" id="<?php echo $id; ?>">
