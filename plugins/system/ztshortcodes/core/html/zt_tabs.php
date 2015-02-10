@@ -13,9 +13,15 @@
 defined('_JEXEC') or die('Restricted access');
 
 global $zo2Shortcodes;
+// Generate unique id
 $id = ZtShortcodesHelperCommon::getUniqueString('zt-tabcontent-');
+// Store id
 $shortcode->options['id'] = $id;
+// Store this table global options
 $zo2Shortcodes['tabs'][$shortcode->options['id']]['options'] = $shortcode->get('options');
+// Reset global options
+$shortcode->set('options', array('id' => $id));
+// Set sub tag
 $shortcode->set('tag', 'zt_tab');
 $parser = new JBBCode\Parser();
 $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
@@ -33,16 +39,20 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
     $id = $shortcode->options['id'];
 }
 ?>  
-
+<pre>
+    <?php print_r($zo2Shortcodes); ?>
+</pre>
+<!-- http://getbootstrap.com/javascript/#tabs -->
 <?php if (!empty($currentTab) && !empty($currentTab['tabs'])) : ?>
-    <div class="zo2-tabs">
-        <ul id="<?php echo $id; ?>" class="nav nav-tabs">
+    <div class="zo2-tabs" role="tabpanel" id="<?php echo $id; ?>">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
             <?php foreach ($currentTab['tabs'] as $key => $tab): ?> 
                 <?php $option = new JObject($tab); ?>             
                 <li class="<?php echo ($option->get('active') == 'true') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>              
             <?php endforeach; ?>
         </ul>
-        <div id="zo2TabContent<?php echo $id; ?>" class="tab-content">
+        <div class="tab-content">
             <?php foreach ($currentTab['contents'] as $key => $content): ?>    
                 <?php $option = new JObject($currentTab['tabs'][$key]); ?>
                 <div class="tab-pane fade <?php echo ($option->get('active') == 'true') ? 'in active' : ''; ?>" id="<?php echo $id . $key; ?>">
