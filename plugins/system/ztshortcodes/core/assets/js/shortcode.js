@@ -459,7 +459,6 @@
             container: "#zo2-sc-tabs-container",
             element: "#zo2-sc-tabs-element",
             title: "#zo2-sc-tab-title",
-            id: "#zo2-sc-tab-id",
             content: "#zo2-sc-tab-content",
             active: "#zo2-sc-tab-active"
         },
@@ -513,7 +512,6 @@
             });
             $(_self._elements.container).on('keyup',
                     _self._elements.title + ', '
-                    + _self._elements.id + ', '
                     + _self._elements.content
                     , function () {
                         _self._update();
@@ -530,8 +528,7 @@
             $tabs.each(function () {
                 shortcode += _self._genTabShortcode($(this));
             });
-            var shortcode = '[zt_tabs ' + (($tabs.length > 0) ? ' tabs="' + $tabs.length + '"' : '')
-                    + ']' + shortcode + '[/zt_tabs]';
+            var shortcode = '[zt_tabs]' + shortcode + '[/zt_tabs]';
             w.zo2.shortcode.value(shortcode);
         },
         /**
@@ -545,7 +542,6 @@
             var content = $tab.find(this._elements.content).val();
             var active = $tab.find(this._elements.active).is(':checked');
             var shortcode = '[zt_tab';
-            shortcode += (id !== '') ? ' id="' + id + '"' : '';
             shortcode += (title !== '') ? ' title="' + title + '"' : '';
             shortcode += (active) ? ' active="true"' : '';
             shortcode += ']' + content + '[/zt_tab]';
