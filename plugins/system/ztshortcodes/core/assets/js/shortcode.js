@@ -1032,3 +1032,57 @@
     w.zo2.shortcode._addOn.push(_progressBar);
 
 })(window, jQuery);
+
+/**
+ * Video shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.video.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Video shortcode class */
+    var _video = {
+        name: 'Video shortcode add-on',
+        /* Selector container */
+        _elements: {
+            url: "#zo2-sc-video-url",
+            width: "#zo2-sc-video-width",
+            height: "#zo2-sc-video-height"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.url + ', '
+                    + _self._elements.width + ', '
+                    + _self._elements.height).on('keyup', function () {
+                _self._update();
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var url = $(_self._elements.url).val();
+            var width = $(_self._elements.width).val();
+            var height = $(_self._elements.height).val();
+            
+            var shortcode = '[zt_video';
+            shortcode += (url !== '') ? ' url="' + url + '"' : '';
+            shortcode += (width !== '') ? ' width="' + width + '"' : '';
+            shortcode += (height !== '') ? ' barColor="' + height + '"' : '';
+            shortcode += '][/zt_video]';
+            w.zo2.shortcode.value(shortcode);
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_video);
+
+})(window, jQuery);
