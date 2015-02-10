@@ -11,7 +11,7 @@ $prefix = 'zo2-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'tab-content'; ?>">Content Tab</label>
             <textarea placeholder="Content Tabs" rows="3" class="form-control"
-                      id="<?php echo $prefix . 'tab-content'; ?>"></textarea>
+                      id="<?php echo $prefix . 'tab-content'; ?>">This is tab content</textarea>
         </div>
         <div class="checkbox">
             <label>
