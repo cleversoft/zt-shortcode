@@ -12,23 +12,29 @@
  */
 defined('_JEXEC') or die('Restricted access');
 ?>
-<div 
-    class="<?php echo $options->get('class'); ?>"
-    id="<?php echo 'zt-accordion-' . md5(microtime()); ?>" 
-    role="<?php echo $options->get('role'); ?>" 
-    aria-multiselectable="<?php echo $options->get('aria-multiselectable'); ?>">
-
-    <!-- Sub content -->
-    <?php
-    $shortcode = new JObject();
-    $shortcode->set('options', array());
-    $shortcode->set('tag', 'zt_accordion_title');
-    $parser = new JBBCode\Parser();
-    $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
-    $builder->setUseOption(true);
-    $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
-// Parse this sub content
-    $parser->parse($this->get('content'));
-    echo $parser->getAsHTML();
-    ?>    
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                Collapsible Group Item #1
+            </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+            <div class="accordion-inner">
+                Anim pariatur cliche...
+            </div>
+        </div>
+    </div>
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                Collapsible Group Item #2
+            </a>
+        </div>
+        <div id="collapseTwo" class="accordion-body collapse">
+            <div class="accordion-inner">
+                Anim pariatur cliche...
+            </div>
+        </div>
+    </div>
 </div>

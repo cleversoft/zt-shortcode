@@ -4,8 +4,8 @@
 
 
 jQuery(window).load(function (){
-    jQuery('.zo2-counter-wrap').waypoint(function(){
-        jQuery('.chart').each(function(){
+        var c = jQuery('body').find('.chart');
+        jQuery(c).each(function(){
             var chartEasing         = jQuery(this).data('easing'),
                 chartbarColor       = jQuery(this).data('barcolor'),
                 charttrackColor     = jQuery(this).data('trackcolor'),
@@ -25,12 +25,8 @@ jQuery(window).load(function (){
                 lineCap: chartlineCap,
                 lineWidth: chartlineWidth,
                 size: chartsize,
-                animate: {duration: chartduration, enabled: true},
-                onStep: function (from, to, percent) {
-                    $(this.el).find('.percent').text(Math.round(percent));
-                }
+                animate: {duration: chartduration, enabled: true}
             });
         });
-    }, {triggerOnce: !0, offset: "bottom-in-view"});
 });
 

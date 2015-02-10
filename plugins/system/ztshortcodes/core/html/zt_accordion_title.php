@@ -14,22 +14,19 @@ defined('_JEXEC') or die('Restricted access');
 $titleId = 'zt-title-' . md5(microtime());
 $contentId = 'zt-content-' . md5(microtime());
 ?>
-<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="<?php echo $titleId; ?>">
-        <h4 class="panel-title">
-            <a 
-                data-toggle="collapse" 
+<div class="accordion-group">
+    <div class="accordion-heading">
+            <a
+                class="accordion-toggle"
+                data-toggle="collapse"
                 data-parent="#<?php echo $options->get('parent'); ?>"
-                href="#<?php echo $contentId; ?>"
-                aria-expanded="<?php echo $options->get('expanded'); ?>" 
-                aria-controls="<?php echo $contentId; ?>">
+                href="#<?php echo $contentId; ?>">
                     <?php echo $options->get('title'); ?>
             </a>
-        </h4>
     </div>
     <div id="<?php echo $contentId; ?>"
-         class="panel-collapse collapse<?php echo ' ' . $options->get('active'); ?>" role="tabpanel" aria-labelledby="<?php echo $titleId; ?>">
-        <div class="panel-body">
+         class="accordion-body collapse collapse<?php echo ' ' . $options->get('active'); ?>">
+        <div class="accordion-inner">
             <?php echo $content; ?>
         </div>
     </div>

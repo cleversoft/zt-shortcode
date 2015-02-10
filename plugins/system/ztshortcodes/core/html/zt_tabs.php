@@ -35,17 +35,26 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
 ?>  
 
 <?php if (!empty($currentTab) && !empty($currentTab['tabs'])) : ?>
-    <div class="zo2-tabs">
-        <ul id="zo2Tab<?php echo $id; ?>" class="nav nav-tabs">
-            <?php foreach ($currentTab['tabs'] as $key => $tab): ?> 
-                <?php $option = new JObject($tab); ?>             
-                <li class="<?php echo ($option->get('active') == 'true') ? 'active' : ''; ?>"><a href="#tab<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>              
+    <div class="zo2-tabs" role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <?php foreach ($currentTab['tabs'] as $key => $tab): ?>
+                <?php $option = new JObject($tab); ?>
+                <?php echo $option->get('active'); ?>
+                <li class="" role="presentation">
+                    <a
+                        href="#<?php echo $id; ?>"
+                        aria-controls="<?php echo $id; ?>"
+                        role="tab"
+                        data-toggle="tab">
+                        <?php echo $option->get('title'); ?>
+                    </a>
+                </li>
             <?php endforeach; ?>
         </ul>
-        <div id="zo2TabContent<?php echo $id; ?>" class="tab-content">
-            <?php foreach ($currentTab['contents'] as $key => $content): ?>    
+        <div class="tab-content">
+            <?php foreach ($currentTab['contents'] as $key => $content): ?>
                 <?php $option = new JObject($currentTab['tabs'][$key]); ?>
-                <div class="tab-pane fade <?php echo ($option->get('active') == 'true') ? 'in active' : ''; ?>" id="tab<?php echo $id . $key; ?>">
+                <div role="tabpanel" class="tab-pane" id="<?php echo $id; ?>">
                     <?php echo $content; ?>
                 </div>
             <?php endforeach; ?>
