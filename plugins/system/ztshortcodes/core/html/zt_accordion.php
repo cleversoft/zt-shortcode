@@ -11,17 +11,18 @@
  * @license     GPL v2
  */
 defined('_JEXEC') or die('Restricted access');
+$parentId = ZtShortcodesHelperCommon::getUniqueString('zt-accordion-');
 ?>
 <div 
-    class="<?php echo $options->get('class'); ?>"
-    id="<?php echo ZtShortcodesHelperCommon::getUniqueString('zt-accordion-'); ?>" 
+    class="panel-group <?php echo $options->get('class'); ?>"
+    id="<?php echo $parentId; ?>" 
     role="<?php echo $options->get('role'); ?>" 
     aria-multiselectable="<?php echo $options->get('aria-multiselectable'); ?>">
 
     <!-- Sub content -->
     <?php
     $shortcode = new JObject();
-    $shortcode->set('options', array());
+    $shortcode->set('options', array('parent' => $parentId));
     $shortcode->set('tag', 'zt_accordion_title');
     $parser = new JBBCode\Parser();
     $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));

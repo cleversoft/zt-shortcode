@@ -17,6 +17,3 @@ global $zo2Shortcodes;
 
 $zo2Shortcodes['tabs'][$shortcode->options['id']]['tabs'][] = $shortcode->options;
 $zo2Shortcodes['tabs'][$shortcode->options['id']]['contents'][] = $content;
-
-// Reset options
-$shortcode->options = array('id' => $shortcode->options['id']);

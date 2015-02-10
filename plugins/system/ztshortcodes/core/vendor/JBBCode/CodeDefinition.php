@@ -140,39 +140,20 @@ class CodeDefinition
             return $el->getAsBBCode();
         }
         // We no longer use this because we'll fetch ourself html
-        $html = $this->getReplacementText();
-
+        //$html = $this->getReplacementText();
+        // Create new shortcode object
+        $shortcode = new \JObject();
         if ($this->usesOption())
         {
-            $options = $el->getAttribute();
-            $this->shortcode->set('options', array_merge($this->shortcode->get('options'), $el->getAttribute()));
-            if (count($options) == 1)
-            {
-                //$vals = array_values($options);
-                //$html = str_ireplace('{option}', reset($vals), $html);
-            } else
-            {
-
-                foreach ($options as $key => $val)
-                {
-                    // Replace with empty because tpl will cover later
-                    //$html = str_ireplace('{' . $key . '}', '', $html);
-                }
-            }
+            // Set options from default in json & current attributes
+            $shortcode->set('options', array_merge($this->shortcode->get('options'), $el->getAttribute()));
         }
 
         $content = $this->getContent($el);
 
         $tpl = new \ZtShortcodesHtml();
-        if (!empty($this->shortcode))
-        {
-            $tpl->set('shortcode', $this->shortcode);
-        }
-        if (!empty($options))
-        {
-            $tpl->set('options', new \JObject($this->shortcode->get('options')));
-        }
-
+        $tpl->set('shortcode', $shortcode);
+        $tpl->set('options', new \JObject($shortcode->get('options')));
         $tpl->set('content', $content);
 
         // Include depends only for this tag and only once time
