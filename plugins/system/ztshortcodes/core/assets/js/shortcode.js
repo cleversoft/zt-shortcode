@@ -459,7 +459,6 @@
             container: "#zo2-sc-tabs-container",
             element: "#zo2-sc-tabs-element",
             title: "#zo2-sc-tab-title",
-            id: "#zo2-sc-tab-id",
             content: "#zo2-sc-tab-content",
             active: "#zo2-sc-tab-active"
         },
@@ -513,7 +512,6 @@
             });
             $(_self._elements.container).on('keyup',
                     _self._elements.title + ', '
-                    + _self._elements.id + ', '
                     + _self._elements.content
                     , function () {
                         _self._update();
@@ -530,8 +528,7 @@
             $tabs.each(function () {
                 shortcode += _self._genTabShortcode($(this));
             });
-            var shortcode = '[zt_tabs ' + (($tabs.length > 0) ? ' tabs="' + $tabs.length + '"' : '')
-                    + ']' + shortcode + '[/zt_tabs]';
+            var shortcode = '[zt_tabs]' + shortcode + '[/zt_tabs]';
             w.zo2.shortcode.value(shortcode);
         },
         /**
@@ -545,7 +542,6 @@
             var content = $tab.find(this._elements.content).val();
             var active = $tab.find(this._elements.active).is(':checked');
             var shortcode = '[zt_tab';
-            shortcode += (id !== '') ? ' id="' + id + '"' : '';
             shortcode += (title !== '') ? ' title="' + title + '"' : '';
             shortcode += (active) ? ' active="true"' : '';
             shortcode += ']' + content + '[/zt_tab]';
@@ -782,16 +778,16 @@
             });
             $(_self._elements.type).on('change', function () {
                 $(_self._elements.text).val('');
-                if($(this).val() === 'text-only'){
+                if ($(this).val() === 'text-only') {
                     $(_self._elements.fieldText).show('slow');
-                    
-                }else{
+
+                } else {
                     $(_self._elements.fieldText).hide('slow');
                 }
                 $(_self._elements.icon).find('a').removeClass('selected');
-                if($(this).val() === 'icon-type-1' || $(this).val() === 'icon-type-2' ){
+                if ($(this).val() === 'icon-type-1' || $(this).val() === 'icon-type-2') {
                     $(_self._elements.fieldIcon).show('slow');
-                }else{
+                } else {
                     $(_self._elements.fieldIcon).hide('slow');
                 }
                 _self._update();
@@ -945,5 +941,94 @@
 
     /* Append to shortcode add-ons */
     w.zo2.shortcode._addOn.push(_accordion);
+
+})(window, jQuery);
+
+/**
+ * Progress shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.progress.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Progress shortcode class */
+    var _progressBar = {
+        name: 'Progress shortcode add-on',
+        /* Selector container */
+        _elements: {
+            type: "#zo2-sc-progress-type",
+            trackColor: "#zo2-sc-progress-trackcolor",
+            barColor: "#zo2-sc-progress-barcolor",
+            titleColor: "#zo2-sc-progress-titlecolor",
+            stripType: "#zo2-sc-strip-type",
+            animated: "#zo2-sc-animated-type",
+            currentValue: "#zo2-sc-progress-current-value",
+            minValue: "#zo2-sc-progress-min-value",
+            maxValue: "#zo2-sc-progress-max-value",
+            content: "#zo2-sc-progress-content",
+            hideContent: "#zo2-sc-progress-hide-content"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.trackColor + ', '
+                    + _self._elements.barColor + ', '
+                    + _self._elements.titleColor + ', '
+                    + _self._elements.currentValue + ', '
+                    + _self._elements.minValue + ', '
+                    + _self._elements.maxValue  + ', '
+                    + _self._elements.content).on('keyup', function () {
+                _self._update();
+            });
+            $(_self._elements.type + ', '
+                    + _self._elements.stripType + ', '
+                    + _self._elements.animated ).on('change', function () {
+                _self._update();
+            });
+            $(_self._elements.hideContent).on('click', function(){
+                _self._update();
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var type = $(_self._elements.type).val();
+            var trackColor = $(_self._elements.trackColor).val();
+            var barColor = $(_self._elements.barColor).val();
+            var titleColor = $(_self._elements.titleColor).val();
+            var currentValue = $(_self._elements.currentValue).val();
+            var minValue = $(_self._elements.minValue).val();
+            var maxValue = $(_self._elements.maxValue).val();
+            var content = $(_self._elements.content).val();
+            var hideContent = $(_self._elements.hideContent).is(":checked");
+            var stripType = $(_self._elements.stripType).val();
+            var animated = $(_self._elements.animated).val();
+            
+            var shortcode = '[zt_progress_bar';
+            shortcode += (type !== '') ? ' type="' + type + '"' : '';
+            shortcode += (trackColor !== '') ? ' trackColor="' + trackColor + '"' : '';
+            shortcode += (barColor !== '') ? ' barColor="' + barColor + '"' : '';
+            shortcode += (titleColor !== '') ? ' titleColor="' + titleColor + '"' : '';
+            shortcode += (currentValue !== '') ? ' now-value="' + currentValue + '"' : '';
+            shortcode += (minValue !== '') ? ' min-value="' + minValue + '"' : '';
+            shortcode += (maxValue !== '') ? ' min-value="' + maxValue + '"' : '';
+            shortcode += (hideContent) ? ' hidden-content="' + hideContent + '"' : '';
+            shortcode += (stripType !== '') ? ' strip="' + stripType + '"' : '';
+            shortcode += (animated !== '') ? ' animated="' + animated + '"' : '';
+            shortcode += ']' + content + '[/zt_progress_bar]';
+            w.zo2.shortcode.value(shortcode);
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_progressBar);
 
 })(window, jQuery);
