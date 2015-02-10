@@ -22,7 +22,7 @@ $contentId = ZtShortcodesHelperCommon::getUniqueString('zt-content-');
                 data-toggle="collapse"
                 data-parent="#<?php echo $options->get('parent'); ?>"
                 href="#<?php echo $contentId; ?>"
-                aria-expanded="<?php echo ($options->get('active') == 'in') ? 'true' : ''; ?>"
+                aria-expanded="<?php echo ($options->get('aria-multiselectable') == 'true') ? 'true' : ''; ?>"
                 aria-controls="<?php echo $contentId; ?>"
                 >
                     <?php echo $options->get('title'); ?>
@@ -30,7 +30,7 @@ $contentId = ZtShortcodesHelperCommon::getUniqueString('zt-content-');
         </h4>
     </div>
     <div id="<?php echo $contentId; ?>"
-         class="accordion-body collapse<?php echo ' ' . $options->get('active'); ?>"
+         class="accordion-body collapse<?php echo ($options->get('aria-multiselectable') == 'true') ? ' in' : ''; ?>"
          role="tabpanel" aria-labelledby="<?php echo $titleId; ?>"
          >
         <div class="panel-body">
