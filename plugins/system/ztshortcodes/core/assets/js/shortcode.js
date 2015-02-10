@@ -312,7 +312,7 @@
 })(window, jQuery);
 
 /**
- * Dropcap shortcode add-on
+ * Dropcaps shortcode add-on
  * @param {type} w
  * @param {type} $
  * @file shortcode.dropcap.js
@@ -320,9 +320,9 @@
  */
 (function (w, $) {
 
-    /* Dropcap shortcode class */
-    var _dropcap = {
-        name: 'Dropcap shortcode add-on',
+    /* Dropcaps shortcode class */
+    var _dropcaps = {
+        name: 'Dropcaps shortcode add-on',
         /* Selector container */
         _elements: {
             type: "#zo2-sc-dropcaps-type",
@@ -355,17 +355,17 @@
             var bgColour = $(_self._elements.bgColour).val();
             var colour = $(_self._elements.textColour).val();
             var type = $(_self._elements.type).val();
-            var shortcode = '[zt_dropcap';
+            var shortcode = '[zt_dropcaps';
             shortcode += (type !== '') ? ' type="' + type + '"' : '';
             shortcode += (colour !== '') ? ' textColour="' + colour + '"' : '';
             shortcode += (bgColour !== '') ? ' bgColour="' + bgColour + '"' : '';
-            shortcode += ']' + content + '[/zt_dropcap]';
+            shortcode += ']' + content + '[/zt_dropcaps]';
             w.zo2.shortcode.value(shortcode);
         }
     };
 
     /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_dropcap);
+    w.zo2.shortcode._addOn.push(_dropcaps);
 
 })(window, jQuery);
 

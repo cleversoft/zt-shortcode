@@ -40,8 +40,15 @@
         "group": "General",
         "tag": "zt_tabs",
         "options": {
-            "tabs": "10",
-            "text": "20"
+            "active": "false"
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css"
+            ],
+            "js": [
+                "Shortcodes://assets/bootstrap/js/bootstrap.min.js"
+            ]
         }
     },
     {
@@ -70,6 +77,16 @@
             "barColor": "#a0ce4e",
             "titleColor": "#ffffff",
             "height": "37"
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
+                "Shortcodes://assets/css/progress-bar.css"
+            ],
+            "js": [
+                "Shortcodes://assets/js/waypoints.min.js",
+                "Shortcodes://assets/js/progress-bar.js"
+            ]
         }
     },
     {
@@ -85,6 +102,11 @@
             "icon": "",
             "link": "#",
             "extra-class": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/buttons.css"
+            ]
         }
     },
     {
@@ -97,6 +119,11 @@
             "type": "success",
             "icon": "",
             "extra-class": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/message-box.css"
+            ]
         }
     },
     {
@@ -110,6 +137,11 @@
             "author": "",
             "author-link": "",
             "extra-class": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/blockquotes.css"
+            ]
         }
     },
     {
@@ -127,6 +159,11 @@
             "title": "",
             "button-type": "",
             "button-text": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/pricing.css"
+            ]
         }
     },
     {
@@ -150,6 +187,11 @@
             "type": "type-1",
             "bgColor": "transparent",
             "textColor": "#444444"
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/dropcaps.css"
+            ]
         }
     },
     {
@@ -169,7 +211,8 @@
         },
         "depends": {
             "css": [
-                "Shortcodes://assets/font-awesome/css/font-awesome.min.css"
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/css/i.css"
             ]
         }
     },
@@ -183,6 +226,11 @@
             "type": "thin",
             "text": "",
             "icon": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/divider.css"
+            ]
         }
     },
     {
@@ -198,6 +246,15 @@
             "style": "default",
             "thumb-width": "300",
             "thumb-height": "300"
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/colorbox/css/colorbox.css",
+                "Shortcodes://assets/css/gallery.css"
+            ],
+            "js": [
+                "Shortcodes://assets/colorbox/js/jquery.colorbox.js"
+            ]
         }
     },
     {
@@ -224,6 +281,11 @@
             "button-type": "",
             "button-size": "",
             "button-text": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/modal.css"
+            ]
         }
     },
     {
@@ -245,6 +307,18 @@
             "content-type": "none",
             "icon": "fa fa-thumbs-o-up",
             "extra-class": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/counter-circle.css"
+            ],
+            "js":[
+                "Shortcodes://assets/js/jquery-2.0.3.min.js",
+                "Shortcodes://assets/js/waypoints.min.js",
+                "Shortcodes://assets/js/jquery.easing.min.js",
+                "Shortcodes://assets/js/jquery.easypiechart.js",
+                "Shortcodes://assets/js/counter-circle.js"
+            ]
         }
     },
     {
@@ -263,6 +337,16 @@
             "borderRadius": "4",
             "link": "#",
             "target": "_self"
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/bxslider/jquery.bxslider.css",
+                "Shortcodes://assets/css/testimonial.css"
+            ],
+            "js": [
+                "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
+                "Shortcodes://assets/js/testimonial.js"
+            ]
         }
     },
     {
@@ -280,6 +364,15 @@
             "showItem": "4",
             "duration": "1000",
             "enableReponsive": "true"
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/carousel.css"
+            ],
+            "js": [
+                "Shortcodes://assets/carouFredSel/jquery.carouFredSel-6.2.1.js",
+                "Shortcodes://assets/js/carousel.js"
+            ]
         }
     }
 ]

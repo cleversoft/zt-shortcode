@@ -15,7 +15,7 @@ $prefix = 'zo2-sc-badges-';
         <input type="text" class="form-control" id="<?php echo $prefix.'text'; ?>" placeholder="Enter Text Badges">
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'link'; ?>">Author Link</label>
+        <label for="<?php echo $prefix.'link'; ?>">Link</label>
         <input type="text" class="form-control" id="<?php echo $prefix.'link'; ?>" placeholder="Enter Link Badges">
     </div>
     <div class="form-group clearfix">
