@@ -7,6 +7,17 @@
         "tag": "zt_label",
         "options": {
             "type": "default"
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css"
+            ],
+            "js": [
+                ""
+            ],
+            "php": [
+                
+            ]
         }
     },
     {
@@ -155,6 +166,11 @@
             "iconBgColor": "",
             "iconBdColor": "",
             "spinningIcon": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css"
+            ]
         }
     },
     {

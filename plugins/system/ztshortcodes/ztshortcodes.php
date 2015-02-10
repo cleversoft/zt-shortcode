@@ -62,19 +62,10 @@ if (!class_exists('plgSystemZtShortcodes'))
             // Only process for frontend
             if (JFactory::getApplication()->isSite())
             {
+                global $zo2Shortcodes;
                 $path = ZtShortcodesPath::getInstance();
                 // Prepare buffer
                 $buffer = array();
-                // Init with Bootstrap 3
-                if ($this->params->get('load_bs3', true))
-                {
-                    $buffer [] = '<link rel="stylesheet" type="text/css" href="' . $path->getUrl('Shortcodes://assets/bootstrap/css/bootstrap.min.css') . '">';
-                }
-                // Init with Font-awesome
-                if ($this->params->get('load_fa', true))
-                {
-                    $buffer [] = '<link rel="stylesheet" type="text/css" href="' . $path->getUrl('Shortcodes://assets/font-awesome/css/font-awesome.min.css') . '">';
-                }
                 // Shortcodes process
                 $shortcodes = $this->_getShortcodes();
                 $parser = new JBBCode\Parser();
@@ -82,14 +73,6 @@ if (!class_exists('plgSystemZtShortcodes'))
                 {
                     // Convert to JObject
                     $shortcode = new JObject($shortcode);
-                    // Include depends to buffer
-                    $html = new ZtShortcodesHtml();
-
-                    $depend = $html->fetch('Shortcodes://depends/' . $shortcode->get('tag') . '.php');
-                    if (!empty($depend))
-                    {
-                        $buffer[] = $depend;
-                    }
                     // Setup shortcode
                     $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
                     // This shortcode required to input options
@@ -109,6 +92,14 @@ if (!class_exists('plgSystemZtShortcodes'))
                 $parser->parse($html);
                 // Parse to HTML
                 $html = $parser->getAsHTML();
+
+                if (!empty($zo2Shortcodes['_css']))
+                {
+                    foreach ($zo2Shortcodes['_css'] as $key => $url)
+                    {
+                        $buffer[] = '<link rel="stylesheet" type="text/css" href="' . $url . '">';
+                    }
+                }
                 $buffer = implode(PHP_EOL, $buffer);
                 $html = str_replace('</head>', $buffer . '</head>', $html);
                 JResponse::setBody($html);

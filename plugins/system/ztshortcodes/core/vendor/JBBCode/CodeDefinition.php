@@ -133,6 +133,8 @@ class CodeDefinition
      */
     public function asHtml(ElementNode $el)
     {
+
+        static $depends = array();
         if (!$this->hasValidInputs($el))
         {
             return $el->getAsBBCode();
@@ -143,10 +145,7 @@ class CodeDefinition
         if ($this->usesOption())
         {
             $options = $el->getAttribute();
-            $options = array_merge($this->shortcode->get('options'), $el->getAttribute());
-            $shortcode = new \JObject();
-            $shortcode->set('tag', $this->shortcode->get('tag'));
-            $shortcode->set('options', $options);
+            $this->shortcode->set('options', array_merge($this->shortcode->get('options'), $el->getAttribute()));
             if (count($options) == 1)
             {
                 //$vals = array_values($options);
@@ -165,18 +164,51 @@ class CodeDefinition
         $content = $this->getContent($el);
 
         $tpl = new \ZtShortcodesHtml();
-        if (!empty($shortcode))
+        if (!empty($this->shortcode))
         {
-            $tpl->set('shortcode', $shortcode);
+            $tpl->set('shortcode', $this->shortcode);
         }
         if (!empty($options))
         {
-            $tpl->set('options', new \JObject($options));
+            $tpl->set('options', new \JObject($this->shortcode->get('options')));
         }
 
         $tpl->set('content', $content);
 
-        return $tpl->fetch('Shortcodes://html/' . $this->shortcode->get('tag') . '.php');
+        // Include depends only for this tag and only once time
+        global $zo2Shortcodes;
+        $buffer [] = $tpl->fetch('Shortcodes://html/' . $this->shortcode->get('tag') . '.php');
+        $depends = $this->shortcode->get('depends');
+        if (is_array($depends))
+        {
+            $path = \ZtShortcodesPath::getInstance();
+            if (isset($depends['css']))
+            {
+                foreach ($depends['css'] as $css)
+                {
+                    $zo2Shortcodes['_css'][$css] = $path->getUrl($css);
+                }
+            }
+            if (isset($depends['js']))
+            {
+                foreach ($depends['js'] as $js)
+                {
+                    $zo2Shortcodes['_js'][$js] = $path->getUrl($js);
+                }
+            }
+            // For php than we will include once
+            if (isset($depends['php']))
+            {
+                foreach ($depends['php'] as $php)
+                {
+                    if ($dependFile = $path->getPath($key))
+                    {
+                        require_once $dependFile;
+                    }
+                }
+            }
+        }
+        return implode(PHP_EOL, $buffer);
     }
 
     protected function getContent(ElementNode $el)
