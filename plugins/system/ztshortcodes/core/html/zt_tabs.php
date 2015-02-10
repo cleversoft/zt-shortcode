@@ -13,7 +13,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 global $zo2Shortcodes;
-$id = 'zt-tabcontent-' . md5(microtime());
+$id = ZtShortcodesHelperCommon::getUniqueString('zt-tabcontent-');
 $shortcode->options['id'] = $id;
 $zo2Shortcodes['tabs'][$shortcode->options['id']]['options'] = $shortcode->get('options');
 $shortcode->set('tag', 'zt_tab');
@@ -36,16 +36,16 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
 
 <?php if (!empty($currentTab) && !empty($currentTab['tabs'])) : ?>
     <div class="zo2-tabs">
-        <ul id="zo2Tab<?php echo $id; ?>" class="nav nav-tabs">
+        <ul id="<?php echo $id; ?>" class="nav nav-tabs">
             <?php foreach ($currentTab['tabs'] as $key => $tab): ?> 
                 <?php $option = new JObject($tab); ?>             
-                <li class="<?php echo ($option->get('active') == 'true') ? 'active' : ''; ?>"><a href="#tab<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>              
+                <li class="<?php echo ($option->get('active') == 'true') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>              
             <?php endforeach; ?>
         </ul>
         <div id="zo2TabContent<?php echo $id; ?>" class="tab-content">
             <?php foreach ($currentTab['contents'] as $key => $content): ?>    
                 <?php $option = new JObject($currentTab['tabs'][$key]); ?>
-                <div class="tab-pane fade <?php echo ($option->get('active') == 'true') ? 'in active' : ''; ?>" id="tab<?php echo $id . $key; ?>">
+                <div class="tab-pane fade <?php echo ($option->get('active') == 'true') ? 'in active' : ''; ?>" id="<?php echo $id . $key; ?>">
                     <?php echo $content; ?>
                 </div>
             <?php endforeach; ?>

@@ -11,8 +11,8 @@
  * @license     GPL v2
  */
 defined('_JEXEC') or die('Restricted access');
-$titleId = 'zt-title-' . md5(microtime());
-$contentId = 'zt-content-' . md5(microtime());
+$titleId = ZtShortcodesHelperCommon::getUniqueString('zt-title-');
+$contentId = ZtShortcodesHelperCommon::getUniqueString('zt-content-');
 ?>
 <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="<?php echo $titleId; ?>">
