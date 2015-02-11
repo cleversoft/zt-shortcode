@@ -37,10 +37,10 @@ $prefix = 'zo2-sc-awesome-';
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'bgColor'; ?>">Icon Background Color</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'color'; ?>" placeholder="Icon Background Color (exp: #000000)">
+        <input type="text" class="form-control" id="<?php echo $prefix.'bgColor'; ?>" placeholder="Icon Background Color (exp: #000000)">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'bdColor'; ?>">Icon Border Color</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'color'; ?>" placeholder="Icon Border Color (exp: #000000)">
+        <input type="text" class="form-control" id="<?php echo $prefix.'bdColor'; ?>" placeholder="Icon Border Color (exp: #000000)">
     </div>
 </form>
