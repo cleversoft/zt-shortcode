@@ -467,10 +467,6 @@
          */
         _init: function () {
             var _self = this;
-            $(_self._elements.container).children()
-                    .last()
-                    .find(_self._elements.id)
-                    .val('zt-tab-' + $(_self._elements.container).children().last().index());
             $(_self._elements.newTab).on('click', function () {
                 $(_self._elements.element).first()
                         .clone()
@@ -483,10 +479,6 @@
                         .last()
                         .find(_self._elements.content)
                         .val('');
-                $(_self._elements.container).children()
-                        .last()
-                        .find(_self._elements.id)
-                        .val('zt-tab-' + $(_self._elements.container).children().last().index());
                 $(_self._elements.container).children()
                         .last()
                         .find(_self._elements.active)
@@ -853,10 +845,6 @@
          */
         _init: function () {
             var _self = this;
-            $(_self._elements.container).children()
-                    .last()
-                    .find(_self._elements.id)
-                    .val('zt-accordion-' + $(_self._elements.container).children().last().index());
             $(_self._elements.newAccordion).on('click', function () {
                 $(_self._elements.element).first()
                         .clone()
@@ -869,10 +857,6 @@
                         .last()
                         .find(_self._elements.content)
                         .val('Accordion Content');
-                $(_self._elements.container).children()
-                        .last()
-                        .find(_self._elements.id)
-                        .val('zt-accordion-' + $(_self._elements.container).children().last().index());
                 $(_self._elements.container).children()
                         .last()
                         .find(_self._elements.active)
@@ -897,7 +881,6 @@
             });
             $(_self._elements.container).on('keyup',
                     _self._elements.title + ', '
-                    + _self._elements.id + ', '
                     + _self._elements.content
                     , function () {
                         _self._update();
@@ -918,8 +901,8 @@
             $accordions.each(function () {
                 shortcode += _self._genAccordionShortcode($(this));
             });
-            var shortcode = '[zt_accordions' 
-                    + ((type !== '') ? ' type="' + type + '"' : '') 
+            var shortcode = '[zt_accordions'
+                    + ((type !== '') ? ' type="' + type + '"' : '')
                     + ']' + shortcode + '[/zt_accordions]';
             w.zo2.shortcode.value(shortcode);
         },
@@ -982,16 +965,16 @@
                     + _self._elements.titleColor + ', '
                     + _self._elements.currentValue + ', '
                     + _self._elements.minValue + ', '
-                    + _self._elements.maxValue  + ', '
+                    + _self._elements.maxValue + ', '
                     + _self._elements.content).on('keyup', function () {
                 _self._update();
             });
             $(_self._elements.type + ', '
                     + _self._elements.stripType + ', '
-                    + _self._elements.animated ).on('change', function () {
+                    + _self._elements.animated).on('change', function () {
                 _self._update();
             });
-            $(_self._elements.hideContent).on('click', function(){
+            $(_self._elements.hideContent).on('click', function () {
                 _self._update();
             });
         },
@@ -1012,7 +995,7 @@
             var hideContent = $(_self._elements.hideContent).is(":checked");
             var stripType = $(_self._elements.stripType).val();
             var animated = $(_self._elements.animated).val();
-            
+
             var shortcode = '[zt_progress_bar';
             shortcode += (type !== '') ? ' type="' + type + '"' : '';
             shortcode += (trackColor !== '') ? ' trackColor="' + trackColor + '"' : '';
@@ -1170,5 +1153,131 @@
 
     /* Append to shortcode add-ons */
     w.zo2.shortcode._addOn.push(_fontAwesome);
+
+})(window, jQuery);
+
+/**
+ * Pricing table shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.pricing.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Pricing shortcode class */
+    var _tabs = {
+        name: 'Tabs shortcode add-on',
+        /* Selector container */
+        _elements: {
+            newPricing: "#zo2-sc-pricing-new-pricing-table",
+            pricingType: "#zo2-sc-pricing-type",
+            container: "#zo2-sc-pricing-container",
+            element: "#zo2-sc-pricing-element",
+            title: "#zo2-sc-pricing-title",
+            hightlight: "#zo2-sc-pricing-hightlight",
+            content: "#zo2-sc-pricing-content",
+            price: "#zo2-sc-pricing-price",
+            type: "#zo2-sc-pricing-button-type",
+            text: "#zo2-sc-pricing-button-text"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.newPricing).on('click', function () {
+                $(_self._elements.element).first()
+                        .clone()
+                        .appendTo(_self._elements.container);
+                var $lastElement = $(_self._elements.container).children().last();
+                $lastElement.find('input')
+                        .val('');
+                $lastElement.find('select')
+                        .val('');
+                $lastElement.find(_self._elements.title)
+                        .val('Title Pricing');
+                $lastElement.find(_self._elements.content)
+                        .val('Content Pricing');
+                $lastElement.find(_self._elements.text)
+                        .val('Button Text');
+                $lastElement.find(_self._elements.hightlight)
+                        .removeAttr('checked');
+            });
+            /* Hight light */
+            $(_self._elements.container).on('click', _self._elements.hightlight, function () {
+                var checked = $(this).is(':checked');
+                $(_self._elements.container).children()
+                        .find(_self._elements.hightlight)
+                        .removeAttr('checked');
+                if ($(_self._elements.container).children().length === 1) {
+                    if (!checked) {
+                        $(this).removeAttr('checked');
+                    } else {
+                        $(this).prop('checked', true);
+                    }
+                } else {
+                    $(this).prop('checked', true);
+                }
+                _self._update();
+            });
+            $(_self._elements.container).on('keyup',
+                    _self._elements.title + ', '
+                    + _self._elements.content + ', '
+                    + _self._elements.text + ', '
+                    + _self._elements.price
+                    , function () {
+                        _self._update();
+                    });
+            $(_self._elements.container).on('change', _self._elements.type, function () {
+                _self._update();
+            });
+            $(_self._elements.pricingType).on('change', function () {
+                _self._update();
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var pricingType = $(this._elements.pricingType).val();
+            var shortcode = '';
+            var $pricings = $(_self._elements.container).children();
+            $pricings.each(function () {
+                shortcode += _self._genTabShortcode($(this));
+            });
+            var shortcode = '[zt_pricings '
+                    + ((pricingType !== '') ? 'type="' + pricingType + '"' : '')
+                    + ']' + shortcode + '[/zt_pricings]';
+            w.zo2.shortcode.value(shortcode);
+        },
+        /**
+         * Generate tab shortcode
+         * @param {type} $pricing
+         * @returns {undefined}
+         */
+        _genTabShortcode: function ($pricing) {
+            var title = $pricing.find(this._elements.title).val();
+            var content = $pricing.find(this._elements.content).val();
+            var price = $pricing.find(this._elements.price).val();
+            var type = $pricing.find(this._elements.type).val();
+            var text = $pricing.find(this._elements.text).val();
+            var hightlight = $pricing.find(this._elements.hightlight).is(':checked');
+            var shortcode = '[zt_pricing_item';
+            shortcode += (title !== '') ? ' title="' + title + '"' : '';
+            shortcode += (hightlight) ? ' item-hightlight="true"' : '';
+            shortcode += (price !== '') ? ' price="' + price + '"' : '';
+            shortcode += (type !== '') ? ' button-type="' + type + '"' : '';
+            shortcode += (text !== '') ? ' button-text="' + text + '"' : '';
+            shortcode += ']' + content + '[/zt_pricing_item]';
+            return shortcode;
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_tabs);
 
 })(window, jQuery);
