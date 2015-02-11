@@ -46,7 +46,7 @@ $prefix = 'zo2-sc-testimonial-';
         <input type="text" class="form-control" id="<?php echo $prefix.'borderRadius' ?>" placeholder="Border Radius (exp: 4)">
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'link' ?>">Counter Duration </label>
+        <label for="<?php echo $prefix.'link' ?>">Counter Duration</label>
         <input type="text" class="form-control" id="<?php echo $prefix.'link' ?>" placeholder="Link ">
     </div>
     <div class="form-group clearfix">

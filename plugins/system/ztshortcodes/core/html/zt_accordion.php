@@ -11,22 +11,11 @@
  * @license     GPL v2
  */
 defined('_JEXEC') or die('Restricted access');
-$parentId = ZtShortcodesHelperCommon::getUniqueString('zt-accordion-');
+$contentId = ZtShortcodesHelperCommon::getUniqueString('zt-content-');
 ?>
-<div class="accordion<?php echo ' accordion-'. $options->get('type'); ?>" id="<?php echo $parentId; ?>">
-
-    <!-- Sub content -->
-    <?php
-    $shortcode = new JObject();
-    $shortcode->set('options', array());
-    $shortcode->set('tag', 'zt_accordion_title');
-    $parser = new JBBCode\Parser();
-    $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
-    $builder->setUseOption(true);
-    $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
-// Parse this sub content
-    $parser->parse($this->get('content'));
-    echo $parser->getAsHTML();
-    ?>    
+<div class="accordion-section">
+    <a class="accordion-section-title<?php echo $options->get('active') ? ' active' : ''; ?>" href="#<?php echo $contentId; ?>"><?php echo $options->get('title'); ?></a>
+    <div id="<?php echo $contentId; ?>" class="accordion-section-content<?php echo $options->get('active') ? ' open' : ''; ?>">
+        <p><?php echo $content; ?></p>
+    </div>
 </div>
-

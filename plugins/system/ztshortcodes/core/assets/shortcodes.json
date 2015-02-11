@@ -168,7 +168,7 @@
         "description": "",
         "icon": "fa fa-list",
         "group": "Collapse",
-        "tag": "zt_accordion",
+        "tag": "zt_accordions",
         "options": {
             "type": "accordion"
         },
