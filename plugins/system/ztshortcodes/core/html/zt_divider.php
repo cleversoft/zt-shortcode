@@ -1,9 +1,15 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: chinhlv
- * Date: 1/30/15
- * Time: 1:37 AM
+ * ZT Shortcodes
+ * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
+ *
+ * @version     1.0.0
+ * @author      ZooTemplate
+ * @email       support@zootemplate.com
+ * @link        http://www.zootemplate.com
+ * @copyright   Copyright (c) 2015 ZooTemplate
+ * @license     GPL v2
  */
 ?>
 
@@ -23,7 +29,7 @@
         $html .= '<a href="#" class="animate-top">';
         if($options->get('type') == 'text-only'){
             $html .= $options->get('text');
-        } else if($options->get('type') == 'text-only'){
+        } else if($options->get('type') == 'icon-type-1'){
             $html .= '<i class="'. $options->get('icon') .'"></i>';
         } else {
             $html .= $options->get('text').' <i class="'. $options->get('icon') .'"></i>';

@@ -1,4 +1,17 @@
 <?php
+
+/**
+ * ZT Shortcodes
+ * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
+ *
+ * @version     1.0.0
+ * @author      ZooTemplate
+ * @email       support@zootemplate.com
+ * @link        http://www.zootemplate.com
+ * @copyright   Copyright (c) 2015 ZooTemplate
+ * @license     GPL v2
+ */
+
 $prefix = 'zo2-sc-';
 ?>
 
@@ -16,7 +29,7 @@ $prefix = 'zo2-sc-';
         </select>
     </div>
     <div class="form-group clearfix" id="<?php echo $prefix.'field-text'; ?>" style="display: none;">
-        <label for="<?php echo $prefix.'divider-text'; ?>">Text</label>
+        <label for="<?php echo $prefix.'divider-text'; ?>">Text(only use with type go to top 1 and go to top icon 2)</label>
         <input type="label" class="form-control" id="<?php echo $prefix.'divider-text'; ?>" placeholder="Enter text content">
     </div>
     <div class="form-group clearfix" id="<?php echo $prefix.'field-icon'; ?>" style="display: none;">

@@ -105,6 +105,7 @@
         },
         "depends": {
             "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
                 "Shortcodes://assets/css/buttons.css"
             ]
         }
