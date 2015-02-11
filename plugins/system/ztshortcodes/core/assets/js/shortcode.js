@@ -918,9 +918,9 @@
             $accordions.each(function () {
                 shortcode += _self._genAccordionShortcode($(this));
             });
-            var shortcode = '[zt_accordion' 
+            var shortcode = '[zt_accordions' 
                     + ((type !== '') ? ' type="' + type + '"' : '') 
-                    + ']' + shortcode + '[/zt_accordion]';
+                    + ']' + shortcode + '[/zt_accordions]';
             w.zo2.shortcode.value(shortcode);
         },
         /**
