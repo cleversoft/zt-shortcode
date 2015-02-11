@@ -840,6 +840,7 @@
         /* Selector container */
         _elements: {
             newAccordion: "#zo2-sc-new-accordion",
+            type: "#zo2-sc-accordion-type",
             container: "#zo2-sc-accordion-container",
             element: "#zo2-sc-accordion-element",
             title: "#zo2-sc-accordion-title",
@@ -863,11 +864,11 @@
                 $(_self._elements.container).children()
                         .last()
                         .find(_self._elements.title)
-                        .val('');
+                        .val('Accordion Title');
                 $(_self._elements.container).children()
                         .last()
                         .find(_self._elements.content)
-                        .val('');
+                        .val('Accordion Content');
                 $(_self._elements.container).children()
                         .last()
                         .find(_self._elements.id)
@@ -901,6 +902,9 @@
                     , function () {
                         _self._update();
                     });
+            $(_self._elements.type).on('change', function () {
+                _self._update();
+            });
         },
         /**
          * Update shortcode
@@ -910,10 +914,13 @@
             var _self = this;
             var shortcode = '';
             var $accordions = $(_self._elements.container).children();
+            var type = $(_self._elements.type).val();
             $accordions.each(function () {
                 shortcode += _self._genAccordionShortcode($(this));
             });
-            var shortcode = '[zt_accordions]' + shortcode + '[/zt_accordions]';
+            var shortcode = '[zt_accordion' 
+                    + ((type !== '') ? ' type="' + type + '"' : '') 
+                    + ']' + shortcode + '[/zt_accordion]';
             w.zo2.shortcode.value(shortcode);
         },
         /**
