@@ -369,7 +369,6 @@
 
 })(window, jQuery);
 
-
 /**
  * Messagebox shortcode add-on
  * @param {type} w
@@ -1067,7 +1066,7 @@
             var url = $(_self._elements.url).val();
             var width = $(_self._elements.width).val();
             var height = $(_self._elements.height).val();
-            
+
             var shortcode = '[zt_video';
             shortcode += (url !== '') ? ' url="' + url + '"' : '';
             shortcode += (width !== '') ? ' width="' + width + '"' : '';
@@ -1079,5 +1078,83 @@
 
     /* Append to shortcode add-ons */
     w.zo2.shortcode._addOn.push(_video);
+
+})(window, jQuery);
+
+/**
+ * Font Awesome shortcode add-on
+ * @param {type} w
+ * @param {type} $
+ * @file shortcode.messagebox.js
+ * @returns {undefined}
+ */
+(function (w, $) {
+
+    /* Font Awesome shortcode class */
+    var _fontAwesome = {
+        name: 'Font Awesome shortcode add-on',
+        /* Selector container */
+        _elements: {
+            icon: "#zo2-sc-awesome-icon",
+            circle: "#zo2-sc-awesome-circle",
+            size: "#zo2-sc-awesome-size",
+            spin: "#zo2-sc-awesome-spin",
+            color: "#zo2-sc-awesome-color",
+            bgColor: "#zo2-sc-awesome-bgColor",
+            bdColor: "#zo2-sc-awesome-bdColor"
+        },
+        /**
+         * Init function
+         * @returns {undefined}
+         */
+        _init: function () {
+            var _self = this;
+            $(_self._elements.icon).find('a').on('click', function () {
+                $(_self._elements.icon).find('a').removeClass('selected');
+                $(this).addClass('selected');
+                _self._update();
+                return false;
+            });
+            $(_self._elements.circle + ', '
+                    + _self._elements.size + ', '
+                    + _self._elements.spin + ', ').on('change', function () {
+                _self._update();
+            });
+            $(_self._elements.color + ', '
+                    + _self._elements.bgColor + ', '
+                    + _self._elements.bdColor).on('keyup', function () {
+                _self._update();
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function () {
+            var _self = this;
+            var icon = _self._getIcon();
+            var circle = $(_self._elements.circle).val();
+            var circle = $(_self._elements.circle).val();
+            
+            
+            var shortcode = '[zt_message_box';
+            shortcode += (type !== '') ? ' type="' + type + '"' : '';
+            shortcode += (icon !== '') ? ' icon="' + icon + '"' : '';
+            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
+            shortcode += ']' + content + '[/zt_message_box]';
+            w.zo2.shortcode.value(shortcode);
+        },
+        /**
+         * Get messagebox icon
+         * @returns {String}
+         */
+        _getIcon: function () {
+            var selected = $(this._elements.icon).find('.selected');
+            return (selected.length <= 0) ? '' : selected.find('i').attr('class');
+        }
+    };
+
+    /* Append to shortcode add-ons */
+    w.zo2.shortcode._addOn.push(_fontAwesome);
 
 })(window, jQuery);
