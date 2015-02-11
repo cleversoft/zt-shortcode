@@ -40,7 +40,7 @@ $prefix = 'zo2-sc-';
 
                 <div class="form-group">
                     <input type="text" class="form-control" id="<?php echo $prefix . 'title-pricing-1' ?>"
-                           placeholder="Enter Title Pricing">
+                           placeholder="Enter Title Pricing" value="Title Pricing">
                 </div>
                 <div class="checkbox">
                     <label>
@@ -49,7 +49,7 @@ $prefix = 'zo2-sc-';
                 </div>
                 <div class="form-group">
                     <textarea placeholder="Content Pricing" rows="3" class="form-control"
-                              id="<?php echo $prefix . 'pricing-1-content' ?>"></textarea>
+                              id="<?php echo $prefix . 'pricing-1-content' ?>">Content Pricing</textarea>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="<?php echo $prefix . 'price-pricing-1' ?>"
@@ -67,7 +67,7 @@ $prefix = 'zo2-sc-';
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="<?php echo $prefix . 'pricing-button-1-text' ?>"
-                           placeholder="Enter Button Text">
+                           placeholder="Enter Button Text" value="Button Text">
                 </div>
             </div>
             <div class="col-sm-4 col-md-4">
@@ -75,7 +75,7 @@ $prefix = 'zo2-sc-';
 
                 <div class="form-group">
                     <input type="text" class="form-control" id="<?php echo $prefix . 'title-pricing-2' ?>"
-                           placeholder="Enter Title Pricing">
+                           placeholder="Enter Title Pricing" value="Title Pricing">
                 </div>
                 <div class="checkbox">
                     <label>
@@ -84,7 +84,7 @@ $prefix = 'zo2-sc-';
                 </div>
                 <div class="form-group">
                     <textarea placeholder="Content Pricing" rows="3" class="form-control"
-                              id="<?php echo $prefix . 'pricing-2-content' ?>"></textarea>
+                              id="<?php echo $prefix . 'pricing-2-content' ?>">Content Pricing</textarea>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="<?php echo $prefix . 'price-pricing-2' ?>"
@@ -103,7 +103,7 @@ $prefix = 'zo2-sc-';
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="<?php echo $prefix . 'pricing-button-2-text' ?>"
-                           placeholder="Enter Button Text">
+                           placeholder="Enter Button Text" value="Button Text">
                 </div>
             </div>
             <div class="col-sm-4 col-md-4">
@@ -111,7 +111,7 @@ $prefix = 'zo2-sc-';
 
                 <div class="form-group">
                     <input type="text" class="form-control" id="<?php echo $prefix . 'title-pricing-3' ?>"
-                           placeholder="Enter Title Pricing">
+                           placeholder="Enter Title Pricing" value="Title Pricing">
                 </div>
                 <div class="checkbox">
                     <label>
@@ -120,7 +120,7 @@ $prefix = 'zo2-sc-';
                 </div>
                 <div class="form-group">
                     <textarea placeholder="Content Pricing" rows="3" class="form-control"
-                              id="<?php echo $prefix . 'pricing-1-content' ?>"></textarea>
+                              id="<?php echo $prefix . 'pricing-1-content' ?>">Content Pricing</textarea>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="<?php echo $prefix . 'price-pricing-3' ?>"
@@ -139,7 +139,7 @@ $prefix = 'zo2-sc-';
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="<?php echo $prefix . 'pricing-button-3-text' ?>"
-                           placeholder="Enter Button Text">
+                           placeholder="Enter Button Text" value="Button Text">
                 </div>
             </div>
         </div>

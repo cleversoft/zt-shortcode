@@ -31,13 +31,13 @@ $prefix = 'zo2-sc-';
         <label for="<?php echo $prefix.'content-column'; ?>">Content Column</label>
         <div class="row">
             <div class="col-sm-4 col-md-4">
-                <textarea placeholder="Content Column" rows="3" class="form-control" id="<?php echo $prefix.'content-column-1'; ?>"></textarea>
+                <textarea placeholder="Content Column" rows="3" class="form-control" id="<?php echo $prefix.'content-column-1'; ?>">Content Column</textarea>
             </div>
             <div class="col-sm-4 col-md-4">
-                <textarea placeholder="Content Column" rows="3" class="form-control" id="<?php echo $prefix.'content-column-2'; ?>"></textarea>
+                <textarea placeholder="Content Column" rows="3" class="form-control" id="<?php echo $prefix.'content-column-2'; ?>">Content Column</textarea>
             </div>
             <div class="col-sm-4 col-md-4">
-                <textarea placeholder="Content Column" rows="3" class="form-control" id="<?php echo $prefix.'content-column-3'; ?>"></textarea>
+                <textarea placeholder="Content Column" rows="3" class="form-control" id="<?php echo $prefix.'content-column-3'; ?>">Content Column</textarea>
             </div>
         </div>
     </div>

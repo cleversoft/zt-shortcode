@@ -33,7 +33,7 @@ $prefix = 'zo2-sc-';
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'message-box-content'; ?>">Content</label>
-        <textarea placeholder="Content Message Box" rows="3" class="form-control" id="<?php echo $prefix.'message-box-content'; ?>"></textarea>
+        <textarea placeholder="Content Message Box" rows="3" class="form-control" id="<?php echo $prefix.'message-box-content'; ?>">Content Message Box</textarea>
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'message-box-class'; ?>">Extra Class</label>

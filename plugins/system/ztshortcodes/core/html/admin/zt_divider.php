@@ -30,7 +30,7 @@ $prefix = 'zo2-sc-';
     </div>
     <div class="form-group clearfix" id="<?php echo $prefix.'field-text'; ?>" style="display: none;">
         <label for="<?php echo $prefix.'divider-text'; ?>">Text(only use with type go to top 1 and go to top icon 2)</label>
-        <input type="label" class="form-control" id="<?php echo $prefix.'divider-text'; ?>" placeholder="Enter text content">
+        <input type="label" class="form-control" id="<?php echo $prefix.'divider-text'; ?>" placeholder="Enter text content" value="Go to top">
     </div>
     <div class="form-group clearfix" id="<?php echo $prefix.'field-icon'; ?>" style="display: none;">
         <label for="<?php echo $prefix.'divider-icon'; ?>">Icon (please select an icon)</label>

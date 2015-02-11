@@ -26,11 +26,11 @@ $prefix = 'zo2-sc-';
     <div id="<?php echo $prefix . 'accordion-element' ?>">
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'accordion-title' ?>">Accordion Title</label>
-            <input type="text" class="form-control" id="<?php echo $prefix . 'accordion-title' ?>" placeholder="Accordion Title">
+            <input type="text" class="form-control" id="<?php echo $prefix . 'accordion-title' ?>" placeholder="Accordion Title" value="Accordion Title">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'accordion-content' ?>">Accordion Content</label>
-            <textarea placeholder="Content Accordion" rows="3" class="form-control" id="<?php echo $prefix . 'accordion-content' ?>"></textarea>
+            <textarea placeholder="Content Accordion" rows="3" class="form-control" id="<?php echo $prefix . 'accordion-content' ?>">Content Accordion</textarea>
         </div>
         <div class="checkbox">
             <label>

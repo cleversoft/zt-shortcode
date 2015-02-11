@@ -58,6 +58,6 @@ $prefix = 'zo2-sc-awesome-';
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'content'; ?>">Content</label>
-        <textarea placeholder="Dropcaps Content" rows="3" class="form-control" id="<?php echo $prefix.'content'; ?>"></textarea>
+        <textarea placeholder="Font Content" rows="3" class="form-control" id="<?php echo $prefix.'content'; ?>">Font Awesome</textarea>
     </div>
 </form>

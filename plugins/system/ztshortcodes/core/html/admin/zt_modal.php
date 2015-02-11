@@ -18,11 +18,11 @@ $prefix = 'zo2-sc-modal';
 <form>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'id'; ?>">ID</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'id'; ?>" placeholder="Enter id modal">
+        <input type="text" class="form-control" id="<?php echo $prefix.'id'; ?>" placeholder="Enter id modal" value="my-modal">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'title'; ?>">Title</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'title'; ?>" placeholder="Enter title modal">
+        <input type="text" class="form-control" id="<?php echo $prefix.'title'; ?>" placeholder="Enter title modal" value="Title Modal">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'button-type'; ?>">Button Type</label>
@@ -45,6 +45,10 @@ $prefix = 'zo2-sc-modal';
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'button-text'; ?>">Button Text</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'button-text'; ?>" placeholder="Enter Button Text">
+        <input type="text" class="form-control" id="<?php echo $prefix.'button-text'; ?>" placeholder="Enter Button Text" value="Button Text">
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'content'; ?>">Extra Class</label>
+        <textarea placeholder="Content Modal" rows="3" class="form-control" id="<?php echo $prefix.'content'; ?>">Content Modal</textarea>
     </div>
 </form>

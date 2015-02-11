@@ -66,7 +66,7 @@ $prefix = 'zo2-sc-';
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'progress-content'; ?>">Progress bar content</label>
-        <input type="label" class="form-control" id="<?php echo $prefix.'progress-content'; ?>" placeholder="Enter Progress Bar Content">
+        <input type="label" class="form-control" id="<?php echo $prefix.'progress-content'; ?>" value="Progress Bar" placeholder="Enter Progress Bar Content">
     </div>
     <div class="checkbox">
         <label>

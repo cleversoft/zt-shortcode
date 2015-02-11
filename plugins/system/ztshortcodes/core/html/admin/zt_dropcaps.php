@@ -35,6 +35,6 @@ $prefix = 'zo2-sc-';
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'dropcaps-content'; ?>">Content</label>
-        <textarea placeholder="Dropcaps Content" rows="3" class="form-control" id="<?php echo $prefix.'dropcaps-content'; ?>"></textarea>
+        <input type="label" class="form-control" id="<?php echo $prefix.'dropcaps-content'; ?>" placeholder="Content Dropcaps" value="D">
     </div>
 </form>

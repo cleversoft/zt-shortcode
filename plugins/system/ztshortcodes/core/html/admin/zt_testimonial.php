@@ -31,11 +31,11 @@ $prefix = 'zo2-sc-testimonial-';
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'name' ?>">Name</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'name' ?>" placeholder="Name author">
+        <input type="text" class="form-control" id="<?php echo $prefix.'name' ?>" placeholder="Name author" value="Name author">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'company' ?>">Company</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'company' ?>" placeholder="Company">
+        <input type="text" class="form-control" id="<?php echo $prefix.'company' ?>" placeholder="Company" value="Company">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'customAvatar' ?>">Avatar</label>
@@ -57,5 +57,9 @@ $prefix = 'zo2-sc-testimonial-';
             <option value="_self">_self</option>
             <option value="_top">_top</option>
         </select>
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix . 'content' ?>">Content</label>
+        <textarea placeholder="Testimonial Content" rows="3" class="form-control" id="<?php echo $prefix . 'content' ?>">Testimonial Content</textarea>
     </div>
 </form>

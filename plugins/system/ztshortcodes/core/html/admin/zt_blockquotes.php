@@ -34,7 +34,7 @@ $prefix = 'zo2-sc-';
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'blockquotes-content'; ?>">Content</label>
-        <textarea placeholder="Content Blockquotes Box" rows="3" class="form-control" id="<?php echo $prefix.'blockquotes-content'; ?>"></textarea>
+        <textarea placeholder="Content Blockquotes Box" rows="3" class="form-control" id="<?php echo $prefix.'blockquotes-content'; ?>">Content Blockquotes Box</textarea>
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'blockquotes-class'; ?>">Extra Class</label>

@@ -42,4 +42,8 @@ $prefix = 'zo2-sc-badges-';
             <option value="link">Link</option>
         </select>
     </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'content'; ?>">Content</label>
+        <input type="text" value="4" class="form-control" id="<?php echo $prefix.'content'; ?>" placeholder="Content Badges">
+    </div>
 </form>
