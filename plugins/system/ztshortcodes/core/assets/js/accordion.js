@@ -11,9 +11,17 @@ jQuery(document).ready(function() {
     // Accordion
     jQuery(accordion).click(function(e) {
         var currentAttrValue = jQuery(this).attr('href');
-        close_accordion_section();
-        jQuery(this).addClass('active');
-        jQuery('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+
+        if(jQuery(e.target).is('.active')) {
+            close_accordion_section();
+        }else {
+            close_accordion_section();
+
+            // Add active class to section title
+            jQuery(this).addClass('active');
+            // Open up the hidden content panel
+            jQuery('.accordion-accordion ' + currentAttrValue).slideDown(300).addClass('open');
+        }
         e.preventDefault();
     });
 
