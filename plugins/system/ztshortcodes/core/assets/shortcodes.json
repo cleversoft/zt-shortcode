@@ -45,9 +45,6 @@
         "depends": {
             "css": [
                 "Shortcodes://assets/bootstrap/css/bootstrap.min.css"
-            ],
-            "js": [
-                "Shortcodes://assets/bootstrap/js/bootstrap.min.js"
             ]
         }
     },
@@ -105,7 +102,6 @@
         },
         "depends": {
             "css": [
-                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
                 "Shortcodes://assets/css/buttons.css"
             ]
         }
@@ -321,9 +317,7 @@
                 "Shortcodes://assets/css/counter-circle.css"
             ],
             "js":[
-                "Shortcodes://assets/js/jquery-2.0.3.min.js",
                 "Shortcodes://assets/js/waypoints.min.js",
-                "Shortcodes://assets/js/jquery.easing.min.js",
                 "Shortcodes://assets/js/jquery.easypiechart.js",
                 "Shortcodes://assets/js/counter-circle.js"
             ]
