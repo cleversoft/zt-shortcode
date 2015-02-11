@@ -17,20 +17,19 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
 ?>
-<div class="pricing-tables<?php echo ' '.$options->get('pricing-type'); ?>">
-    <div class="row">
-        <!-- Sub content -->
-        <?php
-        $shortcode = new JObject();
-        $shortcode->set('options', array());
-        $shortcode->set('tag', 'zt_pricing_item');
-        $parser = new JBBCode\Parser();
-        $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
-        $builder->setUseOption(true);
-        $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
-        // Parse this sub content
-        $parser->parse($this->get('content'));
-        echo $parser->getAsHTML();
-        ?>
-    </div>
+<div
+    class="clearfix pricing-tables<?php echo ' ' . $options->get('pricing-type'); ?><?php echo ' pricing-' . $options->get('pricing-element'); ?>">
+    <!-- Sub content -->
+    <?php
+    $shortcode = new JObject();
+    $shortcode->set('options', array());
+    $shortcode->set('tag', 'zt_pricing_item');
+    $parser = new JBBCode\Parser();
+    $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
+    $builder->setUseOption(true);
+    $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
+    // Parse this sub content
+    $parser->parse($this->get('content'));
+    echo $parser->getAsHTML();
+    ?>
 </div>

@@ -113,7 +113,8 @@
 
 #zo2-sc-tabs-element,
 #zo2-sc-accordion-element,
-#zo2-sc-carousel-item{
+#zo2-sc-carousel-item,
+#zo2-sc-pricing-element{
     padding: 10px 20px;
     background-color: #f8f6f6;
     border: 1px solid #d6d6d6;

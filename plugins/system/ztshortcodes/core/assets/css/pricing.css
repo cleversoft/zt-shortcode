@@ -24,7 +24,31 @@
     border-top-right-radius: 4px;
     margin-bottom: 20px;
 }
-.pricing-tables.attached .col-sm-4, .pricing-tables.attached .col-md-4, .pricing-tables.attached .col-sm-3, .pricing-tables.attached .col-md-3 {
+.pricing-tables .pricing-item{
+    padding: 0 10px;
+}
+.pricing-tables.pricing-2 .pricing-item{
+    width: 50%;
+}
+.pricing-tables.pricing-3 .pricing-item{
+    width: 33.33333%;
+}
+.pricing-tables.pricing-4 .pricing-item{
+    width: 25%;
+}
+.pricing-tables.pricing-5 .pricing-item{
+    width: 20%;
+}
+.pricing-tables.pricing-6 .pricing-item{
+    width: 16.66666%;
+}
+.pricing-tables.pricing-7 .pricing-item{
+    width: 14.285%;
+}
+.pricing-tables.pricing-8 .pricing-item{
+    width: 12.5%;
+}
+.pricing-tables.attached .pricing-item {
     padding-left: 0;
     padding-right: 0;
 }
