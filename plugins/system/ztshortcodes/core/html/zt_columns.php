@@ -1,11 +1,14 @@
 <?php
+
 /**
- * Zo2 Shortcodes (http://www.zo2framework.org)
+ * ZT Shortcodes
+ * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
  *
- * @link        http://www.zo2framework.org
- * @link        http://github.com/aploss/zo2
- * @author      ZooTemplate <http://zootemplate.com>
- * @copyright   Copyright (c) 2013 APL Solutions (http://apl.vn)
+ * @version     1.0.0
+ * @author      ZooTemplate
+ * @email       support@zootemplate.com
+ * @link        http://www.zootemplate.com
+ * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
 defined('_JEXEC') or die('Restricted access');

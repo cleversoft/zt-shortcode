@@ -13,16 +13,12 @@
 defined('_JEXEC') or die('Restricted access');
 $parentId = ZtShortcodesHelperCommon::getUniqueString('zt-accordion-');
 ?>
-<div 
-    class="panel-group <?php echo $options->get('class'); ?>"
-    id="<?php echo $parentId; ?>" 
-    role="<?php echo $options->get('role'); ?>" 
-    aria-multiselectable="<?php echo $options->get('aria-multiselectable'); ?>">
+<div class="accordion<?php echo ' accordion-'. $options->get('type'); ?>" id="<?php echo $parentId; ?>">
 
     <!-- Sub content -->
     <?php
     $shortcode = new JObject();
-    $shortcode->set('options', array('parent' => $parentId));
+    $shortcode->set('options', array());
     $shortcode->set('tag', 'zt_accordion_title');
     $parser = new JBBCode\Parser();
     $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
@@ -33,3 +29,4 @@ $parentId = ZtShortcodesHelperCommon::getUniqueString('zt-accordion-');
     echo $parser->getAsHTML();
     ?>    
 </div>
+

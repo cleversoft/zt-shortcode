@@ -1,4 +1,17 @@
 <?php
+
+/**
+ * ZT Shortcodes
+ * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
+ *
+ * @version     1.0.0
+ * @author      ZooTemplate
+ * @email       support@zootemplate.com
+ * @link        http://www.zootemplate.com
+ * @copyright   Copyright (c) 2015 ZooTemplate
+ * @license     GPL v2
+ */
+
 $prefix = 'zo2-sc-awesome-';
 ?>
 
@@ -37,10 +50,14 @@ $prefix = 'zo2-sc-awesome-';
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'bgColor'; ?>">Icon Background Color</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'color'; ?>" placeholder="Icon Background Color (exp: #000000)">
+        <input type="text" class="form-control" id="<?php echo $prefix.'bgColor'; ?>" placeholder="Icon Background Color (exp: #000000)">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix.'bdColor'; ?>">Icon Border Color</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'color'; ?>" placeholder="Icon Border Color (exp: #000000)">
+        <input type="text" class="form-control" id="<?php echo $prefix.'bdColor'; ?>" placeholder="Icon Border Color (exp: #000000)">
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'content'; ?>">Content</label>
+        <textarea placeholder="Dropcaps Content" rows="3" class="form-control" id="<?php echo $prefix.'content'; ?>"></textarea>
     </div>
 </form>
