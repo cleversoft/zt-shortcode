@@ -1139,7 +1139,7 @@
             var color = $(_self._elements.color).val();
             var bgColor = $(_self._elements.bgColor).val();
             var bdColor = $(_self._elements.bdColor).val();
-            console.log(icon);
+
             var shortcode = '[zt_i';
             shortcode += (icon !== '') ? ' classIcon="' + icon + '"' : '';
             shortcode += (circle !== '') ? ' iconCircle="' + circle + '"' : '';
@@ -1152,7 +1152,7 @@
             w.zo2.shortcode.value(shortcode);
         },
         /**
-         * Get messagebox icon
+         * Get font awesome icon
          * @returns {String}
          */
         _getIcon: function () {
