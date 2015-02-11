@@ -1117,7 +1117,7 @@
             });
             $(_self._elements.circle + ', '
                     + _self._elements.size + ', '
-                    + _self._elements.spin + ', ').on('change', function () {
+                    + _self._elements.spin).on('change', function () {
                 _self._update();
             });
             $(_self._elements.color + ', '
@@ -1134,14 +1134,21 @@
             var _self = this;
             var icon = _self._getIcon();
             var circle = $(_self._elements.circle).val();
-            var circle = $(_self._elements.circle).val();
-            
-            
-            var shortcode = '[zt_message_box';
-            shortcode += (type !== '') ? ' type="' + type + '"' : '';
-            shortcode += (icon !== '') ? ' icon="' + icon + '"' : '';
-            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
-            shortcode += ']' + content + '[/zt_message_box]';
+            var size = $(_self._elements.size).val();
+            var spin = $(_self._elements.spin).val();
+            var color = $(_self._elements.color).val();
+            var bgColor = $(_self._elements.bgColor).val();
+            var bdColor = $(_self._elements.bdColor).val();
+            console.log(icon);
+            var shortcode = '[zt_i';
+            shortcode += (icon !== '') ? ' classIcon="' + icon + '"' : '';
+            shortcode += (circle !== '') ? ' iconCircle="' + circle + '"' : '';
+            shortcode += (size !== '') ? ' iconSize="' + size + '"' : '';
+            shortcode += (spin !== '') ? ' spinningIcon="' + spin + '"' : '';
+            shortcode += (color !== '') ? ' iconColor="' + color + '"' : '';
+            shortcode += (bgColor !== '') ? ' iconBgColor="' + bgColor + '"' : '';
+            shortcode += (bdColor !== '') ? ' iconBdColor="' + bdColor + '"' : '';
+            shortcode += '][/zt_i]';
             w.zo2.shortcode.value(shortcode);
         },
         /**
