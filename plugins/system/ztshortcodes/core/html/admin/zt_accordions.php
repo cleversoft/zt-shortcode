@@ -1,5 +1,4 @@
 <?php
-
 /**
  * ZT Shortcodes
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
@@ -11,12 +10,11 @@
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
-
 $prefix = 'zo2-sc-';
 ?>
 <div class="form-group clearfix">
-    <label for="<?php echo $prefix.'accordion-type'; ?>">Type</label>
-    <select id="<?php echo $prefix.'accordion-type'; ?>" class="form-control">
+    <label for="<?php echo $prefix . 'accordion-type'; ?>">Type</label>
+    <select id="<?php echo $prefix . 'accordion-type'; ?>" class="form-control">
         <option value="accordion">Accordion</option>
         <option value="toggle">Toggle</option>
     </select>
