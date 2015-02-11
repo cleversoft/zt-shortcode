@@ -1074,11 +1074,11 @@
             var width = $(_self._elements.width).val();
             var height = $(_self._elements.height).val();
 
-            var shortcode = '[zt_video';
-            shortcode += (url !== '') ? ' url="' + url + '"' : '';
+            var shortcode = '[zt_video_play';
+            shortcode += (url !== '') ? ' src="' + url + '"' : '';
             shortcode += (width !== '') ? ' width="' + width + '"' : '';
-            shortcode += (height !== '') ? ' barColor="' + height + '"' : '';
-            shortcode += '][/zt_video]';
+            shortcode += (height !== '') ? ' height="' + height + '"' : '';
+            shortcode += '][/zt_video_play]';
             w.zo2.shortcode.value(shortcode);
         }
     };
