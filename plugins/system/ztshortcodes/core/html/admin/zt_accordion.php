@@ -3,6 +3,13 @@ $prefix = 'zo2-sc-';
 ?>
 
 <div id="<?php echo $prefix . 'accordion-container' ?>">
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix.'accordion-type'; ?>">Type</label>
+        <select id="<?php echo $prefix.'accordion-type'; ?>" class="form-control">
+            <option value="accordion">Accordion</option>
+            <option value="toggle">Toggle</option>
+        </select>
+    </div>
     <div id="<?php echo $prefix . 'accordion-element' ?>">
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'accordion-title' ?>">Accordion Title</label>

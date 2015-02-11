@@ -11,30 +11,11 @@
  * @license     GPL v2
  */
 defined('_JEXEC') or die('Restricted access');
-$titleId = ZtShortcodesHelperCommon::getUniqueString('zt-title-');
 $contentId = ZtShortcodesHelperCommon::getUniqueString('zt-content-');
 ?>
-<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="<?php echo $titleId; ?>">
-        <h4 class="panel-title">
-            <a
-                class="accordion-toggle"
-                data-toggle="collapse"
-                data-parent="#<?php echo $options->get('parent'); ?>"
-                href="#<?php echo $contentId; ?>"
-                aria-expanded="<?php echo ($options->get('aria-multiselectable') == 'true') ? 'true' : ''; ?>"
-                aria-controls="<?php echo $contentId; ?>"
-                >
-                    <?php echo $options->get('title'); ?>
-            </a>
-        </h4>
-    </div>
-    <div id="<?php echo $contentId; ?>"
-         class="accordion-body collapse<?php echo ($options->get('aria-multiselectable') == 'true') ? ' in' : ''; ?>"
-         role="tabpanel" aria-labelledby="<?php echo $titleId; ?>"
-         >
-        <div class="panel-body">
-            <?php echo $content; ?>
-        </div>
+<div class="accordion-section">
+    <a class="accordion-section-title" href="#<?php echo $contentId; ?>"><?php echo $options->get('title'); ?></a>
+    <div id="<?php echo $contentId; ?>" class="accordion-section-content<?php echo $options->get('active') ? ' open' : ''; ?>">
+        <p><?php echo $content; ?></p>
     </div>
 </div>

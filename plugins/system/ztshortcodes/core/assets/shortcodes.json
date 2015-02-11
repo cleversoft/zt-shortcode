@@ -173,8 +173,15 @@
         "group": "Collapse",
         "tag": "zt_accordion",
         "options": {
-            "role": "tablist",
-            "aria-multiselectable": "true"
+            "type": "accordion"
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/accordion.css"
+            ],
+            "js": [
+                "Shortcodes://assets/js/accordion.js"
+            ]
         }
     },
     {
