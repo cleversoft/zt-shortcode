@@ -1,5 +1,8 @@
 /**
- * Created by chinhbeo on 2/4/15.
+ * Zo2 Shortcode
+ * @param {pointer} w Window pointer
+ * @param {pointer} $ jQuery pointer
+ * @returns {undefined}
  */
 
 jQuery(window).load(function (){

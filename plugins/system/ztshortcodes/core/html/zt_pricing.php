@@ -18,7 +18,7 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 <div
-    class="clearfix pricing-tables<?php echo ' ' . $options->get('pricing-type'); ?><?php echo ' pricing-' . $options->get('pricing-element'); ?>">
+    class="clearfix pricing-tables<?php echo ($options->get('pricing-type') == '') ? '' : ' attached'; ?>">
     <!-- Sub content -->
     <?php
     $shortcode = new JObject();

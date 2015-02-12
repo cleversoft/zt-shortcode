@@ -47,15 +47,9 @@ $prefix = 'zo2-sc-pricing-';
                            placeholder="Enter Price (exp: $|90|per month).">
                 </div>
                 <div class="form-group">
-                    <label for="<?php echo $prefix . 'button-type' ?>">Button Type</label>
-                    <select id="<?php echo $prefix . 'button-type'; ?>" class="form-control">
-                        <option value="">Default</option>
-                        <option value="primary">Primary</option>
-                        <option value="success">Success</option>
-                        <option value="info">Info</option>
-                        <option value="warning">Warning</option>
-                        <option value="danger">Danger</option>
-                    </select>
+                    <label for="<?php echo $prefix . 'link' ?>">Link</label>
+                    <input type="text" class="form-control" id="<?php echo $prefix . 'link' ?>"
+                           placeholder="Enter Link Pricing" value="#">
                 </div>
                 <div class="form-group">
                     <label for="<?php echo $prefix . 'button-text' ?>">Button Text</label>

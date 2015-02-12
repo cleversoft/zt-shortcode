@@ -6,10 +6,8 @@
  */
 
 jQuery(document).ready(function(){
-    jQuery('.bxslider').bxSlider({
-        mode: 'fade',
-        pager: false,
-        controls: false,
-        auto: true
+    jQuery('.pricing-tables').each(function(){
+        var c = jQuery(this).find('.pricing-item').length;
+        jQuery(this).addClass('pricing-' + c);
     });
 });

@@ -26,6 +26,7 @@
 }
 .pricing-tables .pricing-item{
     padding: 0 10px;
+    box-sizing: border-box;
 }
 .pricing-tables.pricing-2 .pricing-item{
     width: 50%;
@@ -128,6 +129,7 @@
     list-style-type: none;
     margin-top: 2px;
     padding: 20px;
+    margin: 0;
 }
 .plan ul li {
     font-size: 14px;

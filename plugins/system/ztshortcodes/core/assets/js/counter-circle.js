@@ -1,7 +1,9 @@
 /**
- * Created by chinhbeo on 2/3/15.
+ * Zo2 Shortcode
+ * @param {pointer} w Window pointer
+ * @param {pointer} $ jQuery pointer
+ * @returns {undefined}
  */
-
 
 jQuery(window).load(function (){
         var c = jQuery('body').find('.chart');

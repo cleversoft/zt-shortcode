@@ -26,6 +26,7 @@
     display: block;
     background-color: #F8F8F8;
     color: #444;
+    outline: none;
 }
 .accordion-section-title i {
     border-right: 1px solid rgba(0, 0, 0, 0.08);

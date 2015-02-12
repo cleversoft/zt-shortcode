@@ -1,3 +1,10 @@
+/**
+ * Zo2 Shortcode
+ * @param {pointer} w Window pointer
+ * @param {pointer} $ jQuery pointer
+ * @returns {undefined}
+ */
+
 jQuery(document).ready(function() {
     var accordion = jQuery('.accordion-accordion').find('.accordion-section-title'),
         toggle = jQuery('.accordion-toggle').find('.accordion-section-title');
@@ -6,7 +13,7 @@ jQuery(document).ready(function() {
     function close_accordion_section() {
         jQuery('.accordion-accordion .accordion-section-title').removeClass('active');
         jQuery('.accordion-accordion .accordion-section-content').slideUp(300).removeClass('open');
-        jQuery('.accordion-accordion .accordion-section-title .fa').removeClass('fa-plus').addClass('fa-minus');
+        jQuery('.accordion-accordion .accordion-section-title .fa').removeClass('fa-minus').addClass('fa-plus');
     }
 
     // Accordion
@@ -22,7 +29,7 @@ jQuery(document).ready(function() {
             jQuery(this).addClass('active');
             // Open up the hidden content panel
             jQuery('.accordion-accordion ' + currentAttrValue).slideDown(300).addClass('open');
-            jQuery(this).find('.fa').removeClass('fa-minus').addClass('fa-plus');
+            jQuery(this).find('.fa').removeClass('fa-plus').addClass('fa-minus');
         }
         e.preventDefault();
     });
@@ -33,11 +40,11 @@ jQuery(document).ready(function() {
         if(jQuery(content).is(":visible")){
             jQuery(content).slideUp(300);
             jQuery(content).prev().removeClass('active');
-            jQuery(this).find('.fa').removeClass('fa-plus').addClass('fa-minus');
+            jQuery(this).find('.fa').removeClass('fa-minus').addClass('fa-plus');
         } else {
             jQuery(content).slideDown(300);
             jQuery(content).prev().addClass('active');
-            jQuery(this).find('.fa').removeClass('fa-minus').addClass('fa-plus');
+            jQuery(this).find('.fa').removeClass('fa-plus').addClass('fa-minus');
         }
         e.preventDefault();
     });

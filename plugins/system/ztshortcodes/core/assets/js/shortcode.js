@@ -1178,7 +1178,7 @@
             hightlight: "#zo2-sc-pricing-hightlight",
             content: "#zo2-sc-pricing-content",
             price: "#zo2-sc-pricing-price",
-            type: "#zo2-sc-pricing-button-type",
+            link: "#zo2-sc-pricing-link",
             text: "#zo2-sc-pricing-button-text"
         },
         /**
@@ -1250,7 +1250,7 @@
                 shortcode += _self._genTabShortcode($(this));
             });
             var shortcode = '[zt_pricing '
-                    + ((pricingType !== '') ? 'type="' + pricingType + '"' : '')
+                    + ((pricingType !== '') ? 'pricing-type="' + pricingType + '"' : 'pricing-type=""')
                     + ']' + shortcode + '[/zt_pricing]';
             w.zo2.shortcode.value(shortcode);
         },
@@ -1263,14 +1263,14 @@
             var title = $pricing.find(this._elements.title).val();
             var content = $pricing.find(this._elements.content).val();
             var price = $pricing.find(this._elements.price).val();
-            var type = $pricing.find(this._elements.type).val();
+            var link = $pricing.find(this._elements.link).val();
             var text = $pricing.find(this._elements.text).val();
             var hightlight = $pricing.find(this._elements.hightlight).is(':checked');
             var shortcode = '[zt_pricing_item';
             shortcode += (title !== '') ? ' title="' + title + '"' : '';
             shortcode += (hightlight) ? ' item-hightlight="true"' : '';
             shortcode += (price !== '') ? ' price="' + price + '"' : '';
-            shortcode += (type !== '') ? ' button-type="' + type + '"' : '';
+            shortcode += (link !== '') ? ' link="' + link + '"' : '';
             shortcode += (text !== '') ? ' button-text="' + text + '"' : '';
             shortcode += ']' + content + '[/zt_pricing_item]';
             return shortcode;
