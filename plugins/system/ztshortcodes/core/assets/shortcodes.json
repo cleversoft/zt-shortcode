@@ -44,7 +44,8 @@
         },
         "depends": {
             "css": [
-                "Shortcodes://assets/bootstrap/css/bootstrap.min.css"
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
+                "Shortcodes://assets/css/tabs.css"
             ]
         }
     },
