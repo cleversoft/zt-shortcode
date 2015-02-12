@@ -25,6 +25,7 @@
     position: relative;
     display: block;
     background-color: #F8F8F8;
+    color: #444;
 }
 .accordion-section-title i {
     border-right: 1px solid rgba(0, 0, 0, 0.08);
@@ -35,11 +36,16 @@
     width: 50px;
     margin-right: 15px;
 }
+.accordion-section-title:hover, .accordion-section-title.active{
+    color: #2991d6;
+    text-decoration: none;
+}
 
 /*----- Section Content -----*/
 .accordion-section-content {
     padding:15px;
     display:none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 .accordion-section-content.open{
     display: block;
