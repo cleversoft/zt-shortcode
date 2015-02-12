@@ -1249,9 +1249,9 @@
             $pricings.each(function () {
                 shortcode += _self._genTabShortcode($(this));
             });
-            var shortcode = '[zt_pricings '
+            var shortcode = '[zt_pricing '
                     + ((pricingType !== '') ? 'type="' + pricingType + '"' : '')
-                    + ']' + shortcode + '[/zt_pricings]';
+                    + ']' + shortcode + '[/zt_pricing]';
             w.zo2.shortcode.value(shortcode);
         },
         /**
