@@ -28,6 +28,9 @@
     padding: 0 10px;
     box-sizing: border-box;
 }
+.pricing-tables.pricing-1 .pricing-item{
+    width: 100%;
+}
 .pricing-tables.pricing-2 .pricing-item{
     width: 50%;
 }

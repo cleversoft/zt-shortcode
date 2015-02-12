@@ -148,18 +148,21 @@
         "group": "Grid",
         "tag": "zt_pricing",
         "options": {
-            "pricing-type": "default",
+            "pricing-type": "",
             "price": "",
             "item-column": "",
             "item-hightlight": "",
             "level-item": "",
             "title": "",
-            "button-type": "",
+            "link": "",
             "button-text": ""
         },
         "depends": {
             "css": [
                 "Shortcodes://assets/css/pricing.css"
+            ],
+            "js": [
+                "Shortcodes://assets/js/pricing.js"
             ]
         }
     },
