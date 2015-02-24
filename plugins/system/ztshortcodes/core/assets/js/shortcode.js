@@ -28,6 +28,8 @@
             shortcodeRender: "#zt-sc-render",
             shortcodePreview: "#zt-sc-preview-content",
             shortcodeContainer: "#zt-sc-container",
+            /* Icon selector */
+            inputIcon: "#zt-sc-icon",
             /* Control button */
             comButtons: "#zt-shortcode-controls",
             buttonInsert: "#zt-sc-insert",
@@ -143,6 +145,14 @@
             $('div' + this._elements.shortcodeContainer).on('change', '.sc-selectbox', function () {
                 var $parent = $(this).closest(_self._elements.shortcodeContainer);
                 _self._update($parent);
+            });
+            $('div' + _self._elements.inputIcon).find('a').on('click', function () {
+                var $parent = $(this).closest('div' + _self._elements.inputIcon);
+                $parent.find('a').removeClass('selected');
+                $(this).addClass('selected');
+                var selected = $parent.find('.selected');
+                $parent.find('input').val((selected.length <= 0) ? '' : selected.find('i').attr('class')).trigger('change');
+                return false;
             });
         },
         /**

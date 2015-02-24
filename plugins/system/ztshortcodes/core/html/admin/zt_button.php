@@ -57,9 +57,9 @@ $prefix = 'zt-sc-';
             </select>
         </div>
         <div class="form-group clearfix">
-            <label for="<?php echo $prefix . 'button-icon'; ?>">Icon</label>
-            <div id="list-icon-button">
-                <input type="hidden" id="<?php echo $prefix . 'button-icon'; ?>" class="sc-selectbox" data-property="icon">
+            <label for="<?php echo $prefix . 'icon'; ?>">Icon</label>
+            <div id="<?php echo $prefix . 'icon'; ?>">
+                <input type="hidden" class="sc-selectbox" data-property="icon">
                 <?php echo getAwesome(); ?>
             </div>
         </div>
