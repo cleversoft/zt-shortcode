@@ -6,35 +6,6 @@
  */
 (function (w, $) {
 
-    /* Small extension for jQuery */
-    $.fn.extend({
-        insertAtCaret: function (myValue) {
-            return this.each(function (i) {
-                if (w.document.selection) {
-                    //For browsers like Internet Explorer
-                    this.focus();
-                    var sel = w.document.selection.createRange();
-                    sel.text = myValue;
-                    this.focus();
-                }
-                else if (this.selectionStart || this.selectionStart == '0') {
-                    //For browsers like Firefox and Webkit based
-                    var startPos = this.selectionStart;
-                    var endPos = this.selectionEnd;
-                    var scrollTop = this.scrollTop;
-                    this.value = this.value.substring(0, startPos) + myValue + this.value.substring(endPos, this.value.length);
-                    this.focus();
-                    this.selectionStart = startPos + myValue.length;
-                    this.selectionEnd = startPos + myValue.length;
-                    this.scrollTop = scrollTop;
-                } else {
-                    this.value += myValue;
-                    this.focus();
-                }
-            });
-        }
-    });
-
     /* Short code main class */
     var _shortcode = {
         /* Short code add on */
@@ -56,6 +27,7 @@
             shortcodeContent: "#zo2-sc-value",
             shortcodeRender: "#zo2-sc-render",
             shortcodePreview: "#zo2-sc-preview-content",
+            shortcodeContainer: "this._elements.shortcodeContainer",
             /* Control button */
             comButtons: "#zo2-shortcode-controls",
             buttonInsert: "#zo2-sc-insert",
@@ -85,7 +57,6 @@
                     }
                 }
             });
-
             /* Preview button */
             $(_self._elements.buttonPreview).on('click', function () {
                 if ($(_self._elements.buttonPreview).text() === 'Preview Shortcode') {
@@ -100,7 +71,6 @@
                             $("html, body").animate({scrollTop: $(w.document).height()});
                         });
             });
-
             /* Hide tab & group after choice */
             $(_self._elements.tabList).on('click', 'li', function () {
                 var currentTab = $(this).find('a').text();
@@ -110,7 +80,6 @@
                 $(_self._elements.tabGroup).hide('slow');
                 $(_self._elements.breadcrumdContainer).show('slow');
             });
-
             /* Bread crumd home */
             $(_self._elements.breadcrumdContainer).on('click', _self._elements.breadcrumdHome, function () {
                 $(_self._elements.tabList).show('slow');
@@ -129,7 +98,6 @@
                 $(_self._elements.tabContent).find('.active').removeClass('active in');
                 $(_self._elements.tabList).find('.active').removeClass('active');
             });
-
             /* Close button */
             $(_self._elements.buttonClose).on('click', function () {
                 if (typeof (w.parent) !== 'undefined') {
@@ -138,13 +106,13 @@
                     }
                 }
             });
-
             /* Init shortcode add-on */
             $(this._addOn).each(function (key, item) {
                 if (item.hasOwnProperty('_init')) {
                     item._init();
                 }
             });
+            this._hook();
         },
         /**
          * Set shortcode value
@@ -161,1123 +129,131 @@
          */
         preview: function (html) {
             $(this._elements.shortcodeRender).html(html);
+        },
+        /**
+         * Event hook
+         * @returns {undefined}
+         */
+        _hook: function () {
+            var _self = this;
+            $(this._elements.shortcodeContainer).on('keyup', '.sc-textbox', function () {
+                var $parent = $(this).closest(this._elements.shortcodeContainer);
+                _self._update($parent);
+            });
+            $(this._elements.shortcodeContainer).on('change', '.sc-selectbox', function () {
+                var $parent = $(this).closest(this._elements.shortcodeContainer);
+                _self._update($parent);
+            });
+        },
+        /**
+         * Update shortcode data
+         * @param {type} $parent
+         * @returns {undefined}
+         */
+        _update: function ($parent) {
+            var $inputs = $parent.children().filter('.form-group').find('input,select,textarea');
+            var $root = $parent.closest('[data-root*="true"]');
+            var shortcodeTag = $parent.data('tag');
+            var shortcode = {};
+            shortcode._Tag = shortcodeTag;
+            $inputs.each(function () {
+                var inputType = $(this).prop('tagName');
+                var property = $(this).data('property');
+                var type = $(this).attr('type');
+                switch (inputType) {
+                    case 'INPUT':
+                        switch (type) {
+                            case 'checkbox':
+                                var value = $(this).is(':checked');
+                                break;
+                            default:
+                                var value = $(this).val();
+                                break;
+                        }
+                        break;
+                    default:
+                        var value = $(this).val();
+                        break;
+                }
+                if (value !== '' && property !== '') {
+                    shortcode[property] = value;
+                }
+                if (property === '') {
+                    shortcode['_Content'] = value;
+                }
+            });
+            $parent.data('shortcode', shortcode);
+            this._render($root);
+        },
+        /**
+         * Render shortcode
+         * @param {type} $root
+         * @returns {undefined}
+         */
+        _render: function ($root) {
+            var parentTag = $root.data('tag');
+            var shortcode = '';
+            if (typeof (parentTag) === 'undefined' || parentTag === '') {
+                shortcode = this._getShortcode($root.find(this._elements.shortcodeContainer +':first'));
+            } else {
+                shortcode = this._getParentShortcode($root);
+            }
+            this.value(shortcode);
+        },
+        /**
+         * Get shortcode of element
+         * @param {type} $element
+         * @returns {String}
+         */
+        _getShortcode: function ($element) {
+            var data = $element.data('shortcode');
+            if (typeof (data) === 'undefined') {
+                this._update($element);
+                return '';
+            }
+            var shortcode = '[' + data._Tag;
+            $.each(data, function (key, value) {
+                if (key !== '_Tag' && key !== '_Content') {
+                    shortcode += ' ' + key + '="' + value + '"';
+                }
+            });
+            shortcode += ']' + data._Content + '[/' + data._Tag + ']';
+            return shortcode;
+        },
+        /**
+         * Get parent shortcode
+         * @param {type} $element
+         * @returns {String}
+         */
+        _getParentShortcode: function ($element) {
+            var _self = this;
+            var data = $element.data('shortcode');
+            var elementShortCode = '';
+            if (typeof (data) === 'undefined') {
+                this._update($element);
+                return '';
+            }
+            var shortcode = '[' + data._Tag;
+            $.each(data, function (key, value) {
+                if (key !== '_Tag' && key !== '_Content') {
+                    shortcode += ' ' + key + '="' + value + '"';
+                }
+            });
+            $element.children('div' + this._elements.shortcodeContainer).each(function () {
+                elementShortCode += _self._getShortcode($(this));
+            });
+            shortcode += ']' + elementShortCode + '[/' + data._Tag + ']';
+            return shortcode;
         }
-
     };
-
     /* Check for Zo2 javascript framework */
     if (typeof (w.zo2) === 'undefined') {
         w.zo2 = {};
     }
-
     /* Append short code to Zo2 */
     w.zo2.shortcode = _shortcode;
-
     /* Init shortcode */
     $(w.document).ready(function () {
         w.zo2.shortcode._init();
     });
-
-})(window, jQuery);
-
-/**
- * Label shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.label.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Label shortcode class */
-    var _label = {
-        name: 'Label shortcode add-on',
-        /* Selector container */
-        _elements: {
-            value: "#zo2-sc-label-name",
-            type: "#zo2-sc-label-type"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.value).on('keyup', function () {
-                _self._update();
-            });
-            $(_self._elements.type).on('change', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var type = $(_self._elements.type).val();
-            var value = $(_self._elements.value).val();
-            w.zo2.shortcode.value('[zt_label type="' + type + '"]' + value + '[/zt_label]');
-            w.zo2.shortcode.preview('<span class="label label-' + type + '">' + value + '</span>');
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_label);
-
-})(window, jQuery);
-
-/**
- * Button shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.button.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Button shortcode class */
-    var _button = {
-        name: 'Button shortcode add-on',
-        /* Selector container */
-        _elements: {
-            text: "#zo2-sc-button-text",
-            type: "#zo2-sc-button-type",
-            size: "#zo2-sc-button-size",
-            colour: "#zo2-sc-button-colour",
-            icon: "#list-icon-button",
-            link: "#zo2-sc-button-link",
-            extraClass: "#zo2-sc-button-extra-class"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.icon).find('a').on('click', function () {
-                $(_self._elements.icon).find('a').removeClass('selected');
-                $(this).addClass('selected');
-                _self._update();
-                return false;
-            });
-            $(_self._elements.colour + ', '
-                    + _self._elements.size + ', '
-                    + _self._elements.type).on('change', function () {
-                _self._update();
-            });
-            $(_self._elements.text + ', '
-                    + _self._elements.extraClass + ', '
-                    + _self._elements.link).on('keyup', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var text = $(_self._elements.text).val();
-            var extraClass = $(_self._elements.extraClass).val();
-            var colour = $(_self._elements.colour).val();
-            var link = $(_self._elements.link).val();
-            var size = $(_self._elements.size).val();
-            var type = $(_self._elements.type).val();
-            var icon = _self._getIcon();
-            var shortcode = '[zt_button';
-            shortcode += (type !== '') ? ' type="' + type + '"' : '';
-            shortcode += (size !== '') ? ' size="' + size + '"' : '';
-            shortcode += (colour !== '') ? ' colour="' + colour + '"' : '';
-            shortcode += (link !== '') ? ' link="' + link + '"' : '';
-            shortcode += (icon !== '') ? ' icon="' + icon + '"' : '';
-            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
-            shortcode += ']' + text + '[/zt_button]';
-            w.zo2.shortcode.value(shortcode);
-        },
-        /**
-         * Get button icon
-         * @returns {String}
-         */
-        _getIcon: function () {
-            var selected = $(this._elements.icon).find('.selected');
-            return (selected.length <= 0) ? '' : selected.find('i').attr('class');
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_button);
-
-})(window, jQuery);
-
-/**
- * Dropcaps shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.dropcap.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Dropcaps shortcode class */
-    var _dropcaps = {
-        name: 'Dropcaps shortcode add-on',
-        /* Selector container */
-        _elements: {
-            type: "#zo2-sc-dropcaps-type",
-            textColour: "#zo2-sc-dropcaps-text-color",
-            bgColour: "#zo2-sc-dropcaps-bg-color",
-            content: "#zo2-sc-dropcaps-content"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.type).on('change', function () {
-                _self._update();
-            });
-            $(_self._elements.content + ', '
-                    + _self._elements.textColour + ', '
-                    + _self._elements.bgColour).on('keyup', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var content = $(_self._elements.content).val();
-            var bgColour = $(_self._elements.bgColour).val();
-            var colour = $(_self._elements.textColour).val();
-            var type = $(_self._elements.type).val();
-            var shortcode = '[zt_dropcaps';
-            shortcode += (type !== '') ? ' type="' + type + '"' : '';
-            shortcode += (colour !== '') ? ' textColour="' + colour + '"' : '';
-            shortcode += (bgColour !== '') ? ' bgColour="' + bgColour + '"' : '';
-            shortcode += ']' + content + '[/zt_dropcaps]';
-            w.zo2.shortcode.value(shortcode);
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_dropcaps);
-
-})(window, jQuery);
-
-/**
- * Messagebox shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.messagebox.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Messagebox shortcode class */
-    var _messageBox = {
-        name: 'MessageBox shortcode add-on',
-        /* Selector container */
-        _elements: {
-            content: "#zo2-sc-message-box-content",
-            type: "#zo2-sc-message-box-type",
-            icon: "#list-icon-message-box",
-            extraClass: "#zo2-sc-message-box-class"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.icon).find('a').on('click', function () {
-                $(_self._elements.icon).find('a').removeClass('selected');
-                $(this).addClass('selected');
-                _self._update();
-                return false;
-            });
-            $(_self._elements.type).on('change', function () {
-                _self._update();
-            });
-            $(_self._elements.content + ', '
-                    + _self._elements.extraClass).on('keyup', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var content = $(_self._elements.content).val();
-            var extraClass = $(_self._elements.extraClass).val();
-            var type = $(_self._elements.type).val();
-            var icon = _self._getIcon();
-            var shortcode = '[zt_message_box';
-            shortcode += (type !== '') ? ' type="' + type + '"' : '';
-            shortcode += (icon !== '') ? ' icon="' + icon + '"' : '';
-            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
-            shortcode += ']' + content + '[/zt_message_box]';
-            w.zo2.shortcode.value(shortcode);
-        },
-        /**
-         * Get messagebox icon
-         * @returns {String}
-         */
-        _getIcon: function () {
-            var selected = $(this._elements.icon).find('.selected');
-            return (selected.length <= 0) ? '' : selected.find('i').attr('class');
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_messageBox);
-
-})(window, jQuery);
-
-/**
- * Tabs shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.tabs.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Tabs shortcode class */
-    var _tabs = {
-        name: 'Tabs shortcode add-on',
-        /* Selector container */
-        _elements: {
-            newTab: "#zo2-sc-new-tab",
-            container: "#zo2-sc-tabs-container",
-            element: "#zo2-sc-tabs-element",
-            title: "#zo2-sc-tab-title",
-            content: "#zo2-sc-tab-content",
-            active: "#zo2-sc-tab-active"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.newTab).on('click', function () {
-                $(_self._elements.element).first()
-                        .clone()
-                        .appendTo(_self._elements.container);
-                $(_self._elements.container).children()
-                        .last()
-                        .find(_self._elements.title)
-                        .val('');
-                $(_self._elements.container).children()
-                        .last()
-                        .find(_self._elements.content)
-                        .val('');
-                $(_self._elements.container).children()
-                        .last()
-                        .find(_self._elements.active)
-                        .removeAttr('checked');
-            });
-            /* One active tab per tabs shortcode */
-            $(_self._elements.container).on('click', _self._elements.active, function () {
-                var checked = $(this).is(':checked');
-                $(_self._elements.container).children()
-                        .find(_self._elements.active)
-                        .removeAttr('checked');
-                if ($(_self._elements.container).children().length === 1) {
-                    if (!checked) {
-                        $(this).removeAttr('checked');
-                    } else {
-                        $(this).prop('checked', true);
-                    }
-                } else {
-                    $(this).prop('checked', true);
-                }
-                _self._update();
-            });
-            $(_self._elements.container).on('keyup',
-                    _self._elements.title + ', '
-                    + _self._elements.content
-                    , function () {
-                        _self._update();
-                    });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var shortcode = '';
-            var $tabs = $(_self._elements.container).children();
-            $tabs.each(function () {
-                shortcode += _self._genTabShortcode($(this));
-            });
-            var shortcode = '[zt_tabs]' + shortcode + '[/zt_tabs]';
-            w.zo2.shortcode.value(shortcode);
-        },
-        /**
-         * Generate tab shortcode
-         * @param {type} $tab
-         * @returns {undefined}
-         */
-        _genTabShortcode: function ($tab) {
-            var title = $tab.find(this._elements.title).val();
-            var content = $tab.find(this._elements.content).val();
-            var active = $tab.find(this._elements.active).is(':checked');
-            var shortcode = '[zt_tab';
-            shortcode += (title !== '') ? ' title="' + title + '"' : '';
-            shortcode += (active) ? ' active="true"' : '';
-            shortcode += ']' + content + '[/zt_tab]';
-            return shortcode;
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_tabs);
-
-})(window, jQuery);
-
-/**
- * Blockquotes shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.label.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Blockquotes shortcode class */
-    var _blockquotes = {
-        name: 'Blockquotes shortcode add-on',
-        /* Selector container */
-        _elements: {
-            type: "#zo2-sc-blockquotes-type",
-            author: "#zo2-sc-blockquotes-author",
-            link: "#zo2-sc-blockquotes-author-link",
-            content: "#zo2-sc-blockquotes-content",
-            extraClass: "#zo2-sc-blockquotes-class"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.author + ', '
-                    + _self._elements.link + ', '
-                    + _self._elements.content + ', '
-                    + _self._elements.extraClass).on('keyup', function () {
-                _self._update();
-            });
-            $(_self._elements.type).on('change', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var author = $(this._elements.author).val();
-            var link = $(this._elements.link).val();
-            var content = $(this._elements.content).val();
-            var extraClass = $(this._elements.extraClass).val();
-            var type = $(this._elements.type).val();
-            var shortcode = '[zt_blockquotes';
-            shortcode += (author !== '') ? ' author="' + author + '"' : '';
-            shortcode += (link !== '') ? ' link="' + link + '"' : '';
-            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
-            shortcode += (type !== '') ? ' type="' + type + '"' : '';
-            shortcode += ']' + content + '[/zt_blockquotes]';
-            w.zo2.shortcode.value(shortcode);
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_blockquotes);
-
-})(window, jQuery);
-
-/**
- * Counter cirle shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.button.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Counter circle shortcode class */
-    var _counterCircle = {
-        name: 'Counter circle shortcode add-on',
-        /* Selector container */
-        _elements: {
-            effect: "#zo2-sc-counter-effect",
-            barColor: "#zo2-sc-counter-barColor",
-            trackColor: "#zo2-sc-counter-trackColor",
-            scale: "#zo2-sc-counter-scaleLength",
-            percent: "#zo2-sc-counter-percent",
-            lineCap: "#zo2-sc-counter-lineCap",
-            lineWidth: "#zo2-sc-counter-lineWidth",
-            arountSize: "#zo2-sc-counter-size",
-            duration: "#zo2-sc-counter-duration",
-            type: "#zo2-sc-counter-contentType",
-            icon: "#zo2-sc-counter-icon",
-            extraClass: "#zo2-sc-counter-extraClass",
-            content: "#zo2-sc-counter-content",
-            fieldContent: "#zo2-sc-counter-field-content",
-            fieldIcon: "#zo2-sc-counter-field-icon"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.icon).find('a').on('click', function () {
-                $(_self._elements.icon).find('a').removeClass('selected');
-                $(this).addClass('selected');
-                _self._update();
-                return false;
-            });
-            $(_self._elements.effect + ', '
-                    + _self._elements.lineCap + ', '
-                    + _self._elements.type).on('change', function () {
-                _self._update();
-            });
-            $(_self._elements.type).on('change', function () {
-                if ($(_self._elements.type).val() === '') {
-                    $(_self._elements.fieldContent).show('slow');
-                    $(_self._elements.content).val('');
-                } else {
-                    $(_self._elements.fieldContent).hide('slow');
-                }
-                if ($(_self._elements.type).val() === 'icon') {
-                    $(_self._elements.fieldIcon).show('slow');
-                    $(_self._elements.icon).find('a').removeClass('selected');
-                }
-                else {
-                    $(_self._elements.fieldIcon).hide('slow');
-                }
-                _self._update();
-            });
-            $(_self._elements.barColor + ', '
-                    + _self._elements.trackColor + ', '
-                    + _self._elements.scale + ', '
-                    + _self._elements.percent + ', '
-                    + _self._elements.lineWidth + ', '
-                    + _self._elements.arountSize + ', '
-                    + _self._elements.duration + ', '
-                    + _self._elements.extraClass + ', '
-                    + _self._elements.content).on('keyup', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var effect = $(_self._elements.effect).val();
-            var extraClass = $(_self._elements.extraClass).val();
-            var barColor = $(_self._elements.barColor).val();
-            var trackColor = $(_self._elements.trackColor).val();
-            var scale = $(_self._elements.scale).val();
-            var percent = $(_self._elements.percent).val();
-            var lineCap = $(_self._elements.lineCap).val();
-            var lineWidth = $(_self._elements.lineWidth).val();
-            var aroundSize = $(_self._elements.arountSize).val();
-            var duration = $(_self._elements.duration).val();
-            var type = $(_self._elements.type).val();
-            var icon = _self._getIcon();
-            var content = '';
-            if (type === '') {
-                content = $(_self._elements.content).val();
-            } else {
-                content = (type === 'icon') ? icon : percent;
-            }
-            var shortcode = '[zt_counter_circle';
-            shortcode += (effect !== '') ? ' easing="' + effect + '"' : '';
-            shortcode += (barColor !== '') ? ' barColor="' + barColor + '"' : '';
-            shortcode += (trackColor !== '') ? ' trackColor="' + trackColor + '"' : '';
-            shortcode += (scale !== '') ? ' scaleLength="' + scale + '"' : '';
-            shortcode += (percent !== '') ? ' percent="' + percent + '"' : '';
-            shortcode += (lineCap !== '') ? ' lineCap="' + lineCap + '"' : '';
-            shortcode += (lineWidth !== '') ? ' lineWidth="' + lineWidth + '"' : '';
-            shortcode += (aroundSize !== '') ? ' size="' + aroundSize + '"' : '';
-            shortcode += (type !== '') ? ' content-type="' + type + '"' : '';
-            shortcode += (duration !== '') ? ' duration="' + duration + '"' : '';
-            shortcode += (extraClass !== '') ? ' extra-class="' + extraClass + '"' : '';
-            shortcode += ']' + content + '[/zt_counter_circle]';
-            w.zo2.shortcode.value(shortcode);
-        },
-        /**
-         * Get counter cirle icon
-         * @returns {String}
-         */
-        _getIcon: function () {
-            var selected = $(this._elements.icon).find('.selected');
-            return (selected.length <= 0) ? '' : selected.find('i').attr('class');
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_counterCircle);
-
-})(window, jQuery);
-
-/**
- * Divider add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.divider.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Divider shortcode class */
-    var _divider = {
-        name: 'Button shortcode add-on',
-        /* Selector container */
-        _elements: {
-            type: "#zo2-sc-divider-type",
-            text: "#zo2-sc-divider-text",
-            icon: "#list-icon-divider",
-            fieldText: "#zo2-sc-field-text",
-            fieldIcon: "#zo2-sc-field-icon"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.icon).find('a').on('click', function () {
-                $(_self._elements.icon).find('a').removeClass('selected');
-                $(this).addClass('selected');
-                _self._update();
-                return false;
-            });
-            $(_self._elements.type).on('change', function () {
-                $(_self._elements.text).val('');
-                if ($(this).val() === 'text-only') {
-                    $(_self._elements.fieldText).show('slow');
-
-                } else {
-                    $(_self._elements.fieldText).hide('slow');
-                }
-                $(_self._elements.icon).find('a').removeClass('selected');
-                if ($(this).val() === 'icon-type-1' || $(this).val() === 'icon-type-2') {
-                    $(_self._elements.fieldIcon).show('slow');
-                } else {
-                    $(_self._elements.fieldIcon).hide('slow');
-                }
-                _self._update();
-            });
-            $(_self._elements.text).on('keyup', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var text = $(_self._elements.text).val();
-            var type = $(_self._elements.type).val();
-            var icon = _self._getIcon();
-            var shortcode = '[zt_divider';
-            shortcode += (type !== '') ? ' type="' + type + '"' : '';
-            shortcode += (text !== '') ? ' text="' + text + '"' : '';
-            shortcode += (icon !== '') ? ' icon="' + icon + '"' : '';
-            shortcode += '][/zt_divider]';
-            w.zo2.shortcode.value(shortcode);
-        },
-        /**
-         * Get divider icon
-         * @returns {String}
-         */
-        _getIcon: function () {
-            var selected = $(this._elements.icon).find('.selected');
-            return (selected.length <= 0) ? '' : selected.find('i').attr('class');
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_divider);
-
-})(window, jQuery);
-
-/**
- * Accordion shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.tabs.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Accordion shortcode class */
-    var _accordion = {
-        name: 'Accordion shortcode add-on',
-        /* Selector container */
-        _elements: {
-            newAccordion: "#zo2-sc-new-accordion",
-            type: "#zo2-sc-accordion-type",
-            container: "#zo2-sc-accordion-container",
-            element: "#zo2-sc-accordion-element",
-            title: "#zo2-sc-accordion-title",
-            content: "#zo2-sc-accordion-content",
-            active: "#zo2-sc-accordion-active"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.newAccordion).on('click', function () {
-                $(_self._elements.element).first()
-                        .clone()
-                        .appendTo(_self._elements.container);
-                $(_self._elements.container).children()
-                        .last()
-                        .find(_self._elements.title)
-                        .val('Accordion Title');
-                $(_self._elements.container).children()
-                        .last()
-                        .find(_self._elements.content)
-                        .val('Accordion Content');
-                $(_self._elements.container).children()
-                        .last()
-                        .find(_self._elements.active)
-                        .removeAttr('checked');
-            });
-            /* One active accordion per accordions shortcode */
-            $(_self._elements.container).on('click', _self._elements.active, function () {
-                var checked = $(this).is(':checked');
-                $(_self._elements.container).children()
-                        .find(_self._elements.active)
-                        .removeAttr('checked');
-                if ($(_self._elements.container).children().length === 1) {
-                    if (!checked) {
-                        $(this).removeAttr('checked');
-                    } else {
-                        $(this).prop('checked', true);
-                    }
-                } else {
-                    $(this).prop('checked', true);
-                }
-                _self._update();
-            });
-            $(_self._elements.container).on('keyup',
-                    _self._elements.title + ', '
-                    + _self._elements.content
-                    , function () {
-                        _self._update();
-                    });
-            $(_self._elements.type).on('change', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var shortcode = '';
-            var $accordions = $(_self._elements.container).children();
-            var type = $(_self._elements.type).val();
-            $accordions.each(function () {
-                shortcode += _self._genAccordionShortcode($(this));
-            });
-            var shortcode = '[zt_accordions'
-                    + ((type !== '') ? ' type="' + type + '"' : '')
-                    + ']' + shortcode + '[/zt_accordions]';
-            w.zo2.shortcode.value(shortcode);
-        },
-        /**
-         * Generate accordion shortcode
-         * @param {type} $accordion
-         * @returns {undefined}
-         */
-        _genAccordionShortcode: function ($accordion) {
-            var title = $accordion.find(this._elements.title).val();
-            var content = $accordion.find(this._elements.content).val();
-            var active = $accordion.find(this._elements.active).is(':checked');
-            var shortcode = '[zt_accordion';
-            shortcode += (title !== '') ? ' title="' + title + '"' : '';
-            shortcode += (active) ? ' active="true"' : '';
-            shortcode += ']' + content + '[/zt_accordion]';
-            return shortcode;
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_accordion);
-
-})(window, jQuery);
-
-/**
- * Progress shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.progress.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Progress shortcode class */
-    var _progressBar = {
-        name: 'Progress shortcode add-on',
-        /* Selector container */
-        _elements: {
-            type: "#zo2-sc-progress-type",
-            trackColor: "#zo2-sc-progress-trackcolor",
-            barColor: "#zo2-sc-progress-barcolor",
-            titleColor: "#zo2-sc-progress-titlecolor",
-            stripType: "#zo2-sc-strip-type",
-            animated: "#zo2-sc-animated-type",
-            currentValue: "#zo2-sc-progress-current-value",
-            minValue: "#zo2-sc-progress-min-value",
-            maxValue: "#zo2-sc-progress-max-value",
-            content: "#zo2-sc-progress-content",
-            hideContent: "#zo2-sc-progress-hide-content"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.trackColor + ', '
-                    + _self._elements.barColor + ', '
-                    + _self._elements.titleColor + ', '
-                    + _self._elements.currentValue + ', '
-                    + _self._elements.minValue + ', '
-                    + _self._elements.maxValue + ', '
-                    + _self._elements.content).on('keyup', function () {
-                _self._update();
-            });
-            $(_self._elements.type + ', '
-                    + _self._elements.stripType + ', '
-                    + _self._elements.animated).on('change', function () {
-                _self._update();
-            });
-            $(_self._elements.hideContent).on('click', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var type = $(_self._elements.type).val();
-            var trackColor = $(_self._elements.trackColor).val();
-            var barColor = $(_self._elements.barColor).val();
-            var titleColor = $(_self._elements.titleColor).val();
-            var currentValue = $(_self._elements.currentValue).val();
-            var minValue = $(_self._elements.minValue).val();
-            var maxValue = $(_self._elements.maxValue).val();
-            var content = $(_self._elements.content).val();
-            var hideContent = $(_self._elements.hideContent).is(":checked");
-            var stripType = $(_self._elements.stripType).val();
-            var animated = $(_self._elements.animated).val();
-
-            var shortcode = '[zt_progress_bar';
-            shortcode += (type !== '') ? ' type="' + type + '"' : '';
-            shortcode += (trackColor !== '') ? ' trackColor="' + trackColor + '"' : '';
-            shortcode += (barColor !== '') ? ' barColor="' + barColor + '"' : '';
-            shortcode += (titleColor !== '') ? ' titleColor="' + titleColor + '"' : '';
-            shortcode += (currentValue !== '') ? ' now-value="' + currentValue + '"' : '';
-            shortcode += (minValue !== '') ? ' min-value="' + minValue + '"' : '';
-            shortcode += (maxValue !== '') ? ' min-value="' + maxValue + '"' : '';
-            shortcode += (hideContent) ? ' hidden-content="' + hideContent + '"' : '';
-            shortcode += (stripType !== '') ? ' strip="' + stripType + '"' : '';
-            shortcode += (animated !== '') ? ' animated="' + animated + '"' : '';
-            shortcode += ']' + content + '[/zt_progress_bar]';
-            w.zo2.shortcode.value(shortcode);
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_progressBar);
-
-})(window, jQuery);
-
-/**
- * Video shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.video.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Video shortcode class */
-    var _video = {
-        name: 'Video shortcode add-on',
-        /* Selector container */
-        _elements: {
-            url: "#zo2-sc-video-url",
-            width: "#zo2-sc-video-width",
-            height: "#zo2-sc-video-height"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.url + ', '
-                    + _self._elements.width + ', '
-                    + _self._elements.height).on('keyup', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var url = $(_self._elements.url).val();
-            var width = $(_self._elements.width).val();
-            var height = $(_self._elements.height).val();
-
-            var shortcode = '[zt_video_play';
-            shortcode += (url !== '') ? ' src="' + url + '"' : '';
-            shortcode += (width !== '') ? ' width="' + width + '"' : '';
-            shortcode += (height !== '') ? ' height="' + height + '"' : '';
-            shortcode += '][/zt_video_play]';
-            w.zo2.shortcode.value(shortcode);
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_video);
-
-})(window, jQuery);
-
-/**
- * Font Awesome shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.messagebox.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Font Awesome shortcode class */
-    var _fontAwesome = {
-        name: 'Font Awesome shortcode add-on',
-        /* Selector container */
-        _elements: {
-            icon: "#zo2-sc-awesome-icon",
-            circle: "#zo2-sc-awesome-circle",
-            size: "#zo2-sc-awesome-size",
-            spin: "#zo2-sc-awesome-spin",
-            color: "#zo2-sc-awesome-color",
-            bgColor: "#zo2-sc-awesome-bgColor",
-            bdColor: "#zo2-sc-awesome-bdColor"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.icon).find('a').on('click', function () {
-                $(_self._elements.icon).find('a').removeClass('selected');
-                $(this).addClass('selected');
-                _self._update();
-                return false;
-            });
-            $(_self._elements.circle + ', '
-                    + _self._elements.size + ', '
-                    + _self._elements.spin).on('change', function () {
-                _self._update();
-            });
-            $(_self._elements.color + ', '
-                    + _self._elements.bgColor + ', '
-                    + _self._elements.bdColor).on('keyup', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var icon = _self._getIcon();
-            var circle = $(_self._elements.circle).val();
-            var size = $(_self._elements.size).val();
-            var spin = $(_self._elements.spin).val();
-            var color = $(_self._elements.color).val();
-            var bgColor = $(_self._elements.bgColor).val();
-            var bdColor = $(_self._elements.bdColor).val();
-
-            var shortcode = '[zt_i';
-            shortcode += (icon !== '') ? ' classIcon="' + icon + '"' : '';
-            shortcode += (circle !== '') ? ' iconCircle="' + circle + '"' : '';
-            shortcode += (size !== '') ? ' iconSize="' + size + '"' : '';
-            shortcode += (spin !== '') ? ' spinningIcon="' + spin + '"' : '';
-            shortcode += (color !== '') ? ' iconColor="' + color + '"' : '';
-            shortcode += (bgColor !== '') ? ' iconBgColor="' + bgColor + '"' : '';
-            shortcode += (bdColor !== '') ? ' iconBdColor="' + bdColor + '"' : '';
-            shortcode += '][/zt_i]';
-            w.zo2.shortcode.value(shortcode);
-        },
-        /**
-         * Get font awesome icon
-         * @returns {String}
-         */
-        _getIcon: function () {
-            var selected = $(this._elements.icon).find('.selected');
-            return (selected.length <= 0) ? '' : selected.find('i').attr('class');
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_fontAwesome);
-
-})(window, jQuery);
-
-/**
- * Pricing table shortcode add-on
- * @param {type} w
- * @param {type} $
- * @file shortcode.pricing.js
- * @returns {undefined}
- */
-(function (w, $) {
-
-    /* Pricing shortcode class */
-    var _tabs = {
-        name: 'Tabs shortcode add-on',
-        /* Selector container */
-        _elements: {
-            newPricing: "#zo2-sc-pricing-new-pricing-table",
-            pricingType: "#zo2-sc-pricing-type",
-            container: "#zo2-sc-pricing-container",
-            element: "#zo2-sc-pricing-element",
-            title: "#zo2-sc-pricing-title",
-            hightlight: "#zo2-sc-pricing-hightlight",
-            content: "#zo2-sc-pricing-content",
-            price: "#zo2-sc-pricing-price",
-            link: "#zo2-sc-pricing-link",
-            text: "#zo2-sc-pricing-button-text"
-        },
-        /**
-         * Init function
-         * @returns {undefined}
-         */
-        _init: function () {
-            var _self = this;
-            $(_self._elements.newPricing).on('click', function () {
-                $(_self._elements.element).first()
-                        .clone()
-                        .appendTo(_self._elements.container);
-                var $lastElement = $(_self._elements.container).children().last();
-                $lastElement.find('input')
-                        .val('');
-                $lastElement.find('select')
-                        .val('');
-                $lastElement.find(_self._elements.title)
-                        .val('Title Pricing');
-                $lastElement.find(_self._elements.content)
-                        .val('Content Pricing');
-                $lastElement.find(_self._elements.text)
-                        .val('Button Text');
-                $lastElement.find(_self._elements.hightlight)
-                        .removeAttr('checked');
-            });
-            /* Hight light */
-            $(_self._elements.container).on('click', _self._elements.hightlight, function () {
-                var checked = $(this).is(':checked');
-                $(_self._elements.container).children()
-                        .find(_self._elements.hightlight)
-                        .removeAttr('checked');
-                if ($(_self._elements.container).children().length === 1) {
-                    if (!checked) {
-                        $(this).removeAttr('checked');
-                    } else {
-                        $(this).prop('checked', true);
-                    }
-                } else {
-                    $(this).prop('checked', true);
-                }
-                _self._update();
-            });
-            $(_self._elements.container).on('keyup',
-                    _self._elements.title + ', '
-                    + _self._elements.content + ', '
-                    + _self._elements.text + ', '
-                    + _self._elements.price
-                    , function () {
-                        _self._update();
-                    });
-            $(_self._elements.container).on('change', _self._elements.type, function () {
-                _self._update();
-            });
-            $(_self._elements.pricingType).on('change', function () {
-                _self._update();
-            });
-        },
-        /**
-         * Update shortcode
-         * @returns {undefined}
-         */
-        _update: function () {
-            var _self = this;
-            var pricingType = $(this._elements.pricingType).val();
-            var shortcode = '';
-            var $pricings = $(_self._elements.container).children();
-            $pricings.each(function () {
-                shortcode += _self._genTabShortcode($(this));
-            });
-            var shortcode = '[zt_pricing '
-                    + ((pricingType !== '') ? 'pricing-type="' + pricingType + '"' : 'pricing-type=""')
-                    + ']' + shortcode + '[/zt_pricing]';
-            w.zo2.shortcode.value(shortcode);
-        },
-        /**
-         * Generate tab shortcode
-         * @param {type} $pricing
-         * @returns {undefined}
-         */
-        _genTabShortcode: function ($pricing) {
-            var title = $pricing.find(this._elements.title).val();
-            var content = $pricing.find(this._elements.content).val();
-            var price = $pricing.find(this._elements.price).val();
-            var link = $pricing.find(this._elements.link).val();
-            var text = $pricing.find(this._elements.text).val();
-            var hightlight = $pricing.find(this._elements.hightlight).is(':checked');
-            var shortcode = '[zt_pricing_item';
-            shortcode += (title !== '') ? ' title="' + title + '"' : '';
-            shortcode += (hightlight) ? ' item-hightlight="true"' : '';
-            shortcode += (price !== '') ? ' price="' + price + '"' : '';
-            shortcode += (link !== '') ? ' link="' + link + '"' : '';
-            shortcode += (text !== '') ? ' button-text="' + text + '"' : '';
-            shortcode += ']' + content + '[/zt_pricing_item]';
-            return shortcode;
-        }
-    };
-
-    /* Append to shortcode add-ons */
-    w.zo2.shortcode._addOn.push(_tabs);
-
 })(window, jQuery);
