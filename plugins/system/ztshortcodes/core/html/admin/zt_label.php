@@ -17,7 +17,7 @@ $prefix = 'zt-sc-';
     <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_label">
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'label-name'; ?>">Label</label>
-            <input type="label" data-property="" class="form-control sc-textbox" id="<?php echo $prefix . 'label-name'; ?>" placeholder="Enter Label">
+            <input type="text" data-property="" class="form-control sc-textbox" id="<?php echo $prefix . 'label-name'; ?>" placeholder="Enter Label">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'label-type'; ?>">Type Label</label>

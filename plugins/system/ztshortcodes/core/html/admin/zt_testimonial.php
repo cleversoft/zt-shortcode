@@ -12,54 +12,63 @@
  * @license     GPL v2
  */
 
-$prefix = 'zt-sc-testimonial-';
+$prefix = 'zt-sc-';
 ?>
 
-<form>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'bgColor'; ?>">Background Color</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'bgColor'; ?>" placeholder="Background Color (exp: #f6f6f6)">
+<div id="<?php echo $prefix . 'container'; ?>" data-tag="" data-root="true">
+    <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_testimonial">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="<?php echo $prefix . 'testimonial-slider'; ?>"> Allow Slide
+            </label>
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'testimonial-bgColor'; ?>">Background Color</label>
+            <input type="text" class="form-control" id="<?php echo $prefix . 'testimonial-bgColor'; ?>"
+                   placeholder="Background Color (exp: #f6f6f6)">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'testimonial-textColor' ?>">Text Color</label>
+            <input type="text" class="form-control" id="<?php echo $prefix . 'testimonial-textColor' ?>"
+                   placeholder="Text Color (exp: #747474)">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'testimonial-name' ?>">Name</label>
+            <input type="text" class="form-control" id="<?php echo $prefix . 'testimonial-name' ?>"
+                   placeholder="Name author" value="Name author">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'testimonial-company' ?>">Company</label>
+            <input type="text" class="form-control" id="<?php echo $prefix . 'testimonial-company' ?>"
+                   placeholder="Company" value="Company">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'testimonial-customAvatar' ?>">Avatar</label>
+            <input type="text" class="form-control" id="<?php echo $prefix . 'testimonial-customAvatar' ?>"
+                   placeholder="Avatar (exp: image/avata/male.jpg)">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'testimonial-borderRadius' ?>">Border Radius</label>
+            <input type="text" class="form-control" id="<?php echo $prefix . 'testimonial-borderRadius' ?>"
+                   placeholder="Border Radius (exp: 4)">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'testimonial-link' ?>">Counter Duration</label>
+            <input type="text" class="form-control" id="<?php echo $prefix . 'testimonial-link' ?>" placeholder="Link ">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'testimonial-target' ?>">Target</label>
+            <select id="<?php echo $prefix . 'testimonial-target' ?>" class="form-control">
+                <option value="_blank">_blank</option>
+                <option value="_parent">_parent</option>
+                <option value="_self">_self</option>
+                <option value="_top">_top</option>
+            </select>
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'testimonial-content' ?>">Content</label>
+            <textarea placeholder="Testimonial Content" rows="3" class="form-control"
+                      id="<?php echo $prefix . 'testimonial-content' ?>">Testimonial Content</textarea>
+        </div>
     </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'textColor' ?>">Text Color</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'textColor' ?>" placeholder="Text Color (exp: #747474)">
-    </div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" id="<?php echo $prefix.'slider'; ?>"> Allow Slide
-        </label>
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'name' ?>">Name</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'name' ?>" placeholder="Name author" value="Name author">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'company' ?>">Company</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'company' ?>" placeholder="Company" value="Company">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'customAvatar' ?>">Avatar</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'customAvatar' ?>" placeholder="Avatar (exp: image/avata/male.jpg)">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'borderRadius' ?>">Border Radius</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'borderRadius' ?>" placeholder="Border Radius (exp: 4)">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'link' ?>">Counter Duration</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'link' ?>" placeholder="Link ">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'target' ?>">Target</label>
-        <select id="<?php echo $prefix.'target' ?>" class="form-control">
-            <option value="_blank">_blank</option>
-            <option value="_parent">_parent</option>
-            <option value="_self">_self</option>
-            <option value="_top">_top</option>
-        </select>
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix . 'content' ?>">Content</label>
-        <textarea placeholder="Testimonial Content" rows="3" class="form-control" id="<?php echo $prefix . 'content' ?>">Testimonial Content</textarea>
-    </div>
-</form>
+</div>

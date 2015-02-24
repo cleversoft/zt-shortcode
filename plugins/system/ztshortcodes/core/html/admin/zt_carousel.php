@@ -12,55 +12,55 @@
  * @license     GPL v2
  */
 
-$prefix = 'zt-sc-carousel-';
+$prefix = 'zt-sc-';
 ?>
 <form>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix . 'showItem'; ?>">Item Carousel</label>
-        <input type="text" class="form-control" id="<?php echo $prefix . 'showItem'; ?>"
+        <label for="<?php echo $prefix . 'carousel-showItem'; ?>">Item Carousel</label>
+        <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-showItem'; ?>"
                placeholder="Item Carousel (exp: 4)">
     </div>
     <div class="form-group clearfix">
-        <label for="<?php echo $prefix . 'duration'; ?>">Duration Carousel</label>
-        <input type="text" class="form-control" id="<?php echo $prefix . 'duration'; ?>"
+        <label for="<?php echo $prefix . 'carousel-duration'; ?>">Duration Carousel</label>
+        <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-duration'; ?>"
                placeholder="Duration Carousel (exp: 1000)">
     </div>
     <div class="checkbox">
         <label>
-            <input type="checkbox" id="<?php echo $prefix . 'showControl'; ?>"> Allow Control Carousel
+            <input type="checkbox" id="<?php echo $prefix . 'carousel-showControl'; ?>"> Allow Control Carousel
         </label>
     </div>
     <div class="checkbox">
         <label>
-            <input type="checkbox" id="<?php echo $prefix . 'showPager'; ?>"> Allow Pager Carousel
+            <input type="checkbox" id="<?php echo $prefix . 'carousel-showPager'; ?>"> Allow Pager Carousel
         </label>
     </div>
     <div class="checkbox">
         <label>
-            <input type="checkbox" id="<?php echo $prefix . 'enableReponsive'; ?>"> Allow Responsive Carousel
+            <input type="checkbox" id="<?php echo $prefix . 'carousel-enableReponsive'; ?>"> Allow Responsive Carousel
         </label>
     </div>
     <div class="form-group clearfix">
         <label>Carousel Item</label>
 
-        <div class="shortcoder-item" id="<?php echo $prefix.'item'; ?>">
+        <div class="shortcoder-item" id="<?php echo $prefix.'carousel-item'; ?>">
             <div class="form-group clearfix">
-                <label for="<?php echo $prefix . 'image' ?>">Avatar</label>
-                <input type="text" class="form-control" id="<?php echo $prefix . 'image' ?>"
+                <label for="<?php echo $prefix . 'carousel-image' ?>">Avatar</label>
+                <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-image' ?>"
                        placeholder="Image (exp: image/avata/male.jpg)">
             </div>
             <div class="form-group clearfix">
-                <label for="<?php echo $prefix . 'title' ?>">Title</label>
-                <input type="text" class="form-control" id="<?php echo $prefix . 'title' ?>" placeholder="Title" />
+                <label for="<?php echo $prefix . 'carousel-title' ?>">Title</label>
+                <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-title' ?>" placeholder="Title" />
             </div>
             <div class="form-group clearfix">
-                <label for="<?php echo $prefix . 'link' ?>">Link </label>
-                <input type="text" class="form-control" id="<?php echo $prefix . 'link' ?>" placeholder="Link " />
+                <label for="<?php echo $prefix . 'carousel-link' ?>">Link </label>
+                <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-link' ?>" placeholder="Link " />
             </div>
 
         </div>
     </div>
     <div class="form-group clearfix">
-        <a href="#" id="<?php echo $prefix . 'new-item'; ?>"><span class="text">+ Add New Item</span></a>
+        <a href="#" id="<?php echo $prefix . 'carousel-new-item'; ?>"><span class="text">+ Add New Item</span></a>
     </div>
 </form>

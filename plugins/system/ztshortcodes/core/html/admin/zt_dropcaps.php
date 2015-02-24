@@ -15,26 +15,31 @@
 $prefix = 'zt-sc-';
 ?>
 
-<form>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'dropcaps-type'; ?>">Type</label>
-        <select id="<?php echo $prefix.'dropcaps-type'; ?>" class="form-control">
-            <option value="type-1">Type 1</option>
-            <option value="type-2">Type 2</option>
-            <option value="type-3">Type 3</option>
-            <option value="type-4">Type 4</option>
-        </select>
+<div id="<?php echo $prefix . 'container'; ?>" data-tag="" data-root="true">
+    <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_dropcaps">
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'dropcaps-type'; ?>">Type</label>
+            <select id="<?php echo $prefix . 'dropcaps-type'; ?>" class="form-control sc-selectbox" data-property="type">
+                <option value="type-1">Type 1</option>
+                <option value="type-2">Type 2</option>
+                <option value="type-3">Type 3</option>
+                <option value="type-4">Type 4</option>
+            </select>
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'dropcaps-bg-color'; ?>">Background color</label>
+            <input type="text" data-property="bgColor" class="form-control sc-textbox" id="<?php echo $prefix . 'dropcaps-bg-color'; ?>"
+                   placeholder="Enter Background Color (exp: #000000).">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'dropcaps-text-color'; ?>">Background text color</label>
+            <input type="text" data-property="textColor" class="form-control sc-textbox" id="<?php echo $prefix . 'dropcaps-text-color'; ?>"
+                   placeholder="Enter text Color (exp: #ffffff).">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'dropcaps-content'; ?>">Content</label>
+            <input type="text" class="form-control sc-textbox" data-property="" id="<?php echo $prefix . 'dropcaps-content'; ?>"
+                   placeholder="Content Dropcaps" value="D">
+        </div>
     </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'dropcaps-bg-color'; ?>">Background color</label>
-        <input type="label" class="form-control" id="<?php echo $prefix.'dropcaps-bg-color'; ?>" placeholder="Enter Background Color (exp: #000000).">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'dropcaps-text-color'; ?>">Background text color</label>
-        <input type="label" class="form-control" id="<?php echo $prefix.'dropcaps-text-color'; ?>" placeholder="Enter text Color (exp: #ffffff).">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'dropcaps-content'; ?>">Content</label>
-        <input type="label" class="form-control" id="<?php echo $prefix.'dropcaps-content'; ?>" placeholder="Content Dropcaps" value="D">
-    </div>
-</form>
+</div>

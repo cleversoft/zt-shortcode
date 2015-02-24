@@ -34,7 +34,7 @@ foreach ($files as $key => $image)
 <?php if (!empty($images)) : ?>
     <?php foreach ($images as $image) : ?>
         <a href="<?php echo $image['src']; ?>" class="ztshortcodes-gallery">
-            <img src="<?php echo $image['thumbnail']; ?>"></a>
+            <img src="<?php echo $image['thumbnail']; ?>"><?php echo $content; ?></a>
     <?php endforeach; ?>
 <?php endif; ?>
 <script>
