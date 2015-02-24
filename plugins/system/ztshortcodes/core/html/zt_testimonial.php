@@ -20,7 +20,7 @@ if($options->get('slider') == 'true'){
 }
 ?>
 
-<div class="zo2-testimonial <?php echo $classSlider; ?>">
+<div class="zt-testimonial <?php echo $classSlider; ?>">
 
     <!-- Sub content -->
     <?php

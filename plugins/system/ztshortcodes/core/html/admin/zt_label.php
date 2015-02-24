@@ -10,7 +10,7 @@
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
-$prefix = 'zo2-sc-';
+$prefix = 'zt-sc-';
 ?>
 
 <div id="<?php echo $prefix . 'container'; ?>" data-tag="" data-root="true">

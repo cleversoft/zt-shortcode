@@ -12,7 +12,7 @@
  * @license     GPL v2
  */
 
-$prefix = 'zo2-sc-modal';
+$prefix = 'zt-sc-modal';
 ?>
 
 <form>

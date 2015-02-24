@@ -13,7 +13,7 @@
  */
 ?>
 
-<div class="zo2-counter-wrap">
+<div class="zt-counter-wrap">
     <span class="chart <?php echo $options->get('extra-class'); ?>"
           data-easing="<?php echo $options->get('easing'); ?>"
           data-percent="<?php echo $options->get('percent'); ?>"

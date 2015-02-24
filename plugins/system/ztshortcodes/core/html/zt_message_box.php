@@ -19,7 +19,7 @@
     if($options->get('width') != ''){
         $style .= 'style="width: '. $options->get('width') .'"';
     }
-    $html .= '<div class="zo2-message-box alert alert-'. $options->get('type') .' '. $options->get('extra-class') .'" role="alert">';
+    $html .= '<div class="zt-message-box alert alert-'. $options->get('type') .' '. $options->get('extra-class') .'" role="alert">';
     if($options->get('icon') != ''){
         $html .= '<i class="'. $options->get('icon') .'"></i>';
     }

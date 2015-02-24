@@ -41,7 +41,7 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
 ?>  
 <!-- http://getbootstrap.com/javascript/#tabs -->
 <?php if (!empty($currentTab) && !empty($currentTab['tabs'])) : ?>
-    <div class="zo2-tabs" role="tabpanel" id="<?php echo $id; ?>">
+    <div class="zt-tabs" role="tabpanel" id="<?php echo $id; ?>">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
             <?php foreach ($currentTab['tabs'] as $key => $tab): ?> 

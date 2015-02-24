@@ -14,7 +14,7 @@
 
 ?>
 
-<div class="zo2-progress progress-bar progress-<?php echo $options->get('strip'); ?> <?php echo $options->get('animated'); ?>"
+<div class="zt-progress progress-bar progress-<?php echo $options->get('strip'); ?> <?php echo $options->get('animated'); ?>"
      style="height: <?php echo $options->get('height').'px'; ?>; background-color: <?php echo $options->get('trackColor'); ?>">
     <div class="progress progress-bar-content"
          role="progressbar"

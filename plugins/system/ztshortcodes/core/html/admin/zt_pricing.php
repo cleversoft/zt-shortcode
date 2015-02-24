@@ -12,7 +12,7 @@
  * @license     GPL v2
  */
 
-$prefix = 'zo2-sc-pricing-';
+$prefix = 'zt-sc-pricing-';
 ?>
 
 <form>

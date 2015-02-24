@@ -12,7 +12,7 @@
  * @license     GPL v2
  */
 
-$prefix = 'zo2-sc-carousel-';
+$prefix = 'zt-sc-carousel-';
 ?>
 <form>
     <div class="form-group clearfix">

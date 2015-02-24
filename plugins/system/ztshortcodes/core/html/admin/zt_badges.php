@@ -12,7 +12,7 @@
  * @license     GPL v2
  */
 
-$prefix = 'zo2-sc-badges-';
+$prefix = 'zt-sc-badges-';
 ?>
 
 <form>

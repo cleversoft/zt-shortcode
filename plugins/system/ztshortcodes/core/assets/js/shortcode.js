@@ -17,26 +17,26 @@
             /* Joomla article editor */
             joomlaEditor: "jform_articletext",
             /* Shortcode tabs */
-            tabGroup: "#zo2-shortcode-groups",
-            tabList: "#zo2-shortcode-tabs-wrapper > #myTab",
-            tabContent: "#zo2-shortcode-tabs-wrapper > #myTabContent",
+            tabGroup: "#zt-shortcode-groups",
+            tabList: "#zt-shortcode-tabs-wrapper > #myTab",
+            tabContent: "#zt-shortcode-tabs-wrapper > #myTabContent",
             /* Common controls */
-            comControls: "#zo2-shortcode-common-controls",
+            comControls: "#zt-shortcode-common-controls",
             /* Shortcode preview */
-            comPreview: "#zo2-shortcode-preview",
-            shortcodeContent: "#zo2-sc-value",
-            shortcodeRender: "#zo2-sc-render",
-            shortcodePreview: "#zo2-sc-preview-content",
+            comPreview: "#zt-shortcode-preview",
+            shortcodeContent: "#zt-sc-value",
+            shortcodeRender: "#zt-sc-render",
+            shortcodePreview: "#zt-sc-preview-content",
             shortcodeContainer: "this._elements.shortcodeContainer",
             /* Control button */
-            comButtons: "#zo2-shortcode-controls",
-            buttonInsert: "#zo2-sc-insert",
-            buttonPreview: "#zo2-sc-preview",
-            buttonClose: "#zo2-sc-close",
+            comButtons: "#zt-shortcode-controls",
+            buttonInsert: "#zt-sc-insert",
+            buttonPreview: "#zt-sc-preview",
+            buttonClose: "#zt-sc-close",
             /* Shortcode breadcrumb */
-            breadcrumdContainer: "#zo2-shortcode-breadcrumd",
-            breadcrumdHome: "#zo2-sc-all-shortcode",
-            breadcrumdCurrent: "#zo2-sc-current-tab"
+            breadcrumdContainer: "#zt-shortcode-breadcrumd",
+            breadcrumdHome: "#zt-sc-all-shortcode",
+            breadcrumdCurrent: "#zt-sc-current-tab"
         },
         /**
          * Select function

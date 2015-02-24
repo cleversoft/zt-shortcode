@@ -10,7 +10,7 @@
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
-$prefix = 'zo2-sc-';
+$prefix = 'zt-sc-';
 ?>
 <div class="form-group clearfix">
     <label for="<?php echo $prefix . 'accordion-type'; ?>">Type</label>

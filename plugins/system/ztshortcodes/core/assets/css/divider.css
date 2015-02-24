@@ -1,9 +1,9 @@
 
 
-.zo2-divider-wrap{
+.zt-divider-wrap{
     position: relative;
 }
-.zo2-divider {
+.zt-divider {
     border-bottom-width: 1px;
     display: block;
     margin-bottom: 30px;
@@ -25,7 +25,7 @@
 .divider-dotted {
     border-bottom-style: dotted;
 }
-.zo2-divider.go-to-top a {
+.zt-divider.go-to-top a {
     border-bottom: 1px solid #e4e4e4;
     display: block;
     margin-bottom: 30px;
@@ -45,15 +45,15 @@
 .go-to-top-icon-1 a:hover, .go-to-top-icon-2 a:hover{
     color: #1dc6df;
 }
-.zo2-divider.go-to-top {
+.zt-divider.go-to-top {
     padding: 0;
 }
-.zo2-divider.go-to-top-icon-1 {
+.zt-divider.go-to-top-icon-1 {
     border-bottom: 1px solid #e4e4e4;
     height: 9px;
     position: relative;
 }
-.zo2-divider.go-to-top-icon-2 {
+.zt-divider.go-to-top-icon-2 {
     border-bottom: 1px solid #e4e4e4;
     height: 10px;
     position: relative;

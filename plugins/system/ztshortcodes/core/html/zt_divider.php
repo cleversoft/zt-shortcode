@@ -23,8 +23,8 @@
         $classTop = 'go-to-top-icon-2';
     }
 
-    $html .= '<div class="zo2-divider-wrap">';
-    $html .= '<div class="zo2-divider '. $classTop .' divider-'. $options->get('type') .'">';
+    $html .= '<div class="zt-divider-wrap">';
+    $html .= '<div class="zt-divider '. $classTop .' divider-'. $options->get('type') .'">';
     if($options->get('type') == 'text-only' || $options->get('type') == 'icon-type-1' || $options->get('type') == 'icon-type-2'){
         $html .= '<a href="#" class="animate-top">';
         if($options->get('type') == 'text-only'){

@@ -1,30 +1,30 @@
 /* Style List Insert shortcode */
-#zo2-shortcode-plugin{
+#zt-shortcode-plugin{
     font-size: 14px;
     color: #333;
     padding: 0 10px;
 }
-#zo2-shortcode-plugin .modal-dialog{
+#zt-shortcode-plugin .modal-dialog{
     width: 800px;
 }
-#zo2-shortcode-plugin .item-shortcode{
+#zt-shortcode-plugin .item-shortcode{
     width: 20%;
 }
-#zo2-shortcode-plugin .nav-tabs > li > a{
+#zt-shortcode-plugin .nav-tabs > li > a{
     padding: 6px 0;
     border-bottom: 1px dotted #e5e5e5;
     color: #222222;
     margin: 0;
 }
-#zo2-shortcode-plugin .nav-tabs > li > a:hover,
-#zo2-shortcode-plugin .nav-tabs > li > a:focus,
-#zo2-shortcode-plugin .nav-tabs > li.active > a{
+#zt-shortcode-plugin .nav-tabs > li > a:hover,
+#zt-shortcode-plugin .nav-tabs > li > a:focus,
+#zt-shortcode-plugin .nav-tabs > li.active > a{
     background-color: transparent;
     color: #005580;
     border-color: transparent;
     border-bottom: 1px dotted #e5e5e5;
 }
-#zo2-shortcode-plugin .nav-tabs > li > a i{
+#zt-shortcode-plugin .nav-tabs > li > a i{
     margin-right: 7px;
 }
 .shortcode-element-title{
@@ -111,10 +111,10 @@
     padding: 10px;
 }
 
-#zo2-sc-tabs-element,
-#zo2-sc-accordion-element,
-#zo2-sc-carousel-item,
-#zo2-sc-pricing-element{
+#zt-sc-tabs-element,
+#zt-sc-accordion-element,
+#zt-sc-carousel-item,
+#zt-sc-pricing-element{
     padding: 10px 20px;
     background-color: #f8f6f6;
     border: 1px solid #d6d6d6;

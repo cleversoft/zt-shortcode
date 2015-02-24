@@ -16,7 +16,7 @@ defined('_JEXEC') or die('Restricted access');
 <?php
 
 $class = $html = '';
-$class .= 'zo2-button';
+$class .= 'zt-button';
 $class .= ' size-' . $options->get('size');
 $class .= ' color-' . $options->get('colour');
 $class .= ' type-' . $options->get('type');

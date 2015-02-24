@@ -1,13 +1,13 @@
-.zo2-quote{
+.zt-quote{
     margin-bottom: 30px;
 }
-.zo2-quote:last-child{
+.zt-quote:last-child{
     margin-bottom: 0;
 }
-.zo2-quote:not(.default-quote){
+.zt-quote:not(.default-quote){
     background-color: #e4e4e4;
 }
-.zo2-quote:not(.big-quote){
+.zt-quote:not(.big-quote){
     border-left: 5px solid #cecece;
     padding-left: 20px;
 }
@@ -19,9 +19,9 @@
     float: left;
     font-size: 30px;
 }
-.box-quote p, .box-quote .zo2-quote-author{
+.box-quote p, .box-quote .zt-quote-author{
     padding-left: 40px;
 }
-.big-quote .zo2-quote-inner{
+.big-quote .zt-quote-inner{
     padding: 40px 50px;
 }

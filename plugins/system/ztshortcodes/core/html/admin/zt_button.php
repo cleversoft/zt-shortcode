@@ -12,7 +12,7 @@
  * @license     GPL v2
  */
 
-$prefix = 'zo2-sc-';
+$prefix = 'zt-sc-';
 ?>
 <form>
     <div class="form-group clearfix">
