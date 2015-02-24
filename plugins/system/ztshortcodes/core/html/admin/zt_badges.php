@@ -12,38 +12,43 @@
  * @license     GPL v2
  */
 
-$prefix = 'zt-sc-badges-';
+$prefix = 'zt-sc-';
 ?>
 
-<form>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'type'; ?>">Type</label>
-        <select id="<?php echo $prefix.'type'; ?>" class="form-control">
-            <option value="link">Link</option>
-            <option value="button">Button</option>
-        </select>
+<div id="<?php echo $prefix . 'container'; ?>" data-tag="" data-root="true">
+    <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_badges">
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'badges-type'; ?>">Type</label>
+            <select id="<?php echo $prefix . 'badges-type'; ?>" class="form-control sc-selectbox" data-property="type">
+                <option value="link">Link</option>
+                <option value="button">Button</option>
+            </select>
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'badges-text'; ?>">Text Badges</label>
+            <input type="text" class="form-control sc-textbox" id="<?php echo $prefix . 'badges-text'; ?>"
+                   placeholder="Enter Text Badges" data-property="text">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'badges-link'; ?>">Link</label>
+            <input type="text" class="form-control sc-textbox" id="<?php echo $prefix . 'badges-link'; ?>"
+                   placeholder="Enter Link Badges" data-property="link">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'badges-buttonType'; ?>">Button Type(only badges type button)</label>
+            <select id="<?php echo $prefix . 'badges-buttonType'; ?>" class="form-control sc-selectbox" data-property="buttonType">
+                <option value="primary">Primary</option>
+                <option value="success">Success</option>
+                <option value="info">Info</option>
+                <option value="warning">Warning</option>
+                <option value="danger">Danger</option>
+                <option value="link">Link</option>
+            </select>
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'badges-content'; ?>">Content</label>
+            <input type="text" value="4" class="form-control sc-textbox" id="<?php echo $prefix . 'badges-content'; ?>"
+                   placeholder="Content Badges" data-property="">
+        </div>
     </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'text'; ?>">Text Badges</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'text'; ?>" placeholder="Enter Text Badges">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'link'; ?>">Link</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'link'; ?>" placeholder="Enter Link Badges">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'buttonType'; ?>">Button Type(only badges type button)</label>
-        <select id="<?php echo $prefix.'buttonType'; ?>" class="form-control">
-            <option value="primary">Primary</option>
-            <option value="success">Success</option>
-            <option value="info">Info</option>
-            <option value="warning">Warning</option>
-            <option value="danger">Danger</option>
-            <option value="link">Link</option>
-        </select>
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'content'; ?>">Content</label>
-        <input type="text" value="4" class="form-control" id="<?php echo $prefix.'content'; ?>" placeholder="Content Badges">
-    </div>
-</form>
+</div>
