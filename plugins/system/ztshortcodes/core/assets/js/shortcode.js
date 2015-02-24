@@ -136,11 +136,11 @@
          */
         _hook: function () {
             var _self = this;
-            $(this._elements.shortcodeContainer).on('keyup', '.sc-textbox', function () {
+            $('div' + this._elements.shortcodeContainer).on('keyup', '.sc-textbox', function () {
                 var $parent = $(this).closest(_self._elements.shortcodeContainer);
                 _self._update($parent);
             });
-            $(this._elements.shortcodeContainer).on('change', '.sc-selectbox', function () {
+            $('div' + this._elements.shortcodeContainer).on('change', '.sc-selectbox', function () {
                 var $parent = $(this).closest(_self._elements.shortcodeContainer);
                 _self._update($parent);
             });
