@@ -1,8 +1,7 @@
 ZT Shortcodes package includes: 
 
-* ZT Shortcodes Content 
-* ZT Shortcodes Editors
 * ZT Shortcodes System 
+* ZT Shortcodes Editors
 
 
 ## Features List
@@ -12,8 +11,7 @@ ZT Shortcodes package includes:
 * Testimonial 
 * Blockquotes 
 * Buttons
-* Accordion
-* Toggle
+* Accordion / Toggle
 * Columns
 * Divider
 * Dropcap
@@ -21,7 +19,7 @@ ZT Shortcodes package includes:
 * Slideshow
 * Lightbox
 * Progess Bars ( http://getbootstrap.com/2.3.2/components.html#progress ) 
-* List-icon
+* List-icon 
 * Message Box
 * Google Maps
 * Youtube
