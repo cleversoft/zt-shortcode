@@ -179,7 +179,7 @@
                     case 'INPUT':
                         switch (type) {
                             case 'checkbox':
-                                var value = $(this).is(':checked');
+                                var value = $(this).is(':checked')?'true':'false';
                                 break;
                             default:
                                 var value = $(this).val();
