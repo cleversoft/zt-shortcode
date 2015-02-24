@@ -194,7 +194,7 @@
             var parentTag = $root.data('tag');
             var shortcode = '';
             if (typeof (parentTag) === 'undefined' || parentTag === '') {
-                shortcode = this._getShortcode($root.find(this._elements.shortcodeContainer +':first'));
+                shortcode = this._getShortcode($root.find(this._elements.shortcodeContainer + ':first'));
             } else {
                 shortcode = this._getParentShortcode($root);
             }
