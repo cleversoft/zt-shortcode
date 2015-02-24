@@ -27,7 +27,7 @@
             shortcodeContent: "#zt-sc-value",
             shortcodeRender: "#zt-sc-render",
             shortcodePreview: "#zt-sc-preview-content",
-            shortcodeContainer: "this._elements.shortcodeContainer",
+            shortcodeContainer: "#zt-sc-container",
             /* Control button */
             comButtons: "#zt-shortcode-controls",
             buttonInsert: "#zt-sc-insert",
@@ -137,11 +137,11 @@
         _hook: function () {
             var _self = this;
             $(this._elements.shortcodeContainer).on('keyup', '.sc-textbox', function () {
-                var $parent = $(this).closest(this._elements.shortcodeContainer);
+                var $parent = $(this).closest(_self._elements.shortcodeContainer);
                 _self._update($parent);
             });
             $(this._elements.shortcodeContainer).on('change', '.sc-selectbox', function () {
-                var $parent = $(this).closest(this._elements.shortcodeContainer);
+                var $parent = $(this).closest(_self._elements.shortcodeContainer);
                 _self._update($parent);
             });
         },
