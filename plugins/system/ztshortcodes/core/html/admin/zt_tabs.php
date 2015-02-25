@@ -1,5 +1,4 @@
 <?php
-
 /**
  * ZT Shortcodes
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
@@ -11,13 +10,10 @@
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
-
 $prefix = 'zt-sc-';
 ?>
 
 <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tabs" data-root="true">
-    <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tabs">
-        <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tabs" data-root="true">
             <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tab">
                 <div class="form-group clearfix">
                     <label for="<?php echo $prefix . 'tab-title' ?>">Title</label>
@@ -37,9 +33,6 @@ $prefix = 'zt-sc-';
                 </div>
             </div>
         </div>
-
-        <div class="form-group clearfix">
-            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-tab' ?>">Add New Tab</button>
-        </div>
-    </div>
+<div class="form-group clearfix">
+    <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-tab' ?>">Add New Tab</button>
 </div>
