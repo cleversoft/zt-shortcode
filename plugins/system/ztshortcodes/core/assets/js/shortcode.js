@@ -8,8 +8,6 @@
 
     /* Short code main class */
     var _shortcode = {
-        /* Short code add on */
-        _addOn: [],
         /**
          * Elements selector
          */
@@ -28,6 +26,8 @@
             shortcodeRender: "#zt-sc-render",
             shortcodePreview: "#zt-sc-preview-content",
             shortcodeContainer: "#zt-sc-container",
+            /* Add new tab */
+            cmdAddNewTab: "#zt-sc-new-tab",
             /* Icon selector */
             inputIcon: "#zt-sc-icon",
             /* Control button */
@@ -149,6 +149,9 @@
             });
             $container.on('click', '.sc-checkbox', function () {
                 var $parent = $(this).closest(_self._elements.shortcodeContainer);
+                var $root = $parent.closest('[data-root*="true"]');
+                $root.find('.sc-checkbox').prop('checked', false);
+                $(this).prop('checked', true);
                 _self._update($parent);
             });
             $('div' + _self._elements.inputIcon).find('a').on('click', function () {
@@ -158,6 +161,16 @@
                 var selected = $parent.find('.selected');
                 $parent.find('input').val((selected.length <= 0) ? '' : selected.find('i').attr('class')).trigger('change');
                 return false;
+            });
+            /* Tab clone */
+            $(_self._elements.cmdAddNewTab).on('click', function () {
+                $('[data-tag="zt_tab"]').first()
+                        .clone()
+                        .appendTo('[data-tag="zt_tabs"]');
+                var $lastTab = $('[data-tag="zt_tabs"]').children(':last');
+                $lastTab.find('#zt-sc-tab-title').val('Tab title');
+                $lastTab.find('#zt-sc-tab-content').val('Tab content').trigger('keyup');
+                $lastTab.find('.sc-checkbox').prop('checked', false);
             });
         },
         /**
