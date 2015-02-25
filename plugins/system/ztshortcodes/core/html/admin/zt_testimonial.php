@@ -23,7 +23,7 @@ $prefix = 'zt-sc-';
             </label>
         </div>
         <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_testimonial" data-root="true">
-            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_testimonial_item">
+            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_testimonial_item" class="container-child">
                 <div class="form-group clearfix">
                     <label for="<?php echo $prefix . 'testimonial-bgColor'; ?>">Background Color</label>
                     <input type="text" class="form-control sc-textbox" data-property="bgColor" id="<?php echo $prefix . 'testimonial-bgColor'; ?>"
@@ -81,7 +81,7 @@ $prefix = 'zt-sc-';
             </div>
         </div>
         <div class="form-group clearfix">
-            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-testimonial' ?>">Add New Testimonial</button>
+            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'clone-element' ?>">Add New Testimonial</button>
         </div>
     </div>
 </div>

@@ -25,7 +25,7 @@ $prefix = 'zt-sc-';
             </select>
         </div>
         <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_pricing" data-root="true">
-            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_pricing_item">
+            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_pricing_item" class="container-child">
                 <div class="form-group clearfix">
                     <label for="<?php echo $prefix . 'pricing-title' ?>">Pricing Title</label>
                     <input type="text" class="form-control sc-textbox" data-property="title" id="<?php echo $prefix . 'pricing-title' ?>"
@@ -59,7 +59,7 @@ $prefix = 'zt-sc-';
             </div>
         </div>
         <div class="form-group clearfix">
-            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-pricing-table' ?>">Add New
+            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'clone-element' ?>">Add New
                 Pricing
             </button>
         </div>

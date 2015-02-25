@@ -22,7 +22,7 @@ $prefix = 'zt-sc-';
             </select>
         </div>
         <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_accordions" data-root="true">
-            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_accordion">
+            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_accordion" class="container-child">
                 <div class="form-group clearfix">
                     <label for="<?php echo $prefix . 'accordion-title' ?>">Accordion Title</label>
                     <input type="text" class="form-control sc-textbox" data-property="title" id="<?php echo $prefix . 'accordion-title' ?>"
@@ -41,7 +41,7 @@ $prefix = 'zt-sc-';
             </div>
         </div>
         <div class="form-group clearfix">
-            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-accordion' ?>">Add New
+            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'clone-element' ?>">Add New
                 Accordion
             </button>
         </div>

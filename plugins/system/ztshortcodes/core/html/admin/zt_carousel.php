@@ -48,7 +48,7 @@ $prefix = 'zt-sc-';
             </label>
         </div>
         <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_carousel" data-root="true">
-            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_carousel_item">
+            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_carousel_item" class="container-child">
                 <label>Carousel Item</label>
                 <div class="form-group clearfix">
                     <label for="<?php echo $prefix . 'carousel-image' ?>">Avatar</label>
@@ -68,7 +68,7 @@ $prefix = 'zt-sc-';
             </div>
         </div>
         <div class="form-group clearfix">
-            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-carousel' ?>">Add New Carousel</button>
+            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'clone-element' ?>">Add New Carousel</button>
         </div>
     </div>
 </div>
