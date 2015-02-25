@@ -35,5 +35,5 @@ $prefix = 'zt-sc-';
     </div>
 </div>
 <div class="form-group clearfix">
-    <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-tab' ?>">Add New Tab</button>
+    <button class="btn btn-default" type="button" id="<?php echo $prefix . 'clone-element' ?>">Add New Tab</button>
 </div>

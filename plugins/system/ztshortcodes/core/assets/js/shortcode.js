@@ -27,7 +27,7 @@
             shortcodePreview: "#zt-sc-preview-content",
             shortcodeContainer: "#zt-sc-container",
             /* Add new tab */
-            cmdAddNewTab: "#zt-sc-new-tab",
+            cloneChildElement: "#zt-sc-clone-element",
             /* Icon selector */
             inputIcon: "#zt-sc-icon",
             /* Control button */
@@ -163,13 +163,16 @@
                 return false;
             });
             /* Tab clone */
-            $(_self._elements.cmdAddNewTab).on('click', function () {
-                $('[data-tag="zt_tab"]').first()
+            $(_self._elements.cloneChildElement).on('click', function () {
+                var $main = $(this).closest('.form-group').parent();
+                var $children = $main.find('.container-child');
+                var $lastTab = $children.last();
+                $children.first()
                         .clone()
-                        .appendTo('[data-tag="zt_tabs"]');
-                var $lastTab = $('[data-tag="zt_tabs"]').children(':last');
-                $lastTab.find('#zt-sc-tab-title').val('Tab title');
-                $lastTab.find('#zt-sc-tab-content').val('Tab content').trigger('keyup');
+                        .appendTo($main.find('>div:first'));
+                $lastTab.find('input').each(function(){
+                    $(this).val($(this).attr('placeholder'));
+                });
                 $lastTab.find('.sc-checkbox').prop('checked', false);
             });
         },
