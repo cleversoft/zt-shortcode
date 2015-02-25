@@ -149,9 +149,11 @@
             });
             $container.on('click', '.sc-checkbox', function () {
                 var $parent = $(this).closest(_self._elements.shortcodeContainer);
-                var $root = $parent.closest('[data-root*="true"]');
-                $root.find('.sc-checkbox').prop('checked', false);
-                $(this).prop('checked', true);
+                if ($parent.hasClass('container-child')) {
+                    var $root = $parent.closest('[data-root*="true"]');
+                    $root.find('.sc-checkbox').prop('checked', false);
+                    $(this).prop('checked', true);
+                }
                 _self._update($parent);
             });
             $('div' + _self._elements.inputIcon).find('a').on('click', function () {
@@ -163,16 +165,18 @@
                 return false;
             });
             /* Elements clone */
-            $('button'+_self._elements.cloneChildElement).on('click', function () {
+            $('button' + _self._elements.cloneChildElement).on('click', function () {
                 var $main = $(this).closest('.form-group').parent();
                 var $children = $main.find('div.container-child');
                 $children.first()
+                        .clone()
                         .appendTo($main.find('>div:first'));
                 var $element = $main.find('div.container-child').last();
-                $element.find('input').each(function(){
+                $element.find('input').each(function () {
                     $(this).val($(this).attr('placeholder'));
                 });
                 $element.find('.sc-checkbox').prop('checked', false);
+                _self._update($children.first());
             });
         },
         /**
@@ -181,9 +185,28 @@
          * @returns {undefined}
          */
         _update: function ($parent) {
-            var $inputs = $parent.children().filter('.form-group').find('input,select,textarea');
+            var _self = this;
             var $root = $parent.closest('[data-root*="true"]');
-            var shortcodeTag = $parent.data('tag');
+            var $elements = $root.find('div' + this._elements.shortcodeContainer);
+            var shortcode = {};
+            if ($elements.length > 0) {
+                shortcode = _self._getData($root);
+                $elements.each(function () {
+                    shortcode._Content += _self._getShortcode(_self._getData($(this)));
+                });
+            } else {
+                shortcode = _self._getData($elements);
+            }
+            _self.value(_self._getShortcode(shortcode));
+        },
+        /**
+         * Get all data field
+         * @param {type} $container
+         * @returns {object}
+         */
+        _getData: function ($container) {
+            var $inputs = $container.children().filter('.form-group').find('input,select,textarea');
+            var shortcodeTag = $container.data('tag');
             var shortcode = {};
             shortcode._Tag = shortcodeTag;
             shortcode._Content = '';
@@ -195,7 +218,7 @@
                     case 'INPUT':
                         switch (type) {
                             case 'checkbox':
-                                var value = $(this).is(':checked')?'true':'false';
+                                var value = $(this).is(':checked') ? 'true' : '';
                                 break;
                             default:
                                 var value = $(this).val();
@@ -213,67 +236,25 @@
                     shortcode['_Content'] = value;
                 }
             });
-            $parent.data('shortcode', shortcode);
-            this._render($root);
-        },
-        /**
-         * Render shortcode
-         * @param {type} $root
-         * @returns {undefined}
-         */
-        _render: function ($root) {
-            var parentTag = $root.data('tag');
-            var shortcode = '';
-            if (typeof (parentTag) === 'undefined' || parentTag === '') {
-                shortcode = this._getShortcode($root.find(this._elements.shortcodeContainer + ':first'));
-            } else {
-                shortcode = this._getParentShortcode($root);
-            }
-            this.value(shortcode);
-        },
-        /**
-         * Get shortcode of element
-         * @param {type} $element
-         * @returns {String}
-         */
-        _getShortcode: function ($element) {
-            var data = $element.data('shortcode');
-            if (typeof (data) === 'undefined') {
-                this._update($element);
-                return '';
-            }
-            var shortcode = '[' + data._Tag;
-            $.each(data, function (key, value) {
-                if (key !== '_Tag' && key !== '_Content') {
-                    shortcode += ' ' + key + '="' + value + '"';
-                }
-            });
-            shortcode += ']' + data._Content + '[/' + data._Tag + ']';
             return shortcode;
         },
         /**
-         * Get parent shortcode
-         * @param {type} $element
+         * Generate shortcode from data
+         * @param {type} $data
          * @returns {String}
          */
-        _getParentShortcode: function ($element) {
-            var _self = this;
-            var data = $element.data('shortcode');
-            var elementShortCode = '';
-            if (typeof (data) === 'undefined') {
-                this._update($element);
-                return '';
-            }
-            var shortcode = '[' + data._Tag;
+        _getShortcode: function (data) {
+            var shortcode = '';
+            shortcode += (data._Tag !== '') ? '[' + data._Tag : '';
             $.each(data, function (key, value) {
                 if (key !== '_Tag' && key !== '_Content') {
-                    shortcode += ' ' + key + '="' + value + '"';
+                    if(value !== '')
+                        shortcode += ' ' + key + '="' + value + '"';
                 }
             });
-            $element.children('div' + this._elements.shortcodeContainer).each(function () {
-                elementShortCode += _self._getShortcode($(this));
-            });
-            shortcode += ']' + elementShortCode + '[/' + data._Tag + ']';
+            shortcode += (data._Tag !== '') ? ']' : '';
+            shortcode += data._Content;
+            shortcode += (data._Tag !== '') ? '[/' + data._Tag + ']' : '';
             return shortcode;
         }
     };
