@@ -162,11 +162,12 @@
                 $parent.find('input').val((selected.length <= 0) ? '' : selected.find('i').attr('class')).trigger('change');
                 return false;
             });
-            /* Tab clone */
-            $(_self._elements.cloneChildElement).on('click', function () {
+            /* Elements clone */
+            $('button'+_self._elements.cloneChildElement).on('click', function () {
                 var $main = $(this).closest('.form-group').parent();
                 var $children = $main.find('.container-child');
                 var $lastTab = $children.last();
+                console.log($main, $children, $lastTab);
                 $children.first()
                         .clone()
                         .appendTo($main.find('>div:first'));
