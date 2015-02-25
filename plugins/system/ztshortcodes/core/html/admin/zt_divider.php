@@ -15,27 +15,33 @@
 $prefix = 'zt-sc-';
 ?>
 
-<form>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix.'divider-type'; ?>">Type</label>
-        <select id="<?php echo $prefix.'divider-type'; ?>" class="form-control">
-            <option value="hr">HR</option>
-            <option value="thin">Thin</option>
-            <option value="fat">Fat</option>
-            <option value="dotted">Dotted</option>
-            <option value="text-only">Go to top 1</option>
-            <option value="icon-type-1">Go to top icon 1</option>
-            <option value="icon-type-2">Go to top icon 2</option>
-        </select>
-    </div>
-    <div class="form-group clearfix" id="<?php echo $prefix.'field-text'; ?>" style="display: none;">
-        <label for="<?php echo $prefix.'divider-text'; ?>">Text(only use with type go to top 1 and go to top icon 2)</label>
-        <input type="text" class="form-control" id="<?php echo $prefix.'divider-text'; ?>" placeholder="Enter text content" value="Go to top">
-    </div>
-    <div class="form-group clearfix" id="<?php echo $prefix.'field-icon'; ?>" style="display: none;">
-        <label for="<?php echo $prefix.'divider-icon'; ?>">Icon (please select an icon)</label>
-        <div id="list-icon-divider">
-            <?php echo getAwesome(); ?>
+<div id="<?php echo $prefix . 'container'; ?>" data-tag="" data-root="true">
+    <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_divider">
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'divider-type'; ?>">Type</label>
+            <select id="<?php echo $prefix . 'divider-type'; ?>" class="form-control sc-selectbox" data-property="type">
+                <option value="hr">HR</option>
+                <option value="thin">Thin</option>
+                <option value="fat">Fat</option>
+                <option value="dotted">Dotted</option>
+                <option value="text-only">Go to top 1</option>
+                <option value="icon-type-1">Go to top icon 1</option>
+                <option value="icon-type-2">Go to top icon 2</option>
+            </select>
+        </div>
+        <div class="form-group clearfix" id="<?php echo $prefix . 'field-text'; ?>" style="display: none;">
+            <label for="<?php echo $prefix . 'divider-text'; ?>">Text(only use with type go to top 1 and go to top icon
+                2)</label>
+            <input type="text" class="form-control sc-textbox" data-property="text" id="<?php echo $prefix . 'divider-text'; ?>"
+                   placeholder="Enter text content" value="Go to top">
+        </div>
+        <div class="form-group clearfix" id="<?php echo $prefix . 'field-icon'; ?>" style="display: none;">
+            <label for="<?php echo $prefix . 'icon'; ?>">Icon (please select an icon)</label>
+
+            <div id="<?php echo $prefix . 'icon'; ?>">
+                <input type="hidden" class="sc-selectbox" data-property="classIcon">
+                <?php echo getAwesome(); ?>
+            </div>
         </div>
     </div>
-</form>
+</div>

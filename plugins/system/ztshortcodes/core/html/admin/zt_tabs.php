@@ -17,7 +17,7 @@ $prefix = 'zt-sc-';
 
 <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tabs" data-root="true">
     <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tabs">
-        <div id="<?php echo $prefix . 'container'; ?>" data-tag="" data-root="true">
+        <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tabs" data-root="true">
             <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tab">
                 <div class="form-group clearfix">
                     <label for="<?php echo $prefix . 'tab-title' ?>">Title</label>
@@ -30,9 +30,9 @@ $prefix = 'zt-sc-';
                     <textarea placeholder="Content Tabs" rows="3" class="form-control sc-textbox" data-property=""
                               id="<?php echo $prefix . 'tab-content'; ?>">This is tab content</textarea>
                 </div>
-                <div class="checkbox">
+                <div class="checkbox form-group clearfix">
                     <label>
-                        <input type="checkbox" class="sc-" id="<?php echo $prefix . 'tab-active'; ?>"> Active
+                        <input type="checkbox" class="sc-checkbox" data-property="active" id="<?php echo $prefix . 'tab-active'; ?>"> Active
                     </label>
                 </div>
             </div>
