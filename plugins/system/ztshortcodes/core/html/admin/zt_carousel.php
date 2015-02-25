@@ -14,53 +14,61 @@
 
 $prefix = 'zt-sc-';
 ?>
-<form>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix . 'carousel-showItem'; ?>">Item Carousel</label>
-        <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-showItem'; ?>"
-               placeholder="Item Carousel (exp: 4)">
-    </div>
-    <div class="form-group clearfix">
-        <label for="<?php echo $prefix . 'carousel-duration'; ?>">Duration Carousel</label>
-        <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-duration'; ?>"
-               placeholder="Duration Carousel (exp: 1000)">
-    </div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" id="<?php echo $prefix . 'carousel-showControl'; ?>"> Allow Control Carousel
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" id="<?php echo $prefix . 'carousel-showPager'; ?>"> Allow Pager Carousel
-        </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" id="<?php echo $prefix . 'carousel-enableReponsive'; ?>"> Allow Responsive Carousel
-        </label>
-    </div>
-    <div class="form-group clearfix">
-        <label>Carousel Item</label>
-
-        <div class="shortcoder-item" id="<?php echo $prefix.'carousel-item'; ?>">
-            <div class="form-group clearfix">
-                <label for="<?php echo $prefix . 'carousel-image' ?>">Avatar</label>
-                <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-image' ?>"
-                       placeholder="Image (exp: image/avata/male.jpg)">
+<div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_carousel" data-root="true">
+    <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_carousel">
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'carousel-showItem'; ?>">Item Carousel</label>
+            <input type="text" class="form-control sc-textbox" data-property="showItem"
+                   id="<?php echo $prefix . 'carousel-showItem'; ?>"
+                   placeholder="Item Carousel (exp: 4)">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'carousel-duration'; ?>">Duration Carousel</label>
+            <input type="text" class="form-control sc-textbox" data-property="duration"
+                   id="<?php echo $prefix . 'carousel-duration'; ?>"
+                   placeholder="Duration Carousel (exp: 1000)">
+        </div>
+        <div class="form-group clearfix checkbox">
+            <label>
+                <input type="checkbox" class="sc-checkbox" data-property="showControl"
+                       id="<?php echo $prefix . 'carousel-showControl'; ?>"> Allow Control Carousel
+            </label>
+        </div>
+        <div class="form-group clearfix checkbox">
+            <label>
+                <input type="checkbox" class="sc-checkbox" data-property="showPager"
+                       id="<?php echo $prefix . 'carousel-showPager'; ?>"> Allow Pager Carousel
+            </label>
+        </div>
+        <div class="form-group clearfix checkbox">
+            <label>
+                <input type="checkbox" class="sc-checkbox" data-property="enableReponsive"
+                       id="<?php echo $prefix . 'carousel-enableReponsive'; ?>"> Allow Responsive
+                Carousel
+            </label>
+        </div>
+        <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_carousel" data-root="true">
+            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_carousel_item">
+                <label>Carousel Item</label>
+                <div class="form-group clearfix">
+                    <label for="<?php echo $prefix . 'carousel-image' ?>">Avatar</label>
+                    <input type="text" class="form-control sc-textbox" data-property="image" id="<?php echo $prefix . 'carousel-image' ?>"
+                           placeholder="Image (exp: image/avata/male.jpg)">
+                </div>
+                <div class="form-group clearfix">
+                    <label for="<?php echo $prefix . 'carousel-title' ?>">Title</label>
+                    <input type="text" class="form-control sc-textbox" data-property="title" id="<?php echo $prefix . 'carousel-title' ?>"
+                           placeholder="Title"/>
+                </div>
+                <div class="form-group clearfix">
+                    <label for="<?php echo $prefix . 'carousel-link' ?>">Link </label>
+                    <input type="text" class="form-control sc-textbox" data-property="link" id="<?php echo $prefix . 'carousel-link' ?>"
+                           placeholder="Link "/>
+                </div>
             </div>
-            <div class="form-group clearfix">
-                <label for="<?php echo $prefix . 'carousel-title' ?>">Title</label>
-                <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-title' ?>" placeholder="Title" />
-            </div>
-            <div class="form-group clearfix">
-                <label for="<?php echo $prefix . 'carousel-link' ?>">Link </label>
-                <input type="text" class="form-control" id="<?php echo $prefix . 'carousel-link' ?>" placeholder="Link " />
-            </div>
-
+        </div>
+        <div class="form-group clearfix">
+            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-carousel' ?>">Add New Carousel</button>
         </div>
     </div>
-    <div class="form-group clearfix">
-        <a href="#" id="<?php echo $prefix . 'carousel-new-item'; ?>"><span class="text">+ Add New Item</span></a>
-    </div>
-</form>
+</div>

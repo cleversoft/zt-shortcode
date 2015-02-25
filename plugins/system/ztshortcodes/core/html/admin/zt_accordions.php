@@ -12,30 +12,38 @@
  */
 $prefix = 'zt-sc-';
 ?>
-<div class="form-group clearfix">
-    <label for="<?php echo $prefix . 'accordion-type'; ?>">Type</label>
-    <select id="<?php echo $prefix . 'accordion-type'; ?>" class="form-control">
-        <option value="accordion">Accordion</option>
-        <option value="toggle">Toggle</option>
-    </select>
-</div>
-<div id="<?php echo $prefix . 'accordion-container' ?>">
-    <div id="<?php echo $prefix . 'accordion-element' ?>">
+<div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_accordions" data-root="true">
+    <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_accordions">
         <div class="form-group clearfix">
-            <label for="<?php echo $prefix . 'accordion-title' ?>">Accordion Title</label>
-            <input type="text" class="form-control" id="<?php echo $prefix . 'accordion-title' ?>" placeholder="Accordion Title" value="Accordion Title">
+            <label for="<?php echo $prefix . 'accordion-type'; ?>">Type</label>
+            <select id="<?php echo $prefix . 'accordion-type'; ?>" class="form-control sc-selectbox" data-property="type">
+                <option value="accordion">Accordion</option>
+                <option value="toggle">Toggle</option>
+            </select>
+        </div>
+        <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_accordions" data-root="true">
+            <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_accordion">
+                <div class="form-group clearfix">
+                    <label for="<?php echo $prefix . 'accordion-title' ?>">Accordion Title</label>
+                    <input type="text" class="form-control sc-textbox" data-property="title" id="<?php echo $prefix . 'accordion-title' ?>"
+                           placeholder="Accordion Title" value="Accordion Title">
+                </div>
+                <div class="form-group clearfix">
+                    <label for="<?php echo $prefix . 'accordion-content' ?>">Accordion Content</label>
+                    <textarea placeholder="Content Accordion sc-textbox" data-property="" rows="3" class="form-control"
+                              id="<?php echo $prefix . 'accordion-content' ?>">Content Accordion</textarea>
+                </div>
+                <div class="form-group clearfix checkbox">
+                    <label>
+                        <input type="checkbox" class="sc-checkbox" data-property="active" id="<?php echo $prefix . 'accordion-active'; ?>"> Active
+                    </label>
+                </div>
+            </div>
         </div>
         <div class="form-group clearfix">
-            <label for="<?php echo $prefix . 'accordion-content' ?>">Accordion Content</label>
-            <textarea placeholder="Content Accordion" rows="3" class="form-control" id="<?php echo $prefix . 'accordion-content' ?>">Content Accordion</textarea>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" id="<?php echo $prefix . 'accordion-active'; ?>"> Active
-            </label>
+            <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-accordion' ?>">Add New
+                Accordion
+            </button>
         </div>
     </div>
-</div>
-<div class="form-group clearfix">
-    <button class="btn btn-default" type="button" id="<?php echo $prefix . 'new-accordion' ?>">Add New Accordion</button>
 </div>

@@ -16,7 +16,7 @@ $prefix = 'zt-sc-';
 ?>
 
 <div id="<?php echo $prefix . 'container'; ?>" data-tag="" data-root="true">
-    <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_label">
+    <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_modal">
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'modal-id'; ?>">ID</label>
             <input type="text" class="form-control sc-textbox" data-property="id" id="<?php echo $prefix . 'modal-id'; ?>"

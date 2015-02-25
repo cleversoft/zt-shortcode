@@ -103,6 +103,7 @@
         },
         "depends": {
             "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
                 "Shortcodes://assets/css/buttons.css"
             ]
         }
@@ -340,6 +341,7 @@
             "name": "Zoo Templates",
             "customAvatar": "image/avata/male.jpg",
             "company": "ClearSoft",
+            "position": "Position",
             "borderRadius": "4",
             "link": "#",
             "target": "_self"
