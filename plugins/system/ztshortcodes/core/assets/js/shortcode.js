@@ -165,16 +165,14 @@
             /* Elements clone */
             $('button'+_self._elements.cloneChildElement).on('click', function () {
                 var $main = $(this).closest('.form-group').parent();
-                var $children = $main.find('.container-child');
-                var $lastTab = $children.last();
-                console.log($main, $children, $lastTab);
+                var $children = $main.find('div.container-child');
                 $children.first()
-                        .clone()
                         .appendTo($main.find('>div:first'));
-                $lastTab.find('input').each(function(){
+                var $element = $main.find('div.container-child').last();
+                $element.find('input').each(function(){
                     $(this).val($(this).attr('placeholder'));
                 });
-                $lastTab.find('.sc-checkbox').prop('checked', false);
+                $element.find('.sc-checkbox').prop('checked', false);
             });
         },
         /**
@@ -188,6 +186,7 @@
             var shortcodeTag = $parent.data('tag');
             var shortcode = {};
             shortcode._Tag = shortcodeTag;
+            shortcode._Content = '';
             $inputs.each(function () {
                 var inputType = $(this).prop('tagName');
                 var property = $(this).data('property');
