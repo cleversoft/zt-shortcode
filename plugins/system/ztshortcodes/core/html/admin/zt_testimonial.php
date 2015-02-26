@@ -32,17 +32,17 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-name' ?>">Name</label>
             <input type="text" class="form-control sc-textbox" data-property="name" id="<?php echo $prefix . 'testimonial-name' ?>"
-                   placeholder="Name author" value="Name author">
+                   placeholder="Name author" data-default="Name author" value="Name author">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-company' ?>">Company</label>
             <input type="text" class="form-control sc-textbox" data-property="company" id="<?php echo $prefix . 'testimonial-company' ?>"
-                   placeholder="Company" value="Company">
+                   placeholder="Company" data-default="Company" value="Company">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-position' ?>">Position</label>
             <input type="text" class="form-control sc-textbox" data-property="position" id="<?php echo $prefix . 'testimonial-position' ?>"
-                   placeholder="Position" value="Position">
+                   placeholder="Position" data-default="Position" value="Position">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-customAvatar' ?>">Avatar</label>
@@ -71,7 +71,7 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-content' ?>">Content</label>
             <textarea placeholder="Testimonial Content sc-textbox" data-property="" rows="3" class="form-control"
-                      id="<?php echo $prefix . 'testimonial-content' ?>">Testimonial Content</textarea>
+                      id="<?php echo $prefix . 'testimonial-content' ?>" data-default="Testimonial Content">Testimonial Content</textarea>
         </div>
     </div>
 </div>

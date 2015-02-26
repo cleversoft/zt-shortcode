@@ -33,7 +33,7 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'tab-content'; ?>">Content Tab</label>
             <textarea placeholder="Content Tabs" rows="3" class="form-control sc-textbox" data-property=""
-                      id="<?php echo $prefix . 'tab-content'; ?>">This is tab content</textarea>
+                      id="<?php echo $prefix . 'tab-content'; ?>" data-default="This is tab content">This is tab content</textarea>
         </div>
         <div class="checkbox form-group clearfix">
             <label>

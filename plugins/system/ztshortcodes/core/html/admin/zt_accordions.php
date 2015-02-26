@@ -25,12 +25,12 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'accordion-title' ?>">Accordion Title</label>
             <input type="text" class="form-control sc-textbox" data-property="title" id="<?php echo $prefix . 'accordion-title' ?>"
-                   placeholder="Accordion Title" value="Accordion Title">
+                   placeholder="Accordion Title" data-default="Accordion Title" value="Accordion Title">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'accordion-content' ?>">Accordion Content</label>
             <textarea placeholder="Content Accordion sc-textbox" data-property="" rows="3" class="form-control"
-                      id="<?php echo $prefix . 'accordion-content' ?>">Content Accordion</textarea>
+                      id="<?php echo $prefix . 'accordion-content' ?>" data-default="Accordion Content">Accordion Content</textarea>
         </div>
         <div class="form-group clearfix checkbox">
             <label>

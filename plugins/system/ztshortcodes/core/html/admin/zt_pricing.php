@@ -24,7 +24,7 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'pricing-title' ?>">Pricing Title</label>
             <input type="text" class="form-control sc-textbox" data-property="title" id="<?php echo $prefix . 'pricing-title' ?>"
-                   placeholder="Enter Title Pricing" value="Title Pricing">
+                   placeholder="Enter Title Pricing" data-default="Title Pricing" value="Title Pricing">
         </div>
         <div class="checkbox form-group clearfix">
             <label>
@@ -34,7 +34,7 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'pricing-content' ?>">Content</label>
             <textarea placeholder="Content Pricing" rows="3" class="form-control sc-textbox" data-property=""
-                      id="<?php echo $prefix . 'pricing-content' ?>">Content Pricing</textarea>
+                      id="<?php echo $prefix . 'pricing-content' ?>" data-default="Content Pricing">Content Pricing</textarea>
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'pricing-price' ?>">Price</label>
@@ -44,12 +44,12 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'pricing-link' ?>">Link</label>
             <input type="text" class="form-control sc-textbox" data-property="link" id="<?php echo $prefix . 'pricing-link' ?>"
-                   placeholder="Enter Link Pricing" value="#">
+                   placeholder="Enter Link Pricing" data-default="#" value="#">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'pricing-button-text' ?>">Button Text</label>
             <input type="text" class="form-control sc-textbox" data-property="button-text" id="<?php echo $prefix . 'pricing-button-text' ?>"
-                   placeholder="Enter Button Text" value="Button Text">
+                   placeholder="Enter Button Text" data-default="Button Text" value="Button Text">
         </div>
     </div>
 </div>

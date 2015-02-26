@@ -188,7 +188,11 @@
                         .appendTo($main.find('>div:first'));
                 var $element = $main.find('div.container-child').last();
                 $element.find('input').each(function () {
-                    $(this).val($(this).attr('placeholder'));
+                    var value = $(this).data('default');
+                    if(typeof(value) === 'undefined'){
+                        value = '';
+                    }
+                    $(this).val(value);
                 });
                 $element.find('.sc-checkbox').prop('checked', false);
                 _self._update($children.first());
