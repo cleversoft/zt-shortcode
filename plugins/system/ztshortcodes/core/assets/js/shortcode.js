@@ -90,6 +90,12 @@
                 $(_self._elements.tabList).hide('slow');
                 $(_self._elements.tabGroup).hide('slow');
                 $(_self._elements.breadcrumdContainer).show('slow');
+                w.setTimeout(function () {
+                    /* Update default value */
+                    _self._update($(_self._elements.tabContent)
+                            .find('.active')
+                            .find('[data-root="true"]'));
+                }, 500);
             });
             /* Bread crumd home */
             $(_self._elements.breadcrumdContainer).on('click', _self._elements.breadcrumdHome, function () {
@@ -236,7 +242,6 @@
                 }
                 if ($(this).val() === 'icon') {
                     $(_self._elements.counterFieldIcon).show('slow');
-                    console.log($(_self._elements.counterFieldIcon));
                     $parent.find('a').removeClass('selected');
                 }
                 else {
