@@ -260,7 +260,7 @@
             "dir": "",
             "style": "default",
             "thumb-width": "300",
-            "thumb-height": "300"
+            "thumb-width": "300"
         },
         "depends": {
             "css": [
@@ -354,6 +354,7 @@
         },
         "depends": {
             "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
                 "Shortcodes://assets/bxslider/jquery.bxslider.css",
                 "Shortcodes://assets/css/testimonial.css"
             ],
@@ -388,6 +389,18 @@
                 "Shortcodes://assets/carouFredSel/jquery.carouFredSel-6.2.1.js",
                 "Shortcodes://assets/js/carousel.js"
             ]
+        }
+    },
+    {
+        "name": "Google Map",
+        "description": "",
+        "icon": "fa fa-map-marker",
+        "group": "slider",
+        "tag": "zt_google_map",
+        "options": {
+            "link": "",
+            "width": "",
+            "height": ""
         }
     }
 ]

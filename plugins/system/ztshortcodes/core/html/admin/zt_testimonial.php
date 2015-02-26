@@ -22,12 +22,12 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-bgColor'; ?>">Background Color</label>
             <input type="text" class="form-control sc-textbox" data-property="bgColor" id="<?php echo $prefix . 'testimonial-bgColor'; ?>"
-                   placeholder="Background Color (exp: #f6f6f6)">
+                   placeholder="Background Color (exp: #f6f6f6)" data-default="#f6f6f6" value="#f6f6f6">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-textColor' ?>">Text Color</label>
             <input type="text" class="form-control sc-textbox" data-property="textColor" id="<?php echo $prefix . 'testimonial-textColor' ?>"
-                   placeholder="Text Color (exp: #747474)">
+                   placeholder="Text Color (exp: #747474)" data-default="#747474" value="#747474">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-name' ?>">Name</label>
@@ -47,21 +47,21 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-customAvatar' ?>">Avatar</label>
             <input type="text" class="form-control sc-textbox" data-property="customAvatar" id="<?php echo $prefix . 'testimonial-customAvatar' ?>"
-                   placeholder="Avatar (exp: image/avata/male.jpg)">
+                   placeholder="Avatar (exp: image/avata/male.jpg)" data-default="">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-borderRadius' ?>">Border Radius</label>
             <input type="text" class="form-control sc-textbox" data-property="borderRadius" id="<?php echo $prefix . 'testimonial-borderRadius' ?>"
-                   placeholder="Border Radius (exp: 4)">
+                   placeholder="Border Radius (exp: 4)" data-default="4" value="4">
         </div>
         <div class="form-group clearfix">
-            <label for="<?php echo $prefix . 'testimonial-link' ?>">Counter Duration</label>
+            <label for="<?php echo $prefix . 'testimonial-link' ?>">Link Website</label>
             <input type="text" class="form-control sc-textbox" data-property="link" id="<?php echo $prefix . 'testimonial-link' ?>"
-                   placeholder="Link ">
+                   placeholder="Link " data-default="#" value="#link">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'testimonial-target' ?>">Target</label>
-            <select id="<?php echo $prefix . 'testimonial-target' ?>" class="form-control sc-selectbox" data-property="target">
+            <select id="<?php echo $prefix . 'testimonial-target' ?>" class="form-control sc-selectbox" data-property="target" data-default="_blank">
                 <option value="_blank">_blank</option>
                 <option value="_parent">_parent</option>
                 <option value="_self">_self</option>

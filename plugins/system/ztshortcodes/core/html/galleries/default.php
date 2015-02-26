@@ -30,18 +30,29 @@ foreach ($files as $key => $image)
     $images[$key]['src'] = ZtShortcodesPath::getInstance()->toUrl($image);
     $images[$key]['thumbnail'] = ZtShortcodesPath::getInstance()->toUrl(ZtShortcodesHelperImage::getThumbnail($image, $options));
 }
+
+$style = '';
+if($options->get('thumb-width') != ''){
+    $style .= 'width: '. $options->get('thumb-width') . 'px';
+} elseif($options->get('thumb-height') != ''){
+    $style .= 'height: '. $options->get('thumb-height') .'px';
+}
 ?>
-<?php if (!empty($images)) : ?>
-    <?php foreach ($images as $image) : ?>
-        <a href="<?php echo $image['src']; ?>" class="ztshortcodes-gallery">
-            <img src="<?php echo $image['thumbnail']; ?>"><?php echo $content; ?></a>
-    <?php endforeach; ?>
-<?php endif; ?>
+
+<div class="zt-gallery zt-gallery-default">
+    <?php if (!empty($images)) : ?>
+        <?php foreach ($images as $image) : ?>
+            <a href="<?php echo $image['src']; ?>" class="ztshortcodes-gallery group1">
+                <img src="<?php echo $image['thumbnail']; ?>" alt="Image Gallery" style="<?php echo $style; ?>"></a>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>
 <script>
     jQuery(document).ready(function () {
         jQuery('a.ztshortcodes-gallery').colorbox({
             width: <?php echo $options->get('width'); ?>,
-            height: <?php echo $options->get('height'); ?>
+            height: <?php echo $options->get('height'); ?>,
+            rel: "group1"
         });
     })
 </script>

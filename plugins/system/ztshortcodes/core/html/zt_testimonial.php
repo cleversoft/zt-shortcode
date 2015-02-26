@@ -15,7 +15,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 $classSlider = '';
-if($options->get('slider') == 'true'){
+if($options->get('slider') == 'yes'){
     $classSlider = 'bxslider';
 }
 ?>

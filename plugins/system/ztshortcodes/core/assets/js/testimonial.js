@@ -7,7 +7,6 @@
 
 jQuery(document).ready(function(){
     jQuery('.bxslider').bxSlider({
-        mode: 'fade',
         pager: false,
         controls: false,
         auto: true

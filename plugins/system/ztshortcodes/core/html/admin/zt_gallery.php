@@ -32,5 +32,15 @@ $prefix = 'zt-sc-';
             <input type="text" data-property="height" class="form-control sc-textbox" id="<?php echo $prefix . 'gallery-height'; ?>"
                    placeholder="Enter height for popup gallery">
         </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'gallery-width'; ?>">Gallery Thumb width</label>
+            <input type="text" data-property="thumb-width" class="form-control sc-textbox" id="<?php echo $prefix . 'gallery-thumb-width'; ?>"
+                   placeholder="Enter width for Thumb gallery">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'gallery-height'; ?>">Gallery Thumb height</label>
+            <input type="text" data-property="thumb-height" class="form-control sc-textbox" id="<?php echo $prefix . 'gallery-thumb-height'; ?>"
+                   placeholder="Enter height for Thumb gallery">
+        </div>
     </div>
 </div>

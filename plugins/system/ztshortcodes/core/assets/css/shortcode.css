@@ -4,6 +4,9 @@
     color: #333;
     padding: 0 10px;
 }
+#zt-shortcode-tabs-wrapper{
+    margin-bottom: 20px;
+}
 #zt-shortcode-plugin .modal-dialog{
     width: 800px;
 }
