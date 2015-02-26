@@ -43,7 +43,7 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
 <?php if (!empty($currentTab) && !empty($currentTab['tabs'])) : ?>
     <div class="zo2-tabs <?php echo 'zo2-tab-'. $options->get('tabType'); ?>" role="tabpanel" id="<?php echo $id; ?>">
         <!-- Nav tabs -->
-        <?php if(!$options->get('tabType')) : ?>
+        <?php if($options->get('tabType') != 'bottom-tabs') : ?>
             <ul class="nav nav-tabs">
                 <?php foreach ($currentTab['tabs'] as $key => $tab): ?>
                     <?php $option = new JObject($tab); ?>
@@ -60,7 +60,7 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
             <?php endforeach; ?>
 
         </div>
-        <?php if($options->get('tabType')) : ?>
+        <?php if($options->get('tabType') == 'bottom-tabs') : ?>
             <ul class="nav nav-tabs">
                 <?php foreach ($currentTab['tabs'] as $key => $tab): ?>
                     <?php $option = new JObject($tab); ?>
