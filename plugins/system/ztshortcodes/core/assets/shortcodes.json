@@ -398,9 +398,20 @@
         "group": "slider",
         "tag": "zt_google_map",
         "options": {
-            "link": "",
+            "address": "",
+            "height": "",
             "width": "",
-            "height": ""
+            "type": "",
+            "zoom": "",
+            "color": "",
+            "saturation": ""
+        },
+        "depends": {
+            "css": [
+            ],
+            "js": [
+                "Shortcodes://assets/js/map.js"
+            ]
         }
     }
 ]
