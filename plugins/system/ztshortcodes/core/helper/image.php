@@ -25,7 +25,7 @@ if (!class_exists('ZtShortcodesHelperImage'))
     class ZtShortcodesHelperImage
     {
 
-        public static function getThumbnail($source, $options)
+        public static function getThumbnail($source, $width, $height, $prefix)
         {
             $cacheDir = JPATH_ROOT . '/cache/ztshortcodes';
             $sourceInfo = pathinfo($source);
@@ -35,7 +35,7 @@ if (!class_exists('ZtShortcodesHelperImage'))
             {
                 JFolder::create($cacheDir);
             }
-            $cacheFilePath = JPath::clean($cacheDir . '/' . $sourceInfo['basename']);
+            $cacheFilePath = JPath::clean($cacheDir . '/' . $prefix . $sourceInfo['basename']);
 
             if (JFile::exists($source))
             {
@@ -44,7 +44,7 @@ if (!class_exists('ZtShortcodesHelperImage'))
 
                     $imager = new ZtShortcodesImager('gd');
                     $imager->loadFile($source);
-                    $imager->thumbnail($options->get('width'), $options->get('height'));
+                    $imager->fit($width, $height);
                     $imager->saveToFile($cacheFilePath);
                 }
                 return $cacheFilePath;

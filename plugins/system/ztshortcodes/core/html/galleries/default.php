@@ -27,8 +27,12 @@ if (is_array($files))
     foreach ($files as $key => $image)
     {
         $image = JPath::clean($image);
-        $images[$key]['src'] = ZtShortcodesPath::getInstance()->toUrl($image);
-        $images[$key]['thumbnail'] = ZtShortcodesPath::getInstance()->toUrl(ZtShortcodesHelperImage::getThumbnail($image, $options));
+        $images[$key]['src'] = ZtShortcodesPath::getInstance()->toUrl(
+                ZtShortcodesHelperImage::getThumbnail($image, $options->get('width', 600), $options->get('height', 600), 'resized_')
+        );
+        $images[$key]['thumbnail'] = ZtShortcodesPath::getInstance()->toUrl(
+                ZtShortcodesHelperImage::getThumbnail($image, $options->get('thumb-width', 300), $options->get('thumb-height', 300), 'thumb_')
+        );
     }
 }
 ?>
