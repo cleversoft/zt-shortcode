@@ -42,7 +42,12 @@
             /* Divider */
             dividerType: "#zt-sc-divider-type",
             dividerFieldText: "#zt-sc-field-text",
-            dividerFieldIcon: "#zt-sc-field-icon"
+            dividerFieldIcon: "#zt-sc-field-icon",
+            /* Counter circle */
+            counterType: "#zt-sc-counter-contentType",
+            counterFieldContent: "#zt-sc-field-content",
+            counterFieldIcon: "#zt-sc-field-icon",
+            counterContent: "#zt-sc-content",
         },
         /**
          * Select function
@@ -182,10 +187,10 @@
                 $element.find('.sc-checkbox').prop('checked', false);
                 _self._update($children.first());
             });
-            $('select#zt-sc-column-number').on('change', function(){
+            $('select#zt-sc-column-number').on('change', function () {
                 var $main = $(this).closest('.form-group').parent();
                 var value = $(this).val();
-                var bootstrapClass = 12/value;
+                var bootstrapClass = 12 / value;
                 var counter = 0;
                 var $root = $main.find('[data-root*="true"]');
                 var element = '';
@@ -195,7 +200,7 @@
                 element += '</div>';
                 element += '</div>';
                 $root.html('');
-                while(counter < value){
+                while (counter < value) {
                     $(element)
                             .addClass('col-sm-' + bootstrapClass)
                             .addClass('col-md-' + bootstrapClass)
@@ -213,11 +218,29 @@
 
                 } else {
                     $(_self._elements.dividerFieldText).hide('slow');
-                }                
+                }
                 if ($(this).val() === 'icon-type-1' || $(this).val() === 'icon-type-2') {
                     $(_self._elements.dividerFieldIcon).show('slow');
                 } else {
                     $(_self._elements.dividerFieldIcon).hide('slow');
+                }
+            });
+            /*Counter circle*/
+            $(_self._elements.counterType).on('change', function () {
+                var $parent = $(this).closest(_self._elements.shortcodeContainer);
+                if ($(this).val() === '') {
+                    $(_self._elements.counterFieldContent).show('slow');
+                    $(_self._elements.counterContent).val('');
+                } else {
+                    $(_self._elements.counterFieldContent).hide('slow');
+                }
+                if ($(this).val() === 'icon') {
+                    $(_self._elements.counterFieldIcon).show('slow');
+                    console.log($(_self._elements.counterFieldIcon));
+                    $parent.find('a').removeClass('selected');
+                }
+                else {
+                    $(_self._elements.counterFieldIcon).hide('slow');
                 }
             });
         },
@@ -290,7 +313,7 @@
             shortcode += (data._Tag !== '') ? '[' + data._Tag : '';
             $.each(data, function (key, value) {
                 if (key !== '_Tag' && key !== '_Content') {
-                    if(value !== '')
+                    if (value !== '')
                         shortcode += ' ' + key + '="' + value + '"';
                 }
             });

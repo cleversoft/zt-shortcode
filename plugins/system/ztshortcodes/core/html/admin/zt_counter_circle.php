@@ -19,7 +19,7 @@ $prefix = 'zt-sc-';
     <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_counter_circle">
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'counter-effect'; ?>">Effect Bar</label>
-            <?php echo getEffectJqueryEasing($prefix . 'counter-effect', 'form-control'); ?>
+            <?php echo getEffectJqueryEasing($prefix . 'counter-effect', 'form-control sc-selectbox'); ?>
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'counter-barColor' ?>">Bar Color</label>
