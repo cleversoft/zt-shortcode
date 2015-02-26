@@ -216,6 +216,7 @@
                 }
                 _self._update($main.find('[data-root="true"]'));
             }).trigger('change');
+            _self.value('');
             /* Divider special type filter */
             $(_self._elements.dividerType).on('change', function () {
                 var $parent = $(this).closest(_self._elements.shortcodeContainer);
