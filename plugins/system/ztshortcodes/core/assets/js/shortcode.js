@@ -38,7 +38,11 @@
             /* Shortcode breadcrumb */
             breadcrumdContainer: "#zt-shortcode-breadcrumd",
             breadcrumdHome: "#zt-sc-all-shortcode",
-            breadcrumdCurrent: "#zt-sc-current-tab"
+            breadcrumdCurrent: "#zt-sc-current-tab",
+            /* Divider */
+            type: "#zt-sc-divider-type",
+            fieldText: "#zt-sc-field-text",
+            fieldIcon: "#zt-sc-field-icon"
         },
         /**
          * Select function
@@ -199,6 +203,23 @@
                     counter++;
                 }
             }).trigger('change');
+            /* Divider special type filter */
+            $(_self._elements.type).on('change', function () {
+                var $parent = $(this).closest(_self._elements.shortcodeContainer);
+                $parent.find('input').val('');
+                if ($(this).val() === 'text-only') {
+                    $(_self._elements.fieldText).show('slow');
+
+                } else {
+                    $(_self._elements.fieldText).hide('slow');
+                }
+                $(_self._elements.icon).find('a').removeClass('selected');
+                if ($(this).val() === 'icon-type-1' || $(this).val() === 'icon-type-2') {
+                    $(_self._elements.fieldIcon).show('slow');
+                } else {
+                    $(_self._elements.fieldIcon).hide('slow');
+                }
+            });
         },
         /**
          * Update shortcode data
