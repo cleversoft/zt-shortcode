@@ -178,6 +178,27 @@
                 $element.find('.sc-checkbox').prop('checked', false);
                 _self._update($children.first());
             });
+            $('select#zt-sc-column-number').on('change', function(){
+                var $main = $(this).closest('.form-group').parent();
+                var value = $(this).val();
+                var bootstrapClass = 12/value;
+                var counter = 0;
+                var $root = $main.find('[data-root*="true"]');
+                var element = '';
+                element += '<div id="zt-sc-container" data-tag="zt_colum" class="container-child ">';
+                element += '<div class="form-group clearfix">';
+                element += '<textarea placeholder="Content Column" rows="3" data-property="" class="form-control sc-textbox">Content Column</textarea>';
+                element += '</div>';
+                element += '</div>';
+                $root.html('');
+                while(counter < value){
+                    $(element)
+                            .addClass('col-sm-' + bootstrapClass)
+                            .addClass('col-md-' + bootstrapClass)
+                            .appendTo($root);
+                    counter++;
+                }
+            }).trigger('change');
         },
         /**
          * Update shortcode data
