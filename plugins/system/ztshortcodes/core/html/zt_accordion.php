@@ -14,8 +14,8 @@ defined('_JEXEC') or die('Restricted access');
 $contentId = ZtShortcodesHelperCommon::getUniqueString('zt-content-');
 ?>
 <div class="accordion-section">
-    <a class="accordion-section-title<?php echo $options->get('active') ? ' active' : ''; ?>" href="#<?php echo $contentId; ?>"><i class="fa <?php echo ($options->get('active')) ? 'fa-minus' : 'fa-plus'; ;?>"></i><?php echo $options->get('title'); ?></a>
-    <div id="<?php echo $contentId; ?>" class="accordion-section-content<?php echo $options->get('active') ? ' open' : ''; ?>">
+    <a class="accordion-section-title<?php echo ($options->get('active') == "yes") ? ' active' : ''; ?>" href="#<?php echo $contentId; ?>"><i class="fa <?php echo ($options->get('active') == "yes") ? 'fa-minus' : 'fa-plus'; ;?>"></i><?php echo $options->get('title'); ?></a>
+    <div id="<?php echo $contentId; ?>" class="accordion-section-content<?php echo ($options->get('active') == "yes") ? ' open' : ''; ?>">
         <p><?php echo $content; ?></p>
     </div>
 </div>

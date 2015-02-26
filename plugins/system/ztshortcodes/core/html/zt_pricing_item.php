@@ -27,7 +27,7 @@ if (!isset($price[2]))
 {
     $price[2] = '';
 }
-if ($options->get('item-hightlight') == true)
+if ($options->get('item-hightlight') == "yes")
 {
     $classHightLight = 'recommended';
 }

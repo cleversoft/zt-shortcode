@@ -33,12 +33,12 @@ defined('_JEXEC') or die('Restricted access');
         echo $parser->getAsHTML();
         ?>
     </div>
-    <?php if ($options->get('showControl') == "true"): ?>
+    <?php if ($options->get('showControl') == "yes"): ?>
         <div class="prev-btn"><i class="fa fa-chevron-left"></i></div>
         <div class="next-btn"><i class="fa fa-chevron-right"></i></div>
     <?php
     endif;
-    if ($options->get('showPager') == "true"):
+    if ($options->get('showPager') == "yes"):
         ?>
         <div class="zo2-carousel-pager"></div>
     <?php endif; ?>

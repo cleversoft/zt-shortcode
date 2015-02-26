@@ -47,7 +47,7 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
             <ul class="nav nav-tabs">
                 <?php foreach ($currentTab['tabs'] as $key => $tab): ?>
                     <?php $option = new JObject($tab); ?>
-                    <li class="<?php echo ($option->get('active') == 'true') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>
+                    <li class="<?php echo ($option->get('active') == 'yes') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
@@ -64,7 +64,7 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
             <ul class="nav nav-tabs">
                 <?php foreach ($currentTab['tabs'] as $key => $tab): ?>
                     <?php $option = new JObject($tab); ?>
-                    <li class="<?php echo ($option->get('active') == 'true') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>
+                    <li class="<?php echo ($option->get('active') == 'yes') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
