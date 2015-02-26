@@ -200,8 +200,9 @@
                 var counter = 0;
                 var $root = $main.find('[data-root*="true"]');
                 var element = '';
-                element += '<div id="zt-sc-container" data-tag="zt_colum" class="container-child ">';
+                element += '<div id="zt-sc-container" data-tag="zt_column" class="container-child ">';
                 element += '<div class="form-group clearfix">';
+                element += '<input type="hidden" class="sc-selectbox" data-property="md" value="' + bootstrapClass + '">';
                 element += '<textarea placeholder="Content Column" rows="3" data-property="" class="form-control sc-textbox">Content Column</textarea>';
                 element += '</div>';
                 element += '</div>';
@@ -213,6 +214,7 @@
                             .appendTo($root);
                     counter++;
                 }
+                _self._update($main.find('[data-root="true"]'));
             }).trigger('change');
             /* Divider special type filter */
             $(_self._elements.dividerType).on('change', function () {
