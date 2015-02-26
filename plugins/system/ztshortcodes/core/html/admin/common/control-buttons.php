@@ -14,6 +14,6 @@
 ?>
 <div class="form-insert" id="zt-shortcode-controls">
     <button type="button" id="zt-sc-insert" class="btn btn-primary button-insert-shortcode">Insert Shortcode</button>
-    <button type="button" id="zt-sc-preview" class="btn btn-default">Preview Shortcode</button>
+    <button type="button" id="zt-sc-preview" class="btn btn-default" style="display: none;">Preview Shortcode</button>
     <button type="button" id="zt-sc-close" class="btn btn-danger">Close</button>
 </div>
