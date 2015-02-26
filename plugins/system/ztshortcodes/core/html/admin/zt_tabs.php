@@ -20,6 +20,7 @@ $prefix = 'zt-sc-';
             <option value="horizontal">Horizontal</option>
             <option value="vertical-left">Vertical Left</option>
             <option value="vertical-right">Vertical Right</option>
+            <option value="bottom-Tabs">Horizontal Bottom</option>
         </select>
     </div>
     <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tab" class="container-child">

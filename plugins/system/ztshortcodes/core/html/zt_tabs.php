@@ -4,9 +4,9 @@
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
  *
  * @version     1.0.0
- * @author      ZooTemplate 
- * @email       support@zootemplate.com 
- * @link        http://www.zootemplate.com 
+ * @author      ZooTemplate
+ * @email       support@zootemplate.com
+ * @link        http://www.zootemplate.com
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
@@ -38,19 +38,21 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
     $currentTab = $zo2Shortcodes['tabs'][$shortcode->options['id']];
     $id = $shortcode->options['id'];
 }
-?>  
-<!-- http://getbootstrap.com/javascript/#tabs -->
+?>
+    <!-- http://getbootstrap.com/javascript/#tabs -->
 <?php if (!empty($currentTab) && !empty($currentTab['tabs'])) : ?>
-    <div class="clearfix zo2-tabs <?php echo 'zo2-tab-'. $options->get('tabType'); ?>" role="tabpanel" id="<?php echo $id; ?>">
+    <div class="zo2-tabs <?php echo 'zo2-tab-'. $options->get('tabType'); ?>" role="tabpanel" id="<?php echo $id; ?>">
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs">
-            <?php foreach ($currentTab['tabs'] as $key => $tab): ?> 
-                <?php $option = new JObject($tab); ?>             
-                <li class="<?php echo ($option->get('active') == 'true') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>              
-            <?php endforeach; ?>
-        </ul>
+        <?php if(!$options->get('tabType')) : ?>
+            <ul class="nav nav-tabs">
+                <?php foreach ($currentTab['tabs'] as $key => $tab): ?>
+                    <?php $option = new JObject($tab); ?>
+                    <li class="<?php echo ($option->get('active') == 'true') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
         <div class="tab-content">
-            <?php foreach ($currentTab['contents'] as $key => $content): ?>    
+            <?php foreach ($currentTab['contents'] as $key => $content): ?>
                 <?php $option = new JObject($currentTab['tabs'][$key]); ?>
                 <div class="tab-pane fade <?php echo ($option->get('active') == 'true') ? 'in active' : ''; ?>" id="<?php echo $id . $key; ?>">
                     <?php echo $content; ?>
@@ -58,5 +60,13 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
             <?php endforeach; ?>
 
         </div>
+        <?php if($options->get('tabType')) : ?>
+            <ul class="nav nav-tabs">
+                <?php foreach ($currentTab['tabs'] as $key => $tab): ?>
+                    <?php $option = new JObject($tab); ?>
+                    <li class="<?php echo ($option->get('active') == 'true') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $option->get('title'); ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
     </div>
 <?php endif; ?>

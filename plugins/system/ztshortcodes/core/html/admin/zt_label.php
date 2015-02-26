@@ -22,7 +22,7 @@ $prefix = 'zt-sc-';
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'label-type'; ?>">Type Label</label>
             <select id="<?php echo $prefix . 'label-type'; ?>" class="form-control sc-selectbox" data-property="type">
-                <option value="">Default</option>
+                <option value="default">Default</option>
                 <option value="primary">Primary</option>
                 <option value="success">Success</option>
                 <option value="info">Info</option>
