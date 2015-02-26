@@ -44,7 +44,7 @@ if (!class_exists('ZtShortcodesHelperImage'))
 
                     $imager = new ZtShortcodesImager('gd');
                     $imager->loadFile($source);
-                    $imager->thumbnail($options->get('thumb-width'), $options->get('thumb-height'));
+                    $imager->thumbnail($options->get('width'), $options->get('height'));
                     $imager->saveToFile($cacheFilePath);
                 }
                 return $cacheFilePath;
