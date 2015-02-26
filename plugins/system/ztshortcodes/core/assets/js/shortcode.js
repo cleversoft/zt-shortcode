@@ -41,13 +41,13 @@
             breadcrumdCurrent: "#zt-sc-current-tab",
             /* Divider */
             dividerType: "#zt-sc-divider-type",
-            dividerFieldText: "#zt-sc-field-text",
-            dividerFieldIcon: "#zt-sc-field-icon",
+            dividerFieldText: "#zt-sc-divider-field-text",
+            dividerFieldIcon: "#zt-sc-divider-field-icon",
             /* Counter circle */
             counterType: "#zt-sc-counter-contentType",
-            counterFieldContent: "#zt-sc-field-content",
-            counterFieldIcon: "#zt-sc-field-icon",
-            counterContent: "#zt-sc-content",
+            counterFieldContent: "#zt-sc-counter-field-content",
+            counterFieldIcon: "#zt-sc-counter-field-icon",
+            counterContent: "#zt-sc-counter-content",
         },
         /**
          * Select function

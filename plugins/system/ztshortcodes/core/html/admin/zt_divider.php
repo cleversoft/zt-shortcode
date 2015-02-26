@@ -29,13 +29,13 @@ $prefix = 'zt-sc-';
                 <option value="icon-type-2">Go to top icon 2</option>
             </select>
         </div>
-        <div class="form-group clearfix" id="<?php echo $prefix . 'field-text'; ?>" style="display: none;">
+        <div class="form-group clearfix" id="<?php echo $prefix . 'divider-field-text'; ?>" style="display: none;">
             <label for="<?php echo $prefix . 'divider-text'; ?>">Text(only use with type go to top 1 and go to top icon
                 2)</label>
             <input type="text" class="form-control sc-textbox" data-property="text" id="<?php echo $prefix . 'divider-text'; ?>"
                    placeholder="Enter text content" value="Go to top">
         </div>
-        <div class="form-group clearfix" id="<?php echo $prefix . 'field-icon'; ?>" style="display: none;">
+        <div class="form-group clearfix" id="<?php echo $prefix . 'divider-field-icon'; ?>" style="display: none;">
             <label for="<?php echo $prefix . 'icon'; ?>">Icon (please select an icon)</label>
 
             <div id="<?php echo $prefix . 'icon'; ?>">
