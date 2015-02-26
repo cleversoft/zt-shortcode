@@ -13,4 +13,4 @@
  */
 defined('_JEXEC') or die('Restricted access');
 ?>
-<div class="col-md-<?php echo $options->get('md'); ?>"><?php echo $content; ?></div>
+<div class="col-md-<?php echo $options->get('md'); ?> col-sm-<?php echo $options->get('md'); ?>"><?php echo $content; ?></div>
