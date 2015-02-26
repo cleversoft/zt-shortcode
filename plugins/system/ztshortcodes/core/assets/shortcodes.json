@@ -40,7 +40,7 @@
         "group": "General",
         "tag": "zt_tabs",
         "options": {
-            
+            "tabType": ""
         },
         "depends": {
             "css": [

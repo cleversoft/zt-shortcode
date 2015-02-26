@@ -14,6 +14,14 @@ $prefix = 'zt-sc-';
 ?>
 
 <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tabs" data-root="true">
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix . 'tabs-type'; ?>">Type</label>
+        <select id="<?php echo $prefix . 'tabs-type'; ?>" class="form-control sc-selectbox" data-property="tabType">
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical-left">Vertical Left</option>
+            <option value="vertical-right">Vertical Right</option>
+        </select>
+    </div>
     <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_tab" class="container-child">
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'tab-title' ?>">Title</label>
@@ -37,3 +45,4 @@ $prefix = 'zt-sc-';
 <div class="form-group clearfix">
     <button class="btn btn-default" type="button" id="<?php echo $prefix . 'clone-element' ?>">Add New Tab</button>
 </div>
+
