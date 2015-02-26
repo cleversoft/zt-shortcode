@@ -17,13 +17,13 @@ $prefix = 'zt-sc-';
         <label for="<?php echo $prefix . 'carousel-showItem'; ?>">Item Carousel</label>
         <input type="text" class="form-control sc-textbox" data-property="showItem"
                id="<?php echo $prefix . 'carousel-showItem'; ?>"
-               placeholder="Item Carousel (exp: 4)">
+               placeholder="Item Carousel (exp: 4)" value="4">
     </div>
     <div class="form-group clearfix">
         <label for="<?php echo $prefix . 'carousel-duration'; ?>">Duration Carousel</label>
         <input type="text" class="form-control sc-textbox" data-property="duration"
                id="<?php echo $prefix . 'carousel-duration'; ?>"
-               placeholder="Duration Carousel (exp: 1000)">
+               placeholder="Duration Carousel (exp: 1000)" value="1000">
     </div>
     <div class="form-group clearfix checkbox">
         <label>
