@@ -90,6 +90,12 @@
                 $(_self._elements.tabList).hide('slow');
                 $(_self._elements.tabGroup).hide('slow');
                 $(_self._elements.breadcrumdContainer).show('slow');
+                w.setTimeout(function () {
+                    /* Update default value */
+                    _self._update($(_self._elements.tabContent)
+                            .find('.active')
+                            .find('[data-root="true"]'));
+                }, 500);
             });
             /* Bread crumd home */
             $(_self._elements.breadcrumdContainer).on('click', _self._elements.breadcrumdHome, function () {
@@ -194,8 +200,9 @@
                 var counter = 0;
                 var $root = $main.find('[data-root*="true"]');
                 var element = '';
-                element += '<div id="zt-sc-container" data-tag="zt_colum" class="container-child ">';
+                element += '<div id="zt-sc-container" data-tag="zt_column" class="container-child ">';
                 element += '<div class="form-group clearfix">';
+                element += '<input type="hidden" class="sc-selectbox" data-property="md" value="' + bootstrapClass + '">';
                 element += '<textarea placeholder="Content Column" rows="3" data-property="" class="form-control sc-textbox">Content Column</textarea>';
                 element += '</div>';
                 element += '</div>';
@@ -207,7 +214,9 @@
                             .appendTo($root);
                     counter++;
                 }
+                _self._update($main.find('[data-root="true"]'));
             }).trigger('change');
+            _self.value('');
             /* Divider special type filter */
             $(_self._elements.dividerType).on('change', function () {
                 var $parent = $(this).closest(_self._elements.shortcodeContainer);
@@ -236,7 +245,6 @@
                 }
                 if ($(this).val() === 'icon') {
                     $(_self._elements.counterFieldIcon).show('slow');
-                    console.log($(_self._elements.counterFieldIcon));
                     $parent.find('a').removeClass('selected');
                 }
                 else {
