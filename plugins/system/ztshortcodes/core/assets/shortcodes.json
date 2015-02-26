@@ -155,7 +155,7 @@
         "group": "Grid",
         "tag": "zt_pricing",
         "options": {
-            "pricing-type": "",
+            "pricing-type": "default",
             "price": "",
             "item-column": "",
             "item-hightlight": "",

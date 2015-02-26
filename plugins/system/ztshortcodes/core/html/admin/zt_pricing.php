@@ -16,7 +16,7 @@ $prefix = 'zt-sc-';
     <div class="form-group clearfix">
         <label for="<?php echo $prefix . 'pricing-type'; ?>">Pricing Type</label>
         <select id="<?php echo $prefix . 'pricing-type'; ?>" class="form-control sc-selectbox" data-property="pricing-type">
-            <option value="">Default</option>
+            <option value="default">Default</option>
             <option value="attached">Attached</option>
         </select>
     </div>
