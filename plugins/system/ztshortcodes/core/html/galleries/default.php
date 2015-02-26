@@ -44,7 +44,7 @@ if($options->get('thumb-width') != ''){
 }
 ?>
 
-<div class="zt-gallery zt-gallery-default">
+<div class="zt-gallery zt-gallery-default clearfix">
     <?php if (!empty($images)) : ?>
         <?php foreach ($images as $image) : ?>
             <a href="<?php echo $image['src']; ?>" class="ztshortcodes-gallery group1">
