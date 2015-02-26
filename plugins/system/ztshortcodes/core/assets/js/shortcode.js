@@ -40,9 +40,9 @@
             breadcrumdHome: "#zt-sc-all-shortcode",
             breadcrumdCurrent: "#zt-sc-current-tab",
             /* Divider */
-            type: "#zt-sc-divider-type",
-            fieldText: "#zt-sc-field-text",
-            fieldIcon: "#zt-sc-field-icon"
+            dividerType: "#zt-sc-divider-type",
+            dividerFieldText: "#zt-sc-field-text",
+            dividerFieldIcon: "#zt-sc-field-icon"
         },
         /**
          * Select function
@@ -204,20 +204,20 @@
                 }
             }).trigger('change');
             /* Divider special type filter */
-            $(_self._elements.type).on('change', function () {
+            $(_self._elements.dividerType).on('change', function () {
                 var $parent = $(this).closest(_self._elements.shortcodeContainer);
                 $parent.find('input').val('');
+                $parent.find('a').removeClass('selected');
                 if ($(this).val() === 'text-only') {
-                    $(_self._elements.fieldText).show('slow');
+                    $(_self._elements.dividerFieldText).show('slow');
 
                 } else {
-                    $(_self._elements.fieldText).hide('slow');
-                }
-                $(_self._elements.icon).find('a').removeClass('selected');
+                    $(_self._elements.dividerFieldText).hide('slow');
+                }                
                 if ($(this).val() === 'icon-type-1' || $(this).val() === 'icon-type-2') {
-                    $(_self._elements.fieldIcon).show('slow');
+                    $(_self._elements.dividerFieldIcon).show('slow');
                 } else {
-                    $(_self._elements.fieldIcon).hide('slow');
+                    $(_self._elements.dividerFieldIcon).hide('slow');
                 }
             });
         },
