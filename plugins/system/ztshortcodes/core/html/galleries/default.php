@@ -1,5 +1,4 @@
 <?php
-
 /**
  * ZT Shortcodes
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
@@ -11,7 +10,6 @@
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
-
 ?>
 
 <?php
@@ -24,11 +22,18 @@ $allowedExtensions = array_merge($allowedExtensions, array_map('strtoupper', $al
 $filter = implode('|', $allowedExtensions);
 $filter = "^.*\.(" . implode('|', $allowedExtensions) . ")$";
 $files = JFolder::files($dir, $filter, false, true);
-foreach ($files as $key => $image)
+if (is_array($files))
 {
-    $image = JPath::clean($image);
-    $images[$key]['src'] = ZtShortcodesPath::getInstance()->toUrl($image);
-    $images[$key]['thumbnail'] = ZtShortcodesPath::getInstance()->toUrl(ZtShortcodesHelperImage::getThumbnail($image, $options));
+    foreach ($files as $key => $image)
+    {
+        $image = JPath::clean($image);
+        $images[$key]['src'] = ZtShortcodesPath::getInstance()->toUrl(
+                ZtShortcodesHelperImage::getThumbnail($image, $options->get('width', 600), $options->get('height', 600), 'resized_')
+        );
+        $images[$key]['thumbnail'] = ZtShortcodesPath::getInstance()->toUrl(
+                ZtShortcodesHelperImage::getThumbnail($image, $options->get('thumb-width', 300), $options->get('thumb-height', 300), 'thumb_')
+        );
+    }
 }
 
 $style = '';

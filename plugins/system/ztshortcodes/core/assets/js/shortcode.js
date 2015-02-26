@@ -91,10 +91,15 @@
                 $(_self._elements.tabGroup).hide('slow');
                 $(_self._elements.breadcrumdContainer).show('slow');
                 w.setTimeout(function () {
-                    /* Update default value */
-                    _self._update($(_self._elements.tabContent)
+                    var $parentContainer = $(_self._elements.tabContent)
                             .find('.active')
-                            .find('[data-root="true"]'));
+                            .find('[data-root="true"]');
+                    var $checkboxs = $parentContainer.find('div.container-child .sc-checkbox');
+                    if ($checkboxs.find(':checked').length <= 0) {
+                        $checkboxs.first().prop('checked', true);
+                    }
+                    /* Update default value */
+                    _self._update($parentContainer);
                 }, 500);
             });
             /* Bread crumd home */
@@ -189,7 +194,7 @@
                 var $element = $main.find('div.container-child').last();
                 $element.find('input').each(function () {
                     var value = $(this).data('default');
-                    if(typeof(value) === 'undefined'){
+                    if (typeof (value) === 'undefined') {
                         value = '';
                     }
                     $(this).val(value);
@@ -317,7 +322,7 @@
         },
         /**
          * Generate shortcode from data
-         * @param {type} $data
+         * @param {type} data
          * @returns {String}
          */
         _getShortcode: function (data) {
