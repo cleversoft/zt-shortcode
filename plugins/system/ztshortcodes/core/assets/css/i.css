@@ -1,3 +1,6 @@
+.zt-font-ic{
+    margin: 0 0 5px 0;
+}
 .zt-font-ic.ic-circle{
     display: block;
     border-radius: 50%;
@@ -28,6 +31,7 @@
 }
 .ic-list{
     display: block;
+    font-size: 14px;
 }
 .ic-list:before{
     display: inline-block;

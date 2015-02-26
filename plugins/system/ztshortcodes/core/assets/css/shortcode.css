@@ -111,10 +111,7 @@
     padding: 10px;
 }
 
-#zt-sc-tabs-element,
-#zt-sc-accordion-element,
-#zt-sc-carousel-item,
-#zt-sc-pricing-element{
+.container-child{
     padding: 10px 20px;
     background-color: #f8f6f6;
     border: 1px solid #d6d6d6;

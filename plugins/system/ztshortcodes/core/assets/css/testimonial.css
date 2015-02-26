@@ -15,6 +15,9 @@
     content: "";
     position: absolute;
 }
+.testimonial-item{
+    margin-bottom: 30px;
+}
 .testimonial-thumbnail{
     display: block;
     float: left;
