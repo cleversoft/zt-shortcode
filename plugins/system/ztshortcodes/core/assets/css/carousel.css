@@ -48,6 +48,8 @@
     transform: translateY(-50%);
 }
 .image-extras .icon-link{
+    border: medium none !important;
+    display: inline-block;
     height: 30px;
     line-height: 30px;
     position: relative;
@@ -87,7 +89,7 @@
     left: inherit;
     right: -10px;
 }
-.pager{
+.zo2-carousel-pager{
     bottom: -10px;
     left: 50%;
     margin: 0;
@@ -97,7 +99,7 @@
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
 }
-.pager a{
+.zo2-carousel-pager a{
     background-color: #000;
     border-radius: 50%;
     display: block;
@@ -108,6 +110,6 @@
     width: 10px;
     outline: none;
 }
-.pager a.selected{
+.zo2-carousel-pager a.selected{
     background-color: rgba(0,0,0,0.4);
 }

@@ -373,14 +373,15 @@
             "image": "images/carousel/up1.jpg",
             "title": "",
             "link": "",
-            "showPager": "true",
-            "showControl": "true",
+            "showPager": "fasle",
+            "showControl": "fasle",
             "showItem": "4",
             "duration": "1000",
-            "enableReponsive": "true"
+            "enableReponsive": "fasle"
         },
         "depends": {
             "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
                 "Shortcodes://assets/css/carousel.css"
             ],
             "js": [

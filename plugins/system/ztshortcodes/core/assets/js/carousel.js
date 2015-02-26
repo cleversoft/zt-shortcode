@@ -8,7 +8,6 @@
 jQuery(document).ready(function () {
 
     jQuery('.carousel-wrap').each(function(){
-
         var itemCarousel = jQuery(this).find('.carousel-slider'),
             i = jQuery(itemCarousel).data('items'),
             d = jQuery(itemCarousel).data('duration'),
@@ -17,7 +16,7 @@ jQuery(document).ready(function () {
         jQuery(itemCarousel).carouFredSel({
             prev: ".prev-btn",
             next: ".next-btn",
-            pagination: ".pager",
+            pagination: ".zo2-carousel-pager",
             width: "100%",
             items: i,
             responsive: r,
