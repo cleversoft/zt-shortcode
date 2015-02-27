@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <extension group="system" method="upgrade" type="plugin" version="2.5">
-    <name>PLG_SYSTEM_ZTSHORTCODES</name>
-    <creationDate>Jan 2015</creationDate>
+    <name>System - ZtShortcodes</name>
+    <creationDate>Feb 27, 2015</creationDate>
     <author>ZooTemplate.Com</author>
     <authorEmail>support@zootemplate.com</authorEmail>
     <authorUrl>https://www.zootemplate.com</authorUrl>

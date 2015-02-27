@@ -15,7 +15,7 @@
 defined('_JEXEC') or die();
 
 
-class PlgSystemZtshortcodesInstallerScript
+class PlgEditorsXTDZtshortcodesInstallerScript
 {
     /**
      * Called after any type of action
@@ -33,7 +33,7 @@ class PlgSystemZtshortcodesInstallerScript
             ->update('#__extensions')
             ->set("`enabled`='1'")
             ->where("`type`='plugin'")
-            ->where("`folder`='system'")
+            ->where("`folder`='editors-xtd'")
             ->where("`element`='ztshortcodes'");
         $db->setQuery($query);
         $db->execute();
