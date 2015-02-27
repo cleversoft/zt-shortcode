@@ -54,7 +54,7 @@ if (isset($zo2Shortcodes['tabs'][$shortcode->options['id']]))
         <div class="tab-content">
             <?php foreach ($currentTab['contents'] as $key => $content): ?>
                 <?php $option = new JObject($currentTab['tabs'][$key]); ?>
-                <div class="tab-pane fade <?php echo ($option->get('active') == 'true') ? 'in active' : ''; ?>" id="<?php echo $id . $key; ?>">
+                <div class="tab-pane fade <?php echo ($option->get('active') == 'yes') ? 'in active' : ''; ?>" id="<?php echo $id . $key; ?>">
                     <?php echo $content; ?>
                 </div>
             <?php endforeach; ?>

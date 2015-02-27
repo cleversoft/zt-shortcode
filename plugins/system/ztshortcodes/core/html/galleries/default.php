@@ -61,17 +61,3 @@ if($options->get('thumb-width') != ''){
         });
     })
 </script>
-
-<?php
-
-$address = "Salzburg";
-$address = str_replace(" ", "+", $address);
-$region = "Austria";
-
-$json = file_get_contents("http://maps.google.com/maps/api/geocode/json?address=$address&sensor=false&region=$region");
-$json = json_decode($json);
-
-$lat = $json->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};
-$long = $json->{'results'}[0]->{'geometry'}->{'location'}->{'lng'};
-echo $lat."</br>".$long;
-?>
