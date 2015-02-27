@@ -13,118 +13,55 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
-jimport('joomla.plugin.plugin');
-
 /**
  * Class exists checking
  */
-if (!class_exists('plgSystemZtShortcodes'))
-{
+if (!class_exists('PlgButtonZtShortcodes')) {
+
 
     /**
      * 
      */
-    class plgSystemZtShortcodes extends JPlugin
-    {
+    class PlgButtonZtShortcodes extends JPlugin {
 
         /**
-         * 
-         * @param type $subject
-         * @param type $config
+         * Load the language file on instantiation.
+         *
+         * @var    boolean
+         * @since  3.1
          */
-        public function __construct(&$subject, $config = array())
-        {
-            parent::__construct($subject, $config);
-            require_once __DIR__ . '/core/bootstrap.php';
-        }
+        protected $autoloadLanguage = true;
 
         /**
-         * Service for backend request
+         * Display the button.
+         *
+         * @param   string   $name    The name of the button to display.
+         * @param   string   $asset   The name of the asset being edited.
+         * @param   integer  $author  The id of the author owning the asset being edited.
+         *
+         * @return  array    A two element array of (imageName, textToInsert) or false if not authorised.
          */
-        public function onAfterRoute()
-        {
-            $jinput = JFactory::getApplication()->input;
-            if ($task = $jinput->get('ztshortcodes_task'))
-            {
-                $view = $jinput->get('ztshortcodes_view');
-                $html = new ZtShortcodesHtml();
-                $buffer = $html->fetch('Shortcodes://html/admin/' . $view . '.php');
-                echo $buffer;
-                exit();
+        public function onDisplay($name, $asset, $author) {
+            $app = JFactory::getApplication();
+
+            $extension = $app->input->get('option');
+
+            if ($asset == '') {
+                $asset = $extension;
             }
-        }
 
-        /**
-         * 
-         */
-        public function onAfterRender()
-        {
-            // Only process for frontend
-            if (JFactory::getApplication()->isSite())
-            {
-                global $zo2Shortcodes;
-                $path = ZtShortcodesPath::getInstance();
-                // Prepare buffer
-                $buffer = array();
-                // Shortcodes process
-                $shortcodes = $this->_getShortcodes();
-                $parser = new JBBCode\Parser();
-                foreach ($shortcodes as $shortcode)
-                {
-                    // Convert to JObject
-                    $shortcode = new JObject($shortcode);
-                    // Setup shortcode
-                    $builder = new JBBCode\CodeDefinitionBuilder($shortcode->get('tag'), $shortcode->get('tag'));
-                    // This shortcode required to input options
-                    if (count($shortcode->get('options')) > 0)
-                    {
-                        $builder->setUseOption(true);
-                        $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
-                    } else // This shortcode do not required to input options
-                    {
-                        $builder->setUseOption(false);
-                        $parser->addCodeDefinition($builder->build()->setShortcode($shortcode));
-                    }
-                }
-                // Get body
-                $html = JResponse::getBody();
-                // Parsing
-                $parser->parse($html);
-                // Parse to HTML
-                $html = $parser->getAsHTML();
 
-                if (!empty($zo2Shortcodes['_css']))
-                {
-                    foreach ($zo2Shortcodes['_css'] as $key => $url)
-                    {
-                        $buffer[] = '<link rel="stylesheet" type="text/css" href="' . $url . '">';
-                    }
-                }
-                if (!empty($zo2Shortcodes['_js']))
-                {
-                    foreach ($zo2Shortcodes['_js'] as $key => $url)
-                    {
-                        $buffer[] = '<script src="' . $url . '"></script>';
-                    }
-                }
-                $buffer = implode(PHP_EOL, $buffer);
-                $html = str_replace('</head>', $buffer . '</head>', $html);
-                JResponse::setBody($html);
-            }
-        }
+            $link = 'index.php?ztshortcodes_task=display&ztshortcodes_view=shortcodes';
+            JHtml::_('behavior.modal');
+            $button = new JObject;
+            $button->modal = true;
+            $button->class = 'btn';
+            $button->link = $link;
+            $button->text = JText::_('PLG_EDITORS-XTD_ZTSHORTCODES_BUTTON');
+            $button->name = 'picture';
+            $button->options = "{handler: 'iframe', size: {x: 900, y: 600}}";
 
-        /**
-         * 
-         * @return array
-         */
-        private function _getShortcodes()
-        {
-            $jsonFile = ZtShortcodesPath::getInstance()->getPath('Shortcodes://assets/shortcodes.json');
-            if ($jsonFile)
-            {
-                return json_decode(file_get_contents($jsonFile), true);
-            }
-            return array();
+            return $button;
         }
 
     }
