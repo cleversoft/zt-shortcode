@@ -431,9 +431,21 @@
         "group": "slider",
         "tag": "zt_title",
         "options": {
-            "type": "",
-            "margin-top": "",
-            "margin-bottom": ""
+            "type": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/title.css"
+            ]
+        }
+    },
+    {
+        "name": "Person",
+        "description": "",
+        "icon": "fa fa-adn",
+        "group": "slider",
+        "tag": "zt_person",
+        "options": {
         },
         "depends": {
             "css": [
