@@ -13,10 +13,8 @@
     <description>A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge</description>    	
     
 	<scriptfile>pkg_ztshortcodes.script.php</scriptfile>
-	<files folder="source/editors-xtd">
-   		<file type="plugin" id="ztshortcodes" group="editors-xtd">ztshortcodes</file>
- 	</files>
- 	<files folder="source/system">
-   		<file type="template" id="ztshortcodes" group="system">ztshortcodes</file>
+	<files folder="source">
+   		<file type="plugin" id="ztshortcodes" group="editors-xtd">ztshortcodes_button.zip</file>
+   		<file type="plugin" id="ztshortcodes" group="system">ztshortcodes.zip</file>
  	</files>
 </extension>
