@@ -1,7 +1,7 @@
 ZT Shortcodes package includes: 
 
-* ZT Shortcodes System 
-* ZT Shortcodes Editors
+* System - ZT Shortcodes 
+* Button- ZT Shortcodes
 
 
 ## Features List
@@ -25,5 +25,3 @@ ZT Shortcodes package includes:
 * Youtube
 * Twitter
 * Vimeo
-
-![Features List](https://cloud.githubusercontent.com/assets/5260516/5871284/8f780dcc-a30d-11e4-871e-0ddc1591a3a4.png)
