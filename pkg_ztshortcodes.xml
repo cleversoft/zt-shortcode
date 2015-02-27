@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<extension type="package" version="3.0" method="install">
+	<name>Package - ZtShortcodes</name>
+	<packagename>ztshortcodes</packagename>
+    <packager>ZtShortcodes</packager>   	
+	<creationDate>Feb 28, 2015</creationDate>
+    <version>1.0.0</version>	
+    <author>ZooTemplate.com</author>    
+    <authorEmail>support@zootemplate.com</authorEmail>
+    <authorUrl>https://www.zootemplate.com/zo2</authorUrl>
+    <copyright>Copyright (c) 2008 - 2015 ZooTemplate.Com</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later</license>
+    <description>A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge</description>    	
+    
+	<scriptfile>pkg_ztshortcodes.script.php</scriptfile>
+	<files folder="source/editors-xtd">
+   		<file type="plugin" id="ztshortcodes" group="editors-xtd">ztshortcodes</file>
+ 	</files>
+ 	<files folder="source/system">
+   		<file type="template" id="ztshortcodes" group="system">ztshortcodes</file>
+ 	</files>
+</extension>

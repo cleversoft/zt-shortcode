@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<extension version="3.1" type="plugin" group="editors-xtd">
-    <name>PLG_EDITORS-XTD_ZTSHORTCODES</name>
-    <creationDate>Jan 2015</creationDate>
+<extension group="system" method="upgrade" type="plugin" version="2.5">
+    <name>System - ZtShortcodes</name>
+    <creationDate>Feb 26, 2015</creationDate>
     <author>ZooTemplate.Com</author>
     <authorEmail>support@zootemplate.com</authorEmail>
     <authorUrl>https://www.zootemplate.com</authorUrl>
     <copyright>Copyright (c) 2008 - 2015 ZooTemplate.com</copyright>
     <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
     <version>1.0.0</version>
-    <description>PLG_EDITORS-XTD_ZTSHORTCODES</description>
+    <description>PLG_SYSTEM_ZTSHORTCODES_DESC</description>
     <scriptfile>ztshortcodes.script.php</scriptfile>
     <languages folder="language">
-        <language tag="en-GB">en-GB/en-GB.plg_editors-xtd_ztshortcodes.ini</language>
-        <language tag="en-GB">en-GB/en-GB.plg_editors-xtd_ztshortcodes.sys.ini</language>		
+        <language tag="en-GB">en-GB/en-GB.plg_system_ztshortcodes.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_ztshortcodes.sys.ini</language>		
     </languages>
-    <files>     
+    <files>
+        <folder>core</folder>
+        <folder>local</folder>
         <filename plugin="ztshortcodes">ztshortcodes.php</filename>        
         <filename>index.html</filename>
-    </files>    
+    </files>
+    <config>
+        <fields name="params">
+			<fieldset name="basic">
+				<field name="load_bs3" type="radio" default="0" label="PLG_SYSTEM_ZTSHORTCODES_LABEL_LOAD_BOOTSTRAP3" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="load_fa" type="radio" default="1" label="PLG_SYSTEM_ZTSHORTCODES_LABEL_LOAD_FA" description="">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>            
+        </fields>
+    </config>
 </extension>
