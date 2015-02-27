@@ -413,5 +413,32 @@
                 "Shortcodes://assets/js/map.js"
             ]
         }
+    },
+    {
+        "name": "Space",
+        "description": "",
+        "icon": "fa fa-align-justify",
+        "group": "slider",
+        "tag": "zt_space",
+        "options": {
+            "height": ""
+        }
+    },
+    {
+        "name": "Title",
+        "description": "",
+        "icon": "fa fa-adn",
+        "group": "slider",
+        "tag": "zt_title",
+        "options": {
+            "type": "",
+            "margin-top": "",
+            "margin-bottom": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/title.css"
+            ]
+        }
     }
 ]
