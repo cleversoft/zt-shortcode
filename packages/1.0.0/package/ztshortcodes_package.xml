@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.3">
+	<name>ZtShortcodes Package</name>
+	<author>ZooTemplate.Com</author>
+	<creationDate>Feb 2015</creationDate>
+	<packagename>ztshortcodespkg</packagename>
+	<version>1.0.0</version>
+	<url>https://www.zootemplate.com</url>
+	<packager>CleverSoft</packager>
+	<packagerurl>https://www.zootemplate.com</packagerurl>
+	<description></description>	
+	<scriptfile>script.php</scriptfile>
+	<files folder="packages">
+		<file type="plugin" id="ztshortcodes" group="system">plg_system_ztshortcodes.zip</file>
+		<file type="plugin" id="button_ztshortcodes" group="editors-xtd">plg_button_ztshortcodes.zip</file>
+	</files>
+ </extension>
