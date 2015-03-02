@@ -1,0 +1,35 @@
+.zt-person-social ul{
+    list-style: none;
+}
+.zt-person-social ul li{
+    float: left;
+}
+.zt-person-social a{
+    background-color: #ccc;
+    color: #fff;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 4px;
+    text-align: center;
+    width: 25px;
+}
+.zt-person-social.social-rounded a{
+    border-radius: 4px;
+}
+.zt-person-social.social-circle a{
+    border-radius: 50%;
+}
+.zt-person-social a:hover{
+    background-color: #337ab7;
+}
+.zt-person-content{
+    clear: both;
+    padding-top: 20px;
+}
+.zt-person-image{
+    margin-bottom: 20px;
+}
+.zt-person-author > span{
+    display: block;
+}
