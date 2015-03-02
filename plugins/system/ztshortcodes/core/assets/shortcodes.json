@@ -446,15 +446,19 @@
         "group": "slider",
         "tag": "zt_persons",
         "options": {
+            "slider": "no"
         },
         "depends": {
             "css": [
                 "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
                 "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/bxslider/jquery.bxslider.css",
                 "Shortcodes://assets/css/persons.css"
             ],
             "js": [
-                "Shortcodes://assets/bootstrap/js/bootstrap.min.js"
+                "Shortcodes://assets/bootstrap/js/bootstrap.min.js",
+                "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
+                "Shortcodes://assets/js/persons.js"
             ]
         }
     }

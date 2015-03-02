@@ -14,13 +14,14 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-$classSlider = '';
-if($options->get('slider') == 'yes'){
-    $classSlider = 'bxslider';
-}
 ?>
 
-<div class="zt-persons row <?php echo $classSlider; ?>">
+<div class="zt-persons row <?php echo ($options->get('slider') == 'yes') ? 'bxslider' : ''; ?>"
+     data-show="<?php echo $options->get('item'); ?>"
+     data-pager="<?php echo ($options->get('pager') == 'yes') ? 'true' : 'false'; ?>"
+     data-controls="<?php echo ($options->get('controls') == 'yes') ? 'true' : 'false'; ?>"
+     data-auto="<?php echo ($options->get('auto') == 'yes') ? 'true' : 'false'; ?>"
+     data-margin="<?php echo $options->get('margin'); ?>">
 
     <!-- Sub content -->
     <?php

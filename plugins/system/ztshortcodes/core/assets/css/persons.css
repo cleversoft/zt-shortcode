@@ -1,3 +1,6 @@
+.zt-person{
+    margin-bottom: 30px;
+}
 .zt-person-social ul{
     list-style: none;
 }
@@ -33,3 +36,31 @@
 .zt-person-author > span{
     display: block;
 }
+.bx-wrapper .bx-viewport{
+    box-shadow: none;
+    left: 0;
+    border: none;
+}
+.bx-wrapper .bx-controls-direction a{
+    text-indent: 0;
+    text-align: center;
+    background-color: #000;
+    border-radius: 50%;
+    line-height: 32px;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+.bx-wrapper:hover .bx-controls-direction a{
+    opacity: 1;
+}
+.bx-wrapper [class*="col-md"],
+.bx-wrapper [class*="col-sm"]{
+    padding-left: 0;
+    padding-right: 0;
+}
+.bx-wrapper .row{
+    margin-left: 0;
+    margin-top: 0;
+}
+

@@ -11,6 +11,7 @@
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
+defined('_JEXEC') or die('Restricted access');
 
 if ($options->get('tooltip') == "yes") {
     $toolTip = 'data-toggle="tooltip"';

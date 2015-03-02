@@ -17,8 +17,36 @@ $prefix = 'zt-sc-';
     <div class="form-group clearfix checkbox">
         <label>
             <input type="checkbox" class="sc-checkbox" data-property="slider"
-                   id="<?php echo $prefix . 'persons-active'; ?>"> Active
+                   id="<?php echo $prefix . 'persons-slider'; ?>"> Allow Slider
         </label>
+    </div>
+    <div class="form-group clearfix checkbox">
+        <label>
+            <input type="checkbox" class="sc-checkbox" data-property="pager"
+                   id="<?php echo $prefix . 'persons-pager'; ?>"> Allow Pager
+        </label>
+    </div>
+    <div class="form-group clearfix checkbox">
+        <label>
+            <input type="checkbox" class="sc-checkbox" data-property="controls"
+                   id="<?php echo $prefix . 'persons-controls'; ?>"> Allow Controls
+        </label>
+    </div>
+    <div class="form-group clearfix checkbox">
+        <label>
+            <input type="checkbox" class="sc-checkbox" data-property="auto"
+                   id="<?php echo $prefix . 'persons-auto'; ?>"> Auto Slider
+        </label>
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix . 'persons-margin'; ?>">Margin Item</label>
+        <input type="text" data-property="margin" class="form-control sc-textbox" id="<?php echo $prefix . 'persons-margin'; ?>"
+               placeholder="Enter Name" data-default="20" value="20">
+    </div>
+    <div class="form-group clearfix">
+        <label for="<?php echo $prefix . 'persons-item'; ?>">Show Item</label>
+        <input type="text" data-property="item" class="form-control sc-textbox" id="<?php echo $prefix . 'persons-item'; ?>"
+               placeholder="Enter Name" data-default="4" value="4">
     </div>
     <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_person" class="container-child">
         <div class="form-group clearfix">
