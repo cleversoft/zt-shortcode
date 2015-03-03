@@ -1,0 +1,27 @@
+.zt-box-item{
+    text-align: center;
+}
+.zt-box-item.spin-hover:hover .fa{
+    animation: 2s linear 0s normal none infinite running fa-spin;
+}
+.zt-box-icon{
+    display: inline-block;
+}
+.zt-icon-circle{
+    border-radius: 50%;
+}
+.zt-icon-rounder{
+    border-radius: 15px;
+}
+.zt-box-link{
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-align: center;
+}
+.zt-box-link:hover{
+    text-decoration: none;
+}

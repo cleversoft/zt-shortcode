@@ -480,5 +480,24 @@
             "js": [
             ]
         }
+    },
+    {
+        "name": "Box Content",
+        "description": "",
+        "icon": "fa fa-adn",
+        "group": "slider",
+        "tag": "zt_box_content",
+        "options": {
+            "class": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/css/box-content.css"
+            ],
+            "js": [
+            ]
+        }
     }
 ]
