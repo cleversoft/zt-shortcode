@@ -44,7 +44,7 @@ $linkBgColorHover = $options->get('linkBgColorHover');
             class="zt-box-icon zt-icon-<?php echo ($iconStyle != "") ? $iconStyle : 'default'; ?>"
             style="margin-bottom: <?php echo $iconBottom; ?>; margin-top: <?php echo $iconTop; ?>; width: <?php echo $iconSize; ?>; height: <?php echo $iconSize; ?>; border: <?php echo $iconBorder; ?> solid <?php echo $iconBorderColor; ?>; background-color: <?php echo $iconBgColor; ?>">
             <?php if ($iconAnimation == 'zoom-hover') { ?>
-                <span class="after" style="background-color: <?php $iconBgColor; ?>"></span>
+                <span class="after" style="border-color: <?php echo $iconBgColor; ?>"></span>
             <?php } ?>
             <i class="<?php echo $icon; ?> <?php echo ($iconAnimation == 'spin') ? 'fa-spin' : '' ?>"
                style="font-size: <?php echo $iconFontSize; ?>; color: <?php echo $iconColor; ?>; line-height: <?php echo ($iconBorder == '') ? $iconSize : $iconSize - ($iconBorder * 2) . 'px'; ?>;"></i>
