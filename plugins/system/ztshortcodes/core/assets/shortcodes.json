@@ -442,7 +442,7 @@
     {
         "name": "Person",
         "description": "",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-user",
         "group": "slider",
         "tag": "zt_persons",
         "options": {
@@ -465,9 +465,9 @@
     {
         "name": "Social Icon",
         "description": "",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-twitter",
         "group": "slider",
-        "tag": "zt_social_icon",
+        "tag": "zt_social_icons",
         "options": {
             "boxed": "yes"
         },
@@ -484,7 +484,7 @@
     {
         "name": "Box Content",
         "description": "",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-th-large",
         "group": "slider",
         "tag": "zt_box_content",
         "options": {

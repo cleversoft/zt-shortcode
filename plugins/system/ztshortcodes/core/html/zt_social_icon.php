@@ -14,62 +14,23 @@
 ?>
 
 <?php
-$socialArray = array(
-    $options->get('facebook'),
-    $options->get('twitter'),
-    $options->get('instagram'),
-    $options->get('dribbble'),
-    $options->get('google'),
-    $options->get('linkedin'),
-    $options->get('blogger'),
-    $options->get('tumblr'),
-    $options->get('reddit'),
-    $options->get('yahoo'),
-    $options->get('deviantart'),
-    $options->get('vimeo'),
-    $options->get('youtube'),
-    $options->get('pinterest'),
-    $options->get('rss'),
-    $options->get('digg'),
-    $options->get('flickr'),
-    $options->get('forrst'),
-    $options->get('myspace'),
-    $options->get('skype'),
-    $options->get('paypal'),
-    $options->get('dropbox'),
-    $options->get('soundcloud'),
-    $options->get('vk')
-);
 
-$colorIcon = $options->get('color');
-$bgIcon = $options->get('bgColor');
+$icon = $options->get('icon');
+$title = $options->get('title');
+$link = $options->get('link');
+$color = $options->get('color');
+$bgColor = $options->get('bgColor');
+$hoverColor = $options->get('hoverColor');
+$hoverBgColor = $options->get('hoverBgColor');
+
+$titleLow = strtolower($title);
 ?>
 
-<div class="clearfix zt-social-networks <?php echo ($options->get('boxed')) ? 'boxed-icons' : ''; ?>">
 
-    <?php $i = 0; foreach ($socialArray as $item) {
-        $iconFont = str_replace("#", "", $item);
-
-        ?>
-                <?php if ($item != NULL) { ?>
-
-                    <a title="Facebook"
-                       style="color:<?php echo $colorIcon; ?>;background-color:<?php echo $bgIcon; ?>;border-color:<?php echo $bgIcon; ?>;border-radius: <?php echo $options->get('radius') . 'px'; ?>;"
-                       href="<?php echo $item; ?>" target="_blank" class="zt-social-icon-item zt-icon-<?php echo $iconFont; ?>">
-                        <?php if($iconFont == 'vimeo') { ?>
-                        <i class="fa fa-<?php echo $iconFont . '-square'; ?>"></i>
-                        <?php } elseif($iconFont == 'blogger') { ?>
-                        <i class="fa fa-<?php echo 'adn'; ?>"></i>
-                        <?php } elseif($iconFont == 'forrst') { ?>
-                        <i class="fa fa-<?php echo 'xing-square'; ?>"></i>
-                        <?php } elseif($iconFont == 'myspace') { ?>
-                        <i class="fa fa-<?php echo 'wifi'; ?>"></i>
-                        <?php } else { ?>
-                        <i class="fa fa-<?php echo $iconFont; ?>"></i>
-                        <?php } ?>
-                    </a>
-
-            <?php }
-        $i++;
-    } ?>
-</div>
+<a title="<?php echo $title; ?>"
+   style="color:<?php echo $color; ?>;background-color:<?php echo $bgColor; ?>;border-color:<?php echo $bgColor; ?>;"
+   onmouseover="this.style.backgroundColor='<?php echo $hoverBgColor; ?>'; this.style.color='<?php echo $hoverColor; ?>'"
+   onmouseout="this.style.backgroundColor='<?php echo $bgColor; ?>';this.style.color='<?php echo $color; ?>'"
+   href="<?php echo $link; ?>" target="_blank" class="zt-social-icon-item zt-icon-<?php echo $titleLow; ?>">
+    <i class="<?php echo $icon; ?>"></i>
+</a>
