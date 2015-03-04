@@ -11,22 +11,56 @@
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
+
+// Variable
+
+$boxBgColor = $options->get('boxBgColor');
+$title = $options->get('title');
+$link = $options->get('link');
+$linkText = $options->get('linkText');
+$icon = $options->get('icon');
+$iconAnimation = $options->get('iconAnimation');
+$column = $options->get('column');
+$iconStyle = $options->get('iconStyle');
+$iconTop = $options->get('iconTop') . 'px';
+$iconBottom = $options->get('iconBottom') . 'px';
+$iconFontSize = $options->get('iconFontSize') . 'px';
+$iconColor = $options->get('iconColor');
+$iconBgColor = $options->get('iconBgColor');
+$iconSize = $options->get('iconSize') . 'px';
+$iconBorder = $options->get('iconBorder') . 'px';
+$iconBorderColor = $options->get('iconBorderColor');
+$linkColor = $options->get('linkColor');
+$linkBgColor = $options->get('linkBgColor');
+$linkColorHover = $options->get('linkColorHover');
+$linkBgColorHover = $options->get('linkBgColorHover');
+
 ?>
 
 <div
-    class="zt-box-item <?php echo ($options->get('iconSpin') == 'spin-hover') ? 'spin-hover' : ''; ?> col-sm-<?php echo $options->get('column'); ?> col-md-<?php echo $options->get('column'); ?>">
-    <div
-        class="zt-box-icon zt-icon-<?php echo ($options->get('iconStyle') != "") ? $options->get('iconStyle') : 'default'; ?>"
-        style="margin-bottom: <?php echo $options->get('iconTop') . 'px'; ?>; margin-top: <?php echo $options->get('iconBottom') . 'px'; ?>; width: <?php echo $options->get('iconSize') . 'px' ?>; height: <?php echo $options->get('iconSize') . 'px'; ?>; line-height: <?php echo $options->get('iconSize') . 'px' ?>; border: <?php echo $options->get('iconBorder') . 'px'; ?> solid <?php echo $options->get('iconBorderColor'); ?>">
-        <i class="<?php echo $options->get('icon'); ?> <?php echo ($options->get('iconSpin') == 'spin') ? 'fa-spin' : '' ?>"
-           style="font-size: <?php echo $options->get('iconFontSize') . 'px'; ?>; color: <?php echo $options->get('iconColor'); ?>"></i>
-    </div>
-    <div class="zt-box-content">
-        <h3 class="zt-box-title"><?php echo $options->get('title'); ?></h3>
+    class="clearfix zt-box-item <?php echo ($iconAnimation != '') ? $iconAnimation : ''; ?> col-sm-<?php echo $column; ?> col-md-<?php echo $column; ?>">
+    <div class="zt-box-item-inner" style="background-color: <?php echo $boxBgColor; ?>">
+        <div
+            class="zt-box-icon zt-icon-<?php echo ($iconStyle != "") ? $iconStyle : 'default'; ?>"
+            style="margin-bottom: <?php echo $iconBottom; ?>; margin-top: <?php echo $iconTop; ?>; width: <?php echo $iconSize; ?>; height: <?php echo $iconSize; ?>; border: <?php echo $iconBorder; ?> solid <?php echo $iconBorderColor; ?>; background-color: <?php echo $iconBgColor; ?>">
+            <?php if ($iconAnimation == 'zoom-hover') { ?>
+                <span class="after" style="background-color: <?php $iconBgColor; ?>"></span>
+            <?php } ?>
+            <i class="<?php echo $icon; ?> <?php echo ($iconAnimation == 'spin') ? 'fa-spin' : '' ?>"
+               style="font-size: <?php echo $iconFontSize; ?>; color: <?php echo $iconColor; ?>; line-height: <?php echo ($iconBorder == '') ? $iconSize : $iconSize - ($iconBorder * 2) . 'px'; ?>;"></i>
+        </div>
+        <div class="zt-box-content">
+            <h3 class="zt-box-title"><?php echo $title; ?></h3>
 
-        <p><?php echo $content; ?></p>
-        <?php if($options->get('link') == "") { ?>
-        <a href="<?php echo $options->get('link') ?>" class="zt-box-link" style="background-color: <?php echo $options->get('iconBorderColor'); ?>"><?php echo $options->get('linkText') ?></a>
-        <?php } ?>
+            <p><?php echo $content; ?></p>
+            <?php if ($link != "") { ?>
+                <a href="<?php echo $link; ?>" class="zt-box-link"
+                   style="background-color: <?php echo $options->get('iconBorderColor'); ?>"
+                   onmouseover="this.style.backgroundColor='<?php echo $linkBgColorHover; ?>'; this.style.color='<?php echo $linkColorHover; ?>'"
+                   onmouseout="this.style.backgroundColor='<?php echo $linkBgColor; ?>';this.style.color='<?php echo $linkColor; ?>'">
+                    <?php echo ($linkText) ? $linkText : 'Read More'; ?>
+                </a>
+            <?php } ?>
+        </div>
     </div>
 </div>
