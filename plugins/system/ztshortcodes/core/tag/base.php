@@ -43,13 +43,7 @@ if (!class_exists('ZtShortcodesTagBase'))
             $html->set('content', $content);
             $html->set('tag', $tag);
 
-            $return = $html->fetch('Shortcodes://html/site/' . $tag . '.php');
-
-            if ($return === false)
-            {
-                $return = $html->fetch('Shortcodes://html/site/_generic.php');
-            }
-            return $return;
+            return $html->fetch('Shortcodes://html/site/' . $tag . '.php');
         }
 
     }
