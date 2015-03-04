@@ -39,6 +39,15 @@ defined('_JEXEC') or die('Restricted access');
                 <?php if ($options->get('google')) { ?>
                     <li><a href="<?php echo $options->get('google'); ?>"><i class="fa fa-google-plus"></i></a></li>
                 <?php } ?>
+                <?php if ($options->get('skype')) { ?>
+                    <li><a href="<?php echo $options->get('skype'); ?>"><i class="fa fa-skype"></i></a></li>
+                <?php } ?>
+                <?php if ($options->get('dribbble')) { ?>
+                    <li><a href="<?php echo $options->get('dribbble'); ?>"><i class="fa fa-dribbble"></i></a></li>
+                <?php } ?>
+                <?php if ($options->get('linkedin')) { ?>
+                    <li><a href="<?php echo $options->get('linkedin'); ?>"><i class="fa fa-linkedin"></i></a></li>
+                <?php } ?>
             </ul>
         </div>
         <div class="zt-person-content clearfix"><?php echo $content; ?></div>

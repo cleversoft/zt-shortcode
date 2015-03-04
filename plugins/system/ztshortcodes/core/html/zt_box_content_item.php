@@ -25,6 +25,8 @@
         <h3 class="zt-box-title"><?php echo $options->get('title'); ?></h3>
 
         <p><?php echo $content; ?></p>
+        <?php if($options->get('link') == "") { ?>
         <a href="<?php echo $options->get('link') ?>" class="zt-box-link" style="background-color: <?php echo $options->get('iconBorderColor'); ?>"><?php echo $options->get('linkText') ?></a>
+        <?php } ?>
     </div>
 </div>
