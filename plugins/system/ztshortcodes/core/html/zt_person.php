@@ -13,9 +13,6 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
-if ($options->get('tooltip') == "yes") {
-    $toolTip = 'data-toggle="tooltip"';
-}
 ?>
 
 <div class="zt-person col-sm-<?php echo $options->get('column'); ?> col-md-<?php echo $options->get('column'); ?>">
@@ -31,20 +28,16 @@ if ($options->get('tooltip') == "yes") {
         <div class="zt-person-social pull-right social-<?php echo ($options->get('social-type')) ? $options->get('social-type') : 'default'; ?>">
             <ul>
                 <?php if ($options->get('facebook')) { ?>
-                    <li><a href="<?php echo $options->get('facebook'); ?>"><i <?php echo $toolTip; ?>
-                                data-placement="top" title="Facebook" class="fa fa-facebook"></i></a></li>
+                    <li><a href="<?php echo $options->get('facebook'); ?>"><i class="fa fa-facebook"></i></a></li>
                 <?php } ?>
                 <?php if ($options->get('twitter')) { ?>
-                    <li><a href="<?php echo $options->get('twitter'); ?>" <?php echo $toolTip; ?> data-placement="top"
-                           title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="<?php echo $options->get('twitter'); ?>"><i class="fa fa-twitter"></i></a></li>
                 <?php } ?>
                 <?php if ($options->get('email')) { ?>
-                    <li><a href="<?php echo $options->get('email'); ?>" <?php echo $toolTip; ?> data-placement="top"
-                           title="Email"><i class="fa fa-envelope-o"></i></a></li>
+                    <li><a href="<?php echo $options->get('email'); ?>"><i class="fa fa-envelope-o"></i></a></li>
                 <?php } ?>
                 <?php if ($options->get('google')) { ?>
-                    <li><a href="<?php echo $options->get('google'); ?>" <?php echo $toolTip; ?> data-placement="top"
-                           title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="<?php echo $options->get('google'); ?>"><i class="fa fa-google-plus"></i></a></li>
                 <?php } ?>
             </ul>
         </div>
