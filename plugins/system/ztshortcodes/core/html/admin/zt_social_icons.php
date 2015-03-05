@@ -63,6 +63,12 @@ $prefix = 'zt-sc-';
                    placeholder="Social Background Color">
         </div>
         <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'social-bd-color'; ?>">Border Color</label>
+            <input type="text" class="form-control sc-textbox" data-property="bdColor"
+                   id="<?php echo $prefix . 'social-bd-color'; ?>"
+                   placeholder="Social Border Color">
+        </div>
+        <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'social-hover-color'; ?>">Hover Color</label>
             <input type="text" class="form-control sc-textbox" data-property="hoverColor"
                    id="<?php echo $prefix . 'social-hover-color'; ?>"
@@ -73,6 +79,12 @@ $prefix = 'zt-sc-';
             <input type="text" class="form-control sc-textbox" data-property="hoverBgColor"
                    id="<?php echo $prefix . 'social-hover-bg-color'; ?>"
                    placeholder="Social Hover Background Color">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'social-hover-bd-color'; ?>">Hover Border Color</label>
+            <input type="text" class="form-control sc-textbox" data-property="hoverBdColor"
+                   id="<?php echo $prefix . 'social-hover-bd-color'; ?>"
+                   placeholder="Social Hover Border Color">
         </div>
     </div>
 </div>

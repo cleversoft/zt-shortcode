@@ -3,12 +3,12 @@
     height: 35px;
     display: block;
     text-align: center;
-    line-height: 35px;
+    line-height: 33px;
     margin: 0 5px 5px 0;
     float: left;
-    background-color: #e8e8e8;
     color: #bebdbd;
     transition: all 0.3s ease 0s;
+    border: 1px solid transparent;
 }
 .zt-social-networks .zt-social-icon-item:hover{
     opacity: 0.8;
