@@ -8,7 +8,39 @@
             "height": "200",
             "autoplay": "0",
             "loop": "0"
-        }
+        },
+        "fields": [
+            {
+                "label": "Directory",
+                "type": "text",
+                "name": "dir",
+                "value": ""
+            },
+            {
+                "label": "Width",
+                "type": "text",
+                "name": "width",
+                "value": "600"
+            },
+            {
+                "label": "Height",
+                "type": "text",
+                "name": "height",
+                "value": "600"
+            },
+            {
+                "label": "Thumbnail width",
+                "type": "text",
+                "name": "thumbnail_width",
+                "value": "300"
+            },
+            {
+                "label": "Thumbnail height",
+                "type": "text",
+                "name": "thumbnail_height",
+                "value": "300"
+            }
+        ]
     },
     "crexsc_video_vimeo": {
         "name": "Vimeo",
@@ -20,6 +52,38 @@
             "autopause": "1",
             "autoplay": "0",
             "loop": "0"
-        }
+        },
+        "fields": [
+            {
+                "label": "Directory",
+                "type": "text",
+                "name": "dir",
+                "value": ""
+            },
+            {
+                "label": "Width",
+                "type": "text",
+                "name": "width",
+                "value": "600"
+            },
+            {
+                "label": "Height",
+                "type": "text",
+                "name": "height",
+                "value": "600"
+            },
+            {
+                "label": "Thumbnail width",
+                "type": "text",
+                "name": "thumbnail_width",
+                "value": "300"
+            },
+            {
+                "label": "Thumbnail height",
+                "type": "text",
+                "name": "thumbnail_height",
+                "value": "300"
+            }
+        ]
     }
 }
