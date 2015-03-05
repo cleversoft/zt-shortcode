@@ -34,6 +34,12 @@ ZT Shortcodes package includes:
 
 # Change logs
 
+## Version 1.0.2  released Mar 05, 2015
+
+* Remove load Bootstrap 
+* Update social & column shortcodes 
+* Code optimized 
+
 ## Version 1.0.1  released Mar 04, 2015
 
 * Add shortcode social 

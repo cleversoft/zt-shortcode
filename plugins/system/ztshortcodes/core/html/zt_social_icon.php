@@ -20,17 +20,19 @@ $title = $options->get('title');
 $link = $options->get('link');
 $color = $options->get('color');
 $bgColor = $options->get('bgColor');
+$bdColor = $options->get('bdColor');
 $hoverColor = $options->get('hoverColor');
 $hoverBgColor = $options->get('hoverBgColor');
+$hoverBdColor = $options->get('hoverBdColor');
 
 $titleLow = strtolower($title);
 ?>
 
 
 <a title="<?php echo $title; ?>"
-   style="color:<?php echo $color; ?>;background-color:<?php echo $bgColor; ?>;border-color:<?php echo $bgColor; ?>;"
-   onmouseover="this.style.backgroundColor='<?php echo $hoverBgColor; ?>'; this.style.color='<?php echo $hoverColor; ?>'"
-   onmouseout="this.style.backgroundColor='<?php echo $bgColor; ?>';this.style.color='<?php echo $color; ?>'"
+   style="color:<?php echo $color; ?>;background-color:<?php echo $bgColor; ?>;border-color:<?php echo $bdColor; ?>;"
+   onmouseover="this.style.backgroundColor='<?php echo $hoverBgColor; ?>'; this.style.color='<?php echo $hoverColor; ?>'; this.style.borderColor='<?php echo $hoverBdColor; ?>'"
+   onmouseout="this.style.backgroundColor='<?php echo $bgColor; ?>';this.style.color='<?php echo $color; ?>'; this.style.borderColor='<?php echo $bdColor; ?>'"
    href="<?php echo $link; ?>" target="_blank" class="zt-social-icon-item zt-icon-<?php echo $titleLow; ?>">
     <i class="<?php echo $icon; ?>"></i>
 </a>

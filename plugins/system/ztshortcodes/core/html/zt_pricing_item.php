@@ -32,12 +32,12 @@ if ($options->get('item-hightlight') == "yes")
     $classHightLight = 'recommended';
 }
 
-$html .= '<div class="pricing-item pull-left"><div class="plan' . ' ' . $options->get('level-item') . '' . ' ' . $classHightLight . '">';
+$html .= '<div class="pricing-item pull-left"><div class="pricing-item-inner"><div class="plan' . ' ' . $options->get('level-item') . '' . ' ' . $classHightLight . '">';
 $html .= '<div class="head"><h2>' . $options->get('title') . '</h2></div>';
 $html .= '<ul class="item-list">' . $content . '</ul>';
 $html .= '<div class="price"><h3><span class="symbol">' . $price[0] . '</span>' . $price[1] . '</h3><h4>' . $price[2] . '</h4></div>';
 $html .= '<a class="btn btn-success" href="' . $options->get('link') . '">' . $options->get('button-text') . '</a>';
-$html .= '</div></div>';
+$html .= '</div></div></div>';
 
 echo $html;
 ?>
