@@ -17,7 +17,7 @@ $prefix = 'zt-sc-';
     <div id="<?php echo $prefix . 'container'; ?>" data-tag="zt_title">
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'title'; ?>">Title</label>
-            <input type="text" data-property="" class="form-control sc-textbox" id="<?php echo $prefix . 'title'; ?>" placeholder="Enter  Top">
+            <input type="text" data-property="" class="form-control sc-textbox" id="<?php echo $prefix . 'title'; ?>" placeholder="Enter Title">
         </div>
         <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'title-type'; ?>">Type</label>
@@ -34,7 +34,7 @@ $prefix = 'zt-sc-';
             <input type="text" data-property="marginTop" class="form-control sc-textbox" id="<?php echo $prefix . 'title-margin-top'; ?>" placeholder="Enter Margin Top">
         </div>
         <div class="form-group clearfix">
-            <label for="<?php echo $prefix . 'title-margin-bottom'; ?>">Margin Top</label>
+            <label for="<?php echo $prefix . 'title-margin-bottom'; ?>">Margin Bottom</label>
             <input type="text" data-property="marginBottom" class="form-control sc-textbox" id="<?php echo $prefix . 'title-margin-bottom'; ?>" placeholder="Enter Margin Bottom">
         </div>
         <div class="form-group clearfix">

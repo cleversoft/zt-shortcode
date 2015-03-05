@@ -107,6 +107,21 @@ $prefix = 'zt-sc-';
                    id="<?php echo $prefix . 'person-google'; ?>" placeholder="Enter Link G+" data-default="#google" value="#google">
         </div>
         <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'person-skype'; ?>">Skype</label>
+            <input type="text" data-property="skype" class="form-control sc-textbox"
+                   id="<?php echo $prefix . 'person-skype'; ?>" placeholder="Enter Link Skype" data-default="#skype" value="#skype">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'person-dribbble'; ?>">Dribbble</label>
+            <input type="text" data-property="dribbble" class="form-control sc-textbox"
+                   id="<?php echo $prefix . 'person-dribbble'; ?>" placeholder="Enter Link Dribble" data-default="#dribbble" value="#dribbble">
+        </div>
+        <div class="form-group clearfix">
+            <label for="<?php echo $prefix . 'person-linkedin'; ?>">Linkedin</label>
+            <input type="text" data-property="linkedin" class="form-control sc-textbox"
+                   id="<?php echo $prefix . 'person-linkedin'; ?>" placeholder="Enter Link Linkedin" data-default="#linkedin" value="#linkedin">
+        </div>
+        <div class="form-group clearfix">
             <label for="<?php echo $prefix . 'persons-column'; ?>">Column</label>
             <select id="<?php echo $prefix . 'persons-column'; ?>" class="form-control sc-selectbox" data-property="column">
                 <option value="1">1/12</option>

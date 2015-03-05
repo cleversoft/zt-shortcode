@@ -7,17 +7,6 @@
         "tag": "zt_label",
         "options": {
             "type": "default"
-        },
-        "depends": {
-            "css": [
-                "Shortcodes://assets/bootstrap/css/bootstrap.min.css"
-            ],
-            "js": [
-                ""
-            ],
-            "php": [
-                
-            ]
         }
     },
     {
@@ -44,7 +33,6 @@
         },
         "depends": {
             "css": [
-                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
                 "Shortcodes://assets/css/tabs.css"
             ]
         }
@@ -56,11 +44,6 @@
         "group": "Grid",
         "tag": "zt_columns",
         "options": {
-        },
-        "depends": {
-            "css": [
-                "Shortcodes://assets/bootstrap/css/bootstrap.min.css"
-            ]
         }
     },
     {
@@ -83,7 +66,6 @@
         },
         "depends": {
             "css": [
-                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
                 "Shortcodes://assets/css/progress-bar.css"
             ],
             "js": [
@@ -442,7 +424,7 @@
     {
         "name": "Person",
         "description": "",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-user",
         "group": "slider",
         "tag": "zt_persons",
         "options": {
@@ -450,7 +432,6 @@
         },
         "depends": {
             "css": [
-                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
                 "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
                 "Shortcodes://assets/bxslider/jquery.bxslider.css",
                 "Shortcodes://assets/css/persons.css"
@@ -459,6 +440,42 @@
                 "Shortcodes://assets/bootstrap/js/bootstrap.min.js",
                 "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
                 "Shortcodes://assets/js/persons.js"
+            ]
+        }
+    },
+    {
+        "name": "Social Icon",
+        "description": "",
+        "icon": "fa fa-twitter",
+        "group": "slider",
+        "tag": "zt_social_icons",
+        "options": {
+            "boxed": "yes"
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/css/social.css"
+            ],
+            "js": [
+            ]
+        }
+    },
+    {
+        "name": "Box Content",
+        "description": "",
+        "icon": "fa fa-th-large",
+        "group": "slider",
+        "tag": "zt_box_content",
+        "options": {
+            "class": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/css/box-content.css"
+            ],
+            "js": [
             ]
         }
     }

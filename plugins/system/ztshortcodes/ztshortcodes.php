@@ -62,6 +62,10 @@ if (!class_exists('plgSystemZtShortcodes'))
             // Only process for frontend
             if (JFactory::getApplication()->isSite())
             {
+                $template = JFactory::getApplication()->getTemplate();
+                $templateDir = JPATH_ROOT . '/templates/' . $template . '/html/plg_system_ztshortcodes';
+                ZtShortcodesPath::getInstance()->registerNamespace('Shortcodes', $templateDir);
+
                 global $zo2Shortcodes;
                 $path = ZtShortcodesPath::getInstance();
                 // Prepare buffer
@@ -108,7 +112,7 @@ if (!class_exists('plgSystemZtShortcodes'))
                     }
                 }
                 $buffer = implode(PHP_EOL, $buffer);
-                $html = str_replace('</head>', $buffer . '</head>', $html);
+                $html = str_replace('</body>', $buffer . '</body>', $html);
                 JResponse::setBody($html);
             }
         }
