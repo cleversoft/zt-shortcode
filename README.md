@@ -6,25 +6,31 @@ ZT Shortcodes package includes:
 
 # Features List
 
-* Tabs
-* Pricing Tables
-* Testimonial 
-* Blockquotes 
-* Buttons
-* Accordion / Toggle
-* Columns
-* Divider
-* Dropcap
-* Carousel
-* Slideshow
-* Lightbox
-* Progress Bars ( http://getbootstrap.com/2.3.2/components.html#progress ) 
-* List-icon 
+* Label
+* Button
+* Dropcap 
+* Modal 
+* Space
+* Badge
 * Message Box
-* Google Maps
-* Youtube
-* Twitter
-* Vimeo
+* Font Icons
+* Counter Circle
+* Title / Heading 
+* Tabs
+* Block quote 
+* Divider
+* Testimonial
+* Person
+* Columns
+* Pricing Table
+* Gallery 
+* Carousel 
+* Social Icons
+* Progress Bars
+* Accordion / Toggle
+* Video Play
+* Google Map
+* Boxes Content
 
 # Change logs
 
