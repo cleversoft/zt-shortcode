@@ -23,6 +23,6 @@ $id = ZtShortcodesHelperCommon::getAlias($shortcode);
     >
     <!-- Render parent fields -->                                                
     <?php
-    $this->load('Shortcodes://html/admin/form.fields.php', array('fields' => isset($data['fields']) ? $data['fields'] : array()));
+    $this->load('Shortcodes://html/admin/form.fields.php', array('fields' => isset($data['attributes']) ? $data['attributes'] : array()));
     ?>                                                                 
 </form>  
