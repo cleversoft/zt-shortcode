@@ -59,6 +59,45 @@ if (!class_exists('ZtShortcodesHelperCommon'))
             }
         }
 
+        /**
+         * @since 1.0.3
+         * @param mixed $data
+         * @return string
+         */
+        public static function getCacheId($data)
+        {
+            return md5(serialize($data) . serialize(JFactory::getUser()->groups));
+        }
+
+        /**
+         * 
+         * @param type $string
+         * @return string
+         */
+        public static function getAlias($string)
+        {
+            $string = JText::_($string);
+            $string = JApplicationHelper::stringURLSafe($string);
+            return $string;
+        }
+
+        public static function isRemotePath($path)
+        {
+            if (strpos($path, 'tp://') === false || strpos($path, 'tps://') === false)
+            {
+                return false;
+            } else
+            {
+                // $path starting with ftp / http / https
+                $uri = JUri::getInstance($path);
+                if ($uri->getHost() == JUri::getInstance()->getHost())
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
     }
 
 }
