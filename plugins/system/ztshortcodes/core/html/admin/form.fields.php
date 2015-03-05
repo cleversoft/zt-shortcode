@@ -15,5 +15,5 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 <!-- Render all fields of shortcode -->
 <?php foreach ($fields as $field): ?>
-    <?php echo CrexShortcodesField::_($field); ?>
+    <?php echo ZtShortcodesField::_($field); ?>
 <?php endforeach; ?>      
