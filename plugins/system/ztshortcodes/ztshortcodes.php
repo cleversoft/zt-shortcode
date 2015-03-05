@@ -67,6 +67,8 @@ if (!class_exists('plgSystemZtShortcodes'))
             if (JFactory::getApplication()->isSite())
             {
                 require_once __DIR__ . '/core/bootstrap.php';
+                $templateDir = JPATH_ROOT . '/templates/' . $template . '/html/plg_system_ztshortcodes';
+                ZtShortcodesPath::getInstance()->registerNamespace('Shortcodes', $templateDir);
                 // Get body
                 $html = JResponse::getBody();
                 $parser = ZtShortcodesParser::getInstance();
