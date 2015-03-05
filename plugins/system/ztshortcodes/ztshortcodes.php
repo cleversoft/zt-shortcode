@@ -108,7 +108,7 @@ if (!class_exists('plgSystemZtShortcodes'))
                     }
                 }
                 $buffer = implode(PHP_EOL, $buffer);
-                $html = str_replace('</head>', $buffer . '</head>', $html);
+                $html = str_replace('</body>', $buffer . '</body>', $html);
                 JResponse::setBody($html);
             }
         }
