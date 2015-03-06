@@ -30,11 +30,11 @@ if (!class_exists('ZtShortcodesFieldText'))
             $html [] = '<div class="form-group">';
             $html [] = $this->_getLabel();
             $html [] = '<input'
-                    . ' class="crexsc-input form-control"'
+                    . ' class="form-control"'
                     . ' type="text"'
-                    . ' name="' . $this->get('name') . '"'
                     . ' value="' . $this->get('value') . '"'
-                    . ' data-crexsc="' . $this->get('name') . '"';
+                    . ' data-property="' . $this->get('name') . '"'
+                    . ' data-event="' . $this->get('event', 'keyup') . '"';
             if ($this->get('required'))
             {
                 $html[] = 'required';
