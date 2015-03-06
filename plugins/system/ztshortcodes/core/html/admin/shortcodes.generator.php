@@ -28,8 +28,7 @@ defined('_JEXEC') or die('Restricted access');
                     <div class="row-fluid">
                         <!-- Parent fields -->
                         <div class="span6">
-                            <!-- Parent form -->                   
-                            <blockquote>Parent fields<small>Use for parent tag generator</small></blockquote>                         
+                            <!-- Parent form -->
                             <div class="crexsc-main">
                                 <?php
                                 $this->load('Shortcodes://html/admin/form.php', array(

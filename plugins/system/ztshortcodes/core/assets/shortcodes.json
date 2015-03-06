@@ -11,9 +11,9 @@
         },
         "fields": [
             {
-                "label": "Directory",
+                "label": "URL",
                 "type": "text",
-                "name": "dir",
+                "name": "url",
                 "value": ""
             },
             {
