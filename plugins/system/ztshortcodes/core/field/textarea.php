@@ -16,13 +16,13 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * Class exists checking
  */
-if (!class_exists('ZtShortcodesFieldTextbox'))
+if (!class_exists('ZtShortcodesFieldTextarea'))
 {
 
     /**
      * 
      */
-    class ZtShortcodesFieldTextbox extends ZtShortcodesField
+    class ZtShortcodesFieldTextarea extends ZtShortcodesField
     {
 
         public function render()
@@ -30,11 +30,11 @@ if (!class_exists('ZtShortcodesFieldTextbox'))
             $html [] = '<div class="form-group">';
             $html [] = $this->_getLabel();
             $html [] = '<textarea'
-                    . ' class="crexsc-input form-control"'
+                    . ' class="zt-input form-control"'
                     . ' type="text"'
-                    . ' name="' . $this->get('name') . '"'
                     . ' value="' . $this->get('value') . '"'
-                    . ' data-crexsc="' . $this->get('name') . '"';
+                    . ' data-property="' . $this->get('name') . '"'
+                    . ' data-event="' . $this->get('even', 'keyup') . '"';
             if ($this->get('required'))
             {
                 $html[] = 'required';

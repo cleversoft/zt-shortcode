@@ -38,7 +38,7 @@ if (!class_exists('ZtShortcodesFieldRadio'))
             foreach ($this->get('options', array()) as $option)
             {
                 $html [] = '<input '
-                        . 'class="crexsc-input form-control"'
+                        . 'class="zt-input form-control"'
                         . 'type="radio" '
                         . 'value="' . $option['value'] . '" '
                         . (isset($option['checked']) ? 'checked="' . $option['checked'] . '"' : '')

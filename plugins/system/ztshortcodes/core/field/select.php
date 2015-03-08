@@ -16,13 +16,13 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * Class exists checking
  */
-if (!class_exists('ZtShortcodesFieldList'))
+if (!class_exists('ZtShortcodesFieldSelect'))
 {
 
     /**
      * 
      */
-    class ZtShortcodesFieldList extends ZtShortcodesField
+    class ZtShortcodesFieldSelect extends ZtShortcodesField
     {
 
         public function render()
@@ -30,7 +30,7 @@ if (!class_exists('ZtShortcodesFieldList'))
 
             $html [] = '<div class="form-group">';
             $html [] = $this->_getLabel();
-            $html [] = '<select name="' . $this->get('name') . '">';
+            $html [] = '<select class="zt-input form-control" data-property="' . $this->get('name') . '" data-event="' . $this->get('event', 'change') . '">';
             foreach ($this->get('options', array()) as $option)
             {
                 $html [] = '<option value="' . $option['value'] . '">' . $option['label'] . '</option>';
