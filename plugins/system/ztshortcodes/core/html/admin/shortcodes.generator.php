@@ -29,11 +29,11 @@ defined('_JEXEC') or die('Restricted access');
                         <!-- Parent fields -->
                         <div class="span6">
                             <!-- Parent form -->
-                            <div class="crexsc-main">
+                            <div class="zt-main">
                                 <?php
                                 $this->load('Shortcodes://html/admin/form.php', array(
                                     'data' => $data,
-                                    'class' => 'crexsc-form parent',
+                                    'class' => 'zt-form parent',
                                     'shortcode' => $shortcode
                                 ));
                                 ?>                              
@@ -47,11 +47,11 @@ defined('_JEXEC') or die('Restricted access');
                                 <?php $subTag = $data['subTag']; ?>
                                 <?php foreach ($subTag as $subShortcode => $data) : ?>                                        
                                     <?php $subShortcodeAlias = ZtShortcodesHelperCommon::getAlias($subShortcode); ?>
-                                    <div class="crexsc-sub">                                                                          
+                                    <div class="zt-sub">                                                                          
                                         <?php
                                         $this->load('Shortcodes://html/admin/form.php', array(
                                             'data' => $data,
-                                            'class' => 'crexsc-form child',
+                                            'class' => 'zt-form child',
                                             'shortcode' => $subShortcode
                                         ));
                                         ?>                                          

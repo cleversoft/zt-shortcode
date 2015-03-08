@@ -1,5 +1,147 @@
 {
-    "crexsc_video_youtube": {
+    "crexsc_bs2_grid": {
+        "name": "Grid",
+        "group": "Scaffolding",
+        "icon": "fa fa-bars",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "crexsc_bs2_column": {
+                "attributes": {
+                    "class": "span12"
+                },
+                "fields": [
+                    {
+                        "label": "Width",
+                        "type": "select",
+                        "name": "class",
+                        "options": [
+                            {
+                                "value": "span1",
+                                "label": "span1"
+                            },
+                            {
+                                "value": "span2",
+                                "label": "span2"
+                            },
+                            {
+                                "value": "span3",
+                                "label": "span3"
+                            },
+                            {
+                                "value": "span4",
+                                "label": "span4"
+                            },
+                            {
+                                "value": "span5",
+                                "label": "span5"
+                            },
+                            {
+                                "value": "span6",
+                                "label": "span6"
+                            },
+                            {
+                                "value": "span7",
+                                "label": "span7"
+                            },
+                            {
+                                "value": "span8",
+                                "label": "span8"
+                            },
+                            {
+                                "value": "span9",
+                                "label": "span9"
+                            },
+                            {
+                                "value": "span10",
+                                "label": "span10"
+                            },
+                            {
+                                "value": "span11",
+                                "label": "span11"
+                            },
+                            {
+                                "value": "span12",
+                                "label": "span12"
+                            }
+                        ]
+
+
+                    },
+                    {
+                        "label": "Offset",
+                        "type": "select",
+                        "name": "offset",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": "None"
+                            },
+                            {
+                                "value": "1",
+                                "label": "1"
+                            },
+                            {
+                                "value": "2",
+                                "label": "2"
+                            },
+                            {
+                                "value": "3",
+                                "label": "3"
+                            },
+                            {
+                                "value": "4",
+                                "label": "5"
+                            },
+                            {
+                                "value": "5",
+                                "label": "5"
+                            },
+                            {
+                                "value": "6",
+                                "label": "6"
+                            },
+                            {
+                                "value": "7",
+                                "label": "7"
+                            },
+                            {
+                                "value": "8",
+                                "label": "8"
+                            },
+                            {
+                                "value": "9",
+                                "label": "9"
+                            },
+                            {
+                                "value": "10",
+                                "label": "10"
+                            },
+                            {
+                                "value": "11",
+                                "label": "11"
+                            },
+                            {
+                                "value": "12",
+                                "label": "12"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Content",
+                        "type": "textarea",
+                        "name": "maincontent",
+                        "value": "Enter your column content"
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "class": "row"
+        },
+        "fields": [
+        ]
+    },
+    "zt_video_youtube": {
         "name": "Youtube",
         "group": "Video",
         "icon": "fa fa-youtube",
@@ -42,7 +184,7 @@
             }
         ]
     },
-    "crexsc_video_vimeo": {
+    "zt_video_vimeo": {
         "name": "Vimeo",
         "group": "Video",
         "icon": "fa fa-vimeo-square",
