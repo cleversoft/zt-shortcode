@@ -18,6 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 <!-- Preview place -->
 <div class="row-fluid">
     <div class="span12">                                       
-        <textarea id="crexsc-bbcode" cols="80" rows="20" style=""></textarea>
+        <?php $this->load('Shortcodes://html/admin/common/control-buttons.php'); ?>
+        <?php $this->load('Shortcodes://html/admin/common/short-code-preview.php'); ?>
     </div>
 </div>
