@@ -51,7 +51,7 @@ if (!class_exists('ZtShortcodesFieldFaicons'))
         private function _getLatestIcons()
         {
             $html = '
-                <div class="row-fluid fontawesome-icon-list">       
+                <div class="row-fluid fontawesome-icon-list">
                     <div class="fa-hover fa-icon span1"><i class="fa fa-bed"></i></div>    
                     <div class="fa-hover fa-icon span1"><i class="fa fa-buysellads"></i></div>    
                     <div class="fa-hover fa-icon span1"><i class="fa fa-cart-arrow-down"></i></div>    
