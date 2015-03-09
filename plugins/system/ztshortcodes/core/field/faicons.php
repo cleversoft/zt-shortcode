@@ -36,7 +36,6 @@ if (!class_exists('ZtShortcodesFieldFaicons'))
             $html [] = $this->_getLabel();
             $html [] = $this->_getLatestIcons();
             $html [] = '<input class="fa-icon" name="icon" type="hidden" value=""/>';
-            $html [] = $this->_getScript();
             if ($this->get('required'))
             {
                 $html[] = 'required';
@@ -96,19 +95,6 @@ if (!class_exists('ZtShortcodesFieldFaicons'))
                     <div class="fa-hover fa-icon span1"><i class="fa fa-whatsapp"></i></div>    
                 </div>';
             return $html;
-        }
-
-        private function _getScript()
-        {
-            static $inited;
-            if (empty($inited))
-            {
-                $path = CrexShortcodesPath::getInstance();
-                $js = '<script src="' . $path->getUrl('Shortcodes://assets/js/faicons.js') . '"></script>';
-                $inited = true;
-                return $js;
-            }
-            return '';
         }
 
     }

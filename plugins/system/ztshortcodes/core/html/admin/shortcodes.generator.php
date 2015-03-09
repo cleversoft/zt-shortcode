@@ -43,7 +43,6 @@ defined('_JEXEC') or die('Restricted access');
                         <!-- Sub fields -->
                         <div class="span6">                                        
                             <?php if (isset($data['subTag'])) : ?>
-                                <blockquote>Child fields<small>Use for sub tag generator</small></blockquote>                                          
                                 <?php $subTag = $data['subTag']; ?>
                                 <?php foreach ($subTag as $subShortcode => $data) : ?>                                        
                                     <?php $subShortcodeAlias = ZtShortcodesHelperCommon::getAlias($subShortcode); ?>
