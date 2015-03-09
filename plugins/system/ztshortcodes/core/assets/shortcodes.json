@@ -1,11 +1,11 @@
 {
-    "crexsc_bs2_grid": {
+    "zt_grid": {
         "name": "Grid",
         "group": "Scaffolding",
         "icon": "fa fa-bars",
         "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
         "subTag": {
-            "crexsc_bs2_column": {
+            "zt_column": {
                 "attributes": {
                     "class": "span12"
                 },

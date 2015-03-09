@@ -17,7 +17,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 <div class="row-fluid">              
     <div class="span12">
-        <div id="crexsc-generator" class="">
+        <div id="zt-sc-generator" class="">
             <!-- Display form for each shortcode -->
             <?php foreach ($list as $shortcode => $data) : ?>                          
                 <?php $shortcodeAlias = ZtShortcodesHelperCommon::getAlias($shortcode); ?>                                  

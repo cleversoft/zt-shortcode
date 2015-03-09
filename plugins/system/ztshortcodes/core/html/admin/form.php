@@ -18,8 +18,8 @@ $id = ZtShortcodesHelperCommon::getAlias($shortcode);
 <form 
     class="<?php echo $class; ?>" 
     id="<?php echo $id; ?>"
-    data-crexsc-tag="<?php echo $shortcode; ?>"
-    data-crexsc-options="<?php echo htmlentities(json_encode($data)); ?>"
+    data-tag="<?php echo $shortcode; ?>"
+    data-options="<?php echo htmlentities(json_encode($data)); ?>"
     >
     <!-- Render parent fields -->                                                
     <?php

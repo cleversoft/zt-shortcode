@@ -23,17 +23,17 @@ foreach ($list as $tag => $data)
 ?>
 <div class="row-fluid">
     <div class="span12">
-        <div id="crexsc-list" class="row-fluid" role="tabpanel" data-example-id="togglable-tabs">
+        <div id="zt-sc-list" class="row-fluid" role="tabpanel" data-example-id="togglable-tabs">
             <!-- Nav tabs -->
             <ul id="myTab" class="nav nav-tabs">
                 <?php $first = true; ?>
                 <?php foreach ($grouped as $groupName => $shortcodes) : ?>
                     <?php $groupNameAlias = ZtShortcodesHelperCommon::getAlias($groupName); ?>
                     <li                                
-                        class="<?php echo ($first) ? 'active' : ''; ?> crexsc-group-title">
+                        class="<?php echo ($first) ? 'active' : ''; ?> zt-sc-group-title">
                         <a 
                             href="#<?php echo $groupNameAlias; ?>" 
-                            id="crexsc-group-tab-<?php echo $groupNameAlias; ?>" 
+                            id="zt-sc-group-tab-<?php echo $groupNameAlias; ?>" 
                             role="tab" 
                             data-toggle="tab" 
                             aria-controls="<?php echo $groupNameAlias; ?>" 
@@ -50,15 +50,15 @@ foreach ($list as $tag => $data)
                 <?php foreach ($grouped as $groupName => $shortcodes) : ?>
                     <?php $groupNameAlias = ZtShortcodesHelperCommon::getAlias($groupName); ?>
                     <div                                 
-                        class="tab-pane fade<?php echo ($first) ? ' active in' : ''; ?> crexsc-group-content" 
+                        class="tab-pane fade<?php echo ($first) ? ' active in' : ''; ?> zt-sc-group-content" 
                         id="<?php echo $groupNameAlias; ?>"                                 
                         <!-- Render each shortcodes in a group -->
-                        <ul class="unstyled crexsc-shortcodes">
+                        <ul class="unstyled zt-sc-shortcodes">
                                 <?php foreach ($grouped[$groupName] as $shortcode => $data) : ?>
                                     <?php
                                     $title = (isset($data['description']) ? $data['description'] : '' );
                                     ?>
-                                <li class="crexsc-shortcode">
+                                <li class="zt-sc-shortcode">
                                     <i class="<?php echo $data['icon']; ?>"></i>
                                     <a href="#<?php echo ZtShortcodesHelperCommon::getAlias($shortcode); ?>" 
                                        onClick="crex.shortcodes.showForm(this);">
