@@ -24,7 +24,7 @@ $useEditor = $params->get('use_editor', true);
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="<?php echo $root . '/media/jui/js/bootstrap.min.js'; ?>"></script>
-<script src="<?php echo $path->getUrl('Shortcodes://assets/js/shortcodes.js'); ?>"></script>
+<script src="<?php echo $path->getUrl('Shortcodes://assets/js/shortcode.js'); ?>"></script>
 <?php if ($useEditor): ?>
     <script src="<?php echo $path->getUrl('Shortcodes://assets/js/editor.js'); ?>"></script>
 <?php endif; ?>
@@ -32,7 +32,7 @@ $useEditor = $params->get('use_editor', true);
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="<?php echo $root . '/media/jui/css/bootstrap.min.css'; ?>">
-<link rel="stylesheet" href="<?php echo $path->getUrl('Shortcodes://assets/css/shortcodes.css'); ?>"/>
+<link rel="stylesheet" href="<?php echo $path->getUrl('Shortcodes://assets/css/shortcode.css'); ?>"/>
 <!-- Editor -->
 <link rel="stylesheet" type="text/css" href="<?php echo $path->getUrl('Shortcodes://assets/markitup/markitup/skins/markitup/style.css'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo $path->getUrl('Shortcodes://assets/markitup/markitup/sets/bbcode/style.css'); ?>" />
