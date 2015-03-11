@@ -61,7 +61,7 @@ foreach ($list as $tag => $data)
                                 <li class="zt-sc-shortcode">
                                     <i class="<?php echo $data['icon']; ?>"></i>
                                     <a href="#<?php echo ZtShortcodesHelperCommon::getAlias($shortcode); ?>" 
-                                       onClick="crex.shortcodes.showForm(this);">
+                                       onClick="zt.shortcode.showForm(this);return false;">
                                         <span class="hasTooltip" data-toggle="tooltip" title="<?php echo $title; ?>"><strong><var><?php echo $data['name']; ?></var></strong></span>
                                     </a>                       
                                 </li>

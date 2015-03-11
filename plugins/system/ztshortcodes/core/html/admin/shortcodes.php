@@ -35,6 +35,7 @@ $list = $parser->getShortcodes();
             <?php $this->load('Shortcodes://html/admin/shortcodes.generator.php', array('list' => $list)); ?> 
 
             <?php $this->load('Shortcodes://html/admin/shortcodes.common.php'); ?>
+
         </div>
     </body>
 </html>
