@@ -1,230 +1,2342 @@
 {
-    "zt_grid": {
-        "name": "Grid",
+    "zt_label": {
+        "name": "Label",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "type": "default"
+        },
+        "depends": {
+            "js": [
+                "Shortcodes://assets/bootstrap/js/bootstrap.min.js"
+            ],
+            "css": [
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
+                "Shortcodes://assets/css/site/site.shortcode.css",
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/colorbox/css/colorbox.css"
+            ]
+        },
+        "fields": [
+            {
+                "label": "Label",
+                "type": "text",
+                "name": "maincontent",
+                "value": "Label"
+            },
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "Default"
+                    },
+                    {
+                        "value": "primary",
+                        "label": "Primary"
+                    },
+                    {
+                        "value": "success",
+                        "label": "Success"
+                    },
+                    {
+                        "value": "info",
+                        "label": "Info"
+                    },
+                    {
+                        "value": "warning",
+                        "label": "Warning"
+                    },
+                    {
+                        "value": "danger",
+                        "label": "Danger"
+                    }
+                ]
+            }
+        ]
+    },
+    "zt_badges": {
+        "name": "Badge",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "type": "link",
+            "text": "",
+            "link": "#",
+            "buttonType": "primary"
+        },
+        "fields": [
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "link",
+                        "label": "Link"
+                    },
+                    {
+                        "value": "button",
+                        "label": "Button"
+                    }
+                ]
+            },
+            {
+                "label": "Text Badges",
+                "type": "text",
+                "name": "text",
+                "value": "Text Badges"
+            },
+            {
+                "label": "Link Badges",
+                "type": "text",
+                "name": "link",
+                "value": "Link Badges"
+            },
+            {
+                "label": "Button Type",
+                "type": "select",
+                "name": "buttonType",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "Default"
+                    },
+                    {
+                        "value": "primary",
+                        "label": "Primary"
+                    },
+                    {
+                        "value": "success",
+                        "label": "Success"
+                    },
+                    {
+                        "value": "info",
+                        "label": "Info"
+                    },
+                    {
+                        "value": "warning",
+                        "label": "Warning"
+                    },
+                    {
+                        "value": "danger",
+                        "label": "Danger"
+                    }
+                ]
+            },
+            {
+                "label": "Content",
+                "type": "textarea",
+                "name": "maincontent",
+                "value": "Content"
+            }
+        ]
+    },
+    "zt_progress_bar": {
+        "name": "Progress Bar",
+        "group": "Boostrap",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "trackColor": "#edecec",
+            "barColor": "#a0ce4e",
+            "titleColor": "#ffffff",
+            "strip": "striped",
+            "animated": "active",
+            "now-value": "90",
+            "min-value": "0",
+            "max-value": "100"
+        },
+        "depends": {
+            "js": [
+                "Shortcodes://assets/js/waypoints.min.js",
+                "Shortcodes://assets/js/progress-bar.js"
+            ]
+        },
+        "fields": [
+            {
+                "label": "Track Color",
+                "type": "text",
+                "name": "trackColor",
+                "value": "#edecec"
+            },
+            {
+                "label": "Bar Color",
+                "type": "text",
+                "name": "barColor",
+                "value": "#a0ce4e"
+            },
+            {
+                "label": "Title Color",
+                "type": "text",
+                "name": "titleColor",
+                "value": "#ffffff"
+            },
+            {
+                "label": "Strip Type",
+                "type": "select",
+                "name": "strip",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "Default"
+                    },
+                    {
+                        "value": "striped",
+                        "label": "Striped"
+                    }
+                ]
+            },
+            {
+                "label": "Animated Type",
+                "type": "select",
+                "name": "animated",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "Default"
+                    },
+                    {
+                        "value": "active",
+                        "label": "Active"
+                    }
+                ]
+            },
+            {
+                "label": "Current Value",
+                "type": "text",
+                "name": "now-value",
+                "value": "90"
+            },
+            {
+                "label": "Min Value",
+                "type": "text",
+                "name": "min-value",
+                "value": "0"
+            },
+            {
+                "label": "Max Value",
+                "type": "text",
+                "name": "max-value",
+                "value": "100"
+            },
+            {
+                "label": "Progress bar content",
+                "type": "textarea",
+                "name": "maincontent",
+                "value": "Progress bar content"
+            }
+        ]
+    },
+    "zt_button": {
+        "name": "Button",
+        "group": "Boostrap",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "type": "stroke-to-fill",
+            "size": "small",
+            "colour": "white",
+            "icon": "fa fa-ambulance",
+            "link": "#",
+            "extra-class": "class-button"
+        },
+        "fields": [
+            {
+                "label": "Text",
+                "type": "text",
+                "name": "maincontent",
+                "value": "Shortcode Button"
+            },
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "Standard"
+                    },
+                    {
+                        "value": "stroke-to-fill",
+                        "label": "Stroke To Fill"
+                    },
+                    {
+                        "value": "icon-reveal",
+                        "label": "Icon Reveal"
+                    },
+                    {
+                        "value": "icon-stroke",
+                        "label": "Icon Stroke"
+                    }
+                ]
+            },
+            {
+                "label": "Size",
+                "type": "select",
+                "name": "size",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "Standard"
+                    },
+                    {
+                        "value": "small",
+                        "label": "Small"
+                    },
+                    {
+                        "value": "large",
+                        "label": "Large"
+                    }
+                ]
+            },
+            {
+                "label": "Colour",
+                "type": "select",
+                "name": "colour",
+                "options": [
+                    {
+                        "value": "accent",
+                        "label": "Accent"
+                    },
+                    {
+                        "value": "black",
+                        "label": "Black"
+                    },
+                    {
+                        "value": "white",
+                        "label": "White"
+                    },
+                    {
+                        "value": "blue",
+                        "label": "Blue"
+                    },
+                    {
+                        "value": "green",
+                        "label": "Green"
+                    },
+                    {
+                        "value": "pink",
+                        "label": "Pink"
+                    },
+                    {
+                        "value": "grey",
+                        "label": "Grey"
+                    },
+                    {
+                        "value": "light-grey",
+                        "label": "Light Grey"
+                    },
+                    {
+                        "value": "orange",
+                        "label": "Orange"
+                    },
+                    {
+                        "value": "turquoise",
+                        "label": "Turquoise"
+                    },
+                    {
+                        "value": "gold",
+                        "label": "Gold"
+                    },
+                    {
+                        "value": "transparent-light",
+                        "label": "Transparent Light"
+                    },
+                    {
+                        "value": "transparent-dark",
+                        "label": "Transparent Dark"
+                    }
+                ]
+            },
+            {
+                "label": "Icon",
+                "type": "faicons",
+                "name": "icon",
+                "value": "fa fa-ambulance"
+            },
+            {
+                "label": "Link",
+                "type": "text",
+                "name": "link",
+                "value": "#"
+            },
+            {
+                "label": "Extra Class",
+                "type": "text",
+                "name": "extra-class",
+                "value": ""
+            }
+        ]
+    },
+    "zt_message_box": {
+        "name": "Message Box",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "type": "success",
+            "icon": "fa fa-times-circle",
+            "extra-class": "message-box"
+        },
+        "fields": [
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "success",
+                        "label": "Success"
+                    },
+                    {
+                        "value": "info",
+                        "label": "Info"
+                    },
+                    {
+                        "value": "warning",
+                        "label": "Warning"
+                    },
+                    {
+                        "value": "danger",
+                        "label": "Danger"
+                    }
+                ]
+            },
+            {
+                "label": "Content",
+                "type": "textarea",
+                "name": "maincontent",
+                "value": "Content Message Box"
+            },
+            {
+                "label": "Extra Class",
+                "type": "text",
+                "name": "extra-class",
+                "value": "message-box"
+            }
+        ]
+    },
+    "zt_blockquotes": {
+        "name": "Blockquotes",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "type": "big",
+            "author": "Author",
+            "author-link": "#",
+            "extra-class": "blockquotes"
+        },
+        "fields": [
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "Default"
+                    },
+                    {
+                        "value": "big",
+                        "label": "Big Quote"
+                    },
+                    {
+                        "value": "box",
+                        "label": "Box Quote"
+                    }
+                ]
+            },
+            {
+                "label": "Author",
+                "type": "text",
+                "name": "author",
+                "value": "Author"
+            },
+            {
+                "label": "Author Link",
+                "type": "text",
+                "name": "author-link",
+                "value": "Author"
+            },
+            {
+                "label": "Content",
+                "type": "textarea",
+                "name": "maincontent",
+                "value": "Content Blockquotes Box"
+            },
+            {
+                "label": "Extra Class",
+                "type": "text",
+                "name": "extra-class",
+                "value": "blockquotes"
+            }
+        ]
+    },
+    "zt_dropcaps": {
+        "name": "Dropcaps",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "type": "type-1",
+            "bgColor": "#000",
+            "textColor": "#fff"
+        },
+        "fields": [
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "type-1",
+                        "label": "Type 1"
+                    },
+                    {
+                        "value": "type-2",
+                        "label": "Type 2"
+                    },
+                    {
+                        "value": "type-3",
+                        "label": "Type 3"
+                    },
+                    {
+                        "value": "type-4",
+                        "label": "Type 4"
+                    }
+                ]
+            },
+            {
+                "label": "Background color",
+                "type": "text",
+                "name": "bgColor",
+                "value": "#000"
+            },
+            {
+                "label": "Background text color",
+                "type": "text",
+                "name": "textColor",
+                "value": "#fff"
+            },
+            {
+                "label": "Content",
+                "type": "textarea",
+                "name": "maincontent",
+                "value": "D"
+            }
+        ]
+    },
+    "zt_i": {
+        "name": "Font Icon",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "classIcon": "fa fa-android",
+            "iconCircle": "",
+            "iconSize": "",
+            "spinningIcon": "",
+            "iconColor": "",
+            "iconBgColor": "",
+            "iconBdColor": ""
+        },
+        "fields": [
+            {
+                "label": "Icon",
+                "type": "faicons",
+                "name": "classIcon",
+                "value": "fa fa-android"
+            },
+            {
+                "label": "Icon Circle",
+                "type": "select",
+                "name": "iconCircle",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
+                "label": "Icon Size",
+                "type": "select",
+                "name": "iconSize",
+                "options": [
+                    {
+                        "value": "small",
+                        "label": "Small"
+                    },
+                    {
+                        "value": "medium",
+                        "label": "Medium"
+                    },
+                    {
+                        "value": "large",
+                        "label": "Large"
+                    }
+                ]
+            },
+            {
+                "label": "Icon Spinning",
+                "type": "select",
+                "name": "spinningIcon",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
+                "label": "Icon Color",
+                "type": "text",
+                "name": "iconColor",
+                "value": "#000"
+            },
+            {
+                "label": "Icon Background Color",
+                "type": "text",
+                "name": "iconBgColor",
+                "value": "#000"
+            },
+            {
+                "label": "Icon Border Color",
+                "type": "text",
+                "name": "iconBdColor",
+                "value": "#000"
+            },
+            {
+                "label": "Content",
+                "type": "textarea",
+                "name": "maincontent",
+                "value": "Font Awesome"
+            }
+        ]
+    },
+    "zt_divider": {
+        "name": "Divider",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "type": "thin",
+            "classIcon": "",
+            "text": ""
+        },
+        "fields": [
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "hr",
+                        "label": "HR"
+                    },
+                    {
+                        "value": "thin",
+                        "label": "Thin"
+                    },
+                    {
+                        "value": "fat",
+                        "label": "Fat"
+                    },
+                    {
+                        "value": "dotted",
+                        "label": "Dotted"
+                    },
+                    {
+                        "value": "text-only",
+                        "label": "Go to top 1"
+                    },
+                    {
+                        "value": "icon-type-1",
+                        "label": "Go to top icon 1"
+                    },
+                    {
+                        "value": "icon-type-2",
+                        "label": "Go to top icon 2"
+                    }
+                ]
+            },
+            {
+                "label": "Icon",
+                "type": "faicons",
+                "name": "classIcon",
+                "value": "fa fa-android"
+            },
+            {
+                "label": "Text (only use with type go to top 1 and go to top icon 2)",
+                "type": "text",
+                "name": "text",
+                "value": "Go To Top"
+            }
+        ]
+    },
+    "zt_modal": {
+        "name": "Modal",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "id": "my-modal",
+            "title": "Title Modal",
+            "button-type": "success",
+            "button-size": "sm",
+            "button-text": "Button Text"
+        },
+        "fields": [
+            {
+                "label": "ID",
+                "type": "text",
+                "name": "id",
+                "value": "my-modal"
+            },
+            {
+                "label": "Title",
+                "type": "text",
+                "name": "title",
+                "value": "Title Modal"
+            },
+            {
+                "label": "Button Type",
+                "type": "select",
+                "name": "button-type",
+                "options": [
+                    {
+                        "value": "primary",
+                        "label": "Primary"
+                    },
+                    {
+                        "value": "success",
+                        "label": "Success"
+                    },
+                    {
+                        "value": "info",
+                        "label": "Info"
+                    },
+                    {
+                        "value": "warning",
+                        "label": "Warning"
+                    },
+                    {
+                        "value": "danger",
+                        "label": "Danger"
+                    },
+                    {
+                        "value": "link",
+                        "label": "Link"
+                    }
+                ]
+            },
+            {
+                "label": "Button Size",
+                "type": "select",
+                "name": "button-size",
+                "options": [
+                    {
+                        "value": "xs",
+                        "label": "XSmall"
+                    },
+                    {
+                        "value": "sm",
+                        "label": "Small"
+                    },
+                    {
+                        "value": "lg",
+                        "label": "Large"
+                    }
+                ]
+            },
+            {
+                "label": "Button Text",
+                "type": "text",
+                "name": "button-text",
+                "value": "Button Text"
+            },
+            {
+                "label": "Gallery Thumb height",
+                "type": "textarea",
+                "name": "maincontent",
+                "value": "Content Modal"
+            }
+        ]
+    },
+    "zt_counter_circle": {
+        "name": "Counter Circle",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "easing": "my-modal",
+            "barColor": "#000000",
+            "trackColor": "#000000",
+            "scaleLength": "10",
+            "percent": "90",
+            "lineCap": "round",
+            "lineWidth": "10",
+            "size": "12",
+            "duration": "1000",
+            "icon": "fa fa-align-left"
+        },
+        "fields": [
+            {
+                "label": "Effect Bar",
+                "type": "select",
+                "name": "easing",
+                "options": [
+                    {
+                        "value": "easeInQuad",
+                        "label": "easeInQuad"
+                    },
+                    {
+                        "value": "easeInQuad",
+                        "label": "easeInQuad"
+                    },
+                    {
+                        "value": "easeOutQuad",
+                        "label": "easeOutQuad"
+                    },
+                    {
+                        "value": "easeInOutQuad",
+                        "label": "easeInOutQuad"
+                    },
+                    {
+                        "value": "easeInCubic",
+                        "label": "easeInCubic"
+                    },
+                    {
+                        "value": "easeOutCubic",
+                        "label": "easeOutCubic"
+                    }
+                ]
+            },
+            {
+                "label": "Bar Color",
+                "type": "text",
+                "name": "barColor",
+                "value": "#000000"
+            },
+            {
+                "label": "Track Color",
+                "type": "text",
+                "name": "trackColor",
+                "value": "#000000"
+            },
+            {
+                "label": "Scale Length",
+                "type": "text",
+                "name": "scaleLength",
+                "value": "10"
+            },
+            {
+                "label": "Counter Percent",
+                "type": "text",
+                "name": "percent",
+                "value": "90"
+            },
+            {
+                "label": "Counter LineCap",
+                "type": "select",
+                "name": "lineCap",
+                "options": [
+                    {
+                        "value": "butt",
+                        "label": "Butt"
+                    },
+                    {
+                        "value": "round",
+                        "label": "Round"
+                    },
+                    {
+                        "value": "square",
+                        "label": "Square"
+                    }
+                ]
+            },
+            {
+                "label": "Counter Line Width",
+                "type": "text",
+                "name": "lineWidth",
+                "value": "10"
+            },
+            {
+                "label": "Counter Around Size",
+                "type": "text",
+                "name": "size",
+                "value": "160"
+            },
+            {
+                "label": "Counter Duration",
+                "type": "text",
+                "name": "duration",
+                "value": "1000"
+            },
+            {
+                "label": "Content Type",
+                "type": "select",
+                "name": "content-type",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "Default"
+                    },
+                    {
+                        "value": "percent",
+                        "label": "Percent"
+                    },
+                    {
+                        "value": "icon",
+                        "label": "Icon"
+                    }
+                ]
+            },
+            {
+                "label": "Content",
+                "type": "text",
+                "name": "maincontent",
+                "value": ""
+            },
+            {
+                "label": "Icon",
+                "type": "faicons",
+                "name": "icon",
+                "value": ""
+            },
+            {
+                "label": "Extra Class",
+                "type": "text",
+                "name": "extra-class",
+                "value": ""
+            }
+        ]
+    },
+    "zt_google_map": {
+        "name": "Google Map",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "address": "",
+            "height": "",
+            "width": "",
+            "type": "",
+            "zoom": "",
+            "color": "",
+            "saturation": ""
+        },
+        "fields": [
+            {
+                "label": "Address",
+                "type": "text",
+                "name": "address",
+                "value": "Ha Noi"
+            },
+            {
+                "label": "Map Height",
+                "type": "text",
+                "name": "height",
+                "value": "300"
+            },
+            {
+                "label": "Map Width",
+                "type": "text",
+                "name": "width",
+                "value": "500"
+            },
+            {
+                "label": "Map Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "roadmap",
+                        "label": "Map"
+                    },
+                    {
+                        "value": "satellite",
+                        "label": "Satellite"
+                    },
+                    {
+                        "value": "hybrid",
+                        "label": "Hybrid"
+                    },
+                    {
+                        "value": "terrain",
+                        "label": "Terrain"
+                    }
+                ]
+            },
+            {
+                "label": "Map Zoom",
+                "type": "select",
+                "name": "zoom",
+                "options": [
+                    {
+                        "value": "14",
+                        "label": "14 - Default"
+                    },
+                    {
+                        "value": "1",
+                        "label": "1"
+                    },
+                    {
+                        "value": "2",
+                        "label": "2"
+                    },
+                    {
+                        "value": "3",
+                        "label": "3"
+                    },
+                    {
+                        "value": "4",
+                        "label": "4"
+                    },
+                    {
+                        "value": "5",
+                        "label": "5"
+                    },
+                    {
+                        "value": "6",
+                        "label": "6"
+                    },
+                    {
+                        "value": "7",
+                        "label": "7"
+                    },
+                    {
+                        "value": "8",
+                        "label": "8"
+                    },
+                    {
+                        "value": "9",
+                        "label": "9"
+                    },
+                    {
+                        "value": "10",
+                        "label": "10"
+                    },
+                    {
+                        "value": "11",
+                        "label": "11"
+                    },
+                    {
+                        "value": "12",
+                        "label": "12"
+                    },
+                    {
+                        "value": "13",
+                        "label": "13"
+                    },
+                    {
+                        "value": "14",
+                        "label": "14"
+                    },
+                    {
+                        "value": "15",
+                        "label": "15"
+                    },
+                    {
+                        "value": "16",
+                        "label": "16"
+                    },
+                    {
+                        "value": "17",
+                        "label": "17"
+                    },
+                    {
+                        "value": "18",
+                        "label": "18"
+                    },
+                    {
+                        "value": "19",
+                        "label": "19"
+                    },
+                    {
+                        "value": "20",
+                        "label": "20"
+                    }
+                ]
+            },
+            {
+                "label": "Map Color",
+                "type": "text",
+                "name": "color",
+                "value": "#ffffff"
+            },
+            {
+                "label": "Map Saturation",
+                "type": "select",
+                "name": "saturation",
+                "options": [
+                    {
+                        "value": "color",
+                        "label": "Color"
+                    },
+                    {
+                        "value": "mono",
+                        "label": "Mono"
+                    }
+                ]
+            }
+        ]
+    },
+    "zt_space": {
+        "name": "Space",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "height": "",
+            "id": "",
+            "class": ""
+        },
+        "fields": [
+            {
+                "label": "Height",
+                "type": "text",
+                "name": "height",
+                "value": ""
+            },
+            {
+                "label": "ID Element",
+                "type": "text",
+                "name": "id",
+                "value": ""
+            },
+            {
+                "label": "Class Extend",
+                "type": "text",
+                "name": "class",
+                "value": ""
+            }
+        ]
+    },
+    "zt_title": {
+        "name": "Title",
+        "group": "Typography",
+        "icon": "fa fa-adn",
+        "attributes": {
+            "type": "",
+            "marginTop": "",
+            "marginBottom": "",
+            "id": "",
+            "class": ""
+        },
+        "fields": [
+            {
+                "label": "Title",
+                "type": "text",
+                "name": "maincontent",
+                "value": ""
+            },
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "No Style"
+                    },
+                    {
+                        "value": "single-border",
+                        "label": "Single Border Solid"
+                    },
+                    {
+                        "value": "double-border",
+                        "label": "Double Border Solid"
+                    },
+                    {
+                        "value": "single-bottom",
+                        "label": "Single Border Bottom"
+                    },
+                    {
+                        "value": "double-bottom",
+                        "label": "Double Border Bottom"
+                    }
+                ]
+            },
+            {
+                "label": "Margin Top",
+                "type": "text",
+                "name": "marginTop",
+                "value": ""
+            },
+            {
+                "label": "Margin Bottom",
+                "type": "text",
+                "name": "marginBottom",
+                "value": ""
+            },
+            {
+                "label": "ID Element",
+                "type": "text",
+                "name": "id",
+                "value": ""
+            },
+            {
+                "label": "Class Extend",
+                "type": "text",
+                "name": "class",
+                "value": ""
+            }
+        ]
+    },
+    "zt_accordions": {
+        "name": "Accordion",
         "group": "Scaffolding",
         "icon": "fa fa-bars",
         "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
         "subTag": {
-            "zt_column": {
+            "zt_accordion": {
                 "attributes": {
-                    "class": "span12"
+                    "title": "",
+                    "active": ""
                 },
                 "fields": [
                     {
-                        "label": "Width",
-                        "type": "select",
-                        "name": "class",
-                        "options": [
-                            {
-                                "value": "span1",
-                                "label": "span1"
-                            },
-                            {
-                                "value": "span2",
-                                "label": "span2"
-                            },
-                            {
-                                "value": "span3",
-                                "label": "span3"
-                            },
-                            {
-                                "value": "span4",
-                                "label": "span4"
-                            },
-                            {
-                                "value": "span5",
-                                "label": "span5"
-                            },
-                            {
-                                "value": "span6",
-                                "label": "span6"
-                            },
-                            {
-                                "value": "span7",
-                                "label": "span7"
-                            },
-                            {
-                                "value": "span8",
-                                "label": "span8"
-                            },
-                            {
-                                "value": "span9",
-                                "label": "span9"
-                            },
-                            {
-                                "value": "span10",
-                                "label": "span10"
-                            },
-                            {
-                                "value": "span11",
-                                "label": "span11"
-                            },
-                            {
-                                "value": "span12",
-                                "label": "span12"
-                            }
-                        ]
-
-
+                        "label": "Accordion Title",
+                        "type": "textarea",
+                        "name": "title",
+                        "value": "Accordion Title"
                     },
                     {
-                        "label": "Offset",
-                        "type": "select",
-                        "name": "offset",
-                        "options": [
-                            {
-                                "value": "",
-                                "label": "None"
-                            },
-                            {
-                                "value": "1",
-                                "label": "1"
-                            },
-                            {
-                                "value": "2",
-                                "label": "2"
-                            },
-                            {
-                                "value": "3",
-                                "label": "3"
-                            },
-                            {
-                                "value": "4",
-                                "label": "5"
-                            },
-                            {
-                                "value": "5",
-                                "label": "5"
-                            },
-                            {
-                                "value": "6",
-                                "label": "6"
-                            },
-                            {
-                                "value": "7",
-                                "label": "7"
-                            },
-                            {
-                                "value": "8",
-                                "label": "8"
-                            },
-                            {
-                                "value": "9",
-                                "label": "9"
-                            },
-                            {
-                                "value": "10",
-                                "label": "10"
-                            },
-                            {
-                                "value": "11",
-                                "label": "11"
-                            },
-                            {
-                                "value": "12",
-                                "label": "12"
-                            }
-                        ]
-                    },
-                    {
-                        "label": "Content",
+                        "label": "Accordion Content",
                         "type": "textarea",
                         "name": "maincontent",
-                        "value": "Enter your column content"
+                        "value": "Accordion Content"
+                    },
+                    {
+                        "label": " Active",
+                        "type": "radio",
+                        "name": "active",
+                        "value": ""
                     }
                 ]
             }
         },
         "attributes": {
-            "class": "row"
-        },
-        "fields": [
-        ]
-    },
-    "zt_video_youtube": {
-        "name": "Youtube",
-        "group": "Video",
-        "icon": "fa fa-youtube",
-        "attributes": {
-            "width": "200",
-            "height": "200",
-            "autoplay": "0",
-            "loop": "0"
+            "type": ""
         },
         "fields": [
             {
-                "label": "URL",
-                "type": "text",
-                "name": "url",
-                "value": ""
-            },
-            {
-                "label": "Width",
-                "type": "text",
-                "name": "width",
-                "value": "600"
-            },
-            {
-                "label": "Height",
-                "type": "text",
-                "name": "height",
-                "value": "600"
-            },
-            {
-                "label": "Thumbnail width",
-                "type": "text",
-                "name": "thumbnail_width",
-                "value": "300"
-            },
-            {
-                "label": "Thumbnail height",
-                "type": "text",
-                "name": "thumbnail_height",
-                "value": "300"
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "accordion",
+                        "label": "Accordion"
+                    },
+                    {
+                        "value": "toggle",
+                        "label": "Toggle"
+                    }
+                ]
             }
         ]
     },
-    "zt_video_vimeo": {
-        "name": "Vimeo",
-        "group": "Video",
-        "icon": "fa fa-vimeo-square",
+    "zt_tabs": {
+        "name": "Tabs",
+        "group": "Scaffolding",
+        "icon": "fa fa-bars",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_tab": {
+                "attributes": {
+                    "title": "",
+                    "active": ""
+                },
+                "fields": [
+                    {
+                        "label": "Title",
+                        "type": "textarea",
+                        "name": "title",
+                        "value": "Title Tab"
+                    },
+                    {
+                        "label": "Content Tab",
+                        "type": "textarea",
+                        "name": "maincontent",
+                        "value": "This is tab content"
+                    },
+                    {
+                        "label": " Active",
+                        "type": "radio",
+                        "name": "active",
+                        "value": ""
+                    }
+                ]
+            }
+        },
         "attributes": {
-            "width": "200",
-            "height": "200",
-            "autopause": "1",
-            "autoplay": "0",
-            "loop": "0"
+            "Type": ""
         },
         "fields": [
             {
-                "label": "Directory",
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "horizontal",
+                        "label": "Horizontal"
+                    },
+                    {
+                        "value": "vertical-left",
+                        "label": "Vertical Left"
+                    },
+                    {
+                        "value": "vertical-right",
+                        "label": "Vertical Right"
+                    },
+                    {
+                        "value": "bottom-tabs",
+                        "label": "Horizontal Bottom"
+                    }
+                ]
+            }
+        ]
+    },
+    "zt_pricing": {
+        "name": "Pricing Table",
+        "group": "Scaffolding",
+        "icon": "fa fa-bars",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_pricing_item": {
+                "attributes": {
+                    "title": "",
+                    "link": "",
+                    "button-text": "",
+                    "item-hightlight": "",
+                    "price": ""
+                },
+                "fields": [
+                    {
+                        "label": "Title",
+                        "type": "textarea",
+                        "name": "title",
+                        "value": "Title Tab"
+                    },
+                    {
+                        "label": "Item Hightlight",
+                        "type": "radio",
+                        "name": "maincontent",
+                        "value": "This is tab content"
+                    },
+                    {
+                        "label": " Active",
+                        "type": "radio",
+                        "name": "item-hightlight",
+                        "value": ""
+                    },
+                    {
+                        "label": "Content",
+                        "type": "textarea",
+                        "name": "maincontent",
+                        "value": "Content Pricing"
+                    },
+                    {
+                        "label": "Price",
+                        "type": "text",
+                        "name": "price",
+                        "value": "$|90|per year"
+                    },
+                    {
+                        "label": "Link",
+                        "type": "text",
+                        "name": "link",
+                        "value": "#"
+                    },
+                    {
+                        "label": "Button Text",
+                        "type": "text",
+                        "name": "button-text",
+                        "value": "Button Text"
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "Type": ""
+        },
+        "fields": [
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "pricing-type",
+                "options": [
+                    {
+                        "value": "default",
+                        "label": "Default"
+                    },
+                    {
+                        "value": "attached",
+                        "label": "Attached"
+                    }
+                ]
+            }
+        ]
+    },
+    "zt_testimonial": {
+        "name": "Pricing Table",
+        "group": "Scaffolding",
+        "icon": "fa fa-bars",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_testimonial_item": {
+                "attributes": {
+                    "bgColor": "",
+                    "textColor": "",
+                    "name": "",
+                    "company": "",
+                    "position": "",
+                    "customAvatar": "",
+                    "borderRadius": "",
+                    "link": "",
+                    "target": ""
+                },
+                "fields": [
+                    {
+                        "label": "Background Color",
+                        "type": "text",
+                        "name": "bgColor",
+                        "value": "#f6f6f6"
+                    },
+                    {
+                        "label": "Text Color",
+                        "type": "text",
+                        "name": "textColor",
+                        "value": "#747474"
+                    },
+                    {
+                        "label": "Name",
+                        "type": "text",
+                        "name": "name",
+                        "value": "Name author"
+                    },
+                    {
+                        "label": "Company",
+                        "type": "text",
+                        "name": "company",
+                        "value": "Company"
+                    },
+                    {
+                        "label": "Position",
+                        "type": "text",
+                        "name": "position",
+                        "value": "Position"
+                    },
+                    {
+                        "label": "Avatar",
+                        "type": "text",
+                        "name": "customAvatar",
+                        "value": ""
+                    },
+                    {
+                        "label": "Border Radius",
+                        "type": "text",
+                        "name": "borderRadius",
+                        "value": "4"
+                    },
+                    {
+                        "label": "Link Website",
+                        "type": "text",
+                        "name": "link",
+                        "value": "#link"
+                    },
+                    {
+                        "label": "Target",
+                        "type": "select",
+                        "name": "link",
+                        "options": [
+                            {
+                                "value": "_blank",
+                                "label": "_blank"
+                            },
+                            {
+                                "value": "_parent",
+                                "label": "_parent"
+                            },
+                            {
+                                "value": "_self",
+                                "label": "_self"
+                            },
+                            {
+                                "value": "_top",
+                                "label": "_top"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Content",
+                        "type": "text",
+                        "name": "link",
+                        "value": "Testimonial Content"
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "slider": ""
+        },
+        "fields": [
+            {
+                "label": "Allow Slide ",
+                "type": "radio",
+                "name": "slider",
+                "value": ""
+            }
+        ]
+    },
+    "zt_carousel": {
+        "name": "Carousel",
+        "group": "Scaffolding",
+        "icon": "fa fa-bars",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_carousel_item": {
+                "attributes": {
+                    "image": "",
+                    "title": "",
+                    "link": ""
+                },
+                "fields": [
+                    {
+                        "label": "Avatar",
+                        "type": "text",
+                        "name": "image",
+                        "value": ""
+                    },
+                    {
+                        "label": "Title",
+                        "type": "text",
+                        "name": "title",
+                        "value": ""
+                    },
+                    {
+                        "label": "Link ",
+                        "type": "text",
+                        "name": "link",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "showItem": "",
+            "duration": "",
+            "showControl": "",
+            "showPager": "",
+            "enableReponsive": ""
+        },
+        "fields": [
+            {
+                "label": "Item Carousel",
                 "type": "text",
-                "name": "dir",
+                "name": "showItem",
+                "value": "6"
+            },
+            {
+                "label": "Duration Carousel",
+                "type": "text",
+                "name": "duration",
+                "value": "1000"
+            },
+            {
+                "label": "Allow Control Carousel",
+                "type": "radio",
+                "name": "showControl",
                 "value": ""
             },
             {
-                "label": "Width",
-                "type": "text",
-                "name": "width",
-                "value": "600"
+                "label": "Allow Pager Carouse",
+                "type": "radio",
+                "name": "showPager",
+                "value": ""
             },
             {
-                "label": "Height",
-                "type": "text",
-                "name": "height",
-                "value": "600"
+                "label": "Allow Responsive Carousel",
+                "type": "radio",
+                "name": "enableReponsive",
+                "value": ""
+            }
+        ]
+    },
+    "zt_persons": {
+        "name": "Person",
+        "group": "Scaffolding",
+        "icon": "fa fa-bars",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_person": {
+                "attributes": {
+                    "name": "",
+                    "position": "",
+                    "image": "",
+                    "img-type": "",
+                    "social-type": "",
+                    "facebook": "",
+                    "twitter": "",
+                    "email": "",
+                    "google": "",
+                    "skype": "",
+                    "dribbble": "",
+                    "linkedin": "",
+                    "column": ""
+                },
+                "fields": [
+                    {
+                        "label": "Name",
+                        "type": "text",
+                        "name": "name",
+                        "value": "Person Name"
+                    },
+                    {
+                        "label": "Position",
+                        "type": "text",
+                        "name": "position",
+                        "value": "Person Position"
+                    },
+                    {
+                        "label": "Description",
+                        "type": "textarea",
+                        "name": "position",
+                        "value": "Persons Description"
+                    },
+                    {
+                        "label": "Image",
+                        "type": "text",
+                        "name": "image",
+                        "value": "images/"
+                    },
+                    {
+                        "label": "Image Style",
+                        "type": "select",
+                        "name": "social-type",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": "none"
+                            },
+                            {
+                                "value": "rounded",
+                                "label": "Rounded"
+                            },
+                            {
+                                "value": "circle",
+                                "label": "Circle"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Facebook",
+                        "type": "text",
+                        "name": "facebook",
+                        "value": "#facebook"
+                    },
+                    {
+                        "label": "Twitter",
+                        "type": "text",
+                        "name": "twitter",
+                        "value": "#twitter"
+                    },
+                    {
+                        "label": "Email",
+                        "type": "text",
+                        "name": "email",
+                        "value": "#email"
+                    },
+                    {
+                        "label": "Goolge +",
+                        "type": "text",
+                        "name": "google",
+                        "value": "#google"
+                    },
+                    {
+                        "label": "Skype",
+                        "type": "text",
+                        "name": "skype",
+                        "value": "#skype"
+                    },
+                    {
+                        "label": "Dribbble",
+                        "type": "text",
+                        "name": "dribbble",
+                        "value": "#dribbble"
+                    },
+                    {
+                        "label": "Linkedin",
+                        "type": "text",
+                        "name": "linkedin",
+                        "value": "#linkedin"
+                    },
+                    {
+                        "label": "Column",
+                        "type": "select",
+                        "name": "column",
+                        "options": [
+                            {
+                                "value": "1",
+                                "label": "1/12"
+                            },
+                            {
+                                "value": "2",
+                                "label": "2/12"
+                            },
+                            {
+                                "value": "3",
+                                "label": "3/12"
+                            },
+                            {
+                                "value": "4",
+                                "label": "4/12"
+                            },
+                            {
+                                "value": "5",
+                                "label": "5/12"
+                            },
+                            {
+                                "value": "6",
+                                "label": "6/12"
+                            },
+                            {
+                                "value": "7",
+                                "label": "7/12"
+                            },
+                            {
+                                "value": "8",
+                                "label": "8/12"
+                            },
+                            {
+                                "value": "9",
+                                "label": "9/12"
+                            },
+                            {
+                                "value": "10",
+                                "label": "10/12"
+                            },
+                            {
+                                "value": "11",
+                                "label": "11/12"
+                            },
+                            {
+                                "value": "11",
+                                "label": "11/12"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "slider": "",
+            "pager": "",
+            "controls": "",
+            "auto": "",
+            "margin": "",
+            "item": ""
+        },
+        "fields": [
+            {
+                "label": "Allow Slider",
+                "type": "radio",
+                "name": "slider",
+                "value": ""
             },
             {
-                "label": "Thumbnail width",
-                "type": "text",
-                "name": "thumbnail_width",
-                "value": "300"
+                "label": "Allow Pager",
+                "type": "radio",
+                "name": "pager",
+                "value": ""
             },
             {
-                "label": "Thumbnail height",
+                "label": "Allow Controls",
+                "type": "radio",
+                "name": "controls",
+                "value": ""
+            },
+            {
+                "label": "Auto Slider",
+                "type": "radio",
+                "name": "auto",
+                "value": ""
+            },
+            {
+                "label": "Margin Item",
                 "type": "text",
-                "name": "thumbnail_height",
-                "value": "300"
+                "name": "margin",
+                "value": "20"
+            },
+            {
+                "label": "Show Item",
+                "type": "text",
+                "name": "item",
+                "value": "4"
+            }
+        ]
+    },
+    "zt_box_content": {
+        "name": "Box Content",
+        "group": "Scaffolding",
+        "icon": "fa fa-bars",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_box_content_item": {
+                "attributes": {
+                    "boxBgColor": "",
+                    "icon": "",
+                    "iconStyle": "",
+                    "iconAnimation": "",
+                    "iconColor": "",
+                    "iconBgColor": "",
+                    "iconBorder": "",
+                    "iconBorderColor": "",
+                    "iconSize": "",
+                    "iconTop": "",
+                    "iconBottom": "",
+                    "iconFontSize": "",
+                    "title": "",
+                    "link": "",
+                    "linkText": "",
+                    "linkColor": "",
+                    "linkBgColor": "",
+                    "linkColorHover": "",
+                    "linkBgColorHover": "",
+                    "column": ""
+                },
+                "fields": [
+                    {
+                        "label": "Background Box Color",
+                        "type": "text",
+                        "name": "boxBgColor",
+                        "value": ""
+                    },
+                    {
+                        "label": "Icon",
+                        "type": "faicons",
+                        "name": "icon",
+                        "value": ""
+                    },
+                    {
+                        "label": "Icon Style",
+                        "type": "select",
+                        "name": "iconStyle",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": "Default"
+                            },
+                            {
+                                "value": "square",
+                                "label": "Square"
+                            },
+                            {
+                                "value": "circle",
+                                "label": "Circle"
+                            },
+                            {
+                                "value": "rounder",
+                                "label": "Rounder"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Icon Animation",
+                        "type": "select",
+                        "name": "iconAnimation",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": "Default"
+                            },
+                            {
+                                "value": "spin",
+                                "label": "Spin Always"
+                            },
+                            {
+                                "value": "spin-hover",
+                                "label": "Spin Hover"
+                            },
+                            {
+                                "value": "left-hover",
+                                "label": "Animation Left Hover"
+                            },
+                            {
+                                "value": "zoom-hover",
+                                "label": "Animation Zoom Hover"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Icon Color",
+                        "type": "text",
+                        "name": "iconColor",
+                        "value": "#2c2c2c"
+                    },
+                    {
+                        "label": "Icon Background Color",
+                        "type": "text",
+                        "name": "iconBgColor",
+                        "value": "#000"
+                    },
+                    {
+                        "label": "Icon Border Size",
+                        "type": "text",
+                        "name": "iconBorder",
+                        "value": "5"
+                    },
+                    {
+                        "label": "Border Color",
+                        "type": "text",
+                        "name": "iconBorderColor",
+                        "value": "#f26c4f"
+                    },
+                    {
+                        "label": "Icon Around Size",
+                        "type": "text",
+                        "name": "iconSize",
+                        "value": "160"
+                    },
+                    {
+                        "label": "Icon Margin Top",
+                        "type": "text",
+                        "name": "iconTop",
+                        "value": "20"
+                    },
+                    {
+                        "label": "Icon Margin Bottom",
+                        "type": "text",
+                        "name": "iconBottom",
+                        "value": "20"
+                    },
+                    {
+                        "label": "Icon Font Size",
+                        "type": "text",
+                        "name": "iconFontSize",
+                        "value": "60"
+                    },
+                    {
+                        "label": "Title",
+                        "type": "text",
+                        "name": "title",
+                        "value": "Boxed Content"
+                    },
+                    {
+                        "label": "Content",
+                        "type": "textarea",
+                        "name": "maincontent",
+                        "value": "Boxed Content"
+                    },
+                    {
+                        "label": "Link",
+                        "type": "textarea",
+                        "name": "link",
+                        "value": "#link"
+                    },
+                    {
+                        "label": "Text Link",
+                        "type": "text",
+                        "name": "linkText",
+                        "value": "Read More"
+                    },
+                    {
+                        "label": "Link Color",
+                        "type": "text",
+                        "name": "linkColor",
+                        "value": "#ffffff"
+                    },
+                    {
+                        "label": "Link Background Color",
+                        "type": "text",
+                        "name": "linkBgColor",
+                        "value": "#f26c4f"
+                    },
+                    {
+                        "label": "Link Color Hover",
+                        "type": "text",
+                        "name": "linkColorHover",
+                        "value": "#333333"
+                    },
+                    {
+                        "label": "Link Background Color Hover",
+                        "type": "text",
+                        "name": "linkBgColorHover",
+                        "value": "#eeeeee"
+                    },
+                    {
+                        "label": "Column",
+                        "type": "select",
+                        "name": "column",
+                        "options": [
+                            {
+                                "value": "1",
+                                "label": "1/12"
+                            },
+                            {
+                                "value": "2",
+                                "label": "2/12"
+                            },
+                            {
+                                "value": "3",
+                                "label": "3/12"
+                            },
+                            {
+                                "value": "4",
+                                "label": "4/12"
+                            },
+                            {
+                                "value": "5",
+                                "label": "5/12"
+                            },
+                            {
+                                "value": "6",
+                                "label": "6/12"
+                            },
+                            {
+                                "value": "7",
+                                "label": "7/12"
+                            },
+                            {
+                                "value": "8",
+                                "label": "8/12"
+                            },
+                            {
+                                "value": "9",
+                                "label": "9/12"
+                            },
+                            {
+                                "value": "10",
+                                "label": "10/12"
+                            },
+                            {
+                                "value": "11",
+                                "label": "11/12"
+                            },
+                            {
+                                "value": "11",
+                                "label": "11/12"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "class": ""
+        },
+        "fields": [
+            {
+                "label": "Class Extend",
+                "type": "text",
+                "name": "class",
+                "value": ""
+            }
+        ]
+    },
+    "zt_social_icons": {
+        "name": "Social Icon",
+        "group": "Scaffolding",
+        "icon": "fa fa-bars",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_social_icon": {
+                "attributes": {
+                    "icon": "",
+                    "title": "",
+                    "link": "",
+                    "color": "",
+                    "bgColor": "",
+                    "bdColor": "",
+                    "hoverColor": "",
+                    "hoverBgColor": "",
+                    "hoverBdColor": ""
+                },
+                "fields": [
+                    {
+                        "label": "Icon (Select Icon Social)",
+                        "type": "faicons",
+                        "name": "icon",
+                        "value": ""
+                    },
+                    {
+                        "label": "Title",
+                        "type": "text",
+                        "name": "title",
+                        "value": ""
+                    },
+                    {
+                        "label": "Link",
+                        "type": "text",
+                        "name": "link",
+                        "value": "#"
+                    },
+                    {
+                        "label": "Color",
+                        "type": "text",
+                        "name": "color",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Background Color",
+                        "type": "text",
+                        "name": "bgColor",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Border Color",
+                        "type": "text",
+                        "name": "bdColor",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Hover Color",
+                        "type": "text",
+                        "name": "hoverColor",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Hover Background Color",
+                        "type": "text",
+                        "name": "hoverBgColor",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Hover Border Color",
+                        "type": "text",
+                        "name": "hoverBdColor",
+                        "value": "#000000"
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "boxed": "",
+            "radius": ""
+        },
+        "fields": [
+            {
+                "label": "Boxed Social Icons",
+                "type": "select",
+                "name": "boxed",
+                "options": [
+                    {
+                        "values": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "values": "no",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
+                "label": "Social Icon Box Radius",
+                "type": "select",
+                "name": "radius",
+                "value": "5"
+            }
+        ]
+    },
+    "zt_counter": {
+        "name": "Counter Box",
+        "group": "Scaffolding",
+        "icon": "fa fa-bars",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_counter_box": {
+                "attributes": {
+                    "icon": "",
+                    "iconColor": "",
+                    "from": "",
+                    "to": "",
+                    "unit": "",
+                    "unitPos": "",
+                    "updown": "",
+                    "speed": "",
+                    "countColor": "",
+                    "contentColor": "",
+                    "border": "",
+                    "bdColor": "",
+                    "column": ""
+                },
+                "fields": [
+                    {
+                        "label": "Icon",
+                        "type": "faicons",
+                        "name": "icon",
+                        "value": ""
+                    },
+                    {
+                        "label": "Icon Color",
+                        "type": "text",
+                        "name": "iconColor",
+                        "value": ""
+                    },
+                    {
+                        "label": "Counter Form",
+                        "type": "text",
+                        "name": "from",
+                        "value": "0"
+                    },
+                    {
+                        "label": "Counter To",
+                        "type": "text",
+                        "name": "to",
+                        "value": "1000"
+                    },
+                    {
+                        "label": "Counter Unit",
+                        "type": "text",
+                        "name": "unit",
+                        "value": "$"
+                    },
+                    {
+                        "label": "Unit Position",
+                        "type": "text",
+                        "name": "unitPos",
+                        "options": [
+                            {
+                                "value": "before",
+                                "label": "Before Value"
+                            },
+                            {
+                                "value": "after",
+                                "label": "After Value"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Count Up or Down",
+                        "type": "text",
+                        "name": "updown",
+                        "options": [
+                            {
+                                "value": "up",
+                                "label": "Up"
+                            },
+                            {
+                                "value": "down",
+                                "label": "Down"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Speed",
+                        "type": "text",
+                        "name": "speed",
+                        "value": "1000"
+                    },
+                    {
+                        "label": "Counter Color",
+                        "type": "text",
+                        "name": "countColor",
+                        "value": "#a0ce4e"
+                    },
+                    {
+                        "label": "Content Color",
+                        "type": "text",
+                        "name": "contentColor",
+                        "value": "#747474"
+                    },
+                    {
+                        "label": "Border",
+                        "type": "text",
+                        "name": "border",
+                        "options": [
+                            {
+                                "value": "yes",
+                                "label": "Yes"
+                            },
+                            {
+                                "value": "no",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Border Color",
+                        "type": "text",
+                        "name": "bdColor",
+                        "value": "#e0dede"
+                    },
+                    {
+                        "label": "Content",
+                        "type": "text",
+                        "name": "maincontent",
+                        "value": "Complete Project"
+                    },
+                    {
+                        "label": "Column",
+                        "type": "select",
+                        "name": "column",
+                        "options": [
+                            {
+                                "value": "1",
+                                "label": "1/12"
+                            },
+                            {
+                                "value": "2",
+                                "label": "2/12"
+                            },
+                            {
+                                "value": "3",
+                                "label": "3/12"
+                            },
+                            {
+                                "value": "4",
+                                "label": "4/12"
+                            },
+                            {
+                                "value": "5",
+                                "label": "5/12"
+                            },
+                            {
+                                "value": "6",
+                                "label": "6/12"
+                            },
+                            {
+                                "value": "7",
+                                "label": "7/12"
+                            },
+                            {
+                                "value": "8",
+                                "label": "8/12"
+                            },
+                            {
+                                "value": "9",
+                                "label": "9/12"
+                            },
+                            {
+                                "value": "10",
+                                "label": "10/12"
+                            },
+                            {
+                                "value": "11",
+                                "label": "11/12"
+                            },
+                            {
+                                "value": "11",
+                                "label": "11/12"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "class": ""
+        },
+        "fields": [
+            {
+                "label": "Class Extend",
+                "type": "select",
+                "name": "class",
+                "value": ""
             }
         ]
     }

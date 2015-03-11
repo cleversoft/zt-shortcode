@@ -534,11 +534,11 @@ if (!class_exists('ZtShortcodesParser'))
                 foreach ($match as $m)
                 {
                     if (!empty($m[1]))
-                        $atts[strtolower($m[1])] = stripcslashes($m[2]);
+                        $atts[$m[1]] = stripcslashes($m[2]);
                     elseif (!empty($m[3]))
-                        $atts[strtolower($m[3])] = stripcslashes($m[4]);
+                        $atts[$m[3]] = stripcslashes($m[4]);
                     elseif (!empty($m[5]))
-                        $atts[strtolower($m[5])] = stripcslashes($m[6]);
+                        $atts[$m[5]] = stripcslashes($m[6]);
                     elseif (isset($m[7]) and strlen($m[7]))
                         $atts[] = stripcslashes($m[7]);
                     elseif (isset($m[8]))
