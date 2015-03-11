@@ -19,7 +19,7 @@ $root = rtrim(JUri::root(), '/');
 $path = ZtShortcodesPath::getInstance();
 $plugin = JPluginHelper::getPlugin('editors-xtd', 'ztshortcodes');
 $params = new JRegistry($plugin->params);
-$useEditor = $params->get('use_editor', true);
+$useEditor = $params->get('use_editor', false);
 ?>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->

@@ -9,6 +9,7 @@
     /* Short code main class */
     var _shortcode = {
         _elements: {
+            shortcodeWrapper: "#zt-sc-generator",
             /* Control button */
             comButtons: "#zt-shortcode-controls",
             buttonInsert: "#zt-sc-insert",
@@ -19,6 +20,8 @@
             shortcodeBbcode: "#zt-sc-bbcode",
             shortcodeRender: "#zt-sc-render"
         },
+        /* Activate form */
+        activateForm: null,
         _init: function(){
             var _self = this;
             /* Insert button */
@@ -41,16 +44,48 @@
                     }
                 }
             });
+            _self.showDefaultForm();
+        },
+        /**
+         * Shortcode event listener bind
+         * @returns {undefined}
+         */
+        _hook: function(){
+
+        },
+        /**
+         * Show default form
+         * @returns {undefined}
+         */
+        showDefaultForm: function(){
+            var _self = this;
+            var formContainer = $(_self._elements.shortcodeWrapper).find('div[class^="form "]');
+            formContainer.hide();
+            _self.activateForm = formContainer.first();
+            _self.activateForm.show();
+        },
+        /**
+         * Show a form
+         * @param {type} thisPtr
+         * @returns {undefined}
+         */
+        showForm: function(thisPtr){
+            var _self = this;
+            if(_self.activateForm !== null)
+                _self.activateForm.hide();
+            _self.activateForm = $(_self._elements.shortcodeWrapper).find('div' + $(thisPtr).attr('href'));
+            _self.activateForm.show('slow');
+            return false;
         }
     };
     /* Check for Zo2 javascript framework */
-    if (typeof (w.zo2) === 'undefined') {
-        w.zo2 = {};
+    if (typeof (w.zt) === 'undefined') {
+        w.zt = {};
     }
     /* Append short code to Zo2 */
-    w.zo2.shortcode = _shortcode;
+    w.zt.shortcode = _shortcode;
     /* Init shortcode */
     $(w.document).ready(function () {
-        w.zo2.shortcode._init();
+        w.zt.shortcode._init();
     });
 })(window, jQuery);
