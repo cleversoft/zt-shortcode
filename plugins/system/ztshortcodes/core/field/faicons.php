@@ -22,7 +22,7 @@ if (!class_exists('ZtShortcodesFieldFaicons'))
     /**
      * 
      */
-    class ZtShortcodesFieldFaicons extends CrexShortcodesField
+    class ZtShortcodesFieldFaicons extends ZtShortcodesField
     {
 
         /**

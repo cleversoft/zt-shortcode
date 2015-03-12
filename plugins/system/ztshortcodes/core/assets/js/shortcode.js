@@ -26,7 +26,7 @@
         },
         /* Activate form */
         activateForm: null,
-        _init: function(){
+        _init: function () {
             var _self = this;
             /* Insert button */
             $(_self._elements.comButtons).on('click', _self._elements.buttonInsert, function () {
@@ -55,89 +55,111 @@
          * Shortcode event listener bind
          * @returns {undefined}
          */
-        _hook: function(){
+        _hook: function () {
             var _self = this;
             var fields = _self.activateForm.find('[data-event]');
-            fields.each(function(){
+            fields.each(function () {
                 var event = $(this).data('event');
-                if( event !== ''){
+                if (event !== '') {
                     $(this).unbind(event);
-                    $(this).on(event, function(){
+                    $(this).on(event, function () {
                         _self._update();
                     });
-                }                   
+                }
             });
         },
         /**
          * Update shortcode
          * @returns {undefined}
          */
-        _update: function(){
+        _update: function () {
             var _self = this;
             var childrenForm = _self.activateForm.find(_self._elements.shortcodeFormChild);
             var parentForm = _self.activateForm.find(_self._elements.shortcodeFormParent);
             var childShortcode = '';
             var parentShortcode = '';
             /* Generate child shortcode */
-            childrenForm.each(function(){
-               var content = '';
-               childShortcode += '[' + $(this).data('tag');
-               $(this).find('[data-event]').each(function(){
-                   if($(this).data('property') !== ''){
-                       if($(this).val() !== ''){
-                           childShortcode += ' ' + $(this).data('property') + '="' + $(this).val() + '"';
-                       }
-                   }else{
-                       content = $(this).val();
-                   }
-               });
-               childShortcode += ']' + content + '[/' + $(this).data('tag') + ']';
+            childrenForm.each(function () {
+                var content = '';
+                var tag = $(this).data('tag');
+                childShortcode += '[' + tag;
+                $(this).find('[data-event]').each(function () {
+                    var property = $(this).data('property');
+                    var value = $(this).val();
+                    if (property === '' || property === 'maincontent') {
+                        content = value;
+                    }
+                    else {
+                        if (value !== '') {
+                            childShortcode += ' ' + property + '="' + value + '"';
+                        }
+                    }
+                });
+                childShortcode += ']' + content + '[/' + tag + ']';
             });
             /* Generate parent shortcode */
-            parentForm.each(function(){
-               parentShortcode += '[' + $(this).data('tag');
-               $(this).find('[data-event]').each(function(){
-                   if($(this).data('property') !== ''){
-                      parentShortcode += ' ' + $(this).data('property') + '="' + $(this).val() + '"';
-                   }
-               });
-               parentShortcode += ']' + childShortcode + '[/' + $(this).data('tag') + ']';
+            parentForm.each(function () {
+                var tag = $(this).data('tag');
+                var content = '';
+                parentShortcode += '[' + tag;
+                $(this).find('[data-event]').each(function () {
+                    var property = $(this).data('property');
+                    var value = $(this).val();
+                    if (property === '' || property === 'maincontent') {
+                        content = value;
+                    }
+                    else {
+                        if (value !== '') {
+                            parentShortcode += ' ' + property + '="' + value + '"';
+                        }
+                    }
+                });
+                if(childrenForm.length <= 0){
+                    parentShortcode += ']' + content + '[/' + tag + ']';
+                }else{
+                    parentShortcode += ']' + childShortcode + '[/' + tag + ']';
+                }
+                
             });
             /* Update shortcode preview */
             $(_self._elements.shortcodeBbcode).val(parentShortcode);
-        },        
+        },
         /**
          * Clone child form
          * @returns {undefined}
          */
-        cloneChildForm: function(){
+        cloneChildForm: function () {
             var _self = this;
             var children = _self.activateForm.find(_self._elements.shortcodeFormChild);
             children.first().clone().appendTo(_self.activateForm.find(_self._elements.shortcodeZtSub));
             _self._hook();
+            _self._update();
         },
         /**
          * Show default form
          * @returns {undefined}
          */
-        showDefaultForm: function(){
+        showDefaultForm: function () {
             var _self = this;
             var formContainer = $(_self._elements.shortcodeWrapper).find('div[class^="form "]');
             formContainer.hide();
             _self.activateForm = formContainer.first();
             _self.activateForm.show();
+            _self._update();
         },
         /**
          * Show a form
          * @param {type} thisPtr
          * @returns {undefined}
          */
-        showForm: function(thisPtr){
+        showForm: function (thisPtr) {
             var _self = this;
-            if(_self.activateForm !== null)
+            if (_self.activateForm !== null)
                 _self.activateForm.hide();
             _self.activateForm = $(_self._elements.shortcodeWrapper).find('div' + $(thisPtr).attr('href'));
             _self.activateForm.show('slow');
+            _self._hook();
+            _self._update();
             return false;
         }
     };
