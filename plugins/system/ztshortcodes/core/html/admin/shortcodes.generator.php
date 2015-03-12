@@ -61,7 +61,7 @@ defined('_JEXEC') or die('Restricted access');
                                 <button 
                                     type="button" 
                                     class="btn btn-default"
-                                    onClick="crex.shortcodes.cloneChildForm('#<?php echo $shortcodeAlias; ?>')"
+                                    onClick="zt.shortcode.cloneChildForm('#<?php echo $shortcodeAlias; ?>')"
                                     >Add item</button>
                                 <?php endif; ?>
                         </div>

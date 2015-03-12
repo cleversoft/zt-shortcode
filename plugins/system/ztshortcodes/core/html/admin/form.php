@@ -19,7 +19,6 @@ $id = ZtShortcodesHelperCommon::getAlias($shortcode);
     class="<?php echo $class; ?>" 
     id="<?php echo $id; ?>"
     data-tag="<?php echo $shortcode; ?>"
-    data-options="<?php echo htmlentities(json_encode($data)); ?>"
     >
     <!-- Render parent fields -->                                                
     <?php

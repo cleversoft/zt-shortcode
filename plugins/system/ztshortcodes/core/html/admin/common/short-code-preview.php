@@ -15,7 +15,7 @@
 <div id="zt-shortcode-preview">
     <div class="form-group clearfix">
         <label for="zt-sc-value">Shortcode Content</label>
-        <textarea placeholder="Shortcode Content" rows="3" class="form-control"
+        <textarea placeholder="Shortcode Content" rows="3" cols="80"
                   id="zt-sc-bbcode"></textarea>
     </div>
     <div class="form-group clearfix" id="zt-sc-preview-content" style="display: none;">

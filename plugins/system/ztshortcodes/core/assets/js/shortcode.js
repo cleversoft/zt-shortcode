@@ -10,6 +10,10 @@
     var _shortcode = {
         _elements: {
             shortcodeWrapper: "#zt-sc-generator",
+            shortcodeZtSub: "div.zt-sub",
+            shortcodeZtMain: "div.zt-main",
+            shortcodeFormChild: "form.child",
+            shortcodeFormParent: "form.parent",
             /* Control button */
             comButtons: "#zt-shortcode-controls",
             buttonInsert: "#zt-sc-insert",
@@ -45,13 +49,72 @@
                 }
             });
             _self.showDefaultForm();
+            _self._hook();
         },
         /**
          * Shortcode event listener bind
          * @returns {undefined}
          */
         _hook: function(){
-
+            var _self = this;
+            var fields = _self.activateForm.find('[data-event]');
+            fields.each(function(){
+                var event = $(this).data('event');
+                if( event !== ''){
+                    $(this).unbind(event);
+                    $(this).on(event, function(){
+                        _self._update();
+                    });
+                }                   
+            });
+        },
+        /**
+         * Update shortcode
+         * @returns {undefined}
+         */
+        _update: function(){
+            var _self = this;
+            var childrenForm = _self.activateForm.find(_self._elements.shortcodeFormChild);
+            var parentForm = _self.activateForm.find(_self._elements.shortcodeFormParent);
+            var childShortcode = '';
+            var parentShortcode = '';
+            /* Generate child shortcode */
+            childrenForm.each(function(){
+               var content = '';
+               childShortcode += '[' + $(this).data('tag');
+               $(this).find('[data-event]').each(function(){
+                   if($(this).data('property') !== ''){
+                       if($(this).val() !== ''){
+                           childShortcode += ' ' + $(this).data('property') + '="' + $(this).val() + '"';
+                       }
+                   }else{
+                       content = $(this).val();
+                   }
+               });
+               childShortcode += ']' + content + '[/' + $(this).data('tag') + ']';
+            });
+            /* Generate parent shortcode */
+            parentForm.each(function(){
+               parentShortcode += '[' + $(this).data('tag');
+               $(this).find('[data-event]').each(function(){
+                   if($(this).data('property') !== ''){
+                      parentShortcode += ' ' + $(this).data('property') + '="' + $(this).val() + '"';
+                   }
+               });
+               parentShortcode += ']' + childShortcode + '[/' + $(this).data('tag') + ']';
+            });
+            /* Update shortcode preview */
+            $(_self._elements.shortcodeBbcode).val(parentShortcode);
+        },        
+        /**
+         * Clone child form
+         * @returns {undefined}
+         */
+        cloneChildForm: function(){
+            var _self = this;
+            var children = _self.activateForm.find(_self._elements.shortcodeFormChild);
+            children.first().clone().appendTo(_self.activateForm.find(_self._elements.shortcodeZtSub));
+            _self._hook();
         },
         /**
          * Show default form
