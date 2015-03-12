@@ -51,7 +51,7 @@
     "zt_badges": {
         "name": "Badge",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-bullhorn",
         "attributes": {
             "type": "link",
             "text": "",
@@ -125,10 +125,72 @@
             }
         ]
     },
+    "zt_tabs": {
+        "name": "Tabs",
+        "group": "Scaffolding",
+        "icon": "fa fa-table",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_tab": {
+                "attributes": {
+                    "title": "",
+                    "active": ""
+                },
+                "fields": [
+                    {
+                        "label": "Title",
+                        "type": "textarea",
+                        "name": "title",
+                        "value": "Title Tab"
+                    },
+                    {
+                        "label": "Content Tab",
+                        "type": "textarea",
+                        "name": "maincontent",
+                        "value": "This is tab content"
+                    },
+                    {
+                        "label": " Active",
+                        "type": "radio",
+                        "name": "active",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "Type": ""
+        },
+        "fields": [
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "horizontal",
+                        "label": "Horizontal"
+                    },
+                    {
+                        "value": "vertical-left",
+                        "label": "Vertical Left"
+                    },
+                    {
+                        "value": "vertical-right",
+                        "label": "Vertical Right"
+                    },
+                    {
+                        "value": "bottom-tabs",
+                        "label": "Horizontal Bottom"
+                    }
+                ]
+            }
+        ]
+    },
     "zt_progress_bar": {
         "name": "Progress Bar",
         "group": "Boostrap",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-wifi",
         "attributes": {
             "trackColor": "#edecec",
             "barColor": "#a0ce4e",
@@ -228,7 +290,7 @@
     "zt_button": {
         "name": "Button",
         "group": "Boostrap",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-thumbs-o-up",
         "attributes": {
             "type": "stroke-to-fill",
             "size": "small",
@@ -374,7 +436,7 @@
     "zt_message_box": {
         "name": "Message Box",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-info-circle",
         "attributes": {
             "type": "success",
             "icon": "fa fa-times-circle",
@@ -426,7 +488,7 @@
     "zt_blockquotes": {
         "name": "Blockquotes",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-quote-left",
         "attributes": {
             "type": "big",
             "author": "Author",
@@ -484,10 +546,162 @@
             }
         ]
     },
+    "zt_pricing": {
+        "name": "Pricing Table",
+        "group": "Scaffolding",
+        "icon": "fa fa-table",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_pricing_item": {
+                "attributes": {
+                    "title": "",
+                    "link": "",
+                    "button-text": "",
+                    "item-hightlight": "",
+                    "price": ""
+                },
+                "fields": [
+                    {
+                        "label": "Title",
+                        "type": "text",
+                        "name": "title",
+                        "value": "Title Tab"
+                    },
+                    {
+                        "label": "Item Hightlight",
+                        "type": "radio",
+                        "name": "maincontent",
+                        "value": "This is tab content"
+                    },
+                    {
+                        "label": " Active",
+                        "type": "radio",
+                        "name": "item-hightlight",
+                        "value": ""
+                    },
+                    {
+                        "label": "Content",
+                        "type": "textarea",
+                        "name": "maincontent",
+                        "value": "Content Pricing"
+                    },
+                    {
+                        "label": "Price",
+                        "type": "text",
+                        "name": "price",
+                        "value": "$|90|per year"
+                    },
+                    {
+                        "label": "Link",
+                        "type": "text",
+                        "name": "link",
+                        "value": "#"
+                    },
+                    {
+                        "label": "Button Text",
+                        "type": "text",
+                        "name": "button-text",
+                        "value": "Button Text"
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "Type": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/pricing.css"
+            ],
+            "js": [
+                "Shortcodes://assets/js/pricing.js"
+            ]
+        },
+        "fields": [
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "pricing-type",
+                "options": [
+                    {
+                        "value": "default",
+                        "label": "Default"
+                    },
+                    {
+                        "value": "attached",
+                        "label": "Attached"
+                    }
+                ]
+            }
+        ]
+    },
+    "zt_accordions": {
+        "name": "Accordion",
+        "group": "Scaffolding",
+        "icon": "fa fa-list",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_accordion": {
+                "attributes": {
+                    "title": "",
+                    "active": ""
+                },
+                "fields": [
+                    {
+                        "label": "Accordion Title",
+                        "type": "text",
+                        "name": "title",
+                        "value": "Accordion Title"
+                    },
+                    {
+                        "label": "Accordion Content",
+                        "type": "textarea",
+                        "name": "maincontent",
+                        "value": "Accordion Content"
+                    },
+                    {
+                        "label": "Active",
+                        "type": "radio",
+                        "name": "active",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "type": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/css/accordion.css"
+            ],
+            "js": [
+                "Shortcodes://assets/js/accordion.js"
+            ]
+        },
+        "fields": [
+            {
+                "label": "Type",
+                "type": "select",
+                "name": "type",
+                "options": [
+                    {
+                        "value": "accordion",
+                        "label": "Accordion"
+                    },
+                    {
+                        "value": "toggle",
+                        "label": "Toggle"
+                    }
+                ]
+            }
+        ]
+    },
     "zt_dropcaps": {
         "name": "Dropcaps",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-bullseye",
         "attributes": {
             "type": "type-1",
             "bgColor": "#000",
@@ -545,7 +759,7 @@
     "zt_i": {
         "name": "Font Icon",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-align-justify",
         "attributes": {
             "classIcon": "fa fa-android",
             "iconCircle": "",
@@ -646,7 +860,7 @@
     "zt_divider": {
         "name": "Divider",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-area-chart",
         "attributes": {
             "type": "thin",
             "classIcon": "",
@@ -707,10 +921,93 @@
             }
         ]
     },
+    "zt_gallery": {
+        "name": "Gallery",
+        "group": "Typography",
+        "icon": "fa fa-picture-o",
+        "attributes": {
+            "dir": "",
+            "width": "",
+            "height": "",
+            "thumb-width": "",
+            "thumb-height": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/colorbox/css/colorbox.css",
+                "Shortcodes://assets/css/gallery.css"
+            ],
+            "js": [
+                "Shortcodes://assets/colorbox/js/jquery.colorbox.js"
+            ]
+        },
+        "fields": [
+            {
+                "label": "Gallery Dir",
+                "type": "text",
+                "name": "dir",
+                "value": ""
+            },
+            {
+                "label": "Gallery width",
+                "type": "text",
+                "name": "width",
+                "value": "700"
+            },
+            {
+                "label": "Gallery height",
+                "type": "text",
+                "name": "height",
+                "value": "700"
+            },
+            {
+                "label": "Gallery Thumb width",
+                "type": "text",
+                "name": "thumb-width",
+                "value": "100"
+            },
+            {
+                "label": "Gallery Thumb height",
+                "type": "text",
+                "name": "thumb-height",
+                "value": "100"
+            }
+        ]
+    },
+    "zt_video_play": {
+        "name": "Video Play",
+        "group": "Typography",
+        "icon": "fa fa-youtube-play",
+        "attributes": {
+            "src": "",
+            "width": "",
+            "height": ""
+        },
+        "fields": [
+            {
+                "label": "Video URL",
+                "type": "text",
+                "name": "src",
+                "value": ""
+            },
+            {
+                "label": "Video Width",
+                "type": "text",
+                "name": "width",
+                "value": "500"
+            },
+            {
+                "label": "Video Height",
+                "type": "text",
+                "name": "height",
+                "value": "300"
+            }
+        ]
+    },
     "zt_modal": {
         "name": "Modal",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-credit-card",
         "attributes": {
             "id": "my-modal",
             "title": "Title Modal",
@@ -803,7 +1100,7 @@
     "zt_counter_circle": {
         "name": "Counter Circle",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-certificate",
         "attributes": {
             "easing": "my-modal",
             "barColor": "#000000",
@@ -958,10 +1255,227 @@
             }
         ]
     },
+    "zt_testimonial": {
+        "name": "Pricing Table",
+        "group": "Scaffolding",
+        "icon": "fa fa-shirtsinbulk",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_testimonial_item": {
+                "attributes": {
+                    "bgColor": "",
+                    "textColor": "",
+                    "name": "",
+                    "company": "",
+                    "position": "",
+                    "customAvatar": "",
+                    "borderRadius": "",
+                    "link": "",
+                    "target": ""
+                },
+                "depends": {
+                    "css": [
+                        "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                        "Shortcodes://assets/bxslider/jquery.bxslider.css",
+                        "Shortcodes://assets/css/testimonial.css"
+                    ],
+                    "js": [
+                        "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
+                        "Shortcodes://assets/js/testimonial.js"
+                    ]
+                },
+                "fields": [
+                    {
+                        "label": "Background Color",
+                        "type": "text",
+                        "name": "bgColor",
+                        "value": "#f6f6f6"
+                    },
+                    {
+                        "label": "Text Color",
+                        "type": "text",
+                        "name": "textColor",
+                        "value": "#747474"
+                    },
+                    {
+                        "label": "Name",
+                        "type": "text",
+                        "name": "name",
+                        "value": "Name author"
+                    },
+                    {
+                        "label": "Company",
+                        "type": "text",
+                        "name": "company",
+                        "value": "Company"
+                    },
+                    {
+                        "label": "Position",
+                        "type": "text",
+                        "name": "position",
+                        "value": "Position"
+                    },
+                    {
+                        "label": "Avatar",
+                        "type": "text",
+                        "name": "customAvatar",
+                        "value": ""
+                    },
+                    {
+                        "label": "Border Radius",
+                        "type": "text",
+                        "name": "borderRadius",
+                        "value": "4"
+                    },
+                    {
+                        "label": "Link Website",
+                        "type": "text",
+                        "name": "link",
+                        "value": "#link"
+                    },
+                    {
+                        "label": "Target",
+                        "type": "select",
+                        "name": "link",
+                        "options": [
+                            {
+                                "value": "_blank",
+                                "label": "_blank"
+                            },
+                            {
+                                "value": "_parent",
+                                "label": "_parent"
+                            },
+                            {
+                                "value": "_self",
+                                "label": "_self"
+                            },
+                            {
+                                "value": "_top",
+                                "label": "_top"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Content",
+                        "type": "text",
+                        "name": "link",
+                        "value": "Testimonial Content"
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "slider": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/bxslider/jquery.bxslider.css",
+                "Shortcodes://assets/css/testimonial.css"
+            ],
+            "js": [
+                "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
+                "Shortcodes://assets/js/testimonial.js"
+            ]
+        },
+        "fields": [
+            {
+                "label": "Allow Slide ",
+                "type": "radio",
+                "name": "slider",
+                "value": ""
+            }
+        ]
+    },
+    "zt_carousel": {
+        "name": "Carousel",
+        "group": "Scaffolding",
+        "icon": "fa fa-sliders",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_carousel_item": {
+                "attributes": {
+                    "image": "",
+                    "title": "",
+                    "link": ""
+                },
+                "fields": [
+                    {
+                        "label": "Avatar",
+                        "type": "text",
+                        "name": "image",
+                        "value": ""
+                    },
+                    {
+                        "label": "Title",
+                        "type": "text",
+                        "name": "title",
+                        "value": ""
+                    },
+                    {
+                        "label": "Link ",
+                        "type": "text",
+                        "name": "link",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "showItem": "",
+            "duration": "",
+            "showControl": "",
+            "showPager": "",
+            "enableReponsive": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/css/carousel.css"
+            ],
+            "js": [
+                "Shortcodes://assets/carouFredSel/jquery.carouFredSel-6.2.1.js",
+                "Shortcodes://assets/js/carousel.js"
+            ]
+        },
+        "fields": [
+            {
+                "label": "Item Carousel",
+                "type": "text",
+                "name": "showItem",
+                "value": "6"
+            },
+            {
+                "label": "Duration Carousel",
+                "type": "text",
+                "name": "duration",
+                "value": "1000"
+            },
+            {
+                "label": "Allow Control Carousel",
+                "type": "radio",
+                "name": "showControl",
+                "value": ""
+            },
+            {
+                "label": "Allow Pager Carouse",
+                "type": "radio",
+                "name": "showPager",
+                "value": ""
+            },
+            {
+                "label": "Allow Responsive Carousel",
+                "type": "radio",
+                "name": "enableReponsive",
+                "value": ""
+            }
+        ]
+    },
     "zt_google_map": {
         "name": "Google Map",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-map-marker",
         "attributes": {
             "address": "",
             "height": "",
@@ -1137,7 +1651,7 @@
     "zt_space": {
         "name": "Space",
         "group": "Typography",
-        "icon": "fa fa-adn",
+        "icon": "fa fa-align-justify",
         "attributes": {
             "height": "",
             "id": "",
@@ -1240,441 +1754,10 @@
             }
         ]
     },
-    "zt_accordions": {
-        "name": "Accordion",
-        "group": "Scaffolding",
-        "icon": "fa fa-bars",
-        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
-        "subTag": {
-            "zt_accordion": {
-                "attributes": {
-                    "title": "",
-                    "active": ""
-                },
-                "fields": [
-                    {
-                        "label": "Accordion Title",
-                        "type": "text",
-                        "name": "title",
-                        "value": "Accordion Title"
-                    },
-                    {
-                        "label": "Accordion Content",
-                        "type": "textarea",
-                        "name": "maincontent",
-                        "value": "Accordion Content"
-                    },
-                    {
-                        "label": "Active",
-                        "type": "radio",
-                        "name": "active",
-                        "value": ""
-                    }
-                ]
-            }
-        },
-        "attributes": {
-            "type": ""
-        },
-        "depends": {
-            "css": [
-                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-                "Shortcodes://assets/css/accordion.css"
-            ],
-            "js": [
-                "Shortcodes://assets/js/accordion.js"
-            ]
-        },
-        "fields": [
-            {
-                "label": "Type",
-                "type": "select",
-                "name": "type",
-                "options": [
-                    {
-                        "value": "accordion",
-                        "label": "Accordion"
-                    },
-                    {
-                        "value": "toggle",
-                        "label": "Toggle"
-                    }
-                ]
-            }
-        ]
-    },
-    "zt_tabs": {
-        "name": "Tabs",
-        "group": "Scaffolding",
-        "icon": "fa fa-bars",
-        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
-        "subTag": {
-            "zt_tab": {
-                "attributes": {
-                    "title": "",
-                    "active": ""
-                },
-                "fields": [
-                    {
-                        "label": "Title",
-                        "type": "textarea",
-                        "name": "title",
-                        "value": "Title Tab"
-                    },
-                    {
-                        "label": "Content Tab",
-                        "type": "textarea",
-                        "name": "maincontent",
-                        "value": "This is tab content"
-                    },
-                    {
-                        "label": " Active",
-                        "type": "radio",
-                        "name": "active",
-                        "value": ""
-                    }
-                ]
-            }
-        },
-        "attributes": {
-            "Type": ""
-        },
-        "fields": [
-            {
-                "label": "Type",
-                "type": "select",
-                "name": "type",
-                "options": [
-                    {
-                        "value": "horizontal",
-                        "label": "Horizontal"
-                    },
-                    {
-                        "value": "vertical-left",
-                        "label": "Vertical Left"
-                    },
-                    {
-                        "value": "vertical-right",
-                        "label": "Vertical Right"
-                    },
-                    {
-                        "value": "bottom-tabs",
-                        "label": "Horizontal Bottom"
-                    }
-                ]
-            }
-        ]
-    },
-    "zt_pricing": {
-        "name": "Pricing Table",
-        "group": "Scaffolding",
-        "icon": "fa fa-bars",
-        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
-        "subTag": {
-            "zt_pricing_item": {
-                "attributes": {
-                    "title": "",
-                    "link": "",
-                    "button-text": "",
-                    "item-hightlight": "",
-                    "price": ""
-                },
-                "fields": [
-                    {
-                        "label": "Title",
-                        "type": "text",
-                        "name": "title",
-                        "value": "Title Tab"
-                    },
-                    {
-                        "label": "Item Hightlight",
-                        "type": "radio",
-                        "name": "maincontent",
-                        "value": "This is tab content"
-                    },
-                    {
-                        "label": " Active",
-                        "type": "radio",
-                        "name": "item-hightlight",
-                        "value": ""
-                    },
-                    {
-                        "label": "Content",
-                        "type": "textarea",
-                        "name": "maincontent",
-                        "value": "Content Pricing"
-                    },
-                    {
-                        "label": "Price",
-                        "type": "text",
-                        "name": "price",
-                        "value": "$|90|per year"
-                    },
-                    {
-                        "label": "Link",
-                        "type": "text",
-                        "name": "link",
-                        "value": "#"
-                    },
-                    {
-                        "label": "Button Text",
-                        "type": "text",
-                        "name": "button-text",
-                        "value": "Button Text"
-                    }
-                ]
-            }
-        },
-        "attributes": {
-            "Type": ""
-        },
-        "depends": {
-            "css": [
-                "Shortcodes://assets/css/pricing.css"
-            ],
-            "js": [
-                "Shortcodes://assets/js/pricing.js"
-            ]
-        },
-        "fields": [
-            {
-                "label": "Type",
-                "type": "select",
-                "name": "pricing-type",
-                "options": [
-                    {
-                        "value": "default",
-                        "label": "Default"
-                    },
-                    {
-                        "value": "attached",
-                        "label": "Attached"
-                    }
-                ]
-            }
-        ]
-    },
-    "zt_testimonial": {
-        "name": "Pricing Table",
-        "group": "Scaffolding",
-        "icon": "fa fa-bars",
-        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
-        "subTag": {
-            "zt_testimonial_item": {
-                "attributes": {
-                    "bgColor": "",
-                    "textColor": "",
-                    "name": "",
-                    "company": "",
-                    "position": "",
-                    "customAvatar": "",
-                    "borderRadius": "",
-                    "link": "",
-                    "target": ""
-                },
-                "depends": {
-                    "css": [
-                        "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-                        "Shortcodes://assets/bxslider/jquery.bxslider.css",
-                        "Shortcodes://assets/css/testimonial.css"
-                    ],
-                    "js": [
-                        "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
-                        "Shortcodes://assets/js/testimonial.js"
-                    ]
-                },
-                "fields": [
-                    {
-                        "label": "Background Color",
-                        "type": "text",
-                        "name": "bgColor",
-                        "value": "#f6f6f6"
-                    },
-                    {
-                        "label": "Text Color",
-                        "type": "text",
-                        "name": "textColor",
-                        "value": "#747474"
-                    },
-                    {
-                        "label": "Name",
-                        "type": "text",
-                        "name": "name",
-                        "value": "Name author"
-                    },
-                    {
-                        "label": "Company",
-                        "type": "text",
-                        "name": "company",
-                        "value": "Company"
-                    },
-                    {
-                        "label": "Position",
-                        "type": "text",
-                        "name": "position",
-                        "value": "Position"
-                    },
-                    {
-                        "label": "Avatar",
-                        "type": "text",
-                        "name": "customAvatar",
-                        "value": ""
-                    },
-                    {
-                        "label": "Border Radius",
-                        "type": "text",
-                        "name": "borderRadius",
-                        "value": "4"
-                    },
-                    {
-                        "label": "Link Website",
-                        "type": "text",
-                        "name": "link",
-                        "value": "#link"
-                    },
-                    {
-                        "label": "Target",
-                        "type": "select",
-                        "name": "link",
-                        "options": [
-                            {
-                                "value": "_blank",
-                                "label": "_blank"
-                            },
-                            {
-                                "value": "_parent",
-                                "label": "_parent"
-                            },
-                            {
-                                "value": "_self",
-                                "label": "_self"
-                            },
-                            {
-                                "value": "_top",
-                                "label": "_top"
-                            }
-                        ]
-                    },
-                    {
-                        "label": "Content",
-                        "type": "text",
-                        "name": "link",
-                        "value": "Testimonial Content"
-                    }
-                ]
-            }
-        },
-        "attributes": {
-            "slider": ""
-        },
-        "depends": {
-            "css": [
-                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-                "Shortcodes://assets/bxslider/jquery.bxslider.css",
-                "Shortcodes://assets/css/testimonial.css"
-            ],
-            "js": [
-                "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
-                "Shortcodes://assets/js/testimonial.js"
-            ]
-        },
-        "fields": [
-            {
-                "label": "Allow Slide ",
-                "type": "radio",
-                "name": "slider",
-                "value": ""
-            }
-        ]
-    },
-    "zt_carousel": {
-        "name": "Carousel",
-        "group": "Scaffolding",
-        "icon": "fa fa-bars",
-        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
-        "subTag": {
-            "zt_carousel_item": {
-                "attributes": {
-                    "image": "",
-                    "title": "",
-                    "link": ""
-                },
-                "fields": [
-                    {
-                        "label": "Avatar",
-                        "type": "text",
-                        "name": "image",
-                        "value": ""
-                    },
-                    {
-                        "label": "Title",
-                        "type": "text",
-                        "name": "title",
-                        "value": ""
-                    },
-                    {
-                        "label": "Link ",
-                        "type": "text",
-                        "name": "link",
-                        "value": ""
-                    }
-                ]
-            }
-        },
-        "attributes": {
-            "showItem": "",
-            "duration": "",
-            "showControl": "",
-            "showPager": "",
-            "enableReponsive": ""
-        },
-        "depends": {
-            "css": [
-                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-                "Shortcodes://assets/css/carousel.css"
-            ],
-            "js": [
-                "Shortcodes://assets/carouFredSel/jquery.carouFredSel-6.2.1.js",
-                "Shortcodes://assets/js/carousel.js"
-            ]
-        },
-        "fields": [
-            {
-                "label": "Item Carousel",
-                "type": "text",
-                "name": "showItem",
-                "value": "6"
-            },
-            {
-                "label": "Duration Carousel",
-                "type": "text",
-                "name": "duration",
-                "value": "1000"
-            },
-            {
-                "label": "Allow Control Carousel",
-                "type": "radio",
-                "name": "showControl",
-                "value": ""
-            },
-            {
-                "label": "Allow Pager Carouse",
-                "type": "radio",
-                "name": "showPager",
-                "value": ""
-            },
-            {
-                "label": "Allow Responsive Carousel",
-                "type": "radio",
-                "name": "enableReponsive",
-                "value": ""
-            }
-        ]
-    },
     "zt_persons": {
         "name": "Person",
         "group": "Scaffolding",
-        "icon": "fa fa-bars",
+        "icon": "fa fa-user",
         "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
         "subTag": {
             "zt_person": {
@@ -1896,10 +1979,122 @@
             }
         ]
     },
+    "zt_social_icons": {
+        "name": "Social Icon",
+        "group": "Scaffolding",
+        "icon": "fa fa-twitter",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_social_icon": {
+                "attributes": {
+                    "icon": "",
+                    "title": "",
+                    "link": "",
+                    "color": "",
+                    "bgColor": "",
+                    "bdColor": "",
+                    "hoverColor": "",
+                    "hoverBgColor": "",
+                    "hoverBdColor": ""
+                },
+                "fields": [
+                    {
+                        "label": "Icon (Select Icon Social)",
+                        "type": "faicons",
+                        "name": "icon",
+                        "value": ""
+                    },
+                    {
+                        "label": "Title",
+                        "type": "text",
+                        "name": "title",
+                        "value": ""
+                    },
+                    {
+                        "label": "Link",
+                        "type": "text",
+                        "name": "link",
+                        "value": "#"
+                    },
+                    {
+                        "label": "Color",
+                        "type": "text",
+                        "name": "color",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Background Color",
+                        "type": "text",
+                        "name": "bgColor",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Border Color",
+                        "type": "text",
+                        "name": "bdColor",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Hover Color",
+                        "type": "text",
+                        "name": "hoverColor",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Hover Background Color",
+                        "type": "text",
+                        "name": "hoverBgColor",
+                        "value": "#000000"
+                    },
+                    {
+                        "label": "Hover Border Color",
+                        "type": "text",
+                        "name": "hoverBdColor",
+                        "value": "#000000"
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "boxed": "",
+            "radius": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/css/social.css"
+            ],
+            "js": [
+            ]
+        },
+        "fields": [
+            {
+                "label": "Boxed Social Icons",
+                "type": "select",
+                "name": "boxed",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
+                "label": "Social Icon Box Radius",
+                "type": "text",
+                "name": "radius",
+                "value": "5"
+            }
+        ]
+    },
     "zt_box_content": {
         "name": "Box Content",
         "group": "Scaffolding",
-        "icon": "fa fa-bars",
+        "icon": "fa fa-th-large",
         "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
         "subTag": {
             "zt_box_content_item": {
@@ -2162,122 +2357,10 @@
             }
         ]
     },
-    "zt_social_icons": {
-        "name": "Social Icon",
-        "group": "Scaffolding",
-        "icon": "fa fa-bars",
-        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
-        "subTag": {
-            "zt_social_icon": {
-                "attributes": {
-                    "icon": "",
-                    "title": "",
-                    "link": "",
-                    "color": "",
-                    "bgColor": "",
-                    "bdColor": "",
-                    "hoverColor": "",
-                    "hoverBgColor": "",
-                    "hoverBdColor": ""
-                },
-                "fields": [
-                    {
-                        "label": "Icon (Select Icon Social)",
-                        "type": "faicons",
-                        "name": "icon",
-                        "value": ""
-                    },
-                    {
-                        "label": "Title",
-                        "type": "text",
-                        "name": "title",
-                        "value": ""
-                    },
-                    {
-                        "label": "Link",
-                        "type": "text",
-                        "name": "link",
-                        "value": "#"
-                    },
-                    {
-                        "label": "Color",
-                        "type": "text",
-                        "name": "color",
-                        "value": "#000000"
-                    },
-                    {
-                        "label": "Background Color",
-                        "type": "text",
-                        "name": "bgColor",
-                        "value": "#000000"
-                    },
-                    {
-                        "label": "Border Color",
-                        "type": "text",
-                        "name": "bdColor",
-                        "value": "#000000"
-                    },
-                    {
-                        "label": "Hover Color",
-                        "type": "text",
-                        "name": "hoverColor",
-                        "value": "#000000"
-                    },
-                    {
-                        "label": "Hover Background Color",
-                        "type": "text",
-                        "name": "hoverBgColor",
-                        "value": "#000000"
-                    },
-                    {
-                        "label": "Hover Border Color",
-                        "type": "text",
-                        "name": "hoverBdColor",
-                        "value": "#000000"
-                    }
-                ]
-            }
-        },
-        "attributes": {
-            "boxed": "",
-            "radius": ""
-        },
-        "depends": {
-            "css": [
-                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-                "Shortcodes://assets/css/social.css"
-            ],
-            "js": [
-            ]
-        },
-        "fields": [
-            {
-                "label": "Boxed Social Icons",
-                "type": "select",
-                "name": "boxed",
-                "options": [
-                    {
-                        "value": "yes",
-                        "label": "Yes"
-                    },
-                    {
-                        "value": "no",
-                        "label": "No"
-                    }
-                ]
-            },
-            {
-                "label": "Social Icon Box Radius",
-                "type": "text",
-                "name": "radius",
-                "value": "5"
-            }
-        ]
-    },
     "zt_counter": {
         "name": "Counter Box",
         "group": "Scaffolding",
-        "icon": "fa fa-bars",
+        "icon": "fa fa-asterisk",
         "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
         "subTag": {
             "zt_counter_box": {
