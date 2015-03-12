@@ -13,5 +13,6 @@
  */
 
 ?>
+<?php JHTML::_('behavior.modal'); ?>
 
 <span class="label label-<?php echo ($attributes->get('type')) ? $attributes->get('type') : 'default' ?>"><?php echo $content; ?></span>

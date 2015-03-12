@@ -1,0 +1,20 @@
+.zt-count-asset{
+    display: inline-block;
+    text-align: center;
+}
+.zt-count-inner{
+    padding: 30px 0;
+}
+.zt-count-asset:last-child{
+    margin-right: 0;
+}
+.zt-count-asset .counter-icon{
+    font-size: 60px;
+    margin-bottom: 20px;
+    display: block;
+}
+.zt-count-asset .count-number, .zt-count-asset .unit{
+    display: inline-block;
+    font-size: 40px;
+    line-height: normal;
+}

@@ -1,0 +1,66 @@
+.zt-person{
+    margin-bottom: 30px;
+}
+.zt-person-social ul{
+    list-style: none;
+}
+.zt-person-social ul li{
+    float: left;
+}
+.zt-person-social a{
+    background-color: #ccc;
+    color: #fff;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 4px;
+    text-align: center;
+    width: 25px;
+}
+.zt-person-social.social-rounded a{
+    border-radius: 4px;
+}
+.zt-person-social.social-circle a{
+    border-radius: 50%;
+}
+.zt-person-social a:hover{
+    background-color: #337ab7;
+}
+.zt-person-content{
+    clear: both;
+    padding-top: 20px;
+}
+.zt-person-image{
+    margin-bottom: 20px;
+}
+.zt-person-author > span{
+    display: block;
+}
+.bx-wrapper .bx-viewport{
+    box-shadow: none;
+    left: 0;
+    border: none;
+}
+.bx-wrapper .bx-controls-direction a{
+    text-indent: 0;
+    text-align: center;
+    background-color: #000;
+    border-radius: 50%;
+    line-height: 32px;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+.bx-wrapper:hover .bx-controls-direction a{
+    opacity: 1;
+}
+.bx-wrapper [class*="col-md"],
+.bx-wrapper [class*="col-sm"]{
+    padding-left: 0;
+    padding-right: 0;
+}
+.bx-wrapper .row{
+    margin-left: 0;
+    margin-top: 0;
+}
+
