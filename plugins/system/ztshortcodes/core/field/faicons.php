@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @name        Zt Shortcodes
  * @package     Plugin
@@ -35,7 +36,10 @@ if (!class_exists('ZtShortcodesFieldFaicons'))
             $html [] = '<div class="form-group">';
             $html [] = $this->_getLabel();
             $html [] = $this->_getLatestIcons();
-            $html [] = '<input class="fa-icon" name="icon" type="hidden" value=""/>';
+            $html [] = '<input class="fa-icon" type="hidden" value=""'
+                    . ' data-property="' . $this->get('name', 'icon') . '"'
+                    . ' data-event="' . $this->get('event', 'change') . '"'
+                    . '/>';
             if ($this->get('required'))
             {
                 $html[] = 'required';
