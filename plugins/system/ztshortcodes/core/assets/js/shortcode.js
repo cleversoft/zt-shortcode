@@ -73,15 +73,15 @@
          * Icon selector
          * @returns {undefined}
          */
-        _iconSelector: function(){
+        _iconSelector: function () {
             var $iconFields = $('div.list-awesome-font');
-            $iconFields.on('click', 'a', function(){
+            $iconFields.on('click', 'a', function () {
                 var $currentIconField = $(this).closest('div.list-awesome-font');
                 $currentIconField.find('a.selected').removeClass('selected');
                 $(this).addClass('selected');
                 var icon = $(this).find('i').attr('class');
                 var $hiddenField = $currentIconField.next();
-                if(icon !== ''){
+                if (icon !== '') {
                     $hiddenField.val(icon);
                     $hiddenField.trigger($hiddenField.data('event'));
                 }
@@ -106,6 +106,9 @@
                 $(this).find('[data-event]').each(function () {
                     var property = $(this).data('property');
                     var value = $(this).val();
+                    if ($(this).attr('type') === 'checkbox') {
+                        value = $(this).is(':checked') ? 'yes' : 'no';
+                    }
                     if (property === '' || property === 'maincontent') {
                         content = value;
                     }
@@ -125,6 +128,9 @@
                 $(this).find('[data-event]').each(function () {
                     var property = $(this).data('property');
                     var value = $(this).val();
+                    if ($(this).attr('type') === 'checkbox') {
+                        value = $(this).is(':checked') ? 'yes' : 'no';
+                    }
                     if (property === '' || property === 'maincontent') {
                         content = value;
                     }
@@ -134,12 +140,12 @@
                         }
                     }
                 });
-                if(childrenForm.length <= 0){
+                if (childrenForm.length <= 0) {
                     parentShortcode += ']' + content + '[/' + tag + ']';
-                }else{
+                } else {
                     parentShortcode += ']' + childShortcode + '[/' + tag + ']';
                 }
-                
+
             });
             /* Update shortcode preview */
             $(_self._elements.shortcodeBbcode).val(parentShortcode);

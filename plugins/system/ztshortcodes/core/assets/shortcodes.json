@@ -151,7 +151,7 @@
                     },
                     {
                         "label": " Active",
-                        "type": "radio",
+                        "type": "checkbox",
                         "name": "active",
                         "value": ""
                     }
@@ -569,13 +569,13 @@
                     },
                     {
                         "label": "Item Hightlight",
-                        "type": "radio",
+                        "type": "checkbox",
                         "name": "maincontent",
                         "value": "This is tab content"
                     },
                     {
                         "label": " Active",
-                        "type": "radio",
+                        "type": "checkbox",
                         "name": "item-hightlight",
                         "value": ""
                     },
@@ -661,7 +661,7 @@
                     },
                     {
                         "label": "Active",
-                        "type": "radio",
+                        "type": "checkbox",
                         "name": "active",
                         "value": ""
                     }
@@ -1382,7 +1382,7 @@
         "fields": [
             {
                 "label": "Allow Slide ",
-                "type": "radio",
+                "type": "checkbox",
                 "name": "slider",
                 "value": ""
             }
@@ -1454,19 +1454,19 @@
             },
             {
                 "label": "Allow Control Carousel",
-                "type": "radio",
+                "type": "checkbox",
                 "name": "showControl",
                 "value": ""
             },
             {
                 "label": "Allow Pager Carouse",
-                "type": "radio",
+                "type": "checkbox",
                 "name": "showPager",
                 "value": ""
             },
             {
                 "label": "Allow Responsive Carousel",
-                "type": "radio",
+                "type": "checkbox",
                 "name": "enableReponsive",
                 "value": ""
             }
@@ -1943,25 +1943,25 @@
         "fields": [
             {
                 "label": "Allow Slider",
-                "type": "radio",
+                "type": "checkbox",
                 "name": "slider",
                 "value": ""
             },
             {
                 "label": "Allow Pager",
-                "type": "radio",
+                "type": "checkbox",
                 "name": "pager",
                 "value": ""
             },
             {
                 "label": "Allow Controls",
-                "type": "radio",
+                "type": "checkbox",
                 "name": "controls",
                 "value": ""
             },
             {
                 "label": "Auto Slider",
-                "type": "radio",
+                "type": "checkbox",
                 "name": "auto",
                 "value": ""
             },
