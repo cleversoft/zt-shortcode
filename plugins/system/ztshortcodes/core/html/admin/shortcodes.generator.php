@@ -34,10 +34,10 @@ defined('_JEXEC') or die('Restricted access');
                             'shortcode' => $shortcode
                         ));
                         ?>
-
+                        <?php if (isset($data['subTag'])) : ?>
                         <!-- Sub tag -->
-                        <div class="child-container">
-                            <?php if (isset($data['subTag'])) : ?>
+                        <div class="container-child">
+
                                 <?php $subTag = $data['subTag']; ?>
                                 <?php foreach ($subTag as $subShortcode => $data) : ?>
                                     <?php $subShortcodeAlias = ZtShortcodesHelperCommon::getAlias($subShortcode); ?>
@@ -58,8 +58,8 @@ defined('_JEXEC') or die('Restricted access');
                                     class="btn btn-default"
                                     onClick="zt.shortcode.cloneChildForm('#<?php echo $shortcodeAlias; ?>')"
                                     >Add item</button>
-                            <?php endif; ?>
                         </div>
+                        <?php endif; ?>
                     </div>
         </div>
     <?php endforeach; ?>

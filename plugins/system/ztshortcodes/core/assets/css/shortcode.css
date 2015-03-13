@@ -124,12 +124,14 @@ ul.zt-sc-shortcodes > li > a .fa{
 #zt-sc-generator .form-group input[type="password"],
 #zt-sc-generator .form-group input[type="email"],
 #zt-sc-generator .form-group select,
-#zt-sc-generator .form-group textarea{
+#zt-sc-generator .form-group textarea,
+#zt-shortcode-preview textarea{
     height: 34px;
     padding: 6px 12px;
     width: 100%;
 }
-#zt-sc-generator .form-group textarea{
+#zt-sc-generator .form-group textarea,
+#zt-shortcode-preview textarea{
     height: 140px;
 }
 
@@ -145,6 +147,9 @@ ul.zt-sc-shortcodes > li > a .fa{
     background-color: #f8f6f6;
     border: 1px solid #d6d6d6;
     margin-bottom: 10px;
+}
+.zt-shortcode-wrap{
+    padding: 0 10px;
 }
 
 .item-zt_person{
