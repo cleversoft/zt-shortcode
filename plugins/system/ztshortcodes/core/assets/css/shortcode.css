@@ -13,11 +13,14 @@
 #zt-shortcode-plugin .item-shortcode{
     width: 20%;
 }
-#zt-shortcode-plugin .nav-tabs > li > a{
+ul.zt-sc-shortcodes > li{
     padding: 6px 0;
     border-bottom: 1px dotted #e5e5e5;
+    float: left;
+    width: 20%;
+}
+ul.zt-sc-shortcodes > li > a{
     color: #222222;
-    margin: 0;
 }
 #zt-shortcode-plugin .nav-tabs > li > a:hover,
 #zt-shortcode-plugin .nav-tabs > li > a:focus,
@@ -27,7 +30,7 @@
     border-color: transparent;
     border-bottom: 1px dotted #e5e5e5;
 }
-#zt-shortcode-plugin .nav-tabs > li > a i{
+ul.zt-sc-shortcodes > li > a .fa{
     margin-right: 7px;
 }
 .shortcode-element-title{
@@ -69,6 +72,7 @@
     height: 198px;
     overflow-x: scroll;
     padding: 0;
+    margin-bottom: 10px;
 }
 .list-awesome-font ul li, .group-shortcode-wrap ul li{
     float: left;
@@ -105,6 +109,28 @@
        border-right: 1px solid #ccc;
        line-height: 35px;
        padding: 0 10px;
+}
+
+#zt-sc-generator{
+    margin: 30px 0 0;
+}
+#zt-sc-generator label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    max-width: 100%;
+}
+#zt-sc-generator .form-group input[type="text"],
+#zt-sc-generator .form-group input[type="tel"],
+#zt-sc-generator .form-group input[type="password"],
+#zt-sc-generator .form-group input[type="email"],
+#zt-sc-generator .form-group select,
+#zt-sc-generator .form-group textarea{
+    height: 34px;
+    padding: 6px 12px;
+    width: 100%;
+}
+#zt-sc-generator .form-group textarea{
+    height: 140px;
 }
 
 /* Shortcode Item */

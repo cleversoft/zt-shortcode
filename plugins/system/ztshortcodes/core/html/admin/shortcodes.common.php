@@ -16,9 +16,7 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 <!-- Preview place -->
-<div class="row-fluid">
-    <div class="span12">                                       
-        <?php $this->load('Shortcodes://html/admin/common/control-buttons.php'); ?>
-        <?php $this->load('Shortcodes://html/admin/common/short-code-preview.php'); ?>
-    </div>
+<div class="zt-sc-common">
+    <?php $this->load('Shortcodes://html/admin/common/short-code-preview.php'); ?>
+    <?php $this->load('Shortcodes://html/admin/common/control-buttons.php'); ?>
 </div>
