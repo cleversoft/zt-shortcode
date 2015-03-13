@@ -74,17 +74,18 @@
          * @returns {undefined}
          */
         _iconSelector: function(){
-            var $iconFields = $('div.fontawesome-icon-list');
-            $iconFields.on('click', 'div.fa-icon', function(){
-                var $currentIconField = $(this).closest('div.fontawesome-icon-list');
-                $currentIconField.find('div.selected').removeClass('selected');
+            var $iconFields = $('div.list-awesome-font');
+            $iconFields.on('click', 'a', function(){
+                var $currentIconField = $(this).closest('div.list-awesome-font');
+                $currentIconField.find('a.selected').removeClass('selected');
                 $(this).addClass('selected');
                 var icon = $(this).find('i').attr('class');
                 var $hiddenField = $currentIconField.next();
                 if(icon !== ''){
                     $hiddenField.val(icon);
                     $hiddenField.trigger($hiddenField.data('event'));
-                }                
+                }
+                return false;
             });
         },
         /**
