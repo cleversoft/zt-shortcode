@@ -215,19 +215,19 @@
         "fields": [
             {
                 "label": "Track Color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "trackColor",
                 "value": "#edecec"
             },
             {
                 "label": "Bar Color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "barColor",
                 "value": "#a0ce4e"
             },
             {
                 "label": "Title Color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "titleColor",
                 "value": "#ffffff"
             },
@@ -738,13 +738,13 @@
             },
             {
                 "label": "Background color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "bgColor",
                 "value": "#000"
             },
             {
                 "label": "Background text color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "textColor",
                 "value": "#fff"
             },
@@ -833,19 +833,19 @@
             },
             {
                 "label": "Icon Color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "iconColor",
                 "value": "#000"
             },
             {
                 "label": "Icon Background Color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "iconBgColor",
                 "value": "#000"
             },
             {
                 "label": "Icon Border Color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "iconBdColor",
                 "value": "#000"
             },
@@ -1157,13 +1157,13 @@
             },
             {
                 "label": "Bar Color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "barColor",
                 "value": "#000000"
             },
             {
                 "label": "Track Color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "trackColor",
                 "value": "#000000"
             },
@@ -1287,13 +1287,13 @@
                 "fields": [
                     {
                         "label": "Background Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "bgColor",
                         "value": "#f6f6f6"
                     },
                     {
                         "label": "Text Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "textColor",
                         "value": "#747474"
                     },
@@ -1627,7 +1627,7 @@
             },
             {
                 "label": "Map Color",
-                "type": "text",
+                "type": "colorpicker",
                 "name": "color",
                 "value": "#ffffff"
             },
@@ -2018,37 +2018,37 @@
                     },
                     {
                         "label": "Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "color",
                         "value": "#000000"
                     },
                     {
                         "label": "Background Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "bgColor",
                         "value": "#000000"
                     },
                     {
                         "label": "Border Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "bdColor",
                         "value": "#000000"
                     },
                     {
                         "label": "Hover Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "hoverColor",
                         "value": "#000000"
                     },
                     {
                         "label": "Hover Background Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "hoverBgColor",
                         "value": "#000000"
                     },
                     {
                         "label": "Hover Border Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "hoverBdColor",
                         "value": "#000000"
                     }
@@ -2123,7 +2123,7 @@
                 "fields": [
                     {
                         "label": "Background Box Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "boxBgColor",
                         "value": ""
                     },
@@ -2185,13 +2185,13 @@
                     },
                     {
                         "label": "Icon Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "iconColor",
                         "value": "#2c2c2c"
                     },
                     {
                         "label": "Icon Background Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "iconBgColor",
                         "value": "#000"
                     },
@@ -2203,7 +2203,7 @@
                     },
                     {
                         "label": "Border Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "iconBorderColor",
                         "value": "#f26c4f"
                     },
@@ -2257,25 +2257,25 @@
                     },
                     {
                         "label": "Link Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "linkColor",
                         "value": "#ffffff"
                     },
                     {
                         "label": "Link Background Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "linkBgColor",
                         "value": "#f26c4f"
                     },
                     {
                         "label": "Link Color Hover",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "linkColorHover",
                         "value": "#333333"
                     },
                     {
                         "label": "Link Background Color Hover",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "linkBgColorHover",
                         "value": "#eeeeee"
                     },
@@ -2388,7 +2388,7 @@
                     },
                     {
                         "label": "Icon Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "iconColor",
                         "value": ""
                     },
@@ -2448,13 +2448,13 @@
                     },
                     {
                         "label": "Counter Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "countColor",
                         "value": "#a0ce4e"
                     },
                     {
                         "label": "Content Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "contentColor",
                         "value": "#747474"
                     },
@@ -2475,7 +2475,7 @@
                     },
                     {
                         "label": "Border Color",
-                        "type": "text",
+                        "type": "colorpicker",
                         "name": "bdColor",
                         "value": "#e0dede"
                     },

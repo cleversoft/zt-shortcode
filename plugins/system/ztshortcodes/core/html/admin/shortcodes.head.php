@@ -25,6 +25,9 @@ $useEditor = $params->get('use_editor', false);
 <!-- Latest compiled and minified JavaScript -->
 <script src="<?php echo $root . '/media/jui/js/bootstrap.min.js'; ?>"></script>
 <script src="<?php echo $path->getUrl('Shortcodes://assets/js/shortcode.js'); ?>"></script>
+<script src="<?php echo $path->getUrl('Shortcodes://assets/markitup/markitup/jquery.markitup.js'); ?>"></script>
+<!-- Spectrum color picker -->
+<script src="<?php echo $path->getUrl('Shortcodes://assets/spectrum/spectrum.js'); ?>"></script>
 <?php if ($useEditor): ?>
     <script src="<?php echo $path->getUrl('Shortcodes://assets/js/editor.js'); ?>"></script>
 <?php endif; ?>
@@ -36,4 +39,5 @@ $useEditor = $params->get('use_editor', false);
 <!-- Editor -->
 <link rel="stylesheet" type="text/css" href="<?php echo $path->getUrl('Shortcodes://assets/markitup/markitup/skins/markitup/style.css'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo $path->getUrl('Shortcodes://assets/markitup/markitup/sets/bbcode/style.css'); ?>" />
-<script src="<?php echo $path->getUrl('Shortcodes://assets/markitup/markitup/jquery.markitup.js'); ?>"></script>
+<!-- Spectrum -->
+<link rel="stylesheet" type="text/css" href="<?php echo $path->getUrl('Shortcodes://assets/spectrum/spectrum.css'); ?>" />
