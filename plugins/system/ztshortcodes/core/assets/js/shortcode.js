@@ -91,7 +91,6 @@
         },
         _colorPicker: function () {
             var _self = this;
-            console.log($('[type="colorpicker"]'));
             $('[type="colorpicker"]').spectrum({
                 allowEmpty: true,
                 color: this.value,
@@ -107,7 +106,6 @@
                 change: function (color) {
                     color.toHexString();
                     _self._update();
-                    console.log(this);
                 },
                 palette: [
                     ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)", /*"rgb(153, 153, 153)","rgb(183, 183, 183)",*/
