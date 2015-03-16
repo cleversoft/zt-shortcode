@@ -40,6 +40,9 @@ if (!class_exists('ZtShortcodesFieldText'))
                 $html[] = 'required';
             }
             $html [] = ' >';
+            if($this->get('description')) {
+                $html [] = '<small class="form-field-des">' . $this->get('description') . '</small>';
+            }
             $html [] = '</div>';
             return implode(PHP_EOL, $html);
         }

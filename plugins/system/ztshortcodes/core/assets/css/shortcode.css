@@ -119,6 +119,9 @@ ul.zt-sc-shortcodes > li > a .fa{
     margin-bottom: 5px;
     max-width: 100%;
 }
+#zt-sc-generator .form-group{
+    margin-bottom: 10px;
+}
 #zt-sc-generator .form-group input[type="text"],
 #zt-sc-generator .form-group input[type="tel"],
 #zt-sc-generator .form-group input[type="password"],
@@ -129,6 +132,7 @@ ul.zt-sc-shortcodes > li > a .fa{
     height: 34px;
     padding: 6px 12px;
     width: 100%;
+    margin-bottom: 0;
 }
 #zt-sc-generator .form-group textarea,
 #zt-shortcode-preview textarea{

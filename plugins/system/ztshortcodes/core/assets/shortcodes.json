@@ -2648,5 +2648,111 @@
                 "value": ""
             }
         ]
+    },
+    "zt_stunning_text": {
+        "name": "Stunning Text",
+        "group": "Typography",
+        "icon": "fa fa-connectdevelop",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "attributes": {
+            "bgColor": "",
+            "padding": "",
+            "border": "",
+            "borderColor": "",
+            "button": "",
+            "buttonLink": "",
+            "buttonBg": "",
+            "buttonColor": "",
+            "title": "",
+            "titleColor": "",
+            "captionColor": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/stunning-text.css"
+            ],
+            "js": [
+            ]
+        },
+        "fields": [
+            {
+                "label": "Background Color",
+                "type": "colorpicker",
+                "name": "bgColor",
+                "value": "#f3f3f3"
+            },
+            {
+                "label": "Padding Around",
+                "type": "text",
+                "name": "padding",
+                "description": "Enter padding around for stunning text. <strong>Note: please enter with format: 10px 10px 10px 10px</strong>",
+                "value": "30px 200px 35px 35px"
+            },
+            {
+                "label": "Border Width",
+                "type": "text",
+                "name": "border",
+                "description": "Enter border around for stunning text. <strong>Example: 4</strong>",
+                "value": "0"
+            },
+            {
+                "label": "Border Color",
+                "type": "colorpicker",
+                "name": "borderColor",
+                "value": "#e5e5e5"
+            },
+            {
+                "label": "Button Text",
+                "type": "text",
+                "name": "button",
+                "description": "Enter Button Text for stunning text. <strong>Example: Button Text</strong>",
+                "value": "Button Text"
+            },
+            {
+                "label": "Button Link",
+                "type": "text",
+                "name": "buttonLink",
+                "description": "Enter Button Link for stunning text. <strong>Example: http://www.zootemplate.com/</strong>",
+                "value": "http://www.zootemplate.com/"
+            },
+            {
+                "label": "Button Color",
+                "type": "colorpicker",
+                "name": "buttonColor",
+                "value": "#ffffff"
+            },
+            {
+                "label": "Button Background Color",
+                "type": "colorpicker",
+                "name": "buttonBg",
+                "value": "#0088cc"
+            },
+            {
+                "label": "Title",
+                "type": "text",
+                "name": "title",
+                "description": "Enter Title for stunning text. <strong>Example: Lorem Ipsum is simply</strong>",
+                "value": "Lorem Ipsum is simply"
+            },
+            {
+                "label": "Title Color",
+                "type": "colorpicker",
+                "name": "titleColor",
+                "value": "#0088cc"
+            },
+            {
+                "label": "Caption",
+                "type": "textarea",
+                "name": "maincontent",
+                "description": "Enter Content for stunning text. <strong>Example: Lorem Ipsum is simply dummy text of the....</strong>",
+                "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
+            },
+            {
+                "label": "Caption Color",
+                "type": "colorpicker",
+                "name": "captionColor",
+                "value": "#a0a0a0"
+            }
+        ]
     }
 }
