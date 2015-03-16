@@ -2754,5 +2754,308 @@
                 "value": "#a0a0a0"
             }
         ]
+    },
+    "zt_flip_boxes": {
+        "name": "Flip Boxes",
+        "group": "Typography",
+        "icon": "fa fa-lastfm",
+        "description": "",
+        "subTag": {
+            "flip_box": {
+                "attributes": {
+                    "titleFront": "",
+                    "textFront": "",
+                    "bgColorFront": "",
+                    "titleFrontColor": "",
+                    "textFrontColor": "",
+                    "titleBack": "",
+                    "textBack": "",
+                    "bgColorBack": "",
+                    "titleBackColor": "",
+                    "textBackColor": "",
+                    "borderSize": "",
+                    "borderColor": "",
+                    "borderRadius": "",
+                    "icon": "",
+                    "iconColor": "",
+                    "circle": "",
+                    "circleBgColor": "",
+                    "circleBorderColor": "",
+                    "iconSpin": "",
+                    "image": "",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "animationSpeed": ""
+                },
+                "fields": [
+                    {
+                        "label": "Flip Box Frontside",
+                        "type": "heading"
+                    },
+                    {
+                        "label": "Flip Box Front Heading",
+                        "type": "text",
+                        "name": "titleFront",
+                        "description": "Add a heading for the Front of the flip box.",
+                        "value": "Your Content Goes Here"
+                    },
+                    {
+                        "label": "Flip Box Front Content",
+                        "type": "text",
+                        "name": "textFront",
+                        "description": "Add a heading for the backside of the flip box.",
+                        "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+                    },
+                    {
+                        "label": "Background Color Front",
+                        "type": "colorpicker",
+                        "name": "bgColorFront",
+                        "description": "Controls the background color of the Front. Leave blank for theme option selection.",
+                        "value": ""
+                    },
+                    {
+                        "label": "Heading Color Front",
+                        "type": "colorpicker",
+                        "name": "titleFrontColor",
+                        "description": "Controls the heading color of the Front. Leave blank for theme option selection.",
+                        "value": ""
+                    },
+                    {
+                        "label": "Content Color Front",
+                        "type": "colorpicker",
+                        "name": "textFrontColor",
+                        "description": "Controls the text color of the Front. Leave blank for theme option selection.",
+                        "value": ""
+                    },
+                    {
+                        "label": "Flip Box Backside",
+                        "type": "heading"
+                    },
+                    {
+                        "label": "Flip Box Backside Heading",
+                        "type": "text",
+                        "name": "titleBack",
+                        "description": "Add a heading for the backside of the flip box.",
+                        "value": "Your Content Goes Here"
+                    },
+                    {
+                        "label": "Flip Box Backside Content",
+                        "type": "text",
+                        "name": "textBack",
+                        "description": "Add content for the backside of the flip box.",
+                        "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+                    },
+                    {
+                        "label": "Background Color Back",
+                        "type": "colorpicker",
+                        "name": "bgColorBack",
+                        "description": "Controls the background color of the Back",
+                        "value": ""
+                    },
+                    {
+                        "label": "Heading Color Back",
+                        "type": "colorpicker",
+                        "name": "titleBackColor",
+                        "description": "Controls the heading color of the Back",
+                        "value": ""
+                    },
+                    {
+                        "label": "Content Color Back",
+                        "type": "colorpicker",
+                        "name": "textBackColor",
+                        "description": "Controls the text color of the Back. Leave blank for theme option selection.",
+                        "value": ""
+                    },
+                    {
+                        "label": "Flip Box Border",
+                        "type": "heading"
+                    },
+                    {
+                        "label": "Border Size",
+                        "type": "text",
+                        "name": "borderSize",
+                        "description": "Enter border for flip box. Example: 3",
+                        "value": ""
+                    },
+                    {
+                        "label": "Border Color",
+                        "type": "colorpicker",
+                        "name": "borderColor",
+                        "description": "Flip Box the border color",
+                        "value": ""
+                    },
+                    {
+                        "label": "Border Radius",
+                        "type": "text",
+                        "name": "borderRadius",
+                        "description": "Flip Box the border radius. Example: 4",
+                        "value": ""
+                    },
+                    {
+                        "label": "Flip Box Icon",
+                        "type": "heading"
+                    },
+                    {
+                        "label": "Icon",
+                        "type": "faicons",
+                        "name": "icon",
+                        "description": "Click an icon to select",
+                        "value": ""
+                    },
+                    {
+                        "label": "Icon Color",
+                        "type": "colorpicker",
+                        "name": "iconColor",
+                        "description": "Flip Box Icon the border color",
+                        "value": ""
+                    },
+                    {
+                        "label": "Icon Circle",
+                        "type": "select",
+                        "name": "circle",
+                        "description": "Click an icon to select",
+                        "options": [
+                            {
+                                "value": "yes",
+                                "label": "Yes"
+                            },
+                            {
+                                "value": "no",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Icon Spin",
+                        "type": "select",
+                        "name": "iconSpin",
+                        "description": "",
+                        "options": [
+                            {
+                                "value": "yes",
+                                "label": "Yes"
+                            },
+                            {
+                                "value": "no",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Icon Circle Background Color",
+                        "type": "colorpicker",
+                        "name": "circleBgColor",
+                        "description": "Flip Box Icon Circle Background color",
+                        "value": ""
+                    },
+                    {
+                        "label": "Icon Circle Border Color",
+                        "type": "colorpicker",
+                        "name": "circleBorderColor",
+                        "description": "Flip Box Icon Circle Border color",
+                        "value": ""
+                    },
+                    {
+                        "label": "Icon Image",
+                        "type": "text",
+                        "name": "image",
+                        "description": "Enter Url Image For Flip Box.",
+                        "value": ""
+                    },
+                    {
+                        "label": "Icon Image Width",
+                        "type": "text",
+                        "name": "imageWidth",
+                        "description": "Enter Width Image For Flip Box.",
+                        "value": ""
+                    },
+                    {
+                        "label": "Icon Image Height",
+                        "type": "text",
+                        "name": "imageHeight",
+                        "description": "Enter Height Image For Flip Box.",
+                        "value": ""
+                    },
+                    {
+                        "label": "Speed of Animation",
+                        "type": "Select",
+                        "name": "animationSpeed",
+                        "description": "Choose Speed Animation For Flip Box.",
+                        "options": [
+                            {
+                                "value": "1",
+                                "label": "1"
+                            },
+                            {
+                                "value": "0.9",
+                                "label": "0.9"
+                            },
+                            {
+                                "value": "0.8",
+                                "label": "0.8"
+                            },
+                            {
+                                "value": "0.7",
+                                "label": "0.7"
+                            },
+                            {
+                                "value": "0.8",
+                                "label": "0.8"
+                            },
+                            {
+                                "value": "0.7",
+                                "label": "0.7"
+                            },
+                            {
+                                "value": "0.6",
+                                "label": "0.6"
+                            },
+                            {
+                                "value": "0.5",
+                                "label": "0.5"
+                            },
+                            {
+                                "value": "0.4",
+                                "label": "0.4"
+                            },
+                            {
+                                "value": "0.3",
+                                "label": "0.3"
+                            },
+                            {
+                                "value": "0.2",
+                                "label": "0.2"
+                            },
+                            {
+                                "value": "0.1",
+                                "label": "0.1"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "class": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
+                "Shortcodes://assets/css/flip_boxes.css"
+            ],
+            "js": [
+                "Shortcodes://assets/js/flip-box.js"
+            ]
+        },
+        "fields": [
+            {
+                "label": "Class Extend",
+                "type": "text",
+                "name": "class",
+                "description": "Enter class extend for flip box",
+                "value": "zt-flip-box-extend"
+            }
+        ]
     }
 }

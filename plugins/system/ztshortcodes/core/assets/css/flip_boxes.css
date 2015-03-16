@@ -1,0 +1,65 @@
+.zt-flip-box-inner{
+    margin-bottom: 15px;
+    position: relative;
+    text-align: center;
+}
+.zt-flip-box-front, .zt-flip-box-back{
+    backface-visibility: hidden;
+    background-clip: padding-box;
+    padding: 27px 20px;
+    perspective: 600px;
+    text-align: center;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.2, 0.85, 0.4, 1.275) 0s;
+    -webkit-transition: all 0.4s cubic-bezier(0.2, 0.85, 0.4, 1.275) 0s;
+    -ms-transition: all 0.4s cubic-bezier(0.2, 0.85, 0.4, 1.275) 0s;
+    -o-transition: all 0.4s cubic-bezier(0.2, 0.85, 0.4, 1.275) 0s;
+    box-sizing: border-box;
+}
+.zt-flip-box-front{
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    z-index: 10;
+}
+.zt-flip-box-back{
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    width: 100%;
+    z-index: -1;
+}
+.zt-flip-box-inner:hover .zt-flip-box-front {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    z-index: -1;
+}
+.zt-flip-box-inner:hover .zt-flip-box-back {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    z-index: 10;
+}
+.zt-flip-box-inner .zt-flip-box-circle .fa{
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 64px;
+    font-size: 24px;
+}
+.zt-flip-box-inner .zt-flip-box-no-circle .fa{
+    font-size: 60px;
+}

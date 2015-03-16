@@ -13,14 +13,11 @@
 #zt-shortcode-plugin .item-shortcode{
     width: 20%;
 }
-ul.zt-sc-shortcodes > li{
+#zt-shortcode-plugin .nav-tabs > li > a{
     padding: 6px 0;
     border-bottom: 1px dotted #e5e5e5;
-    float: left;
-    width: 20%;
-}
-ul.zt-sc-shortcodes > li > a{
     color: #222222;
+    margin: 0;
 }
 #zt-shortcode-plugin .nav-tabs > li > a:hover,
 #zt-shortcode-plugin .nav-tabs > li > a:focus,
@@ -30,7 +27,7 @@ ul.zt-sc-shortcodes > li > a{
     border-color: transparent;
     border-bottom: 1px dotted #e5e5e5;
 }
-ul.zt-sc-shortcodes > li > a .fa{
+#zt-shortcode-plugin .nav-tabs > li > a i{
     margin-right: 7px;
 }
 .shortcode-element-title{
@@ -72,7 +69,6 @@ ul.zt-sc-shortcodes > li > a .fa{
     height: 198px;
     overflow-x: scroll;
     padding: 0;
-    margin-bottom: 10px;
 }
 .list-awesome-font ul li, .group-shortcode-wrap ul li{
     float: left;
@@ -111,34 +107,6 @@ ul.zt-sc-shortcodes > li > a .fa{
        padding: 0 10px;
 }
 
-#zt-sc-generator{
-    margin: 30px 0 0;
-}
-#zt-sc-generator label {
-    font-weight: 700;
-    margin-bottom: 5px;
-    max-width: 100%;
-}
-#zt-sc-generator .form-group{
-    margin-bottom: 10px;
-}
-#zt-sc-generator .form-group input[type="text"],
-#zt-sc-generator .form-group input[type="tel"],
-#zt-sc-generator .form-group input[type="password"],
-#zt-sc-generator .form-group input[type="email"],
-#zt-sc-generator .form-group select,
-#zt-sc-generator .form-group textarea,
-#zt-shortcode-preview textarea{
-    height: 34px;
-    padding: 6px 12px;
-    width: 100%;
-    margin-bottom: 0;
-}
-#zt-sc-generator .form-group textarea,
-#zt-shortcode-preview textarea{
-    height: 140px;
-}
-
 /* Shortcode Item */
 .shortcoder-item{
     border: 1px solid #eee;
@@ -152,20 +120,7 @@ ul.zt-sc-shortcodes > li > a .fa{
     border: 1px solid #d6d6d6;
     margin-bottom: 10px;
 }
-.zt-shortcode-wrap{
-    padding: 0 10px;
-}
 
 .item-zt_person{
     display: none;
-}
-.form-field-heading{
-    border-bottom: 1px solid #d6d6d6;
-    font-size: 20px;
-    margin-bottom: 15px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-}
-.form-field-heading label{
-    font-size: 16px;
 }
