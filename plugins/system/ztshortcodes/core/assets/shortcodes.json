@@ -187,6 +187,88 @@
             }
         ]
     },
+    "zt_columns": {
+        "name": "Columns",
+        "group": "Scaffolding",
+        "icon": "fa fa-table",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "subTag": {
+            "zt_column": {
+                "attributes": {
+                    "md": ""
+                },
+                "fields": [
+                    {
+                        "label": "Content Column",
+                        "type": "textarea",
+                        "name": "maincontent",
+                        "value": "This is column content"
+                    },
+                    {
+                        "label": "Column",
+                        "type": "select",
+                        "name": "md",
+                        "options": [
+                            {
+                                "value": "1",
+                                "label": "1/12"
+                            },
+                            {
+                                "value": "2",
+                                "label": "2/12"
+                            },
+                            {
+                                "value": "3",
+                                "label": "3/12"
+                            },
+                            {
+                                "value": "4",
+                                "label": "4/12"
+                            },
+                            {
+                                "value": "5",
+                                "label": "5/12"
+                            },
+                            {
+                                "value": "6",
+                                "label": "6/12"
+                            },
+                            {
+                                "value": "7",
+                                "label": "7/12"
+                            },
+                            {
+                                "value": "8",
+                                "label": "8/12"
+                            },
+                            {
+                                "value": "9",
+                                "label": "9/12"
+                            },
+                            {
+                                "value": "10",
+                                "label": "10/12"
+                            },
+                            {
+                                "value": "11",
+                                "label": "11/12"
+                            },
+                            {
+                                "value": "11",
+                                "label": "11/12"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "Type": ""
+        },
+        "fields": [
+
+        ]
+    },
     "zt_progress_bar": {
         "name": "Progress Bar",
         "group": "Boostrap",
