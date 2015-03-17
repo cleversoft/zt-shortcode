@@ -31,7 +31,6 @@ jQuery(counter).each(function (){
         });
     }
 });
-
 jQuery(window).load(function(){
     jQuery('.counter-box-wrap').each(function(){
         jQuery().waypoint && jQuery(this).waypoint(function () {

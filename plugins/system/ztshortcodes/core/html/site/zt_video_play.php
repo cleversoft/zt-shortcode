@@ -16,7 +16,7 @@
 <?php
 
     // Function call video Link both youtube and vimeo, now
-    if (!function_exists('zo2VideoEmbed')) {
+    if (!function_exists('ztVideoEmbed')) {
         function ztVideoEmbed($url, $width = 640, $height = 480) {
             if (strpos($url,'youtube') || strpos($url,'youtu.be')){
                 return ztVideoYoutube($url, $width, $height);
@@ -27,7 +27,7 @@
     }
 
     // Function process video youtube
-    if (!function_exists('zo2VideoYoutube')) {
+    if (!function_exists('ztVideoYoutube')) {
         function ztVideoYoutube($url, $width = 640, $height = 480) {
             preg_match('~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~', $url, $video_id);
             return '<iframe itemprop="video" src="http://www.youtube.com/embed/'. $video_id[1] .'?wmode=transparent" width="'. $width .'" height="'. $height .'" ></iframe>';
@@ -35,10 +35,11 @@
     }
 
     // Function process video vimeo
-    if (!function_exists('zo2VideoVimeo')) {
+    if (!function_exists('ztVideoVimeo')) {
         function ztVideoVimeo($url, $width = 640, $height = 480) {
             preg_match('/https?:\/\/(?:www\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|)(\d+)(?:$|\/|\?)/', $url, $video_id);
-            return '<iframe itemprop="video" src="http://player.vimeo.com/video/'. $video_id[3] .'?title=0&amp;byline=0&amp;portrait=0?wmode=transparent" width="'. $width .'" height="'. $height .'"></iframe>';
+            $videoId = isset( $video_id[3]) ?  $video_id[3] : '';
+            return '<iframe itemprop="video" src="http://player.vimeo.com/video/'. $videoId.'?title=0&amp;byline=0&amp;portrait=0?wmode=transparent" width="'. $width .'" height="'. $height .'"></iframe>';
         }
     }
 
