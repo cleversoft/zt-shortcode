@@ -39,7 +39,7 @@ ZT Shortcodes package includes:
 
 ## Version 2.0.0  released Mar 18, 2015
 
-* Replace the JBBCode by WordPress' [Shortcode API](http://codex.wordpress.org/Shortcode_API)
+* Replace the JBBCode by [WordPress' Shortcode API](http://codex.wordpress.org/Shortcode_API)
 * Improve backend UI/UX
 * Add color picker for color option 
 * Add new shortcode Turning Text
