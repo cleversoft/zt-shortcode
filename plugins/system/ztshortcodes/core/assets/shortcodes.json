@@ -946,7 +946,8 @@
         "attributes": {
             "type": "thin",
             "classIcon": "",
-            "text": ""
+            "text": "",
+            "color": ""
         },
         "depends": {
             "css": [
@@ -988,6 +989,12 @@
                         "label": "Go to top icon 2"
                     }
                 ]
+            },
+            {
+                "label": "Color Divider",
+                "type": "colorpicker",
+                "name": "color",
+                "value": ""
             },
             {
                 "label": "Icon",
