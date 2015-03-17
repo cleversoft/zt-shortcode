@@ -18,6 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 // Convert shortcodes list to groupping
 foreach ($list as $tag => $data)
 {
+    $grouped['All'][$tag] = $data;
     $grouped[$data['group']][$tag] = $data;
 }
 ?>
