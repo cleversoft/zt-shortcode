@@ -30,11 +30,13 @@ if (!class_exists('ZtShortcodesFieldColorpicker'))
             $html [] = '<div class="form-group">';
             $html [] = $this->_getLabel();
             $html [] = '<input'
-                    . ' class="form-control"'
-                    . ' type="colorpicker"'
+                    . ' class="form-control bootstrapColorPicker"'
+                    . ' type="text"'
                     . ' value="' . $this->get('value') . '"'
                     . ' data-property="' . $this->get('name') . '"'
-                    . ' data-event="' . $this->get('event', 'change') . '"';
+                    . ' data-event="' . $this->get('event', 'change') . '"'
+                    . ' style="background-color:' . $this->get('value', '#fff') . ';"';
+                    
             if ($this->get('required'))
             {
                 $html[] = 'required';
