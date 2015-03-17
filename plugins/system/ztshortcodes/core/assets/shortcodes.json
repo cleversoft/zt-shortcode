@@ -1345,7 +1345,7 @@
         ]
     },
     "zt_testimonial": {
-        "name": "Pricing Table",
+        "name": "Testimonial",
         "group": "Scaffolding",
         "icon": "fa fa-shirtsinbulk",
         "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
