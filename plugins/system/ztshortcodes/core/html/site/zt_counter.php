@@ -12,7 +12,7 @@
  * @license     GPL v2
  */
 ?>
-<div class="row <?php echo $attributes->get('class'); ?>">
+<div class="row counter-box-wrap <?php echo $attributes->get('class'); ?>">
     <?php
         echo $content;
     ?>

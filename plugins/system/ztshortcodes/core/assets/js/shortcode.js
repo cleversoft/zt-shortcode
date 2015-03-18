@@ -9,6 +9,7 @@
     /* Short code main class */
     var _shortcode = {
         _elements: {
+            joomlaEditor: "jform_articletext",
             shortcodeWrapper: "#zt-sc-generator",
             shortcodeZtSub: "div.zt-sub",
             shortcodeZtMain: "div.zt-main",
@@ -34,7 +35,7 @@
                 if (typeof (w.parent) !== 'undefined') {
                     if (w.parent.hasOwnProperty('jInsertEditorText')) {
                         /* Insert to parent editor */
-                        w.parent.jInsertEditorText(code);
+                        w.parent.jInsertEditorText(code, _self._elements.joomlaEditor);
                         /* Close the box */
                         w.parent.SqueezeBox.close();
                     }

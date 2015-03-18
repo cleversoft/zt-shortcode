@@ -285,12 +285,12 @@
         },
         "depends": {
             "css": [
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
                 "Shortcodes://assets/css/progress-bar.css"
             ],
             "js": [
                 "Shortcodes://assets/bootstrap/js/bootstrap.min.js",
                 "Shortcodes://assets/js/waypoints.min.js",
-                "Shortcodes://assets/js/jquery-2.0.3.min.js",
                 "Shortcodes://assets/js/progress-bar.js"
             ]
         },
@@ -638,8 +638,8 @@
                 "attributes": {
                     "title": "",
                     "link": "",
-                    "button-text": "",
-                    "item-hightlight": "",
+                    "buttontext": "",
+                    "itemhightlight": "",
                     "price": ""
                 },
                 "fields": [
@@ -658,7 +658,7 @@
                     {
                         "label": " Active",
                         "type": "checkbox",
-                        "name": "item-hightlight",
+                        "name": "itemhightlight",
                         "value": ""
                     },
                     {
@@ -682,7 +682,7 @@
                     {
                         "label": "Button Text",
                         "type": "text",
-                        "name": "button-text",
+                        "name": "buttontext",
                         "value": "Button Text"
                     }
                 ]
@@ -1018,8 +1018,8 @@
             "dir": "",
             "width": "",
             "height": "",
-            "thumb-width": "",
-            "thumb-height": ""
+            "thumbwidth": "",
+            "thumbheight": ""
         },
         "depends": {
             "css": [
@@ -1052,13 +1052,13 @@
             {
                 "label": "Gallery Thumb width",
                 "type": "text",
-                "name": "thumb-width",
+                "name": "thumbwidth",
                 "value": "100"
             },
             {
                 "label": "Gallery Thumb height",
                 "type": "text",
-                "name": "thumb-height",
+                "name": "thumbheight",
                 "value": "100"
             }
         ]
@@ -2641,6 +2641,7 @@
                 "Shortcodes://assets/css/counter-box.css"
             ],
             "js": [
+                "Shortcodes://assets/bootstrap/js/bootstrap.min.js",
                 "Shortcodes://assets/js/jquery.easing.min.js",
                 "Shortcodes://assets/js/waypoints.min.js",
                 "Shortcodes://assets/js/counter.min.js",
@@ -2650,7 +2651,7 @@
         "fields": [
             {
                 "label": "Class Extend",
-                "type": "select",
+                "type": "text",
                 "name": "class",
                 "value": ""
             }

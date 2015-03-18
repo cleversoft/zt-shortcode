@@ -13,7 +13,23 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
-global $zo2Shortcodes;
+echo $attributes;
 
-$zo2Shortcodes['tabs'][$shortcode->options['id']]['tabs'][] = $shortcode->options;
-$zo2Shortcodes['tabs'][$shortcode->options['id']]['contents'][] = $content;
+?>
+
+<?php if($attributes->get('tabType') != 'bottom-tabs') : ?>
+    <ul class="nav nav-tabs">
+            <li class="<?php echo ($attributes->get('active') == 'yes') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $attributes->get('title'); ?></a></li>
+    </ul>
+<?php endif; ?>
+    <div class="tab-content">
+            <div class="tab-pane fade <?php echo ($attributes->get('active') == 'yes') ? 'in active' : ''; ?>" id="<?php echo $id . $key; ?>">
+                <?php echo $content; ?>
+            </div>
+
+    </div>
+<?php if($attributes->get('tabType') == 'bottom-tabs') : ?>
+    <ul class="nav nav-tabs">
+            <li class="<?php echo ($attributes->get('active') == 'yes') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $attributes->get('title'); ?></a></li>
+    </ul>
+<?php endif; ?>

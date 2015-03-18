@@ -27,7 +27,7 @@ if (!isset($price[2]))
 {
     $price[2] = '';
 }
-if ($attributes->get('item-hightlight') == "yes")
+if ($attributes->get('itemhightlight') == "yes")
 {
     $classHightLight = 'recommended';
 }
@@ -36,7 +36,7 @@ $html .= '<div class="pricing-item pull-left"><div class="plan' . ' ' . $attribu
 $html .= '<div class="head"><h2>' . $attributes->get('title') . '</h2></div>';
 $html .= '<ul class="item-list">' . $content . '</ul>';
 $html .= '<div class="price"><h3><span class="symbol">' . $price[0] . '</span>' . $price[1] . '</h3><h4>' . $price[2] . '</h4></div>';
-$html .= '<a class="btn btn-success" href="' . $attributes->get('link') . '">' . $attributes->get('button-text') . '</a>';
+$html .= '<a class="btn btn-success" href="' . $attributes->get('link') . '">' . $attributes->get('buttontext') . '</a>';
 $html .= '</div></div>';
 
 echo $html;
