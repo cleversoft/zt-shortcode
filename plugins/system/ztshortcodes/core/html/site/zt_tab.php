@@ -13,23 +13,11 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
-echo $attributes;
+global $ztShortcodes;
+$parent = $attributes->get('_parent');
+$ztShortcodes['tabs'][$parent['id']][] = array(
+    'attributes' => $attributes,
+    'content' => $content
+);
 
 ?>
-
-<?php if($attributes->get('tabType') != 'bottom-tabs') : ?>
-    <ul class="nav nav-tabs">
-            <li class="<?php echo ($attributes->get('active') == 'yes') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $attributes->get('title'); ?></a></li>
-    </ul>
-<?php endif; ?>
-    <div class="tab-content">
-            <div class="tab-pane fade <?php echo ($attributes->get('active') == 'yes') ? 'in active' : ''; ?>" id="<?php echo $id . $key; ?>">
-                <?php echo $content; ?>
-            </div>
-
-    </div>
-<?php if($attributes->get('tabType') == 'bottom-tabs') : ?>
-    <ul class="nav nav-tabs">
-            <li class="<?php echo ($attributes->get('active') == 'yes') ? 'active' : ''; ?>"><a href="#<?php echo $id . $key; ?>" data-toggle="tab"><?php echo $attributes->get('title'); ?></a></li>
-    </ul>
-<?php endif; ?>

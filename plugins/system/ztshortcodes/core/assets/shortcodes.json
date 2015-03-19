@@ -130,6 +130,14 @@
         "group": "Scaffolding",
         "icon": "fa fa-table",
         "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/tabs.css",
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css"
+            ],
+            "js": [
+            ]
+        },
         "subTag": {
             "zt_tab": {
                 "attributes": {
@@ -285,11 +293,9 @@
         },
         "depends": {
             "css": [
-                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
                 "Shortcodes://assets/css/progress-bar.css"
             ],
             "js": [
-                "Shortcodes://assets/bootstrap/js/bootstrap.min.js",
                 "Shortcodes://assets/js/waypoints.min.js",
                 "Shortcodes://assets/js/progress-bar.js"
             ]
@@ -2641,11 +2647,10 @@
                 "Shortcodes://assets/css/counter-box.css"
             ],
             "js": [
-                "Shortcodes://assets/bootstrap/js/bootstrap.min.js",
                 "Shortcodes://assets/js/jquery.easing.min.js",
                 "Shortcodes://assets/js/waypoints.min.js",
-                "Shortcodes://assets/js/counter.min.js",
-                "Shortcodes://assets/js/counter-box.js"
+                "Shortcodes://assets/js/counter-box.js",
+                "Shortcodes://assets/js/counter.min.js"
             ]
         },
         "fields": [
