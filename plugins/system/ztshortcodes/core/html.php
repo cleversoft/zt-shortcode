@@ -50,7 +50,7 @@ if (!class_exists('ZtShortcodesHtml'))
          */
         public function fetch($key)
         {
-            $tplFile = $this->_path->getPath($key);
+            $tplFile = $this->getPath($key);
             /* Make sure this template file is exists */
             if ($tplFile)
             {
@@ -65,15 +65,26 @@ if (!class_exists('ZtShortcodesHtml'))
         }
 
         /**
-         * Include another template into current template
-         * @return \Zo2Html
+         * 
+         * @param type $key
+         * @return string|boolean
          */
-        public function load($key)
+        public function getPath($key)
         {
-            $tplFile = $this->_path->getPath($key);
+            return $this->_path->getPath($key);
+        }
+
+        /**
+         * Include another template into current template
+         * @return string
+         */
+        public function load($key, $data = array())
+        {
+            $tplFile = $this->getPath($key);
             if ($tplFile)
             {
                 $properties = $this->getProperties();
+                $properties = array_merge($properties, $data);
                 extract($properties, EXTR_REFS);
                 include($tplFile);
             }

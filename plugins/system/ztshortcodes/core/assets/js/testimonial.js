@@ -7,8 +7,12 @@
 
 jQuery(document).ready(function(){
     jQuery('.bxslider').bxSlider({
-        pager: false,
-        controls: false,
-        auto: true
+        pager: true,
+        controls: true,
+        auto: true,
+        mode: 'vertical',
+        minSlides: 2,
+        maxSlides: 3,
+        moveSlides : 1
     });
 });

@@ -2,6 +2,7 @@ a.zt-button {
     background-clip: padding-box;
     border: 0 none;
     border-radius: 2px;
+    color: #fff;
     display: inline-block;
     font-size: 12px;
     font-weight: bold;
@@ -43,6 +44,7 @@ a.zt-button.color-black:hover {
 a.zt-button.color-white {
     background-color: #fff;
     color: #222;
+    border: 1px solid #e4e4e4;
 }
 a.zt-button.color-white:hover {
     background-color: #e4e4e4;
@@ -64,11 +66,11 @@ a.zt-button.color-grey {
 a.zt-button.color-grey:hover {
     background-color: #333;
 }
-a.zt-button.lightgrey {
+a.zt-button.color-light-grey {
     background-color: #e4e4e4;
     color: #222;
 }
-a.zt-button.lightgrey:hover {
+a.zt-button.color-light-grey:hover {
     background-color: #ccc;
 }
 a.zt-button.color-orange {
@@ -106,20 +108,22 @@ a.zt-button.color-gold {
 a.zt-button.color-gold:hover {
     background-color: #ffbe1c;
 }
-a.zt-button.transparent-light {
+a.zt-button.color-transparent-light {
     border: 1px solid rgba(255, 255, 255, 0.5);
     color: #fff !important;
 }
-a.zt-button.transparent-light:hover {
+a.zt-button.color-transparent-light:hover {
     background: none repeat scroll 0 0 #fff;
     border-color: #fff;
 }
-a.zt-button.transparent-dark {
+a.zt-button.color-transparent-dark {
     border: 1px solid rgba(34, 34, 34, 0.2);
+    color: #222;
 }
-a.zt-button.transparent-dark:hover {
+a.zt-button.color-transparent-dark:hover {
     background: none repeat scroll 0 0 #222;
     border-color: #222;
+    color: #fff;
 }
 .zt-button.color-accent {
     background-color: #1dc6df;
@@ -191,7 +195,7 @@ a.zt-button.type-icon-reveal.color-blue {
 a.zt-button.type-icon-reveal.color-grey {
     background-color: #444;
 }
-a.zt-button.type-icon-reveal.lightgrey {
+a.zt-button.type-icon-reveal.color-light-grey {
     background-color: #e4e4e4;
 }
 a.zt-button.type-icon-reveal.color-orange {

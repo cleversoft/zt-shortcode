@@ -1,15 +1,18 @@
 <?php
 
 /**
- * Zo2 (http://www.zootemplate.com/zo2)
- * A powerful Joomla template framework
- *
- * @version     1.4.4
- * @link        http://www.zootemplate.com/zo2
- * @link        https://github.com/cleversoft/zo2
- * @author      ZooTemplate <http://zootemplate.com>
- * @copyright   Copyright (c) 2015 CleverSoft (http://cleversoft.co/)
- * @license     GPL v2
+ * Zt Shortcodes
+ * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
+ * 
+ * @name        Zt Shortcodes
+ * @version     2.0.0
+ * @package     Plugin
+ * @subpackage  System
+ * @author      ZooTemplate 
+ * @email       support@zootemplate.com 
+ * @link        http://www.zootemplate.com 
+ * @copyright   Copyright (c) 2015 ZooTemplate
+ * @license     GPL v2 
  */
 
 defined('_JEXEC') or die();

@@ -1,3 +1,6 @@
+.zt-counter-wrap{
+    display: inline-block;
+}
 .chart {
     display: inline-block;
     margin-bottom: 30px;

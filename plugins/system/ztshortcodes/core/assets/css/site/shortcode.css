@@ -1,0 +1,126 @@
+/* Style List Insert shortcode */
+#zt-shortcode-plugin{
+    font-size: 14px;
+    color: #333;
+    padding: 0 10px;
+}
+#zt-shortcode-tabs-wrapper{
+    margin-bottom: 20px;
+}
+#zt-shortcode-plugin .modal-dialog{
+    width: 800px;
+}
+#zt-shortcode-plugin .item-shortcode{
+    width: 20%;
+}
+#zt-shortcode-plugin .nav-tabs > li > a{
+    padding: 6px 0;
+    border-bottom: 1px dotted #e5e5e5;
+    color: #222222;
+    margin: 0;
+}
+#zt-shortcode-plugin .nav-tabs > li > a:hover,
+#zt-shortcode-plugin .nav-tabs > li > a:focus,
+#zt-shortcode-plugin .nav-tabs > li.active > a{
+    background-color: transparent;
+    color: #005580;
+    border-color: transparent;
+    border-bottom: 1px dotted #e5e5e5;
+}
+#zt-shortcode-plugin .nav-tabs > li > a i{
+    margin-right: 7px;
+}
+.shortcode-element-title{
+    background-color: #eeeeee;
+    border-bottom: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    margin: 20px 0;
+    padding: 13px 10px;
+}
+.shortcode-element-title h3{
+    color: #555555;
+    margin: 0;
+}
+.description-shortcode{
+    padding-left: 20px;
+}
+
+/* Short code common */
+.shortcode-render {
+    background-color: #eeeeee;
+    width: 100%;
+    min-height: 50px; 
+}
+/* Form Gruop */
+.form-insert{
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+/* Font Awesome */
+.list-awesome-font ul, .group-shortcode-wrap ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.list-awesome-font{
+    border: 1px solid #ccc;
+    height: 198px;
+    overflow-x: scroll;
+    padding: 0;
+}
+.list-awesome-font ul li, .group-shortcode-wrap ul li{
+    float: left;
+    display: block;
+}
+.list-awesome-font ul li a{
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #333;
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 20px;
+    margin: 0;
+    text-align: center;
+    width: 30px;
+}
+
+.list-awesome-font ul li a.selected{
+    color: #fff;
+    background-color: #333;
+}
+
+.list-awesome-font ul li a i{
+    line-height: 30px;
+}
+
+/* Group Shortcode */
+.group-shortcode-wrap h5{
+       float: left;
+}
+.group-shortcode-wrap a {
+       border-right: 1px solid #ccc;
+       line-height: 35px;
+       padding: 0 10px;
+}
+
+/* Shortcode Item */
+.shortcoder-item{
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container-child{
+    padding: 10px 20px;
+    background-color: #f8f6f6;
+    border: 1px solid #d6d6d6;
+    margin-bottom: 10px;
+}
+
+.item-zt_person{
+    display: none;
+}

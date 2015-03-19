@@ -31,8 +31,26 @@ ZT Shortcodes package includes:
 * Video Play
 * Google Map
 * Boxes Content
+* Counter Box
+* Turning Text
+* Flip Box
 
 # Change logs
+
+## Version 2.0.0  released Mar 18, 2015
+
+* Replace the JBBCode by [WordPress' Shortcode API](http://codex.wordpress.org/Shortcode_API)
+* Improve backend UI/UX
+* Add color picker for color option 
+* Add new shortcode Turning Text
+* Add new shortcode Flip Box
+* Add new shortcode Counter Box
+* Update Filter Group  
+
+
+## Version 1.0.3  released Mar 09, 2015
+
+* Add counter box shortcode
 
 ## Version 1.0.2  released Mar 05, 2015
 
