@@ -3070,5 +3070,85 @@
                 "value": "zt-flip-box-extend"
             }
         ]
+    },
+    "zt_parallax": {
+        "name": "Parallax",
+        "group": "Typography",
+        "icon": "fa fa-connectdevelop",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "attributes": {
+            "image": "",
+            "bgtype": "",
+            "padding": "",
+            "fullwidth": "",
+            "class": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/css/parallax.css"
+            ],
+            "js": [
+            ]
+        },
+        "fields": [
+            {
+                "label": "Background Image",
+                "type": "text",
+                "name": "image",
+                "description": "Choose url path image for parallax",
+                "value": ""
+            },
+            {
+                "label": "Background Type",
+                "type": "select",
+                "name": "type",
+                "description": "",
+                "options": [
+                    {
+                        "value": "cover",
+                        "label": "Cover"
+                    },
+                    {
+                        "value": "repeat",
+                        "label": "Repeat"
+                    }
+                ]
+            },
+            {
+                "label": "Parallax Content",
+                "type": "textarea",
+                "name": "maincontent",
+                "value": ""
+            },
+            {
+                "label": "Padding Content",
+                "type": "text",
+                "name": "padding",
+                "description": "Choose padding content parallax. Note: only allow padding-top and padding-bottom. exp: 100px 100px",
+                "value": "100px 100px"
+            },
+            {
+                "label": "Full Width",
+                "type": "select",
+                "name": "fullwidth",
+                "description": "",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
+                "label": "Class Extend",
+                "type": "text",
+                "name": "class",
+                "value": "Choose class extend"
+            }
+        ]
     }
 }
