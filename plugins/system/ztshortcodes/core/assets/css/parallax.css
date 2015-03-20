@@ -1,0 +1,69 @@
+.zt-parallax-asset-video{
+    height: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.zt-parallax-asset-video .zt-content-parallax{
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    width: calc(100% - 40px);
+}
+.zt-parallax-asset-inner{
+    height: 100% !important;
+}
+.zt-parallax-asset-video .ui-video-background{
+    margin-top: -100px;
+}
+.zt-parallax-asset-video .ui-video-background ul li{
+    float: left;
+    list-style: none;
+    margin: 0 5px;
+    width: 30px;
+}
+video{
+    width: 100%;
+}
+.ui-icon-play, .ui-icon-pause, .ui-icon-volume-on, .ui-icon-volume-off{
+    font-size: 0;
+    position: relative;
+}
+.ui-icon-play:before,
+.ui-icon-pause:before,
+.ui-icon-volume-on:before,
+.ui-icon-volume-off:before{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: "FontAwesome";
+    font-size: 15px;
+    height: 30px;
+    left: 0;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 30px;
+}
+.ui-icon-play:before{
+    content: "\f16a";
+}
+.ui-icon-pause:before{
+    content: "\f03d";
+}
+.ui-icon-volume-on:before{
+    content: "\f028";
+}
+.ui-icon-volume-off:before{
+    content: "\f026";
+}
+
+/* =============== Parallax Image ================= */
+.zt-parallax-asset{
+    background-size: cover;
+    background-attachment: fixed;
+}
+.zt-parallax-asset .zt-content-parallax{
+    padding: 0 20px;
+}

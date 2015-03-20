@@ -18,10 +18,10 @@
      style="height: 37px; background-color: <?php echo $attributes->get('trackColor'); ?>">
     <div class="progress progress-bar-content"
          role="progressbar"
-         data-percentage="<?php echo $attributes->get('now-value'); ?>"
-         aria-valuenow="<?php echo $attributes->get('now-value'); ?>"
-         aria-valuemin="<?php echo $attributes->get('min-value'); ?>"
-         aria-valuemax="<?php echo $attributes->get('max-value'); ?>"
+         data-percentage="<?php echo $attributes->get('nowvalue'); ?>"
+         aria-valuenow="<?php echo $attributes->get('nowvalue'); ?>"
+         aria-valuemin="<?php echo $attributes->get('minvalue'); ?>"
+         aria-valuemax="<?php echo $attributes->get('maxvalue'); ?>"
          style="background-color: <?php echo $attributes->get('barColor'); ?>">
 
     </div>
