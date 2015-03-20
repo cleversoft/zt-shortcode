@@ -387,7 +387,7 @@
             "colour": "white",
             "icon": "fa fa-ambulance",
             "link": "#",
-            "extra-class": "class-button"
+            "extraclass": "class-button"
         },
         "depends": {
             "css": [
@@ -530,7 +530,7 @@
         "attributes": {
             "type": "success",
             "icon": "fa fa-times-circle",
-            "extra-class": "message-box"
+            "extraclass": "message-box"
         },
         "depends": {
             "css": [
@@ -582,8 +582,8 @@
         "attributes": {
             "type": "big",
             "author": "Author",
-            "author-link": "#",
-            "extra-class": "blockquotes"
+            "authorlink": "#",
+            "extraclass": "blockquotes"
         },
         "depends": {
             "css": [
@@ -1108,9 +1108,9 @@
         "attributes": {
             "id": "my-modal",
             "title": "Title Modal",
-            "button-type": "success",
-            "button-size": "sm",
-            "button-text": "Button Text"
+            "buttontype": "success",
+            "buttonsize": "sm",
+            "buttontext": "Button Text"
         },
         "depends": {
             "css": [
@@ -1862,8 +1862,8 @@
                     "name": "",
                     "position": "",
                     "image": "",
-                    "img-type": "",
-                    "social-type": "",
+                    "imgtype": "",
+                    "socialtype": "",
                     "facebook": "",
                     "twitter": "",
                     "email": "",

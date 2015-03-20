@@ -20,7 +20,7 @@ $class .= 'zt-button';
 $class .= ' size-' . $attributes->get('size');
 $class .= ' color-' . $attributes->get('colour');
 $class .= ' type-' . $attributes->get('type');
-$class .= ' ' . $attributes->get('extra-class');
+$class .= ' ' . $attributes->get('extraclass');
 
 //Html For Button
 $html .= '<a href="' . $attributes->get('link') . '" class="' . $class . '">';
