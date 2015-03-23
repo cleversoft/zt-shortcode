@@ -442,7 +442,11 @@ if (!class_exists('ZtShortcodesParser'))
          */
         public function do_shortcode_tag($m)
         {
-            $html = false;
+
+            // Provide caching for same shortcodes
+            $cacheId = ZtShortcodesHelperCommon::getCacheId($m);
+            $cache = JFactory::getCache('ztshortcodes', '');
+            $html = $cache->get($cacheId);
             if ($html === false)
             {
                 // allow [[foo]] syntax for escaping a tag
@@ -508,6 +512,8 @@ if (!class_exists('ZtShortcodesParser'))
                     // self-closing tag
                     $html = $m[1] . call_user_func($this->shortcode_tags[$tag], $attr, null, $tag) . $m[6];
                 }
+                // Store cache
+                $cache->store($html, $cacheId);
             }
             return $html;
         }
