@@ -16,14 +16,14 @@ defined('_JEXEC') or die('Restricted access');
 <?php
 
 $html = '';
-$html .= '<div class="zt-quote ' . $attributes->get('type') . '-quote">';
+$html .= '<div class="zt-quote ' . $attributes->get('type') . '-quote '. $attributes->get('extraclass') .'">';
 $html .= '<div class="zt-quote-inner">';
 if ($attributes->get('type') == "box")
 {
     $html .= '<i class="fa fa-quote-left"></i>';
 }
 $html .= '<p>' . $content . '</p>';
-$html .= '<a class="zt-quote-author" href="' . $attributes->get('author-link') . '">&#8212 ' . $attributes->get('author') . '</a>';
+$html .= '<a class="zt-quote-author" href="' . $attributes->get('authorlink') . '">&#8212 ' . $attributes->get('author') . '</a>';
 $html .= '</div>';
 $html .= '</div>';
 

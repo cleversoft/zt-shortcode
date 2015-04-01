@@ -15,8 +15,8 @@
 ?>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-<?php echo $attributes->get('button-type'); ?> btn-<?php echo $attributes->get('button-size'); ?>" data-toggle="modal" data-target="#<?php echo $attributes->get('id'); ?>">
-    <?php echo $attributes->get('button-text'); ?>
+<button type="button" class="btn btn-<?php echo $attributes->get('buttontype'); ?> btn-<?php echo $attributes->get('buttonsize'); ?>" data-toggle="modal" data-target="#<?php echo $attributes->get('id'); ?>">
+    <?php echo $attributes->get('buttontext'); ?>
 </button>
 
 <!-- Modal -->

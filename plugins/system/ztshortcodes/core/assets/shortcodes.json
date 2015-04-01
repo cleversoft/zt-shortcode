@@ -287,15 +287,17 @@
             "titleColor": "#ffffff",
             "strip": "striped",
             "animated": "active",
-            "now-value": "90",
-            "min-value": "0",
-            "max-value": "100"
+            "nowvalue": "90",
+            "minvalue": "0",
+            "maxvalue": "100"
         },
         "depends": {
             "css": [
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
                 "Shortcodes://assets/css/progress-bar.css"
             ],
             "js": [
+                "Shortcodes://assets/bootstrap/js/bootstrap.min.js",
                 "Shortcodes://assets/js/waypoints.min.js",
                 "Shortcodes://assets/js/progress-bar.js"
             ]
@@ -352,19 +354,19 @@
             {
                 "label": "Current Value",
                 "type": "text",
-                "name": "now-value",
+                "name": "nowvalue",
                 "value": "90"
             },
             {
                 "label": "Min Value",
                 "type": "text",
-                "name": "min-value",
+                "name": "minvalue",
                 "value": "0"
             },
             {
                 "label": "Max Value",
                 "type": "text",
-                "name": "max-value",
+                "name": "maxvalue",
                 "value": "100"
             },
             {
@@ -385,7 +387,7 @@
             "colour": "white",
             "icon": "fa fa-ambulance",
             "link": "#",
-            "extra-class": "class-button"
+            "extraclass": "class-button"
         },
         "depends": {
             "css": [
@@ -528,7 +530,7 @@
         "attributes": {
             "type": "success",
             "icon": "fa fa-times-circle",
-            "extra-class": "message-box"
+            "extraclass": "message-box"
         },
         "depends": {
             "css": [
@@ -580,8 +582,8 @@
         "attributes": {
             "type": "big",
             "author": "Author",
-            "author-link": "#",
-            "extra-class": "blockquotes"
+            "authorlink": "#",
+            "extraclass": "blockquotes"
         },
         "depends": {
             "css": [
@@ -1106,9 +1108,9 @@
         "attributes": {
             "id": "my-modal",
             "title": "Title Modal",
-            "button-type": "success",
-            "button-size": "sm",
-            "button-text": "Button Text"
+            "buttontype": "success",
+            "buttonsize": "sm",
+            "buttontext": "Button Text"
         },
         "depends": {
             "css": [
@@ -1454,7 +1456,7 @@
                     {
                         "label": "Content",
                         "type": "text",
-                        "name": "link",
+                        "name": "maincontent",
                         "value": "Testimonial Content"
                     }
                 ]
@@ -1860,8 +1862,8 @@
                     "name": "",
                     "position": "",
                     "image": "",
-                    "img-type": "",
-                    "social-type": "",
+                    "imgtype": "",
+                    "socialtype": "",
                     "facebook": "",
                     "twitter": "",
                     "email": "",
@@ -3068,6 +3070,207 @@
                 "name": "class",
                 "description": "Enter class extend for flip box",
                 "value": "zt-flip-box-extend"
+            }
+        ]
+    },
+    "zt_parallax": {
+        "name": "Parallax",
+        "group": "Typography",
+        "icon": "fa fa-connectdevelop",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "attributes": {
+            "ptype": "",
+            "image": "",
+            "bgtype": "",
+            "video1": "",
+            "video2": "",
+            "video3": "",
+            "overlay": "",
+            "bgoverlay": "",
+            "opacity": "",
+            "padding": "",
+            "fullwidth": "",
+            "class": ""
+        },
+        "depends": {
+            "css": [
+                "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
+                "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+                "Shortcodes://assets/css/counter-box.css",
+                "Shortcodes://assets/css/parallax.css"
+            ],
+            "js": [
+                "Shortcodes://assets/js/jquery-2.0.3.min.js",
+                "Shortcodes://assets/js/jquery.videobackground.js",
+                "Shortcodes://assets/js/parallax.js"
+            ]
+        },
+        "fields": [
+            {
+                "label": "Parallax Type",
+                "type": "select",
+                "name": "ptype",
+                "description": "",
+                "options": [
+                    {
+                        "value": "video",
+                        "label": "Video"
+                    },
+                    {
+                        "value": "image",
+                        "label": "Image"
+                    }
+                ]
+            },
+            {
+                "label": "Background Image",
+                "type": "text",
+                "name": "image",
+                "description": "Choose url path image for parallax",
+                "value": ""
+            },
+            {
+                "label": "Background Type",
+                "type": "select",
+                "name": "type",
+                "description": "",
+                "options": [
+                    {
+                        "value": "cover",
+                        "label": "Cover"
+                    },
+                    {
+                        "value": "repeat",
+                        "label": "Repeat"
+                    }
+                ]
+            },
+            {
+                "label": "Link Video (MP4)",
+                "type": "text",
+                "name": "video1",
+                "description": "Choose url video MP4 for parallax",
+                "value": ""
+            },
+            {
+                "label": "Link Video (WEBM)",
+                "type": "text",
+                "name": "video2",
+                "description": "Choose url video WEBM for parallax",
+                "value": ""
+            },
+            {
+                "label": "Link Video (OGV)",
+                "type": "text",
+                "name": "video3",
+                "description": "Choose url video OGV for parallax",
+                "value": ""
+            },
+            {
+                "label": "Parallax Content",
+                "type": "textarea",
+                "name": "maincontent",
+                "value": ""
+            },
+            {
+                "label": "Overlay",
+                "type": "select",
+                "name": "overlay",
+                "description": "Choose overlay parallax",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
+                "label": "Background Overlay",
+                "type": "colorpicker",
+                "name": "bgoverlay",
+                "description": "Choose Background Color for overlay parallax",
+                "value": ""
+            },
+            {
+                "label": "Overlay Opacity",
+                "type": "select",
+                "name": "opacity",
+                "description": "Choose overlay parallax",
+                "options": [
+                    {
+                        "value": "0.1",
+                        "label": "0.1"
+                    },
+                    {
+                        "value": "0.2",
+                        "label": "0.2"
+                    },
+                    {
+                        "value": "0.3",
+                        "label": "0.3"
+                    },
+                    {
+                        "value": "0.4",
+                        "label": "0.4"
+                    },
+                    {
+                        "value": "0.5",
+                        "label": "0.5"
+                    },
+                    {
+                        "value": "0.6",
+                        "label": "0.6"
+                    },
+                    {
+                        "value": "0.7",
+                        "label": "0.7"
+                    },
+                    {
+                        "value": "0.8",
+                        "label": "0.8"
+                    },
+                    {
+                        "value": "0.9",
+                        "label": "0.9"
+                    },
+                    {
+                        "value": "1",
+                        "label": "1"
+                    }
+                ]
+            },
+            {
+                "label": " Content",
+                "type": "text",
+                "name": "padding",
+                "description": "Choose padding content parallax. Note: only allow padding-top and padding-bottom. exp: 100px 100px",
+                "value": "100px 100px"
+            },
+            {
+                "label": "Full Width",
+                "type": "select",
+                "name": "fullwidth",
+                "description": "",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
+                "label": "Class Extend",
+                "type": "text",
+                "name": "class",
+                "value": ""
             }
         ]
     }

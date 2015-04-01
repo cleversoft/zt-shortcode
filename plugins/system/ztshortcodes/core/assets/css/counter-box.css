@@ -1,6 +1,7 @@
 .zt-count-asset{
     display: inline-block;
     text-align: center;
+    background-color: #fff;
 }
 .zt-count-inner{
     padding: 30px 0;

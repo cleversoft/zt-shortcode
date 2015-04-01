@@ -19,7 +19,7 @@
     if($attributes->get('width') != ''){
         $style .= 'style="width: '. $attributes->get('width') .'"';
     }
-    $html .= '<div class="zt-message-box alert alert-'. $attributes->get('type') .' '. $attributes->get('extra-class') .'" role="alert">';
+    $html .= '<div class="zt-message-box alert alert-'. $attributes->get('type') .' '. $attributes->get('extraclass') .'" role="alert">';
     if($attributes->get('icon') != ''){
         $html .= '<i class="'. $attributes->get('icon') .'"></i>';
     }
