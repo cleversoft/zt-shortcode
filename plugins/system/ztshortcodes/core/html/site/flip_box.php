@@ -1,18 +1,19 @@
 <?php
-
 /**
- * ZT Shortcodes
+ * Zt Shortcodes
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
- *
- * @version     1.0.0
- * @author      ZooTemplate
- * @email       support@zootemplate.com
- * @link        http://www.zootemplate.com
+ * 
+ * @name        Zt Shortcodes
+ * @version     2.0.0
+ * @package     Plugin
+ * @subpackage  System
+ * @author      ZooTemplate 
+ * @email       support@zootemplate.com 
+ * @link        http://www.zootemplate.com 
  * @copyright   Copyright (c) 2015 ZooTemplate
- * @license     GPL v2
+ * @license     GPL v2 
  */
 defined('_JEXEC') or die('Restricted access');
-
 ?>
 
 <?php
@@ -41,17 +42,19 @@ $imageHeight = $attributes->get('imageHeight');
 $animationSpeed = $attributes->get('animationSpeed');
 ?>
 
-<div class="zt-flip-box-front" style="background-color: <?php echo $bgColorFront; ?>; border: <?php echo $borderSize.'px'; ?> solid <?php echo $borderColor; ?>; border-radius: <?php echo $borderRadius . 'px'; ?>">
+<div class="zt-flip-box-front" style="background-color: <?php echo $bgColorFront; ?>; border: <?php echo $borderSize . 'px'; ?> solid <?php echo $borderColor; ?>; border-radius: <?php echo $borderRadius . 'px'; ?>">
     <div class="zt-flip-box-front-inner">
-        <?php if($icon) { ?>
-        <div class="zt-flip-box-icon zt-flip-box-<?php echo ($circle == "yes") ? 'circle' : 'no-circle'; ?>">
-            <i style="color: <?php echo $iconColor; ?>; background-color: <?php echo $circleBgColor; ?>; border: 1px solid <?php echo ($circleBorderColor) ? $circleBgColor : 'transparent'; ?>" class="<?php echo $icon; ?> <?php echo ($iconSpin == "yes") ? 'fa-spin' : ''; ?>"></i>
-        </div>
+<?php if ($icon)
+{ ?>
+            <div class="zt-flip-box-icon zt-flip-box-<?php echo ($circle == "yes") ? 'circle' : 'no-circle'; ?>">
+                <i style="color: <?php echo $iconColor; ?>; background-color: <?php echo $circleBgColor; ?>; border: 1px solid <?php echo ($circleBorderColor) ? $circleBgColor : 'transparent'; ?>" class="<?php echo $icon; ?> <?php echo ($iconSpin == "yes") ? 'fa-spin' : ''; ?>"></i>
+            </div>
         <?php } ?>
-        <?php if($image) { ?>
-        <div class="zt-flip-box-image">
-            <img src="<?php echo $image; ?>" alt="Image Flip Box" width="<?php echo $imageWidth . 'px'; ?>" height="<?php echo $imageHeight . 'px'; ?>" />
-        </div>
+        <?php if ($image)
+        { ?>
+            <div class="zt-flip-box-image">
+                <img src="<?php echo $image; ?>" alt="Image Flip Box" width="<?php echo $imageWidth . 'px'; ?>" height="<?php echo $imageHeight . 'px'; ?>" />
+            </div>
         <?php } ?>
         <h2 class="zt-flip-box-heading" style="color: <?php echo $titleFrontColor; ?>">Icons</h2>
         <p style="color: <?php echo $textFrontColor; ?>">Font Awesome Icon integration is perfect.</p>

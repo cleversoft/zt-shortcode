@@ -1,14 +1,18 @@
 <?php
+
 /**
- * ZT Shortcodes
+ * Zt Shortcodes
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
- *
- * @version     1.0.0
- * @author      ZooTemplate
- * @email       support@zootemplate.com
- * @link        http://www.zootemplate.com
+ * 
+ * @name        Zt Shortcodes
+ * @version     2.0.0
+ * @package     Plugin
+ * @subpackage  System
+ * @author      ZooTemplate 
+ * @email       support@zootemplate.com 
+ * @link        http://www.zootemplate.com 
  * @copyright   Copyright (c) 2015 ZooTemplate
- * @license     GPL v2
+ * @license     GPL v2 
  */
 defined('_JEXEC') or die('Restricted access');
 ?>
@@ -31,28 +35,33 @@ $updown = $attributes->get('updown');
 $border = $attributes->get('border');
 $bdColor = $attributes->get('bdColor');
 $style = '';
-if($border == 'yes'){
-    $style = 'style="border: 1px solid '. $bdColor .'"';
+if ($border == 'yes')
+{
+    $style = 'style="border: 1px solid ' . $bdColor . '"';
 }
 
 $count_output = '';
-$count_output .= '<div class="zt-count-asset '. $class .'">';
-$count_output .= '<div class="zt-count-inner" '. $style .'>';
-$count_output .= '<span class="counter-icon" style="color: '. $iconColor .'"><i class="' . $icon . '"></i></span>';
-if($unitPos == 'before' and $unit != ''){
-    $count_output .= '<span class="unit" style="color: '. $iconColor .'">'. $unit .'&nbsp;</span>';
+$count_output .= '<div class="zt-count-asset ' . $class . '">';
+$count_output .= '<div class="zt-count-inner" ' . $style . '>';
+$count_output .= '<span class="counter-icon" style="color: ' . $iconColor . '"><i class="' . $icon . '"></i></span>';
+if ($unitPos == 'before' and $unit != '')
+{
+    $count_output .= '<span class="unit" style="color: ' . $iconColor . '">' . $unit . '&nbsp;</span>';
 }
-$count_output .= '<div class="count-number" data-from="' . $from . '" data-to="' . $to . '" data-updown="'. $updown .'" data-speed="' . $speed . '" style="color: '. $countColor .'">';
-if($updown == 'up'){
+$count_output .= '<div class="count-number" data-from="' . $from . '" data-to="' . $to . '" data-updown="' . $updown . '" data-speed="' . $speed . '" style="color: ' . $countColor . '">';
+if ($updown == 'up')
+{
     $count_output .= $to;
-} else {
+} else
+{
     $count_output .= $from;
 }
 $count_output .= '</div>';
-if($unitPos == 'after' and $unit != ''){
-    $count_output .= '<span class="unit" style="color: '. $iconColor .'">&nbsp;'. $unit .'</span>';
+if ($unitPos == 'after' and $unit != '')
+{
+    $count_output .= '<span class="unit" style="color: ' . $iconColor . '">&nbsp;' . $unit . '</span>';
 }
-$count_output .= '<h3 class="count-subject" style="color: '. $contentColor .'">' . $content . '</h3>';
+$count_output .= '<h3 class="count-subject" style="color: ' . $contentColor . '">' . $content . '</h3>';
 $count_output .= '</div>';
 $count_output .= '</div>';
 
