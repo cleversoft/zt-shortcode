@@ -10,7 +10,6 @@ jQuery(document).ready(function(){
         pager: true,
         controls: true,
         auto: true,
-        mode: 'vertical',
         minSlides: 2,
         maxSlides: 3,
         moveSlides : 1

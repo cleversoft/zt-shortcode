@@ -37,6 +37,16 @@ ZT Shortcodes package includes:
 
 # Change logs
 
+## Version 2.0.2  released Apr 07, 2015
+
+* Fixes the issue which the JEXEC security check was not found in some .php files
+* Removed dummy video 
+
+## Version 2.0.1  released Mar 20, 2015
+
+* Add new Parallax shortcode 
+* Fix some issues which related to progress bar, testimonial, button, message, person shortcodes
+
 ## Version 2.0.0  released Mar 18, 2015
 
 * Replace the JBBCode by [WordPress' Shortcode API](http://codex.wordpress.org/Shortcode_API)

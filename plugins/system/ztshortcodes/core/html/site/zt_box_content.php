@@ -1,21 +1,24 @@
 <?php
-
 /**
- * ZT Shortcodes
+ * Zt Shortcodes
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
- *
- * @version     1.0.0
- * @author      ZooTemplate
- * @email       support@zootemplate.com
- * @link        http://www.zootemplate.com
+ * 
+ * @name        Zt Shortcodes
+ * @version     2.0.0
+ * @package     Plugin
+ * @subpackage  System
+ * @author      ZooTemplate 
+ * @email       support@zootemplate.com 
+ * @link        http://www.zootemplate.com 
  * @copyright   Copyright (c) 2015 ZooTemplate
- * @license     GPL v2
+ * @license     GPL v2 
  */
+defined('_JEXEC') or die('Restricted access');
 ?>
 <div class="zt-box-content-wrap <?php echo $attributes->get('class'); ?>">
-<div class="row">
-    <?php
+    <div class="row">
+        <?php
         echo $content;
-    ?>
-</div>
+        ?>
+    </div>
 </div>

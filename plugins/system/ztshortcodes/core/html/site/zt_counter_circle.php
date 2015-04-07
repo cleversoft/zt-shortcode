@@ -1,16 +1,19 @@
 <?php
-
 /**
- * ZT Shortcodes
+ * Zt Shortcodes
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
- *
- * @version     1.0.0
- * @author      ZooTemplate
- * @email       support@zootemplate.com
- * @link        http://www.zootemplate.com
+ * 
+ * @name        Zt Shortcodes
+ * @version     2.0.0
+ * @package     Plugin
+ * @subpackage  System
+ * @author      ZooTemplate 
+ * @email       support@zootemplate.com 
+ * @link        http://www.zootemplate.com 
  * @copyright   Copyright (c) 2015 ZooTemplate
- * @license     GPL v2
+ * @license     GPL v2 
  */
+defined('_JEXEC') or die('Restricted access');
 ?>
 
 <div class="zt-counter-wrap">
@@ -26,13 +29,18 @@
           data-duration="<?php echo $attributes->get('duration'); ?>"
           style="width: <?php echo $attributes->get('size') . 'px'; ?>; height: <?php echo $attributes->get('size') . 'px'; ?>; line-height: <?php echo $attributes->get('size') . 'px'; ?>">
 
-        <?php if ($attributes->get('content-type') == 'percent') {
+        <?php
+        if ($attributes->get('content-type') == 'percent')
+        {
             echo '<span class="percent"></span>';
-        } elseif ($attributes->get('content-type') == 'icon') {
+        } elseif ($attributes->get('content-type') == 'icon')
+        {
             echo '<span><i class="' . $attributes->get('icon') . '"></i></span>';
-        } else {
+        } else
+        {
             echo '<span>' . $content . '</span>';
-        } ?>
+        }
+        ?>
 
 
     </span>

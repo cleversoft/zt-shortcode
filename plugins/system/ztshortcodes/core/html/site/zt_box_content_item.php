@@ -1,16 +1,19 @@
 <?php
-
 /**
- * ZT Shortcodes
+ * Zt Shortcodes
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
- *
- * @version     1.0.0
- * @author      ZooTemplate
- * @email       support@zootemplate.com
- * @link        http://www.zootemplate.com
+ * 
+ * @name        Zt Shortcodes
+ * @version     2.0.0
+ * @package     Plugin
+ * @subpackage  System
+ * @author      ZooTemplate 
+ * @email       support@zootemplate.com 
+ * @link        http://www.zootemplate.com 
  * @copyright   Copyright (c) 2015 ZooTemplate
- * @license     GPL v2
+ * @license     GPL v2 
  */
+defined('_JEXEC') or die('Restricted access');
 
 // Variable
 
@@ -34,7 +37,6 @@ $linkColor = $attributes->get('linkColor');
 $linkBgColor = $attributes->get('linkBgColor');
 $linkColorHover = $attributes->get('linkColorHover');
 $linkBgColorHover = $attributes->get('linkBgColorHover');
-
 ?>
 
 <div
@@ -43,7 +45,8 @@ $linkBgColorHover = $attributes->get('linkBgColorHover');
         <div
             class="zt-box-icon zt-icon-<?php echo ($iconStyle != "") ? $iconStyle : 'default'; ?>"
             style="margin-bottom: <?php echo $iconBottom; ?>; margin-top: <?php echo $iconTop; ?>; width: <?php echo $iconSize; ?>; height: <?php echo $iconSize; ?>; border: <?php echo $iconBorder; ?> solid <?php echo $iconBorderColor; ?>; background-color: <?php echo $iconBgColor; ?>">
-            <?php if ($iconAnimation == 'zoom-hover') { ?>
+<?php if ($iconAnimation == 'zoom-hover')
+{ ?>
                 <span class="after" style="border-color: <?php echo $iconBgColor; ?>"></span>
             <?php } ?>
             <i class="<?php echo $icon; ?> <?php echo ($iconAnimation == 'spin') ? 'fa-spin' : '' ?>"
@@ -53,14 +56,17 @@ $linkBgColorHover = $attributes->get('linkBgColorHover');
             <h3 class="zt-box-title"><?php echo $title; ?></h3>
 
             <p><?php echo $content; ?></p>
-            <?php if ($link != "") { ?>
+            <?php if ($link != "")
+            { ?>
                 <a href="<?php echo $link; ?>" class="zt-box-link"
                    style="background-color: <?php echo $linkBgColor; ?>; color: <?php echo $linkColor; ?>"
-                   onmouseover="this.style.backgroundColor='<?php echo $linkBgColorHover; ?>'; this.style.color='<?php echo $linkColorHover; ?>'"
-                   onmouseout="this.style.backgroundColor='<?php echo $linkBgColor; ?>';this.style.color='<?php echo $linkColor; ?>'">
-                    <?php echo ($linkText) ? $linkText : 'Read More'; ?>
+                   onmouseover="this.style.backgroundColor = '<?php echo $linkBgColorHover; ?>';
+                           this.style.color = '<?php echo $linkColorHover; ?>'"
+                   onmouseout="this.style.backgroundColor = '<?php echo $linkBgColor; ?>';
+                           this.style.color = '<?php echo $linkColor; ?>'">
+                <?php echo ($linkText) ? $linkText : 'Read More'; ?>
                 </a>
-            <?php } ?>
+<?php } ?>
         </div>
     </div>
 </div>
