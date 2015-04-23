@@ -3099,8 +3099,7 @@
                 "Shortcodes://assets/css/counter-box.css",
                 "Shortcodes://assets/css/parallax.css"
             ],
-            "js": [
-                "Shortcodes://assets/js/jquery-2.0.3.min.js",
+            "js": [                
                 "Shortcodes://assets/js/jquery.videobackground.js",
                 "Shortcodes://assets/js/parallax.js"
             ]
