@@ -1,6 +1,7 @@
 /*
     Colorbox Core Style:
     The following CSS is consistent between example themes and should not be altered.
+    Modified by zootemplate.com Apr 24, 2015
 */
 #colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; }
 #cboxWrapper {max-width:none;}
