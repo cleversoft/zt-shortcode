@@ -9,9 +9,6 @@ jQuery(document).ready(function(){
     jQuery('.bxslider').bxSlider({
         pager: true,
         controls: true,
-        auto: true,
-        minSlides: 2,
-        maxSlides: 3,
-        moveSlides : 1
+        auto: true
     });
 });
