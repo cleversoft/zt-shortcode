@@ -5,7 +5,7 @@
  * A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge
  * 
  * @name        Zt Shortcodes
- * @version     2.0.0
+ * @version     2.0.5
  * @package     Plugin
  * @subpackage  System
  * @author      ZooTemplate 
