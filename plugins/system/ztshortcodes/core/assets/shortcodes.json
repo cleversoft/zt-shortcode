@@ -873,21 +873,6 @@
                 "value": "fa fa-android"
             },
             {
-                "label": "Icon Circle",
-                "type": "select",
-                "name": "iconCircle",
-                "options": [
-                    {
-                        "value": "yes",
-                        "label": "Yes"
-                    },
-                    {
-                        "value": "no",
-                        "label": "No"
-                    }
-                ]
-            },
-            {
                 "label": "Icon Size",
                 "type": "select",
                 "name": "iconSize",
@@ -903,6 +888,21 @@
                     {
                         "value": "large",
                         "label": "Large"
+                    }
+                ]
+            },
+            {
+                "label": "Icon Circle",
+                "type": "select",
+                "name": "iconCircle",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
                     }
                 ]
             },
