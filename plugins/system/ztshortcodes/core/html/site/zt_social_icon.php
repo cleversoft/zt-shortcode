@@ -18,6 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 
 <?php
 $icon = $attributes->get('icon');
+$iconSize = $attributes->get('iconSize');
 $title = $attributes->get('title');
 $link = $attributes->get('link');
 $color = $attributes->get('color');
@@ -36,5 +37,5 @@ $titleLow = strtolower($title);
    onmouseout="this.style.backgroundColor = '<?php echo $bgColor; ?>';
            this.style.color = '<?php echo $color; ?>'"
    href="<?php echo $link; ?>" target="_blank" class="zt-social-icon-item zt-icon-<?php echo $titleLow; ?>">
-    <i class="<?php echo $icon; ?>"></i>
+    <i class="<?php echo $icon . " " . $iconSize; ?>"></i>
 </a>
