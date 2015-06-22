@@ -59,19 +59,7 @@ if (!class_exists('plgSystemZtShortcodes'))
         }
 
         /**
-         * On before render event handler
-         */
-        public function onBeforeRender()
-        {
-            $document = JFactory::getDocument();
-            /* Fix Kunenka conflict */
-            unset($document->_metaTags['standard']['og:description']);
-            /* Fix Joomla! conflict */
-            $document->description = '';
-        }
-        
-        /**
-         * After render event handler
+         * 
          */
         public function onAfterRender()
         {

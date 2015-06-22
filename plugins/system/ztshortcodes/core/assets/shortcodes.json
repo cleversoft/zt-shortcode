@@ -873,6 +873,21 @@
                 "value": "fa fa-android"
             },
             {
+                "label": "Icon Circle",
+                "type": "select",
+                "name": "iconCircle",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
                 "label": "Icon Size",
                 "type": "select",
                 "name": "iconSize",
@@ -888,21 +903,6 @@
                     {
                         "value": "large",
                         "label": "Large"
-                    }
-                ]
-            },
-            {
-                "label": "Icon Circle",
-                "type": "select",
-                "name": "iconCircle",
-                "options": [
-                    {
-                        "value": "yes",
-                        "label": "Yes"
-                    },
-                    {
-                        "value": "no",
-                        "label": "No"
                     }
                 ]
             },
@@ -2102,33 +2102,6 @@
                         "value": ""
                     },
                     {
-                        "label": "Icon Size",
-                        "type": "select",
-                        "name": "iconSize",
-                        "options": [
-                            {
-                                "value": "fa-lg",
-                                "label": "1"
-                            },
-                            {
-                                "value": "fa-2x",
-                                "label": "2"
-                            },
-                            {
-                                "value": "fa-3x",
-                                "label": "3"
-                            },
-                            {
-                                "value": "fa-4x",
-                                "label": "4"
-                            },
-                            {
-                                "value": "fa-5x",
-                                "label": "5"
-                            }
-                        ]
-                    },
-                    {
                         "label": "Title",
                         "type": "text",
                         "name": "title",
@@ -2509,33 +2482,6 @@
                         "type": "faicons",
                         "name": "icon",
                         "value": ""
-                    },
-                    {
-                        "label": "Icon Size",
-                        "type": "select",
-                        "name": "iconSize",
-                        "options": [
-                            {
-                                "value": "fa-lg",
-                                "label": "1"
-                            },
-                            {
-                                "value": "fa-2x",
-                                "label": "2"
-                            },
-                            {
-                                "value": "fa-3x",
-                                "label": "3"
-                            },
-                            {
-                                "value": "fa-4x",
-                                "label": "4"
-                            },
-                            {
-                                "value": "fa-5x",
-                                "label": "5"
-                            }
-                        ]
                     },
                     {
                         "label": "Icon Color",

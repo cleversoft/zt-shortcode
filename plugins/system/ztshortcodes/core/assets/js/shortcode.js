@@ -77,7 +77,6 @@
          */
         _iconSelector: function () {
             var $iconFields = $('div.list-awesome-font');
-            $iconFields.unbind('click');
             $iconFields.on('click', 'a', function () {
                 var $currentIconField = $(this).closest('div.list-awesome-font');
                 $currentIconField.find('a.selected').removeClass('selected');
@@ -169,7 +168,6 @@
             var children = _self.activateForm.find(_self._elements.shortcodeFormChild);
             children.first().clone().appendTo(_self.activateForm.find(_self._elements.shortcodeZtSub));
             _self._hook();
-            _self._iconSelector();
             _self._update();
         },
         /**
