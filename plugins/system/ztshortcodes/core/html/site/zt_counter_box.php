@@ -22,6 +22,7 @@ defined('_JEXEC') or die('Restricted access');
 
 // Variable
 $icon = $attributes->get('icon');
+$iconSize = $attributes->get('iconSize');
 $iconColor = $attributes->get('iconColor');
 $from = $attributes->get('from');
 $to = $attributes->get('to');
@@ -43,7 +44,7 @@ if ($border == 'yes')
 $count_output = '';
 $count_output .= '<div class="zt-count-asset ' . $class . '">';
 $count_output .= '<div class="zt-count-inner" ' . $style . '>';
-$count_output .= '<span class="counter-icon" style="color: ' . $iconColor . '"><i class="' . $icon . '"></i></span>';
+$count_output .= '<span class="counter-icon" style="color: ' . $iconColor . '"><i class="' . $icon . ' '. $iconSize .'"></i></span>';
 if ($unitPos == 'before' and $unit != '')
 {
     $count_output .= '<span class="unit" style="color: ' . $iconColor . '">' . $unit . '&nbsp;</span>';
