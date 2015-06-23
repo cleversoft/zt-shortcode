@@ -68,9 +68,15 @@ if (!class_exists('plgSystemZtShortcodes'))
             {
                 $document = JFactory::getDocument();
                 /* Fix Kunenka conflict */
-                $document->_metaTags['standard']['og:description'] = $this->_removeShortCode($document->_metaTags['standard']['og:description']);
+                if(isset($document->_metaTags['standard'])){
+                    if(isset($document->_metaTags['standard']['og:description'])){
+                        $document->_metaTags['standard']['og:description'] = $this->_removeShortCode($document->_metaTags['standard']['og:description']);
+                    }
+                }
                 /* Fix Joomla! conflict */
-                $document->description = $this->_removeShortCode($document->description);
+                if(property_exists($document, 'description')){
+                    $document->description = $this->_removeShortCode($document->description);
+                }
             }
         }
 
