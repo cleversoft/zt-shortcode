@@ -1,9 +1,8 @@
 .zt-social-networks .zt-social-icon-item{
-    width: 35px;
-    height: 35px;
+    
     display: block;
     text-align: center;
-    line-height: 35px;
+    padding: 5px;
     margin: 0 5px 5px 0;
     float: left;
     background-color: #e8e8e8;

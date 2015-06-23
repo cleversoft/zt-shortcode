@@ -19,7 +19,7 @@ defined('_JEXEC') or die('Restricted access');
 $html = $style = $class = '';
 if ($attributes->get('iconCircle') == "yes")
 {
-    $style = 'style="background-color: ' . $attributes->get('iconBgColor') . '; color: ' . $attributes->get('iconColor') . '; border-color: ' . $attributes->get('iconBdColor') . '"';
+    $style = 'style="font-size:'. $attributes->get('iconSize') .'px; background-color: ' . $attributes->get('iconBgColor') . '; color: ' . $attributes->get('iconColor') . '; border-color: ' . $attributes->get('iconBdColor') . '"';
     $class .= 'ic-circle';
 } else
 {
@@ -29,6 +29,7 @@ if ($attributes->get('iconCircle') == "yes")
     }
 }
 $class .= ' ic-' . $attributes->get('iconSize') . ' ' . $attributes->get('classIcon');
+
 if ($attributes->get('spinningIcon') == "yes")
 {
     $class .= ' fa-spin';

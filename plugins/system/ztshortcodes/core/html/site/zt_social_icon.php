@@ -37,5 +37,5 @@ $titleLow = strtolower($title);
    onmouseout="this.style.backgroundColor = '<?php echo $bgColor; ?>';
            this.style.color = '<?php echo $color; ?>'"
    href="<?php echo $link; ?>" target="_blank" class="zt-social-icon-item zt-icon-<?php echo $titleLow; ?>">
-    <i class="<?php echo $icon . " " . $iconSize; ?>"></i>
+    <i class="<?php echo $icon; ?>" style="font-size:<?php echo  $iconSize; ?>px"></i>
 </a>

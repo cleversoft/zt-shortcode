@@ -874,22 +874,9 @@
             },
             {
                 "label": "Icon Size",
-                "type": "select",
+                "type": "text",
                 "name": "iconSize",
-                "options": [
-                    {
-                        "value": "small",
-                        "label": "Small"
-                    },
-                    {
-                        "value": "medium",
-                        "label": "Medium"
-                    },
-                    {
-                        "value": "large",
-                        "label": "Large"
-                    }
-                ]
+                "value": "16"
             },
             {
                 "label": "Icon Circle",
@@ -2103,30 +2090,9 @@
                     },
                     {
                         "label": "Icon Size",
-                        "type": "select",
+                        "type": "text",
                         "name": "iconSize",
-                        "options": [
-                            {
-                                "value": "fa-lg",
-                                "label": "1"
-                            },
-                            {
-                                "value": "fa-2x",
-                                "label": "2"
-                            },
-                            {
-                                "value": "fa-3x",
-                                "label": "3"
-                            },
-                            {
-                                "value": "fa-4x",
-                                "label": "4"
-                            },
-                            {
-                                "value": "fa-5x",
-                                "label": "5"
-                            }
-                        ]
+                        "value": "16"
                     },
                     {
                         "label": "Title",
@@ -2512,30 +2478,9 @@
                     },
                     {
                         "label": "Icon Size",
-                        "type": "select",
+                        "type": "text",
                         "name": "iconSize",
-                        "options": [
-                            {
-                                "value": "fa-lg",
-                                "label": "1"
-                            },
-                            {
-                                "value": "fa-2x",
-                                "label": "2"
-                            },
-                            {
-                                "value": "fa-3x",
-                                "label": "3"
-                            },
-                            {
-                                "value": "fa-4x",
-                                "label": "4"
-                            },
-                            {
-                                "value": "fa-5x",
-                                "label": "5"
-                            }
-                        ]
+                        "value": "16"
                     },
                     {
                         "label": "Icon Color",
