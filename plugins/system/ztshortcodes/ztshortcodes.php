@@ -64,40 +64,13 @@ if (!class_exists('plgSystemZtShortcodes'))
         public function onBeforeRender()
         {
             $jApp = JFactory::getApplication();
-            $jInput = $jApp->input;
-            $option = $jInput->get('option', false);
-            $view = $jInput->get('view', false);
-            $id = $jInput->get('id', -1, 'INT');
             if ($jApp->isSite())
             {
-                if ($option == 'com_content' && $view = 'article' && $id > 0)
-                {
-                    $article = JTable::getInstance("content");
-                    $article->load($id);
-                    $description = $this->_makeDescription($article->get("introtext"));
-                }
-                elseif ($option == 'com_k2' && $view == 'item')
-                {
-                    $db = JFactory::getDbo();
-                    $db->setQuery('SELECT * FROM `#__k2_items` WHERE `id`=' . $id);
-                    $data = $db->loadAssoc();
-                    if($data !== null){
-                        $description = $this->_makeDescription($data['introtext']); 
-                    }
-                }
-                
-                /* Last check make sure we has default description */
-                if(!isset($description))
-                {
-                    /* Default site description */
-                    $description = JFactory::getConfig()->get('MetaDesc');
-                }
-                
                 $document = JFactory::getDocument();
                 /* Fix Kunenka conflict */
-                $document->_metaTags['standard']['og:description'] = $description;
+                $document->_metaTags['standard']['og:description'] = $this->_removeShortCode($document->_metaTags['standard']['og:description']);
                 /* Fix Joomla! conflict */
-                $document->description = $description;
+                $document->description = $this->_removeShortCode($document->description);
             }
         }
 
@@ -106,12 +79,13 @@ if (!class_exists('plgSystemZtShortcodes'))
          * @param type $content
          * @return type
          */
-        private function _makeDescription($content)
+        private function _removeShortCode($content)
         {
             $content = str_replace('[', '<', $content);
             $content = str_replace(']', '>', $content);
+            $content = str_replace(PHP_EOL, '', $content);
             $content = strip_tags($content);
-            return substr($content, 0, (strlen($content) > 255) ? 255 : strlen($content)) . '...';
+            return substr($content, 0, (strlen($content) > 255) ? 255 : strlen($content));
         }
 
         /**
