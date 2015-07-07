@@ -516,6 +516,29 @@
                 "value": "#"
             },
             {
+                "label": "Target",
+                "type": "select",
+                "name": "target",
+                "options": [
+                    {
+                        "value": "_blank",
+                        "label": "_blank"
+                    },
+                    {
+                        "value": "_self",
+                        "label": "_self"
+                    },
+                    {
+                        "value": "_parent",
+                        "label": "_parent"
+                    },
+                    {
+                        "value": "_top",
+                        "label": "_top"
+                    }
+                ]
+            },
+            {
                 "label": "Extra Class",
                 "type": "text",
                 "name": "extra-class",

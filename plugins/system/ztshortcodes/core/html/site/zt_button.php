@@ -22,9 +22,10 @@ $class .= ' size-' . $attributes->get('size');
 $class .= ' color-' . $attributes->get('colour');
 $class .= ' type-' . $attributes->get('type');
 $class .= ' ' . $attributes->get('extraclass');
+$target = $attributes->get('target');
 
 //Html For Button
-$html .= '<a href="' . $attributes->get('link') . '" class="' . $class . '">';
+$html .= '<a href="' . $attributes->get('link') . '" target="' .$target. '" class="' . $class . '">';
 if ($attributes->get('type') == 'icon-reveal' || $attributes->get('type') == 'icon-stroke')
 {
     $html .= '<i class="' . $attributes->get('icon') . '"></i>';
