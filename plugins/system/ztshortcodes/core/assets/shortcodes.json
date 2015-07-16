@@ -202,7 +202,7 @@
         "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
         "depends": {
                     "css": [
-                        "Shortcodes://assets/bootstrap/css/bootstrap.min.css",
+                        "Shortcodes://assets/bootstrap/css/bootstrap.min.css"
                     ],
                     "js": [
                         "Shortcodes://assets/bootstrap/js/bootstrap.min.js"
