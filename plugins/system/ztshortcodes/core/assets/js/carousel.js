@@ -5,7 +5,7 @@
  * @returns {undefined}
  */
 
-jQuery(document).ready(function () {
+jQuery(window).load(function () {
 
     jQuery('.carousel-wrap').each(function(){
         var itemCarousel = jQuery(this).find('.carousel-slider'),
