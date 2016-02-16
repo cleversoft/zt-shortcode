@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <extension version="3.4" method="upgrade" type="plugin" group="editors-xtd">
     <name>Button - ZtShortcodes</name>
-    <creationDate>Mar 20, 2015</creationDate>
+    <creationDate>Feb 16, 2016</creationDate>
     <author>ZooTemplate.Com</author>
     <authorEmail>support@zootemplate.com</authorEmail>
     <authorUrl>https://www.zootemplate.com</authorUrl>
     <copyright>Copyright (c) 2008 - 2015 ZooTemplate.com</copyright>
     <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
-    <version>2.0.1</version>
+    <version>2.0.8</version>
     <description>PLG_EDITORS-XTD_ZTSHORTCODES</description>
     <scriptfile>ztshortcodes.script.php</scriptfile>
     <languages folder="language">

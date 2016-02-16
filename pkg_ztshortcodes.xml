@@ -3,11 +3,11 @@
 	<name>Package - ZtShortcodes</name>
 	<packagename>ztshortcodes</packagename>
     <packager>ZtShortcodes</packager>   	
-	<creationDate>Jun 23, 2015</creationDate>
-    <version>2.0.5</version>	
+	<creationDate>Feb 16, 2016</creationDate>
+    <version>2.0.8</version>	
     <author>ZooTemplate.com</author>    
     <authorEmail>support@zootemplate.com</authorEmail>
-    <authorUrl>https://www.zootemplate.com/zo2</authorUrl>
+    <authorUrl>https://www.zootemplate.com</authorUrl>
     <copyright>Copyright (c) 2008 - 2015 ZooTemplate.Com</copyright>
     <license>http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later</license>
     <description>A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge</description>    	
