@@ -40,6 +40,7 @@ ZT Shortcodes package includes:
 ## Version 2.0.9  released May 3, 2016
 
 * Fix jQuery conflict
+* Fixed load bootstrap 3 issue
 
 ## Version 2.0.8  released Fed 16, 2016
 
