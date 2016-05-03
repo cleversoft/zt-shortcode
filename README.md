@@ -37,6 +37,10 @@ ZT Shortcodes package includes:
 
 # Change logs
 
+## Version 2.0.9  released May 3, 2016
+
+* Fix jQuery conflict
+
 ## Version 2.0.8  released Fed 16, 2016
 
 * Fix carousel issue that The carousel effect was not work on chrome as heights will become not correct
