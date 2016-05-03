@@ -3131,7 +3131,6 @@
                 "Shortcodes://assets/css/parallax.css"
             ],
             "js": [
-                "Shortcodes://assets/js/jquery-2.0.3.min.js",
                 "Shortcodes://assets/js/jquery.videobackground.js",
                 "Shortcodes://assets/js/parallax.js"
             ]
