@@ -18,6 +18,9 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.filesystem.file');
 jimport('joomla.filesystem.folder');
+/*
+ * import jquery if need
+ */
 
 // Global defines
 require_once __DIR__ . '/defines.php';

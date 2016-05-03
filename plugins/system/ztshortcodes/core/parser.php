@@ -280,6 +280,7 @@ if (!class_exists('ZtShortcodesParser'))
         public function do_shortcode($content)
         {
             // Make sure we have at least open tag
+            $a = strpos($content, '[');
             if (false === strpos($content, '['))
             {
                 return $content;

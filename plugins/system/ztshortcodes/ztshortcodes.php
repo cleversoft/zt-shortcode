@@ -40,6 +40,14 @@ if (!class_exists('plgSystemZtShortcodes'))
         {
             parent::__construct($subject, $config);
             require_once __DIR__ . '/core/bootstrap.php';
+
+            ///load bootstrap
+            if ((int)$this->params->get('load_bs3') and JFactory::getApplication()->isSite())
+            {
+                JHtml::_('jquery.framework');
+                JFactory::getDocument()->addScript(JUri::root().'plugins/system/ztshortcodes/core/assets/bootstrap/js/bootstrap.min.js');
+                JFactory::getDocument()->addStyleSheet(JUri::root().'plugins/system/ztshortcodes/core/assets/bootstrap/css/bootstrap.min.css');
+            }
         }
 
         /**
@@ -85,6 +93,7 @@ if (!class_exists('plgSystemZtShortcodes'))
          * @param type $content
          * @return type
          */
+
         private function _removeShortCode($content)
         {
             $content = str_replace('[', '<', $content);
