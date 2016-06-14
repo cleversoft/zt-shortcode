@@ -37,6 +37,10 @@ ZT Shortcodes package includes:
 
 # Change logs
 
+## Version 2.1  released June 14, 2016
+
+* Fixed flip box issue
+
 ## Version 2.0.9  released May 3, 2016
 
 * Fix jQuery conflict
