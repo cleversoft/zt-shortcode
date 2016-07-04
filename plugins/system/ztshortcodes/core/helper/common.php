@@ -70,6 +70,20 @@ if (!class_exists('ZtShortcodesHelperCommon'))
         }
 
         /**
+         * get list options of a selection box.
+         * $sql query sql in joomla
+         * @return options list or empty;
+         */
+
+        public static function getListOption($sql){
+            $db = JFactory::getDbo();
+            $db->setQuery(trim($sql));
+            $results = $db->loadAssocList();
+            if(!$results) return false;
+            return $results;
+        }
+
+        /**
          * 
          * @param type $string
          * @return string

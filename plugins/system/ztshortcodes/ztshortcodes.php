@@ -41,10 +41,14 @@ if (!class_exists('plgSystemZtShortcodes'))
             parent::__construct($subject, $config);
             require_once __DIR__ . '/core/bootstrap.php';
 
+            //js added if does not exist
+            if(!JFactory::getApplication()->get('jquery')){
+                JHtml::_('jquery.framework');
+            }
+
             ///load bootstrap
             if ((int)$this->params->get('load_bs3') and JFactory::getApplication()->isSite())
             {
-                JHtml::_('jquery.framework');
                 JFactory::getDocument()->addScript(JUri::root().'plugins/system/ztshortcodes/core/assets/bootstrap/js/bootstrap.min.js');
                 JFactory::getDocument()->addStyleSheet(JUri::root().'plugins/system/ztshortcodes/core/assets/bootstrap/css/bootstrap.min.css');
             }

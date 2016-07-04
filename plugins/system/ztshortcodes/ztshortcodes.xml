@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <extension group="system" method="upgrade" type="plugin" version="3.4">
     <name>System - ZtShortcodes</name>
-    <creationDate>May 03, 2016</creationDate>
+    <creationDate>Jun 24, 2016</creationDate>
     <author>ZooTemplate.Com</author>
     <authorEmail>support@zootemplate.com</authorEmail>
     <authorUrl>https://www.zootemplate.com</authorUrl>
-    <copyright>Copyright (c) 2008 - 2015 ZooTemplate.com</copyright>
+    <copyright>Copyright (c) 2008 - 2016 ZooTemplate.com</copyright>
     <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
-    <version>2.0.9</version>
+    <version>2.2</version>
     <description>PLG_SYSTEM_ZTSHORTCODES_DESC</description>
     <scriptfile>ztshortcodes.script.php</scriptfile>
     <languages folder="language">

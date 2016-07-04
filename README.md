@@ -37,6 +37,10 @@ ZT Shortcodes package includes:
 
 # Change logs
 
+## Version 2.2  released June 24, 2016
+
+* Add zt_layerslider shortcode
+
 ## Version 2.1  released June 14, 2016
 
 * Fixed flip box issue

@@ -3296,5 +3296,28 @@
                 "value": ""
             }
         ]
+    },
+    "zt_layerslider": {
+        "name": "Layer Slider",
+        "group": "Scaffolding",
+        "icon": "fa fa-sliders",
+        "description": "Generate Bootstrap grid: http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem",
+        "depends": {},
+        "attributes": {
+        },
+        "sql":{
+            "query":"SELECT title, alias FROM #__zt_layerslider_slider WHERE state=1",
+            "target":"alias"
+        },
+        "fields": [
+            {
+                "label": "Select Slider",
+                "type": "select",
+                "name": "alias",
+                "options": [
+
+                ]
+            }
+        ]
     }
 }

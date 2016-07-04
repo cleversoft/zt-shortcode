@@ -19,7 +19,14 @@ defined('_JEXEC') or die('Restricted access');
 <div id="zt-sc-generator" class="">
     <!-- Display form for each shortcode -->
     <?php foreach ($list as $shortcode => $data) : ?>
-        <?php $shortcodeAlias = ZtShortcodesHelperCommon::getAlias($shortcode); ?>
+        <?php
+        $shortcodeAlias = ZtShortcodesHelperCommon::getAlias($shortcode);
+        if (isset($data['sql'])) {
+            if (isset($data['sql']['query']) and !empty($data['sql']['query']))$option_sql =  ZtShortcodesHelperCommon::getListOption($data['sql']['query']);
+            if (isset($option_sql) and $option_sql !== false) $data['sql_options'] = $option_sql;
+        }
+
+        ?>
         <div
             class="form <?php echo $shortcodeAlias; ?>"
             id="<?php echo $shortcodeAlias; ?>"
