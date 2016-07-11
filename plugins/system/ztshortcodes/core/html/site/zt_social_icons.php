@@ -16,12 +16,6 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 
-<style rel="stylesheet" type="text/css">
-    .zt-social-networks > a{
-        border-radius: <?php echo $attributes->get('radius') . 'px'; ?>;
-    }
-</style>
-
 <div class="zt-social-networks <?php echo ($attributes->get('boxed')) ? 'boxed-icons' : ''; ?>">
 
     <!-- Sub content -->

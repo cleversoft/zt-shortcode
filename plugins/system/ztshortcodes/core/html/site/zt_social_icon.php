@@ -25,13 +25,13 @@ $color = $attributes->get('color');
 $bgColor = $attributes->get('bgColor');
 $hoverColor = $attributes->get('hoverColor');
 $hoverBgColor = $attributes->get('hoverBgColor');
-
+$hoverBgColor = $attributes->get('hoverBgColor');
 $titleLow = strtolower($title);
 ?>
 
 
 <a title="<?php echo $title; ?>"
-   style="color:<?php echo $color; ?>;background-color:<?php echo $bgColor; ?>;border-color:<?php echo $bgColor; ?>;"
+   style="color:<?php echo $color; ?>;background-color:<?php echo $bgColor; ?>;border-color:<?php echo $bgColor; ?>; border-radius:<?php echo $borderRadius . 'px'; ?>;"
    onmouseover="this.style.backgroundColor = '<?php echo $hoverBgColor; ?>';
            this.style.color = '<?php echo $hoverColor; ?>'"
    onmouseout="this.style.backgroundColor = '<?php echo $bgColor; ?>';
