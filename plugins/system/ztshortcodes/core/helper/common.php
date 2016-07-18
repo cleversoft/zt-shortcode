@@ -78,9 +78,12 @@ if (!class_exists('ZtShortcodesHelperCommon'))
         public static function getListOption($sql){
             $db = JFactory::getDbo();
             $db->setQuery(trim($sql));
-            $results = $db->loadAssocList();
-            if(!$results) return false;
-            return $results;
+            try{
+                $results = $db->loadAssocList();
+                return $results;
+            } catch (Exception $e) {
+                return array();
+            }
         }
 
         /**
