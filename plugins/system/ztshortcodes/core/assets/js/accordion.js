@@ -22,14 +22,17 @@ jQuery(document).ready(function() {
 
         if(jQuery(e.target).is('.active')) {
             close_accordion_section();
-        }else {
-            close_accordion_section();
-
-            // Add active class to section title
-            jQuery(this).addClass('active');
-            // Open up the hidden content panel
-            jQuery('.accordion-accordion ' + currentAttrValue).slideDown(300).addClass('open');
-            jQuery(this).find('.fa').removeClass('fa-plus').addClass('fa-minus');
+        } else {
+            if (!jQuery(e.target).is('i.fa-minus')) {
+                close_accordion_section();
+                // Add active class to section title
+                jQuery(this).addClass('active');
+                // Open up the hidden content panel
+                jQuery('.accordion-accordion ' + currentAttrValue).slideDown(300).addClass('open');
+                jQuery(this).find('.fa').removeClass('fa-plus').addClass('fa-minus');
+            } else {
+                close_accordion_section();
+            }
         }
         e.preventDefault();
     });
