@@ -1593,7 +1593,6 @@
       "height": "",
       "width": "",
       "type": "",
-      "api": "",
       "zoom": "",
       "color": "",
       "saturation": ""
@@ -1646,12 +1645,6 @@
             "label": "Terrain"
           }
         ]
-      },
-      {
-        "label": "Google Map Api",
-        "type": "text",
-        "name": "api",
-        "value": "AIzaSyD20xTeA1NVDPhaT6FEizCA_o2WU8OS_zU"
       },
       {
         "label": "Map Zoom",

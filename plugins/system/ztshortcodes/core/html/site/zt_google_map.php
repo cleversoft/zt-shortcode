@@ -11,8 +11,10 @@
  * @copyright   Copyright (c) 2015 ZooTemplate
  * @license     GPL v2
  */
+$plugin = JPluginHelper::getPlugin('system','ztshortcodes');
+$pluginParams = new JRegistry($plugin->params);
+$api = $pluginParams->get('google_map_api','AIzaSyD20xTeA1NVDPhaT6FEizCA_o2WU8OS_zU');
 ?>
-
 <div class="spb_map_wrapper">
     <div class="map-canvas"
          style="width:<?php echo $attributes->get('width'). 'px'; ?>; height: <?php echo $attributes->get('height'). 'px'; ?>;"
@@ -23,7 +25,7 @@
          data-mapsaturation="<?php echo $attributes->get('saturation'); ?>"
          data-pinimage="<?php echo $attributes->get('pin'); ?>">
 
-         </div>
+    </div>
 </div>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $attributes->get('api') ?>"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $api; ?>"></script>
