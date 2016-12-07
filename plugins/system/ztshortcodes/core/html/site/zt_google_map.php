@@ -13,7 +13,7 @@
  */
 $plugin = JPluginHelper::getPlugin('system','ztshortcodes');
 $pluginParams = new JRegistry($plugin->params);
-$api = $pluginParams->get('google_map_api','AIzaSyD20xTeA1NVDPhaT6FEizCA_o2WU8OS_zU');
+$api = $pluginParams->get('google_map_api');
 ?>
 <div class="spb_map_wrapper">
     <div class="map-canvas"

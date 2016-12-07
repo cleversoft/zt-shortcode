@@ -98,6 +98,19 @@ if (!class_exists('ZtShortcodesHelperCommon'))
             return $string;
         }
 
+        /** Check google Map Api
+         * @param $path
+         * @return bool
+         */
+
+        public static function getAPI() {
+            $plugin = JPluginHelper::getPlugin('system','ztshortcodes');
+            $pluginParams = new JRegistry($plugin->params);
+            $api = $pluginParams->get('google_map_api');
+            if($api) return true;
+            return false;
+        }
+
         public static function isRemotePath($path)
         {
             if (strpos($path, 'tp://') === false || strpos($path, 'tps://') === false)

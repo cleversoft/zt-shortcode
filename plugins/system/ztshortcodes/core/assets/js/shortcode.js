@@ -198,6 +198,14 @@
             _self._hook();
             _self._update();
             return false;
+        },
+        /**
+         * show API warming when not exist
+         *
+         */
+        showApiWaring:function(thisEle) {
+            var squeezeBox = w.parent.SqueezeBox;
+            squeezeBox.open('index.php?ztshortcodes_task=display&ztshortcodes_view=apiwarming', {handler: 'iframe',size: {x: 300, y: 200}});
         }
     };
     /* Check for Zo2 javascript framework */
