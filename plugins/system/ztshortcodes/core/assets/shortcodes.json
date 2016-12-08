@@ -1601,6 +1601,7 @@
       "css": [
       ],
       "js": [
+        "Shortcodes://assets/js/jquery.appear.js",
         "Shortcodes://assets/js/map.js"
       ]
     },
