@@ -37,6 +37,11 @@ ZT Shortcodes package includes:
 
 # Change logs
 
+## Version 2.4  released Dec 09, 2016
+
+* Add google map javascript API option in system plugin
+
+
 ## Version 2.2  released June 24, 2016
 
 * Add zt_layerslider shortcode
