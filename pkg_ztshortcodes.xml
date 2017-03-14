@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-	<extension type="package" version="3.0" method="upgrade">
+	<extension type="package" version="3.6" method="upgrade">
 	<name>Package - ZtShortcodes</name>
 	<packagename>ztshortcodes</packagename>
     <packager>ZtShortcodes</packager>   	
-	<creationDate>Dec 09, 2016</creationDate>
-    <version>2.4</version>
+	<creationDate>March 14, 2017</creationDate>
+    <version>2.4.2</version>
     <author>ZooTemplate.com</author>    
     <authorEmail>support@zootemplate.com</authorEmail>
     <authorUrl>https://www.zootemplate.com</authorUrl>
-    <copyright>Copyright (c) 2008 - 2015 ZooTemplate.Com</copyright>
+    <copyright>Copyright (c) 2008 - 2017 ZooTemplate.Com</copyright>
     <license>http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later</license>
     <description>A powerful Joomla plugin to help effortlessly customize your own content and style without HTML code knowledge</description>    	
     

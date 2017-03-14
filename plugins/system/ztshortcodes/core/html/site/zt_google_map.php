@@ -8,7 +8,7 @@
  * @author      ZooTemplate
  * @email       support@zootemplate.com
  * @link        http://www.zootemplate.com
- * @copyright   Copyright (c) 2015 ZooTemplate
+ * @copyright   Copyright (c) 2017 ZooTemplate
  * @license     GPL v2
  */
 $plugin = JPluginHelper::getPlugin('system','ztshortcodes');
@@ -21,10 +21,8 @@ $api = $pluginParams->get('google_map_api');
          data-address="<?php echo $attributes->get('address'); ?>"
          data-zoom="<?php echo $attributes->get('zoom'); ?>"
          data-maptype="<?php echo $attributes->get('type'); ?>"
-         data-mapcolor="<?php echo $attributes->get('color'); ?>"
-         data-mapsaturation="<?php echo $attributes->get('saturation'); ?>"
+         data-mapstyle="<?php echo $attributes->get('style'); ?>"
          data-pinimage="<?php echo $attributes->get('pin'); ?>">
-
     </div>
 </div>
 

@@ -1,7 +1,7 @@
-a.zt-button {
+.zt-button {
     background-clip: padding-box;
     border: 0 none;
-    border-radius: 2px;
+    border-radius: 3px;
     color: #fff;
     display: inline-block;
     font-size: 12px;
@@ -12,231 +12,51 @@ a.zt-button {
     max-width: 100%;
     outline: medium none;
     overflow: hidden;
-    padding: 14px 16px;
+    padding: 12px 16px;
     position: relative;
     text-decoration: none;
     text-shadow: none;
     transition: all 0.3s ease-out 0s;
     vertical-align: middle;
 }
-a.zt-button:hover {
+.zt-button:hover {
     color: #fff;
     text-decoration: none !important;
 }
-a.zt-button.size-large {
+.zt-button.size-xs {
+    padding: 2px 7px;
+    font-size: 12px;
+    line-height: 1;
+}
+.zt-button.size-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 1.5
+}
+.zt-button.size-md {
+    font-size: 14px;
+}
+.zt-button.size-lg {
+    padding: 12px 20px;
+    font-size: 16px;
+}
+.zt-button.size-xlg {
+    padding: 18px 40px;
     font-size: 18px;
-    font-weight: normal;
-    line-height: 26px;
 }
-a.zt-button.type-stroke-to-fill {
-    padding: 14px 30px;
-}
-a.zt-button.size-large.type-stroke-to-fill {
-    padding: 15px 40px;
-}
-a.zt-button.color-black {
-    background-color: #222;
-    color: #fff;
-}
-a.zt-button.color-black:hover {
-    background-color: #111;
-}
-a.zt-button.color-white {
-    background-color: #fff;
-    color: #222;
-    border: 1px solid #e4e4e4;
-}
-a.zt-button.color-white:hover {
-    background-color: #e4e4e4;
-}
-a.zt-button.color-blue {
-    background-color: #1593d5;
-    border: 1px solid #fff;
-    color: #fff;
-}
-a.zt-button.color-blue:hover {
-    background-color: #1dacf7;
-}
-a.zt-button.color-blue:hover span {
-    color: #fff;
-}
-a.zt-button.color-grey {
-    background-color: #444;
-}
-a.zt-button.color-grey:hover {
-    background-color: #333;
-}
-a.zt-button.color-light-grey {
-    background-color: #e4e4e4;
-    color: #222;
-}
-a.zt-button.color-light-grey:hover {
-    background-color: #ccc;
-}
-a.zt-button.color-orange {
-    background-color: #ff7f00;
-    color: #fff;
-}
-a.zt-button.color-orange:hover {
-    background-color: #e5692f;
-}
-a.zt-button.color-turquoise {
-    background-color: #21ece0;
-    color: #fff;
-}
-a.zt-button.color-turquoise:hover {
-    background-color: #33cac1;
-}
-a.zt-button.color-green {
-    background-color: #12f197;
-    color: #fff;
-}
-a.zt-button.color-green:hover {
-    background-color: #10ca7f;
-}
-a.zt-button.color-pink {
-    background-color: #f53b3a;
-    color: #fff;
-}
-a.zt-button.color-pink:hover {
-    background-color: #df2d2c;
-}
-a.zt-button.color-gold {
-    background-color: #ffcc4d;
-    color: #222222;
-}
-a.zt-button.color-gold:hover {
-    background-color: #ffbe1c;
-}
-a.zt-button.color-transparent-light {
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #fff !important;
-}
-a.zt-button.color-transparent-light:hover {
-    background: none repeat scroll 0 0 #fff;
-    border-color: #fff;
-}
-a.zt-button.color-transparent-dark {
-    border: 1px solid rgba(34, 34, 34, 0.2);
-    color: #222;
-}
-a.zt-button.color-transparent-dark:hover {
-    background: none repeat scroll 0 0 #222;
-    border-color: #222;
-    color: #fff;
-}
-.zt-button.color-accent {
-    background-color: #1dc6df;
-    color: #fff;
-}
-.zt-button.color-accent:hover {
-    background: none repeat scroll 0 0 #036ea6;
-}
-.zt-button.color-accent:hover span {
-    color: #fff;
-}
-a.zt-button.type-icon-reveal {
-    line-height: 20px;
-    padding: 0;
-}
-a.zt-button.type-icon-stroke {
-    line-height: 18px;
-    padding: 0;
-}
-a.zt-button.type-icon-reveal i {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    font-size: 18px;
-    height: 100%;
-    left: -48px;
-    line-height: 16px;
-    padding: 17px 14px 10px;
-    position: absolute;
-}
-a.zt-button.size-large.type-icon-reveal i {
+.zt-button.size-hg {
+    padding: 20px 50px;
     font-size: 22px;
-    height: 56px;
-    left: -57px;
-    padding: 22px 17px 14px;
 }
-a.zt-button.type-icon-reveal span.text {
-    display: block;
-    padding: 13px 35px;
-    text-align: center;
-    vertical-align: 4px;
+.zt-button.shape-square {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
 }
-a.zt-button.size-large.type-icon-reveal span.text {
-    padding: 18px 50px;
-}
-a.zt-button.type-icon-reveal i, a.zt-button.type-icon-reveal span.text {
-    transition: all 200ms linear 0s;
-}
-a.zt-button.type-icon-reveal:hover i {
-    left: 0;
-}
-a.zt-button.type-icon-reveal:hover span.text {
-    padding-left: 59px;
-    padding-right: 11px;
-}
-a.zt-button.type-icon-reveal.size-large:hover span.text {
-    padding-left: 77px;
-    padding-right: 23px;
-}
-a.zt-button.type-icon-reveal.color-black {
-    background-color: #222;
-}
-a.zt-button.type-icon-reveal.color-white {
-    background-color: #fff;
-    color: #222;
-}
-a.zt-button.type-icon-reveal.color-blue {
-    background-color: #00bff3;
-}
-a.zt-button.type-icon-reveal.color-grey {
-    background-color: #444;
-}
-a.zt-button.type-icon-reveal.color-light-grey {
-    background-color: #e4e4e4;
-}
-a.zt-button.type-icon-reveal.color-orange {
-    background-color: #ff7534;
-}
-a.zt-button.type-icon-reveal.color-turquoise {
-    background-color: #21ece0;
-}
-a.zt-button.type-icon-reveal.color-green {
-    background-color: #12f197;
-}
-a.zt-button.type-icon-reveal.color-pink {
-    background-color: #10ca7f;
-}
-a.zt-button.type-icon-reveal.color-gold {
-    background-color: #ffd56c;
-}
-a.zt-button.type-icon-stroke i {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    display: inline-block;
-    font-size: 18px;
-    height: 46px;
-    left: 0;
-    line-height: 16px;
-    padding: 16px 14px 9px;
-    position: absolute;
-    top: 0;
-}
-a.zt-button.type-icon-stroke span.text {
-    display: inline-block;
-    line-height: 20px;
-    padding: 12px 20px 12px 66px;
-    vertical-align: 4px;
-    color-white-space: nowrap;
-}
-a.zt-button.size-large.type-icon-stroke i {
-    font-size: 22px;
-    height: 54px;
-    padding: 21px 16px 8px;
-}
-a.zt-button.size-large.type-icon-stroke span.text {
-    line-height: 26px;
-    padding: 14px 30px 14px 59px;
+.zt-button.shape-round {
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -o-border-radius: 100px;
 }

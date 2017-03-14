@@ -408,27 +408,55 @@
         "value": "Shortcode Button"
       },
       {
-        "label": "Type",
+        "label": "Text Color",
+        "type": "colorpicker",
+        "name": "color",
+        "value": ""
+      },
+      {
+        "label": "Background Color",
+        "type": "colorpicker",
+        "name": "bgColor",
+        "value": ""
+      },
+      {
+        "label": "Border Width",
+        "type": "text",
+        "name": "borderWidth",
+        "value": ""
+      },
+      {
+        "label": "Border Style",
         "type": "select",
-        "name": "type",
+        "name": "borderStyle",
         "options": [
           {
-            "value": "",
-            "label": "Standard"
+            "value": "none",
+            "label": "None"
           },
           {
-            "value": "stroke-to-fill",
-            "label": "Stroke To Fill"
+            "value": "solid",
+            "label": "Solid"
           },
           {
-            "value": "icon-reveal",
-            "label": "Icon Reveal"
+            "value": "dashed",
+            "label": "Dashed"
           },
           {
-            "value": "icon-stroke",
-            "label": "Icon Stroke"
+            "value": "dotted",
+            "label": "Dotted"
+          },
+          {
+            "value": "double",
+            "label": "Double"
           }
         ]
+      },
+      {
+        "label": "Border Color",
+        "type": "colorpicker",
+        "name": "borderColor",
+        "value": ""
       },
       {
         "label": "Size",
@@ -436,75 +464,78 @@
         "name": "size",
         "options": [
           {
-            "value": "",
+            "value": "md",
             "label": "Standard"
           },
           {
-            "value": "small",
+            "value": "sm",
             "label": "Small"
           },
           {
-            "value": "large",
+            "value": "xs",
+            "label": "Extra Small"
+          },
+          {
+            "value": "lg",
             "label": "Large"
+          },
+          {
+            "value": "xlg",
+            "label": "Extra Large"
+          },
+          {
+            "value": "hg",
+            "label": "Huge"
           }
         ]
       },
       {
-        "label": "Colour",
+        "label": "Button Shape",
         "type": "select",
-        "name": "colour",
+        "name": "shape",
         "options": [
           {
-            "value": "accent",
-            "label": "Accent"
+            "value": "rounded",
+            "label": "Rounded"
           },
           {
-            "value": "black",
-            "label": "Black"
+            "value": "square",
+            "label": "Square"
           },
           {
-            "value": "white",
-            "label": "White"
+            "value": "round",
+            "label": "Round"
+          }
+        ]
+      },
+      {
+        "label": "Button Style",
+        "type": "select",
+        "name": "style",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
           },
           {
-            "value": "blue",
-            "label": "Blue"
+            "value": "primary",
+            "label": "Primary"
           },
           {
-            "value": "green",
-            "label": "Green"
+            "value": "success",
+            "label": "Success"
           },
           {
-            "value": "pink",
-            "label": "Pink"
+            "value": "info",
+            "label": "Info"
           },
           {
-            "value": "grey",
-            "label": "Grey"
+            "value": "warning",
+            "label": "Warning"
           },
           {
-            "value": "light-grey",
-            "label": "Light Grey"
-          },
-          {
-            "value": "orange",
-            "label": "Orange"
-          },
-          {
-            "value": "turquoise",
-            "label": "Turquoise"
-          },
-          {
-            "value": "gold",
-            "label": "Gold"
-          },
-          {
-            "value": "transparent-light",
-            "label": "Transparent Light"
-          },
-          {
-            "value": "transparent-dark",
-            "label": "Transparent Dark"
+            "value": "danger",
+            "label": "Danger"
           }
         ]
       },
@@ -513,6 +544,35 @@
         "type": "faicons",
         "name": "icon",
         "value": "fa fa-ambulance"
+      },
+      {
+        "label": "Text Transform",
+        "type": "select",
+        "name": "textTransform",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "capitalize",
+            "label": "Capitalize"
+          },
+          {
+            "value": "uppercase",
+            "label": "Uppercase"
+          },
+          {
+            "value": "lowercase",
+            "label": "Lowercase"
+          }
+        ]
+      },
+      {
+        "label": "Box Shadow",
+        "type": "text",
+        "name": "shadow",
+        "value": ""
       },
       {
         "label": "Link",
@@ -544,9 +604,21 @@
         ]
       },
       {
+        "label": "Margin",
+        "type": "text",
+        "name": "margin",
+        "value": ""
+      },
+      {
+        "label": "Padding",
+        "type": "text",
+        "name": "padding",
+        "value": ""
+      },
+      {
         "label": "Extra Class",
         "type": "text",
-        "name": "extra-class",
+        "name": "extraclass",
         "value": ""
       }
     ]
@@ -1739,23 +1811,57 @@
         ]
       },
       {
-        "label": "Map Color",
-        "type": "colorpicker",
-        "name": "color",
-        "value": "#ffffff"
-      },
-      {
-        "label": "Map Saturation",
+        "label": "Map Style",
         "type": "select",
-        "name": "saturation",
+        "name": "style",
         "options": [
           {
-            "value": "color",
-            "label": "Color"
+            "value": "default",
+            "label": "Default"
           },
           {
-            "value": "mono",
-            "label": "Mono"
+            "value": "blue-water",
+            "label": "Blue Water"
+          },
+          {
+            "value": "ultra-light",
+            "label": "Ultra Light"
+          },
+          {
+            "value": "shades-grey",
+            "label": "Shades of Grey"
+          },
+          {
+            "value": "light-dream",
+            "label": "Light Dream"
+          },
+          {
+            "value": "pale-dawn",
+            "label": "Pale Dawn"
+          },
+          {
+            "value": "blue-essence",
+            "label": "Blue Essence"
+          },
+          {
+            "value": "unsaturated-browns",
+            "label": "Unsaturated Browns"
+          },
+          {
+            "value": "paper",
+            "label": "Paper"
+          },
+          {
+            "value": "subtle-grayscale",
+            "label": "Subtle Grayscale"
+          },
+          {
+            "value": "midnight",
+            "label": "Midnight Commander"
+          },
+          {
+            "value": "black-white",
+            "label": "Black and White"
           }
         ]
       }
