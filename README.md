@@ -37,6 +37,14 @@ ZT Shortcodes package includes:
 
 # Change logs
 
+## Version 2.4.2  released March 14, 2017
+
+* Add custom style map
+
+## Version 2.4.1  released March 01, 2017
+
+* Add new options for zt button
+
 ## Version 2.4  released Dec 09, 2016
 
 * Add google map javascript API option in system plugin
