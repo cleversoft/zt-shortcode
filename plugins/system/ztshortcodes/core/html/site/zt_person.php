@@ -43,10 +43,10 @@ defined('_JEXEC') or die('Restricted access');
                     ?>
                     <li><a href="<?php echo $attributes->get('twitter'); ?>"><i class="fa fa-twitter"></i></a></li>
                 <?php } ?>
-                <?php if ($attributes->get('email'))
+                <?php if ($attributes->get('instagram'))
                 {
                     ?>
-                    <li><a href="<?php echo $attributes->get('email'); ?>"><i class="fa fa-envelope-o"></i></a></li>
+                    <li><a href="<?php echo $attributes->get('instagram'); ?>"><i class="fa fa-instagram"></i></a></li>
                 <?php } ?>
                 <?php if ($attributes->get('google'))
                 {
