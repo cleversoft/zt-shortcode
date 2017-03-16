@@ -16,7 +16,7 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 
-<div class="zt-persons row <?php echo ($attributes->get('slider') == 'yes') ? 'bxslider' : ''; ?>"
+<div class="zt-persons row <?php echo $attributes->get('extraclass') ?> <?php echo ($attributes->get('slider') == 'yes') ? 'bxslider' : ''; ?>"
      data-show="<?php echo $attributes->get('item'); ?>"
      data-pager="<?php echo ($attributes->get('pager') == 'yes') ? 'true' : 'false'; ?>"
      data-controls="<?php echo ($attributes->get('controls') == 'yes') ? 'true' : 'false'; ?>"

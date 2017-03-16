@@ -25,6 +25,11 @@ defined('_JEXEC') or die('Restricted access');
         <div class="zt-person-author pull-left">
             <span class="person-name"><?php echo $attributes->get('name'); ?></span>
             <span class="person-position"><?php echo $attributes->get('position'); ?></span>
+            <span class="person-email"><?php echo $attributes->get('email'); ?></span>
+            <span class="person-phone"><?php echo $attributes->get('phone'); ?></span>
+        </div>
+        <div class="zt-person-intro">
+            <?php echo $attributes->get('description'); ?>
         </div>
         <div class="zt-person-social pull-right social-<?php echo ($attributes->get('socialtype')) ? $attributes->get('socialtype') : 'default'; ?>">
             <ul>
@@ -47,7 +52,22 @@ defined('_JEXEC') or die('Restricted access');
                 {
                     ?>
                     <li><a href="<?php echo $attributes->get('google'); ?>"><i class="fa fa-google-plus"></i></a></li>
-<?php } ?>
+                <?php } ?>
+                <?php if ($attributes->get('skype'))
+                {
+                    ?>
+                    <li><a href="<?php echo $attributes->get('skype'); ?>"><i class="fa fa-skype"></i></a></li>
+                <?php } ?>
+                <?php if ($attributes->get('dribbble'))
+                {
+                    ?>
+                    <li><a href="<?php echo $attributes->get('dribbble'); ?>"><i class="fa fa-dribbble"></i></a></li>
+                <?php } ?>
+                <?php if ($attributes->get('linkedin'))
+                {
+                    ?>
+                    <li><a href="<?php echo $attributes->get('linkedin'); ?>"><i class="fa fa-linkedin"></i></a></li>
+                <?php } ?>
             </ul>
         </div>
         <div class="zt-person-content clearfix"><?php echo $content; ?></div>

@@ -54,13 +54,3 @@
 .bx-wrapper:hover .bx-controls-direction a{
     opacity: 1;
 }
-.bx-wrapper [class*="col-md"],
-.bx-wrapper [class*="col-sm"]{
-    padding-left: 0;
-    padding-right: 0;
-}
-.bx-wrapper .row{
-    margin-left: 0;
-    margin-top: 0;
-}
-

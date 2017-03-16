@@ -1983,6 +1983,9 @@
         "attributes": {
           "name": "",
           "position": "",
+          "email": "",
+          "phone": "",
+          "description": "",
           "image": "",
           "imgtype": "",
           "socialtype": "",
@@ -1990,6 +1993,7 @@
           "twitter": "",
           "email": "",
           "google": "",
+          "instagram": "",
           "skype": "",
           "dribbble": "",
           "linkedin": "",
@@ -1997,21 +2001,33 @@
         },
         "fields": [
           {
-            "label": "Name",
+            "label": "Person Name",
             "type": "text",
             "name": "name",
             "value": "Person Name"
           },
           {
-            "label": "Position",
+            "label": "Person Position",
             "type": "text",
             "name": "position",
             "value": "Person Position"
           },
           {
+            "label": "Person Email",
+            "type": "text",
+            "name": "email",
+            "value": "#email"
+          },
+          {
+            "label": "Person Phone",
+            "type": "text",
+            "name": "phone",
+            "value": "#phone"
+          },
+          {
             "label": "Description",
             "type": "textarea",
-            "name": "position",
+            "name": "description",
             "value": "Persons Description"
           },
           {
@@ -2023,7 +2039,7 @@
           {
             "label": "Image Style",
             "type": "select",
-            "name": "social-type",
+            "name": "imgtype",
             "options": [
               {
                 "value": "",
@@ -2052,16 +2068,16 @@
             "value": "#twitter"
           },
           {
-            "label": "Email",
-            "type": "text",
-            "name": "email",
-            "value": "#email"
-          },
-          {
             "label": "Goolge +",
             "type": "text",
             "name": "google",
             "value": "#google"
+          },
+          {
+            "label": "Instagram",
+            "type": "text",
+            "name": "instagram",
+            "value": "#instagram"
           },
           {
             "label": "Skype",
@@ -2080,6 +2096,25 @@
             "type": "text",
             "name": "linkedin",
             "value": "#linkedin"
+          },
+          {
+            "label": "Social Style",
+            "type": "select",
+            "name": "socialtype",
+            "options": [
+              {
+                "value": "",
+                "label": "none"
+              },
+              {
+                "value": "rounded",
+                "label": "Rounded"
+              },
+              {
+                "value": "circle",
+                "label": "Circle"
+              }
+            ]
           },
           {
             "label": "Column",
@@ -2145,7 +2180,8 @@
       "controls": "",
       "auto": "",
       "margin": "",
-      "item": ""
+      "item": "",
+      "extraclass": ""
     },
     "depends": {
       "css": [
@@ -2194,6 +2230,12 @@
         "type": "text",
         "name": "item",
         "value": "4"
+      },
+      {
+        "label": "Extra Class",
+        "type": "text",
+        "name": "extraclass",
+        "value": ""
       }
     ]
   },
