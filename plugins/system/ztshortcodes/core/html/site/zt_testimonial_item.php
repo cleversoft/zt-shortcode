@@ -16,26 +16,39 @@
 defined('_JEXEC') or die('Restricted access');
 
 $path = ZtShortcodesPath::getInstance();
+
+$bgColor = JString::trim($attributes->get('bgColor'));
+if($bgColor != '')
+    $background = 'background-color: ' . $bgColor;
+
+$textColor = JString::trim($attributes->get('textColor'));
+if($textColor !='')
+    $color = 'color: ' . $textColor;
+
+$borderRadius = JString::trim($attributes->get('borderRadius'));
+if($borderRadius !='')
+    $radiusAvatar = 'border-radius: ' . $borderRadius;
 ?>
 
 <div class="testimonial-item">
     <div class="testimonial-content">
-        <span style="background-color:<?php echo $attributes->get('bgColor'); ?>; color:<?php echo $attributes->get('textColor'); ?>; border-radius: <?php echo $attributes->get('borderRadius') . 'px'; ?>"><?php echo $content; ?></span>
+        <span style="<?php echo (isset($background) ? $background . ';' : "") . (isset($color) ? $color : "") ?>"><?php echo $content; ?></span>
     </div>
-    <div style="color: <?php echo $attributes->get('textColor'); ?>;" class="author">
-        <span style="color: <?php echo $attributes->get('textColor'); ?>;" class="testimonial-thumbnail">
+    <div style="<?php echo $color ?>;" class="author">
+        <div class="testimonial-thumbnail">
             <?php
             if ($attributes->get('customAvatar') != '')
             {
-                echo '<img src="' . JURI::base() . $attributes->get('customAvatar') . '" alt="' . $attributes->get('name') . '" />';
+                echo '<img src="' . JURI::base() . $attributes->get('customAvatar') . '" alt="' . $attributes->get('name') . '" style="' . (isset($radiusAvatar) ? $radiusAvatar : "") . '"/>';
             } else
             {
                 echo '<span class="thumbnail-icon"><i class="fa fa-user"></i></span>';
             }
             ?>
-        </span>
-        <span class="company-name">
-            <strong><?php echo $attributes->get('name'); ?></strong>, <a target="<?php echo $attributes->get('target'); ?>" href="#"><span><?php echo $attributes->get('company'); ?></span></a>
-        </span>
+        </div>
+        <div class="company-name">
+            <strong><?php echo $attributes->get('name'); ?></strong> 
+            <em><?php echo $attributes->get('company'); ?></em>
+        </div>
     </div>
 </div>

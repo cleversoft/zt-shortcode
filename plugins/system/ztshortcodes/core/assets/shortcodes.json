@@ -1457,17 +1457,6 @@
           "link": "",
           "target": ""
         },
-        "depends": {
-          "css": [
-            "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-            "Shortcodes://assets/bxslider/jquery.bxslider.css",
-            "Shortcodes://assets/css/testimonial.css"
-          ],
-          "js": [
-            "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
-            "Shortcodes://assets/js/testimonial.js"
-          ]
-        },
         "fields": [
           {
             "label": "Background Color",
@@ -1488,16 +1477,10 @@
             "value": "Name author"
           },
           {
-            "label": "Company",
+            "label": "Company Position",
             "type": "text",
             "name": "company",
-            "value": "Company"
-          },
-          {
-            "label": "Position",
-            "type": "text",
-            "name": "position",
-            "value": "Position"
+            "value": "Company, Position"
           },
           {
             "label": "Avatar",
@@ -1510,35 +1493,6 @@
             "type": "text",
             "name": "borderRadius",
             "value": "4"
-          },
-          {
-            "label": "Link Website",
-            "type": "text",
-            "name": "link",
-            "value": "#link"
-          },
-          {
-            "label": "Target",
-            "type": "select",
-            "name": "link",
-            "options": [
-              {
-                "value": "_blank",
-                "label": "_blank"
-              },
-              {
-                "value": "_parent",
-                "label": "_parent"
-              },
-              {
-                "value": "_self",
-                "label": "_self"
-              },
-              {
-                "value": "_top",
-                "label": "_top"
-              }
-            ]
           },
           {
             "label": "Content",
@@ -1555,19 +1509,71 @@
     "depends": {
       "css": [
         "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-        "Shortcodes://assets/bxslider/jquery.bxslider.css",
+        "Shortcodes://assets/owlcarousel/assets/owl.carousel.css",
+        "Shortcodes://assets/owlcarousel/assets/owl.theme.default.css",
         "Shortcodes://assets/css/testimonial.css"
       ],
       "js": [
-        "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
+        "Shortcodes://assets/owlcarousel/owl.carousel.min.js",
         "Shortcodes://assets/js/testimonial.js"
       ]
     },
     "fields": [
       {
-        "label": "Allow Slide ",
-        "type": "checkbox",
-        "name": "slider",
+        "label": "Auto Play",
+        "type": "select",
+        "name": "autoPlay",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes"
+          },
+          {
+            "value": "no",
+            "label": "No"
+          }
+        ]
+      },
+      {
+        "label": "Number Slides",
+        "type": "text",
+        "name": "numSlides",
+        "value": "1"
+      },
+      {
+        "label": "Show Paging",
+        "type": "select",
+        "name": "paging",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes"
+          },
+          {
+            "value": "no",
+            "label": "No"
+          }
+        ]
+      },
+      {
+        "label": "Show Controls ",
+        "type": "select",
+        "name": "controls",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes"
+          },
+          {
+            "value": "no",
+            "label": "No"
+          }
+        ]
+      },
+      {
+        "label": "Extra Class",
+        "type": "text",
+        "name": "extraclass",
         "value": ""
       }
     ]

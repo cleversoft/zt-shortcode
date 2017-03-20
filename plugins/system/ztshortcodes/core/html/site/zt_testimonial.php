@@ -14,18 +14,16 @@
  * @license     GPL v2 
  */
 defined('_JEXEC') or die('Restricted access');
-
-$classSlider = '';
-if ($attributes->get('slider') == 'yes')
-{
-    $classSlider = 'bxslider';
-}
+$class = 'owl-carousel owl-theme ';
+$class .= $attributes->get('extraclass');
 ?>
 
-<div class="zt-testimonial <?php echo $classSlider; ?>">
-
+<div class="zt-testimonial <?php echo $class; ?>" id="<?php echo 'zt-testimonial-' . uniqid(md5(time())); ?>"
+    data-auto="<?php echo $attributes->get('autoPlay') ?>"
+    data-items="<?php echo $attributes->get('numSlides') != '' ? $attributes->get('numSlides') : 1 ?>"
+    data-paging="<?php echo $attributes->get('paging') ?>" 
+    data-controls="<?php echo $attributes->get('controls') ?>"
+  >
     <!-- Sub content -->
-    <?php
-    echo $content;
-    ?>
+    <?php echo $content; ?>
 </div>

@@ -37,6 +37,10 @@ ZT Shortcodes package includes:
 
 # Change logs
 
+## Version 2.4.4  released March 20, 2017
+
+* Fix errors and add options for zt testimonials
+
 ## Version 2.4.3  released March 16, 2017
 
 * Fix errors and add options for zt persons
