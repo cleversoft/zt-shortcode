@@ -50,8 +50,22 @@
     top: 0;
     width: 100%;
 }
-.bx-wrapper .bx-viewport{
-    border: none;
-    box-shadow: none;
-    left: 0;
+.owl-theme .owl-nav [class*='owl-'] {
+    font-size: 0;
+    color: #a8b0b2;
+    background-color: transparent;
+}
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background-color: transparent;
+    color: #a8b0b2;
+}
+.owl-theme .owl-nav [class*='owl-']:before {
+    font-size: 30px;
+    font-family: FontAwesome
+}
+.owl-theme .owl-nav .owl-prev:before {
+    content: '\f104';
+}
+.owl-theme .owl-nav .owl-next:before {
+    content: '\f105';
 }
