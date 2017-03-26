@@ -37,6 +37,10 @@ ZT Shortcodes package includes:
 
 # Change logs
 
+## Version 2.5  released March 27, 2017
+
+* Add new zt countdown and zt gallery instagram
+
 ## Version 2.4.4  released March 20, 2017
 
 * Fix errors and add options for zt testimonials

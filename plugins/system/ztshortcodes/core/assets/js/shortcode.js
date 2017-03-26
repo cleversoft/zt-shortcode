@@ -53,6 +53,7 @@
             _self._hook();
             _self._iconSelector();
             _self._colorPicker();
+            _self._datePicker();
         },
         /**
          * Shortcode event listener bind
@@ -97,6 +98,12 @@
                 $(this).css('background-color', e.color.toHex());
                 _self._update();
             });
+        },
+        _datePicker: function () {
+            var _self = this;
+            $('.datepicker').datepicker().on('change', function(e) {
+                _self._update();
+            });;
         },
         /**
          * Update shortcode

@@ -782,6 +782,21 @@
             "value": "$|90|per year"
           },
           {
+            "label": "Position Price",
+            "type": "select",
+            "name": "type",
+            "options": [
+              {
+                "value": "above",
+                "label": "Above"
+              },
+              {
+                "value": "below",
+                "label": "Below"
+              }
+            ]
+          },
+          {
             "label": "Link",
             "type": "text",
             "name": "link",
@@ -811,7 +826,7 @@
       {
         "label": "Type",
         "type": "select",
-        "name": "pricing-type",
+        "name": "type",
         "options": [
           {
             "value": "default",
@@ -822,6 +837,11 @@
             "label": "Attached"
           }
         ]
+      },
+      {
+        "label": "Extra Class",
+        "type": "text",
+        "name": "extraclass"
       }
     ]
   },
@@ -3472,6 +3492,123 @@
         "options": [
 
         ]
+      }
+    ]
+  },
+  "zt_countdown": {
+    "name": "Countdown",
+    "group": "Scaffolding",
+    "icon": "fa fa-clock-o",
+    "description": "Show a countdown to a given time.",
+    "attributes": {
+      "type": "default"
+    },
+    "depends": {
+      "css": [
+        "Shortcodes://assets/css/countdown.css",
+        "Shortcodes://assets/countdown/css/jquery.classycountdown.css"
+      ],
+      "js": [
+        "Shortcodes://assets/countdown/jquery.plugin.min.js",
+        "Shortcodes://assets/countdown/jquery.countdown.min.js",
+        "Shortcodes://assets/countdown/js/jquery.knob.js",
+        "Shortcodes://assets/countdown/js/jquery.throttle.js",
+        "Shortcodes://assets/countdown/js/jquery.classycountdown.js"
+      ]
+    },
+    "fields": [
+      {
+        "label": "Type",
+        "type": "select",
+        "name": "type",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "circle",
+            "label": "Circle"
+          }
+        ]
+      },
+      {
+        "label": "Time",
+        "type": "datepicker",
+        "name": "time",
+        "value": ""
+      },
+      {
+        "label": "Show Label",
+        "type": "select",
+        "name": "show-label",
+        "options": [
+          {
+            "label": "Yes",
+            "value": "yes"
+          },
+          {
+            "label": "No",
+            "value": "no"
+          }
+        ]
+      },
+      {
+        "label": "Id",
+        "type": "text",
+        "name": "id",
+        "value": ""
+      },
+      {
+        "label": "Extra Class",
+        "type": "text",
+        "name": "extraclass",
+        "value": ""
+      }
+    ]
+  },
+  "zt_gallery_instagram": {
+    "name": "Gallery Instagram",
+    "group": "Scaffolding",
+    "icon": "fa fa-instagram",
+    "description": "Show gallery instagram.",
+    "attributes": {
+    },
+    "depends": {
+      "css": [
+        "Shortcodes://assets/css/instagram.css"
+      ]
+    },
+    "fields": [
+      {
+        "label": "Instagram User ID",
+        "type": "text",
+        "name": "user_id",
+        "value": ""
+      },
+      {
+        "label": "Access Token",
+        "type": "text",
+        "name": "access_token",
+        "value": ""
+      },
+      {
+        "label": "Item Limit",
+        "type": "text",
+        "name": "limit",
+        "value": ""
+      },
+      {
+        "label": "Number of item per row",
+        "type": "text",
+        "name": "per_row",
+        "value": ""
+      },
+      {
+        "label": "Extra Class",
+        "type": "text",
+        "name": "extraclass",
+        "value": ""
       }
     ]
   }

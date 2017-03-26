@@ -16,7 +16,15 @@ jQuery(document).ready(function(){
       dots: paging,
       nav: controls,
       autoplay: auto,
-      items: items
+      items: items,
+      responsive : {
+        0:{
+          items:1
+        },
+        480:{
+          items: items
+        }
+      }
     });
   })
 });

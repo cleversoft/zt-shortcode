@@ -1,0 +1,56 @@
+.zt-countdown {
+  text-align: center;
+}
+.zt-countdown .countdown-section {
+  display: inline-block;
+}
+.zt-countdown.circle .countdown-section {
+  position: relative; 
+  width: 200px;
+  height: 200px;
+}
+
+.countdown-canvas {
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  height: 0px;
+}
+
+.countdown-label {
+  color: #333;  
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.countdown-section span {
+  display: block;
+  margin-bottom: 10px
+}
+.countdown-section .countdown-amount {
+  font-size: 36px
+}
+
+.countdown-section .countdown-period {
+  font-size: 20px
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+ 
+}
+.zt-countdown .countdown-item {
+  display: inline-block;
+  padding-right: 15px;
+  padding-left: 15px
+}
