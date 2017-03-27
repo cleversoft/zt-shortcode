@@ -18,11 +18,13 @@ defined('_JEXEC') or die('Restricted access');
 
 <?php
 $icon = $attributes->get('icon');
+$borderRadius = $attributes->get('radius');
 $iconSize = $attributes->get('iconSize');
 $title = $attributes->get('title');
 $link = $attributes->get('link');
 $color = $attributes->get('color');
 $bgColor = $attributes->get('bgColor');
+$bdColor = $attributes->get('bdColor');
 $hoverColor = $attributes->get('hoverColor');
 $hoverBgColor = $attributes->get('hoverBgColor');
 $hoverBgColor = $attributes->get('hoverBgColor');
@@ -31,7 +33,7 @@ $titleLow = strtolower($title);
 
 
 <a title="<?php echo $title; ?>"
-   style="color:<?php echo $color; ?>;background-color:<?php echo $bgColor; ?>;border-color:<?php echo $bgColor; ?>; border-radius:<?php echo $borderRadius . 'px'; ?>;"
+   style="color:<?php echo $color; ?>;background-color:<?php echo $bgColor; ?>;border-color:<?php echo $bdColor; ?>; border-radius:<?php echo $borderRadius . 'px'; ?>;"
    onmouseover="this.style.backgroundColor = '<?php echo $hoverBgColor; ?>';
            this.style.color = '<?php echo $hoverColor; ?>'"
    onmouseout="this.style.backgroundColor = '<?php echo $bgColor; ?>';
