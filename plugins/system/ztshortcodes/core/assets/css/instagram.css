@@ -58,5 +58,69 @@
   -webkit-transform: scale(1);
   transform: scale(1);
   visibility: visible;
-  opacity: 1; {
+  opacity: 1;
+}
+.modal-instagram {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-transition: .4s;
+  transition: .4s;
+  transform: translateX(-50%), translateY(-50%);
+  -webkit-transform: translateX(-50%), translateY(-50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999
+}
+.in-animate .modal-instagram {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-instagram .modal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+  transform: scale(0) translateX(-50%) translateY(-50%);
+  -webkit-transform: scale(0) translateX(-50%) translateY(-50%);
+}
+.in-animate .modal-instagram .modal-wrapper {
+  transform: scale(1) translateX(-50%) translateY(-50%);
+  -webkit-transform: scale(1) translateX(-50%) translateY(-50%);
+}
+.modal-instagram img {
+  padding: 20px;
+  background-color: #fff
+}
+.modal-instagram .modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 17px;
+  height: 17px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.modal-instagram .modal-close:before,
+.modal-instagram .modal-close:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #404040;
+}
+.modal-instagram .modal-close:before {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.modal-instagram .modal-close:after {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }

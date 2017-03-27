@@ -3577,6 +3577,9 @@
     "depends": {
       "css": [
         "Shortcodes://assets/css/instagram.css"
+      ],
+      "js": [
+        "Shortcodes://assets/js/instagram.js"
       ]
     },
     "fields": [
