@@ -1,5 +1,10 @@
 .zt-person{
     margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px
+}
+.zt-person .zt-person-image img {
+    width: auto;
 }
 .zt-person-social ul{
     list-style: none;

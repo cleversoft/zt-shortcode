@@ -20,7 +20,7 @@ defined('_JEXEC') or die('Restricted access');
 defined('_JEXEC') or die('Restricted access');
 ?>
 <div
-    class="clearfix pricing-tables<?php echo ($attributes->get('pricing-type') == '') ? '' : ' attached'; ?>">
+    class="clearfix pricing-tables<?php echo ($attributes->get('pricing-type') == '') ? '' : ' attached'; ?> <?php echo $attributes->get('extraclass') ?>">
     <!-- Sub content -->
     <?php
     echo $content;

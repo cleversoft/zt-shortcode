@@ -14,15 +14,16 @@
  * @license     GPL v2 
  */
 defined('_JEXEC') or die('Restricted access');
+$class = $attributes->get('slider') == 'yes' ? 'owl-carousel owl-theme ' : 'row ';
+$class .= $attributes->get('extraclass');
 ?>
 
-<div class="zt-persons row <?php echo $attributes->get('extraclass') ?> <?php echo ($attributes->get('slider') == 'yes') ? 'bxslider' : ''; ?>"
-     data-show="<?php echo $attributes->get('item'); ?>"
-     data-pager="<?php echo ($attributes->get('pager') == 'yes') ? 'true' : 'false'; ?>"
-     data-controls="<?php echo ($attributes->get('controls') == 'yes') ? 'true' : 'false'; ?>"
-     data-auto="<?php echo ($attributes->get('auto') == 'yes') ? 'true' : 'false'; ?>"
-     data-margin="<?php echo $attributes->get('margin'); ?>">
-
+<div class="zt-persons <?php echo $class ?>" id="zt-persons-<?php echo uniqid(md5(time())) ?>" 
+    data-show="<?php echo $attributes->get('item'); ?>"
+    data-pager="<?php echo $attributes->get('pager') ?>"
+    data-controls="<?php echo $attributes->get('controls') ?>"
+    data-auto="<?php echo $attributes->get('auto') ?>"
+    >
     <!-- Sub content -->
 <?php
 echo $content;

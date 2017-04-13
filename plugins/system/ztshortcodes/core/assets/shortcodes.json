@@ -2212,11 +2212,12 @@
     "depends": {
       "css": [
         "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-        "Shortcodes://assets/bxslider/jquery.bxslider.css",
+        "Shortcodes://assets/owlcarousel/assets/owl.carousel.css",
+        "Shortcodes://assets/owlcarousel/assets/owl.theme.default.css",
         "Shortcodes://assets/css/persons.css"
       ],
       "js": [
-        "Shortcodes://assets/bxslider/jquery.bxslider.min.js",
+        "Shortcodes://assets/owlcarousel/owl.carousel.min.js",
         "Shortcodes://assets/js/persons.js"
       ]
     },
@@ -2244,12 +2245,6 @@
         "type": "checkbox",
         "name": "auto",
         "value": ""
-      },
-      {
-        "label": "Margin Item",
-        "type": "text",
-        "name": "margin",
-        "value": "20"
       },
       {
         "label": "Show Item",
@@ -2349,7 +2344,8 @@
     },
     "attributes": {
       "boxed": "",
-      "radius": ""
+      "radius": "",
+      "extraclass": ""
     },
     "depends": {
       "css": [
@@ -2380,6 +2376,12 @@
         "type": "text",
         "name": "radius",
         "value": "5"
+      },
+      {
+        "label": "Extra Class",
+        "type": "text",
+        "name": "extraclass",
+        "value": ""
       }
     ]
   },
@@ -3552,12 +3554,6 @@
             "value": "no"
           }
         ]
-      },
-      {
-        "label": "Id",
-        "type": "text",
-        "name": "id",
-        "value": ""
       },
       {
         "label": "Extra Class",

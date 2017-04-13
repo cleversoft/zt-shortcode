@@ -1,32 +1,31 @@
 /**
  * Zo2 Shortcode
- * @param {pointer} w Window pointer
  * @param {pointer} $ jQuery pointer
  * @returns {undefined}
  */
 
 jQuery(document).ready(function(){
-    jQuery('.zt-persons.bxslider').each(function(){
-       var c = jQuery(this).find('.zt-person').length,
-           i = jQuery(this).data('show'),
-           w = jQuery(this).parent().width(),
-           ws = '';
-
-        if(i < c){
-            ws = w / i;
-        } else {
-            ws = w / c;
+  jQuery('.zt-persons').each(function(){
+    var id = jQuery(this).attr('id');
+    var i = jQuery(this).attr('data-show');
+    var a = jQuery(this).attr('data-auto') == 'yes' ? true : false;
+    var c = jQuery(this).attr('data-controls') == 'yes' ? true : false;
+    var p = jQuery(this).attr('data-pager') == 'yes' ? true : false;
+    if(jQuery(this).hasClass('owl-carousel')) {
+      jQuery(this).find('.zt-person').attr('class', 'zt-person');
+      jQuery('#'+id).owlCarousel({
+        autoplay: a,
+        nav: c,
+        dots: p,
+        responsive : {
+          0:{
+            items: 1
+          },
+          480:{
+            items: i
+          }
         }
-       jQuery(this).bxSlider({
-           pager: jQuery(this).data('pager'),
-           controls: jQuery(this).data('controls'),
-           auto: jQuery(this).data('auto'),
-           minSlides: 1,
-           maxSlides: i,
-           slideWidth: ws - jQuery(this).data('margin'),
-           slideMargin: jQuery(this).data('margin'),
-           nextText: '<i class="fa fa-chevron-right"></i>',
-           prevText: '<i class="fa fa-chevron-left"></i>'
-       });
-    });
+      });
+    }
+  });
 });

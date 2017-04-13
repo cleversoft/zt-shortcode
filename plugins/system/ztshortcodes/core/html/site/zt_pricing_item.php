@@ -36,9 +36,13 @@ if ($attributes->get('itemhightlight') == "yes")
 }
 
 $html .= '<div class="pricing-item pull-left"><div class="plan' . ' ' . $attributes->get('level-item') . '' . ' ' . $classHightLight . '">';
-$html .= '<div class="head"><h2>' . $attributes->get('title') . '</h2></div>';
+$html .= '<div class="head">';
+if($attributes->get('position') == 'above') 
+  $html .= '<div class="price"><h3><span class="symbol">' . $price[0] . '</span>' . $price[1] . '</h3><h4>' . $price[2] . '</h4></div>';
+$html .= '<h2>' . $attributes->get('title') . '</h2></div>';
 $html .= '<ul class="item-list">' . $content . '</ul>';
-$html .= '<div class="price"><h3><span class="symbol">' . $price[0] . '</span>' . $price[1] . '</h3><h4>' . $price[2] . '</h4></div>';
+if($attributes->get('position') == 'below') 
+  $html .= '<div class="price"><h3><span class="symbol">' . $price[0] . '</span>' . $price[1] . '</h3><h4>' . $price[2] . '</h4></div>';
 $html .= '<a class="btn btn-success" href="' . $attributes->get('link') . '">' . $attributes->get('buttontext') . '</a>';
 $html .= '</div></div>';
 

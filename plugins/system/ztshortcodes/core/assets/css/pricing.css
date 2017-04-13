@@ -1,9 +1,6 @@
 .main-title {
     text-align: center;
 }
-.pricing-tables {
-    padding: 20px;
-}
 .pricing-tables h1 {
     font-size: 48px;
 }
@@ -103,7 +100,6 @@
     padding: 0;
 }
 .plan .price {
-    border-top: 1px solid #eee;
     margin: 0 auto 30px;
     width: 80%;
 }
