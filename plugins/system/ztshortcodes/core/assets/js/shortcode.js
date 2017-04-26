@@ -35,6 +35,11 @@
                 if (typeof (w.parent) !== 'undefined') {
                     if (w.parent.hasOwnProperty('jInsertEditorText')) {
                         /* Insert to parent editor */
+                        if($('#jform_articletext') > 0) {
+                            _self._elements.joomlaEditor = 'jform_articletext';
+                        } else {
+                            _self._elements.joomlaEditor = 'jform_content';
+                        }
                         w.parent.jInsertEditorText(code, _self._elements.joomlaEditor);
                         /* Close the box */
                         w.parent.SqueezeBox.close();
