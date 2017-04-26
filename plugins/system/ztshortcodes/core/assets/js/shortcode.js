@@ -35,7 +35,7 @@
                 if (typeof (w.parent) !== 'undefined') {
                     if (w.parent.hasOwnProperty('jInsertEditorText')) {
                         /* Insert to parent editor */
-                        if($('#jform_articletext') > 0) {
+                        if(w.parent.document.getElementById('jform_articletext')) {
                             _self._elements.joomlaEditor = 'jform_articletext';
                         } else {
                             _self._elements.joomlaEditor = 'jform_content';
