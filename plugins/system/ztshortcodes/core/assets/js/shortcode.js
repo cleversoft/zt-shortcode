@@ -9,7 +9,7 @@
     /* Short code main class */
     var _shortcode = {
         _elements: {
-            joomlaEditor: "jform_articletext",
+            joomlaEditor: "jform_content",
             shortcodeWrapper: "#zt-sc-generator",
             shortcodeZtSub: "div.zt-sub",
             shortcodeZtMain: "div.zt-main",
