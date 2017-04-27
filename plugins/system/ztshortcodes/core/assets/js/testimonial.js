@@ -6,7 +6,7 @@
  */
 
 jQuery(document).ready(function(){
-  jQuery('.owl-carousel').each(function(e){
+  jQuery('.zt-testimonial').each(function(e){
     var id = jQuery(this).attr('id');
     var items = jQuery(this).attr('data-items');
     var auto = jQuery(this).attr('data-auto') == 'yes' ? true : false;
