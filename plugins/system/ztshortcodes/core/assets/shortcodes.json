@@ -1529,8 +1529,7 @@
     "depends": {
       "css": [
         "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-        "Shortcodes://assets/owlcarousel/assets/owl.carousel.css",
-        "Shortcodes://assets/owlcarousel/assets/owl.theme.default.css",
+        "Shortcodes://assets/owlcarousel/owl.carousel.min.css",
         "Shortcodes://assets/css/testimonial.css"
       ],
       "js": [
@@ -1642,19 +1641,32 @@
     "depends": {
       "css": [
         "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
+        "Shortcodes://assets/owlcarousel/owl.carousel.min.css",
         "Shortcodes://assets/css/carousel.css"
       ],
       "js": [
-        "Shortcodes://assets/carouFredSel/jquery.carouFredSel-6.2.1.js",
+        "Shortcodes://assets/owlcarousel/owl.carousel.min.js",
         "Shortcodes://assets/js/carousel.js"
       ]
     },
     "fields": [
       {
-        "label": "Item Carousel",
+        "label": "Item On Desktop",
         "type": "text",
-        "name": "showItem",
+        "name": "itemMd",
         "value": "6"
+      },
+      {
+        "label": "Item On Tablet",
+        "type": "text",
+        "name": "itemSm",
+        "value": "3"
+      },
+      {
+        "label": "Item On Mobile",
+        "type": "text",
+        "name": "itemXs",
+        "value": "1"
       },
       {
         "label": "Duration Carousel",
@@ -1672,12 +1684,6 @@
         "label": "Allow Pager Carouse",
         "type": "checkbox",
         "name": "showPager",
-        "value": ""
-      },
-      {
-        "label": "Allow Responsive Carousel",
-        "type": "checkbox",
-        "name": "enableReponsive",
         "value": ""
       }
     ]
@@ -2212,8 +2218,7 @@
     "depends": {
       "css": [
         "Shortcodes://assets/font-awesome/css/font-awesome.min.css",
-        "Shortcodes://assets/owlcarousel/assets/owl.carousel.css",
-        "Shortcodes://assets/owlcarousel/assets/owl.theme.default.css",
+        "Shortcodes://assets/owlcarousel/owl.carousel.min.css",
         "Shortcodes://assets/css/persons.css"
       ],
       "js": [

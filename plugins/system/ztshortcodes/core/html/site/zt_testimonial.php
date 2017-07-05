@@ -14,7 +14,7 @@
  * @license     GPL v2 
  */
 defined('_JEXEC') or die('Restricted access');
-$class = 'owl-carousel owl-theme ';
+$class = 'owl-carousel ';
 $class .= $attributes->get('extraclass');
 ?>
 

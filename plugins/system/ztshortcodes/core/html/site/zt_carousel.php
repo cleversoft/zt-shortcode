@@ -16,24 +16,16 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 
-<div class="carousel-wrap">
-    <div class="carousel-slider" id="<?php echo ZtShortcodesHelperCommon::getUniqueString('zt-carousel-'); ?>"
-         data-items="<?php echo $attributes->get('showItem'); ?>"
-         data-duration="<?php echo $attributes->get('duration'); ?>"
-         data-responsinve="<?php echo $attributes->get('enableReponsive'); ?>">
+<div class="zt-carousel owl-carousel" id="<?php echo ZtShortcodesHelperCommon::getUniqueString('zt-carousel-'); ?>"
+     data-items-md="<?php echo $attributes->get('itemMd'); ?>"
+     data-items-sm="<?php echo $attributes->get('itemSm'); ?>"
+     data-items-xs="<?php echo $attributes->get('itemXs'); ?>"
+     data-duration="<?php echo $attributes->get('duration'); ?>"
+     data-control="<?php echo $attributes->get('showControl'); ?>"
+     data-pager="<?php echo $attributes->get('showPager'); ?>">
 
-        <!-- Sub content -->
-        <?php
-        echo $content;
-        ?>
-    </div>
-    <?php if ($attributes->get('showControl') == "yes"): ?>
-        <div class="prev-btn"><i class="fa fa-chevron-left"></i></div>
-        <div class="next-btn"><i class="fa fa-chevron-right"></i></div>
-        <?php
-    endif;
-    if ($attributes->get('showPager') == "yes"):
-        ?>
-        <div class="zo2-carousel-pager"></div>
-    <?php endif; ?>
+    <!-- Sub content -->
+    <?php
+    echo $content;
+    ?>
 </div>

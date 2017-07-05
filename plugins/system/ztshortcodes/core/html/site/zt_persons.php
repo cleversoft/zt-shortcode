@@ -14,7 +14,7 @@
  * @license     GPL v2 
  */
 defined('_JEXEC') or die('Restricted access');
-$class = $attributes->get('slider') == 'yes' ? 'owl-carousel owl-theme ' : 'row ';
+$class = $attributes->get('slider') == 'yes' ? 'owl-carousel ' : 'row ';
 $class .= $attributes->get('extraclass');
 ?>
 

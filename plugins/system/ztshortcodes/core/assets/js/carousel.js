@@ -5,28 +5,36 @@
  * @returns {undefined}
  */
 
-jQuery(window).load(function () {
+jQuery(document).ready(function () {
 
-    jQuery('.carousel-wrap').each(function(){
-        var itemCarousel = jQuery(this).find('.carousel-slider'),
-            i = jQuery(itemCarousel).data('items'),
-            d = jQuery(itemCarousel).data('duration'),
-            r = jQuery(itemCarousel).data('responsinve');
+    jQuery('.zt-carousel').each(function(){
+        var id          = jQuery(this).attr('id'),
+            md          = jQuery(this).data('items-md'),
+            sm          = jQuery(this).data('items-sm'),
+            xs          = jQuery(this).data('items-xs'),
+            dur         = jQuery(this).data('duration');
+            if (jQuery(this).data('control') == 'yes')
+                var control = true;
+            else
+                var control = false;    
+            if (jQuery(this).data('pager') == 'yes')
+                var pager = true;
+            else
+                var pager = false;
         // Using custom configuration
-        jQuery(itemCarousel).carouFredSel({
-            prev: ".prev-btn",
-            next: ".next-btn",
-            pagination: ".zo2-carousel-pager",
-            width: "100%",
-            items: i,
-            responsive: r,
-            scroll: {
-                duration: d,
-                pauseOnHover: true
-            },
-            wrapper: {
-                element: "div",
-                classname: "carousel-wrap"
+        jQuery('#'+id).owlCarousel({
+            nav: control,
+            dots: pager,
+            responsive: {
+                0: {
+                    items: xs
+                },
+                768: {
+                    items: sm
+                },
+                992: {
+                    items: md
+                }
             }
         });
     });
